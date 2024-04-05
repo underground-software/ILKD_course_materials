@@ -157,7 +157,7 @@ the instructors reserve the right to give the student a final course grade of F.
 
 |#|date|topic|S|M|T|W|R|F|S|Assignment Due|
 |--|--|--|--|--|--|--|--|--|--|--|
-|00| 26 May|syllabus, course format, what is linux?	||[L00](Lectures/L00.md)||[L01](lectures/L01.md)||||                             |
+|00| 26 May|syllabus, course format, what is linux?	||[L00](lectures/L00.md)||[L01](lectures/L01.md)||||                             |
 |01| 02 Jun|commandline bootcamp, git intro		||[L02](lectures/L02.md)||[L03](lectures/L03.md)||||[setup](assignments/setup.md)|
 |02| 09 Jun|makefiles, C compilation deep dive		||[L04](lectures/L04.md)||Shavuot               ||||                             |
 |03| 16 Jun|file descriptors, processes, syscalls	||[L05](lectures/L05.md)||[L06](lectures/L06.md)||||[E0](assignments/E0.md)      |
