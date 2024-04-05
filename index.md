@@ -2,7 +2,8 @@
 
 ### Course Summary and Purpose
 
-We aim to introduce students to the concepts, tools, and framework necessary for independent work on the Linux kernel.
+We aim to introduce students to the concepts, tools, and framework necessary for independent work on the Linux kernel,
+and more broadly to the skills necessary for work as a professional open source software engineer.
 
 ### Course Description
 
