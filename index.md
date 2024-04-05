@@ -98,33 +98,33 @@ Students will:
 
   * Students are required to include live demonstrations of their code by sharing their screen during the presentation
 
-Student grades will be weighted according to the following:
+### Grading Details
+
+#### Category Weights
 
 | Category | Percentage |
 |--|--|
-| Programs | 30% |
-| Exercises | 20% |
-| Midpoint Presentation | 15% |
+| Programs                              | 30% |
+| Exercises                             | 20% |
+| Midpoint Presentation                 | 15% |
 | Final Assignment + Final Presentation | 30% |
-| Participation | 5% |
+| Participation                         |  5% |
 
-
-Students will be given a letter grade according to the following this scheme:
+#### Letter Grade Conversion
 
 |Percentage range|Letter grade|Grade points|
 |--|--|--|
-|90 ~ 100|A |4.0|
+|90 ~ 100  |A |4.0|
 |85 ~ 89.99|A-|3.7|
 |80 ~ 84.99|B+|3.3|
-|75 ~ 79.99|B|3.0|
+|75 ~ 79.99|B |3.0|
 |70 ~ 74.99|B-|2.7|
 |65 ~ 69.99|C+|2.3|
-|60 ~ 64.99|C|2.0|
+|60 ~ 64.99|C |2.0|
 |55 ~ 59.99|C-|1.7|
 |50 ~ 54.99|D+|1.3|
-|40 ~ 49.99|D|1.0|
-|below 40|F|0.0|
-
+|40 ~ 49.99|D |1.0|
+|below 40  |F |0.0|
 
 ## Course Policies
 
