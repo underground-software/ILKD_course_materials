@@ -133,7 +133,6 @@ Students will:
 
 ### Attendance Policy
 
-TODO
 * Attendance is required.
 
   * The instructors will be joining remotely
