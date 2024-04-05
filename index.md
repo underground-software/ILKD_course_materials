@@ -44,6 +44,9 @@ Students will:
 
 * Patience, determination, and an ability to focus on a potentially frustrating task for sustained periods of time.
 
+* The ability to join a live video call with camera/microphone from that computer
+  (i.e. the necessary equipment and a stable internet connection)
+
 ### Coursework Overview
 
 #### Coding Assignments
