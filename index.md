@@ -169,3 +169,22 @@ the instructors reserve the right to give the student a final course grade of F.
     so it is the sole responsibility of the student who chooses this path to ensure that their
     work is correct lest any defects in the submission negatively impact their final grade.
 
+|#|date|topic|S|M|T|W|R|F|S|Assignment Due|
+|--|--|--|--|--|--|--|--|--|--|--|
+|00| 01 Sep|syllabus, course format, what is linux?	|||                      ||[L00](lectures/L00.md)|||                             |
+|01| 08 Sep|commandline bootcamp, git intro		|||[L01](lectures/L01.md)||[L02](lectures/L02.md)|||                             |
+|02| 15 Sep|makefiles, C compilation deep dive		|||[L03](lectures/L03.md)||[L04](lectures/L04.md)|||[setup](assignments/setup.md)|
+|03| 22 Sep|file descriptors, processes, syscalls	|||[L05](lectures/L05.md)||[L06](lectures/L06.md)|||[E0](assignments/E0.md)      |
+|04| 29 Sep|CPU priv., reentrency, kernel vs user code	|||[L07](lectures/L07.md)||[L08](lectures/L08.md)|||[P0](assignments/P0.md)      |
+|05| 06 Oct|tracing how/when OS code runs on the CPU	|||[L09](lectures/L09.md)||[L10](lectures/L10.md)|||                             |
+|06| 13 Oct|midpoint pres, what a good pres. looks like	|||monday schedule       ||[L11](lectures/L11.md)|||[Midpoint Presentation](assignments/mid_pres_guide.md)|
+|07| 20 Oct|assembly refresher, syscalls: end to end	|||[L12](lectures/L12.md)||[L13](lectures/L13.md)|||[E1](assignments/E1.md)      |
+|08| 27 Oct|kernel pseudo filesystems; kernel modules	|||[L14](lectures/L14.md)||[L15](lectures/L15.md)|||[P1](assignments/P1.md)      |
+|09| 03 Nov|character devices, ioctl, file position	|||[L16](lectures/L16.md)||[L17](lectures/L17.md)|||[E2](assignments/E2.md)      |
+|10| 10 Nov|kernel locking support			|||[L18](lectures/L18.md)||[L19](lectures/L19.md)|||[P2](assignments/P2.md)      |
+|11| 17 Nov|misc. devices for simple chardevs		|||[L20](lectures/L20.md)||[L21](lectures/L21.md)|||[F0](assignments/F0.md)      |
+|12| 24 Nov|live debugging: broken char dev module	|||[L22](lectures/L22.md)||thanksgiving          |||                             |
+|13| 01 Dec|guest lecture; final presentations		|||[L23](lectures/L23.md)||[L24](lectures/L24.md)|||[F1](assignments/F1.md)      |
+|14| 08 Dec|final presentations				|||[L25](lectures/L25.md)||[L26](lectures/L26.md)|||                             |
+|15| 15 Dec|final presentations; end of class		|||[L27](lectures/L27.md)||[L28](lectures/L27.md)|||[Final Presentation](assignments/final_pres_guide.md)|
+
