@@ -136,7 +136,9 @@ Students will:
 TODO
 * Attendance is required.
 
+  * The instructors will be joining remotely
 
+  * Students are welcome (and encouraged) to join the meeting as well so they can contribute more easily
 
 ### Automatic Course Failure
 
