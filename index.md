@@ -95,7 +95,9 @@ Students will:
 
 * Students will be required to complete two presentations throughout the course
 
-  * Students must deliver their presentations over a live video call (with a camera)
+  * Students must record and upload their midpoint presentations by the due date
+
+  * Students must deliver their final presentations over a live video call (with a camera)
 
   * Presentations must include original visual content, such as slides
 
