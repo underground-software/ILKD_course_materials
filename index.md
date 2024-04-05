@@ -1,4 +1,4 @@
-## Fall 2024 Course
+## Introduction to Linux Kernel Development Fall 2024
 
 ### Course Summary and Purpose
 
