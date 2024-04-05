@@ -4,7 +4,7 @@
 
 We aim to introduce students to the concepts, tools, and framework necessary for independent work on the Linux kernel.
 
-### Course description
+### Course Description
 
 Linux is the most widely used operating system in the world.
 The core software component of the Linux operating system is the kernel.
@@ -21,7 +21,7 @@ and how to make changes to it will give students an invaluable perspective
 on how their computers work behind the scenes that will reveal
 a new layer of understanding to apply to any future software engineering practice.
 
-### Course objectives
+### Course Objectives
 
 Students will:
 
@@ -41,7 +41,7 @@ Students will:
 
 * Patience, determination, and an ability to focus on a potentially frustrating task for sustained periods of time.
 
-### Coursework overview
+### Coursework Overview
 
 TODO: tense stuff
 
@@ -117,7 +117,7 @@ Students will be given a letter grade according to the following this scheme:
 
 ## Course Policies
 
-### Attendence Policy
+### Attendance Policy
 
 TODO
 * Attendance is required.
