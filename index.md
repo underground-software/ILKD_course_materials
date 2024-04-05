@@ -46,49 +46,57 @@ Students will:
 
 ### Coursework Overview
 
-TODO: tense stuff
-
-**Coding Assignments**
+#### Coding Assignments
 
 * Students will complete a coding assignment about once a week
 
-* Assignment submissions are git patches formatted for email. 
+* Assignment submissions are git patches formatted for email
 
 * Assignments fall into three categories: exercises, programs, and the final project
 
-* Exercises are about practicing skills and learning by doing.
+* Exercises are about practicing skills and learning by doing
 
-  * Students will follow a series of instructions to execute certain
-    commands, and answer questions about what you did.
+  * Students will follow a series of instructions (e.g. to execute certain
+    commands), and answer questions about what they did
 
-  * A submission will be proof that you completed the steps
-    correctly, and your answers to the questions.
+  * A submission will be proof that the student completed the steps
+    correctly, and their answers to the questions
 
   * As a general rule exercises will not involve much programming,
-    and are weighted lesser in your overall grade.
+    and are weighted lesser in the overall course grade
 
-* Programs are about getting your hands dirty and actually writing some code.
+* Programs are about getting your hands dirty and actually writing some code
 
-  * Students will have specific requirements your code has to meet,
-    and a way to test that what you have written completes the requirements it successfully.
+  * Students will have specific requirements their code has to meet, and a way
+    to test that what they have written completes the requirements successfully.
 
-  * Your submission will consists of proof that your program works correctly, and its source code.
+  * A submission will consists of proof that the program works correctly, and its source code.
 
-  * Since programs involve more actual coding, they will be weighted more in your overall grade.
+  * Since programs involve more actual coding, they will be weighted more in the overall course grade.
 
-* Students will review two other's submissions as a part of every assignment
+* The final project is broken into two parts
 
-**Presentation Assignments**
+  * The students will have freedom to engineer a creative project
 
-* Students will be required to complete two (2) presentations throughout the course
+  * However, there is an emphasis on designing rigorous specifications and tests to clarify and enforce that vision
 
-* Students must deliver their presentations over a live video call
+  * The student will implement a peers specification instead of their own.
 
-* Presentations must include original visual content, such as slides
+* As a part of every assignment (except the very final one) students will perform peer review
 
-* Students are required to include live demonstrations of their code by sharing their text editor and/or terminal during the presentation
+  * Students will be assigned two others' submissions to review
 
-### Grading scheme:
+  * Part of the grade on each assignment will be determined by the quality and thoroughness of the review
+
+#### Presentation Assignments
+
+* Students will be required to complete two presentations throughout the course
+
+  * Students must deliver their presentations over a live video call (with a camera)
+
+  * Presentations must include original visual content, such as slides
+
+  * Students are required to include live demonstrations of their code by sharing their screen during the presentation
 
 Student grades will be weighted according to the following:
 
