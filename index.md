@@ -8,19 +8,21 @@ and more broadly to the skills necessary for work as a professional open source 
 ### Course Description
 
 Linux is the most widely used operating system in the world.
-The core software component of the Linux operating system is the kernel.
-A couple of its roles include managing hardware interactions,
-virtualizing system resources, and enforcing security constraints.
-In effect, Linux kernel powers almost all of the world’s top supercomputers,
-android phones, and an innumerable variety of other computers.
+It powers the world's top supercomputers, every android phone,
+and the servers that host the internet's most popular websites.
+At the core of Linux is a software component called the kernel.
+It performs critical roles including managing communication with
+hardware, sharing system resources equitably, and enforcing
+security constraints.
 This course will introduce students to Linux kernel development
-by focusing on device driver development.
-This will give students hands-on experience working with internal Linux kernel APIs
-and provide an overview of some of the core features and components of the kernel.
-Gaining an understanding of the inner workings of the operating system
-and how to make changes to it will give students an invaluable perspective
-on how their computers work behind the scenes that will reveal
-a new layer of understanding to apply to any future software engineering practice.
+through hands-on experience working with internal Linux kernel
+APIs and providing an overview of some of the core features
+and components of the kernel.
+Students will gain an invaluable perspective on how their computers
+work behind the scenes. By grasping the inner workings of the operating
+system and how to make changes to it, they will add a new layer of
+understanding to their mental model of computation that will pay
+dividends throughout their future in software engineering.
 
 ### Course Objectives
 
