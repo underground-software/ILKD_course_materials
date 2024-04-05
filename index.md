@@ -136,33 +136,35 @@ Students will:
 TODO
 * Attendance is required.
 
-### Automatic Course Failure (Grade of F)
-
-* In the case that a student fails to complete a task by a deadline with no prior notice,
-an instructor will reach out to you via email and/or direct message.
-If the student fails to respond to this message within seven (7) days of it’s receipt,
-the instructors reserve the right to give the student a failing grade (F) for the course.
 
 
-### Assignment Policies
+### Automatic Course Failure
+
+If a student fails to complete a task by a deadline with no prior notice,
+an instructor will reach out to you via email and direct message on matrix.
+If the student fails to respond to this message within seven days of it's receipt,
+the instructors reserve the right to give the student a final course grade of F.
+
+### Due date Policies
 
 * Instructors reserve the right to change due dates within reason
-  * In such a case, we will provide sufficient advance notice to students
-* There is no late work!
-  * Students receive a zero for assignments not submitted on time.
+
+  * In such a case, we will provide advance notice to students
+
+  * If the due date is being pushed forward, the notification will occur at least one week before the new due date
+
+* The instructors will not accept late work
+
+  * Students receive a zero for assignments not submitted on time
+
 * One exception (a once per semester get out of jail free card):
-  * Students may choose to opt out of the peer review process.
-  * By bypassing the ack requirement (both giving and receiving) students receive the two days that would be used for that process as an extension before they make their first and only final submission.
-  * This means that you do you not get a chance to receive early feedback from your peers and so you get what you get for a final grade.
 
+  * Students may choose to opt out of the peer review process for a given coding assignment
 
+  * By skipping the process---both giving and receiving---students can use the two days that the process
+    would normally entail to take more time to work on their final (and only) submission.
 
-
-
-
-
-
-
-
-
+  * Skipping peer review means forgoing the safety net of receiving early feedback from peers,
+    so it is the sole responsibility of the student who chooses this path to ensure that their
+    work is correct lest any defects in the submission negatively impact their final grade.
 
