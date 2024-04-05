@@ -30,13 +30,13 @@ Students will:
 
 * Stretch their C programming skills to the limit
 
-* Create, develop, and test interesting and creative Linux kernel modules
-
 * Develop the ability to autonomously participate in the open source software community
 
 * Learn how to give and receive feedback on code patches
 
 * Demonstrate the ability to explain your code and your knowledge of Linux in your own words
+
+* Create, develop, and test interesting and creative Linux kernel modules
 
 ### Required Materials
 
