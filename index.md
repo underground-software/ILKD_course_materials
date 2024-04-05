@@ -115,22 +115,6 @@ Students will:
 | Final Assignment + Final Presentation | 30% |
 | Participation                         |  5% |
 
-#### Letter Grade Conversion
-
-|Percentage range|Letter grade|Grade points|
-|--|--|--|
-|90 ~ 100  |A |4.0|
-|85 ~ 89.99|A-|3.7|
-|80 ~ 84.99|B+|3.3|
-|75 ~ 79.99|B |3.0|
-|70 ~ 74.99|B-|2.7|
-|65 ~ 69.99|C+|2.3|
-|60 ~ 64.99|C |2.0|
-|55 ~ 59.99|C-|1.7|
-|50 ~ 54.99|D+|1.3|
-|40 ~ 49.99|D |1.0|
-|below 40  |F |0.0|
-
 ## Course Policies
 
 ### Attendance Policy
