@@ -109,11 +109,10 @@ Students will:
 
 | Category | Percentage |
 |--|--|
-| Programs                              | 30% |
+| Programs                              | 35% |
 | Exercises                             | 20% |
 | Midpoint Presentation                 | 15% |
 | Final Assignment + Final Presentation | 30% |
-| Participation                         |  5% |
 
 ## Course Policies
 
