@@ -41,12 +41,13 @@ Assignment due: [E0](assignments/E0.md)
 
 Tuesday:
  - L05
-   - Worked example, what are processes, what are syscalls, what are file descriptors *TBA: design this content*
+   - Basically the OS assignment where you run grep in a child process <https://cs.uml.edu/~bill/cs308/Assignment_2.pdf>
+   - open read write fork exec dup pipe wait close exit
 
 Thursday:
  - L06
-   - Basically the OS assignment where you run grep in a child process <https://cs.uml.edu/~bill/cs308/Assignment_2.pdf>
-   - open read write fork exec dup pipe wait close exit
+   - Worked example, what are processes, what are file descriptors, what are syscalls, what are signals?
+   - Uncover the underlying linux facilities that these posix concepts map on to.
 
 Week 04 | 29 September 2024
 --
