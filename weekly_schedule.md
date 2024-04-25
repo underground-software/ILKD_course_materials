@@ -60,7 +60,7 @@ Tuesday:
 
 Thursday:
  - L08
-   - We are able to run forbidden stuff when we are writing kernel code <https://kdlp.underground.software/course/fall2023/lectures/L06.md>
+   - What causes kernel code to run, exceptions, traps, interrupts <https://kdlp.underground.software/course/fall2023/lectures/L08.md>
 
 Week 05 | 06 October 2024
 --
@@ -69,11 +69,11 @@ Assignment due: none
 
 Tuesday:
  - L09
-   - What causes kernel code to run, exceptions, traps, interrupts <https://kdlp.underground.software/course/fall2023/lectures/L08.md>
+   - tracing kernel code with ftrace <https://kdlp.underground.software/course/fall2023/lectures/L07.md> *TBA: design specific demo for this*
 
 Thursday:
  - L10
-   - tracing kernel code with ftrace <https://kdlp.underground.software/course/fall2023/lectures/L07.md> *TBA: design specific demo for this*
+   - bpftrace demo
 
 
 Week 06 | 13 October 2024
@@ -87,7 +87,8 @@ Assignment due: none
 Thursday:
  - L11
    - What do we want for presentations in this class, no exams means we have high expectations <https://kdlp.underground.software/course/fall2023/assignments/mid_pres_guide.md>
-
+   - We are able to run forbidden stuff when we are writing kernel code <https://kdlp.underground.software/course/fall2023/lectures/L06.md>
+    (priv_rdmsr_demo)
 
 Week 07 | 20 October 2024
 --
