@@ -209,6 +209,7 @@ The times listed above are in Israel Daylight Time, which corresponds to the ins
 
 
 |Week #|Start Date|Assignment Due|
+|--|--|--|
 |00| 26 May|                             |
 |01| 02 Jun|[setup](assignments/setup.md)|
 |02| 09 Jun|                             |
