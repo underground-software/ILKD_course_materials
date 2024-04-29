@@ -38,6 +38,8 @@ Students will:
 
 * Create, develop, and test interesting and creative Linux kernel modules
 
+* Extend their Linux kernel internals knowledge
+
 ### Required Materials
 
 * A computer that can run a virtual machine to give you access to a Linux environment.
@@ -122,18 +124,50 @@ Students will:
 
   * The instructors will be joining remotely
 
-  * Students are welcome (and encouraged) to join the meeting as well so they can contribute more easily
+  * Students are required to join the lecture zoom meeting to attend the course
 
 ### Automatic Course Failure
 
 If a student fails to complete a task by a deadline with no prior notice,
 an instructor will reach out to you via email and direct message on matrix.
 If the student fails to respond to this message within seven days of it's receipt,
-the instructors reserve the right to give the student a final course grade of F.
+the instructors reserve the right to give the student a final course grade of 0.
 
 ### Due date Policies
 
-* Instructors reserve the right to change due dates within reason
+During a week where an assignment is due,
+the students must make two submissions and complete two peer reviews in three stages as follows:
+
+1. By 23:59 Tuesday, a student must make at least one submission.
+This is the "initial submission" stage.
+The student will not be graded on the content of this submission,
+however the student will receive a 0 for the assignment if they do not submit anything at all.
+Students may make as many resubmissions as they please,
+and only the last submission made before the initial submission deadline
+will be distributed as the target of peer review.
+Students will review each other's initial submissions in the following stage.
+
+2. By 23:59 Wednesday, a student must reply by email to two other students' initial submissions
+providing feedback on anything wrong with the patchset
+and any suggestions for the other student to improve their final submission.
+This is the "peer review" stage.
+Triggered by the event of the initial submission deadline, automation will make all students'
+submissions visible to the whole class and assign each student two others to peer review.
+Each peer review will comprise 10% of a students' assignment grade, for 20% of the total.
+
+3. By 23:59 Thursday, a student must make at least one more submission for the assignment.
+This is the "final submission" stage.
+The wise students will take their peer's feedback and self-reflection into account and revise
+their work before the final submission, however they are not required to do so.
+Students can re-submit as many times as they please
+and they will only be graded on the content
+of last submission made before the deadline,
+provided they made at lease one initial submission.
+The grade students receive on the content of the final submission will comprise 80% of their assignment grade.
+
+The times listed above are in Israel Daylight Time, which corresponds to the instructors' 16:59 Eastern Daylight Time in Boston, USA.
+
+* Instructors reserve the right to delay due dates within reason
 
   * In such a case, we will provide advance notice to students
 
@@ -142,6 +176,8 @@ the instructors reserve the right to give the student a final course grade of F.
 * The instructors will not accept late work
 
   * Students receive a zero for assignments not submitted on time
+
+  * With advance notice, the instructors will appropriately accomadate students who have reserve duty to ensure they have the opportunity to receive full credit
 
 * One exception (a once per semester get out of jail free card):
 
@@ -154,18 +190,42 @@ the instructors reserve the right to give the student a final course grade of F.
     so it is the sole responsibility of the student who chooses this path to ensure that their
     work is correct lest any defects in the submission negatively impact their final grade.
 
-|#|date|topic|S|M|T|W|R|F|S|Assignment Due|
-|--|--|--|--|--|--|--|--|--|--|--|
-|00| 26 May|syllabus, course format, what is linux?	||[L00](lectures/L00.md)||[L01](lectures/L01.md)||||                             |
-|01| 02 Jun|commandline bootcamp, git intro		||[L02](lectures/L02.md)||[L03](lectures/L03.md)||||[setup](assignments/setup.md)|
-|02| 09 Jun|makefiles, C compilation deep dive		||[L04](lectures/L04.md)||Shavuot               ||||                             |
-|03| 16 Jun|file descriptors, processes, syscalls	||[L05](lectures/L05.md)||[L06](lectures/L06.md)||||[E0](assignments/E0.md)      |
-|04| 23 Jun|CPU priv., reentrency, kernel vs user code	||[L07](lectures/L07.md)||[L08](lectures/L08.md)||||[P0](assignments/P0.md)      |
-|05| 30 Jun|traps exceptions interrupts			||thursday schedule     ||[L09](lectures/L09.md)||||[E1](assignments/E1.md)      |
-|06| 07 Jul|tracing how/when OS code runs on the CPU	||[L10](lectures/L10.md)||[L11](lectures/L11.md)||||[P1](assignments/P1.md)      |
-|07| 14 Jul|assembly refresher, syscalls: end to end	||[L12](lectures/L12.md)||[L13](lectures/L13.md)||||[Midpoint Presentation](assignments/mid_pres_guide.md)|
-|08| 21 Jul|kernel pseudo filesystems; kernel modules	||[L14](lectures/L14.md)||[L15](lectures/L15.md)||||[E2](assignments/E2.md)      |
-|09| 28 Jul|character devices, ioctl, file position	||[L16](lectures/L16.md)||[L17](lectures/L17.md)||||[P2](assignments/P2.md)      |
-|10| 04 Aug|kernel locking support			||[L18](lectures/L18.md)||[L19](lectures/L19.md)||||[F0](assignments/F0.md)      |
-|11| 11 Aug|misc. devices for simple chardevs		||[L20](lectures/L20.md)||[L21](lectures/L21.md)||||                             |
-|12| 18 Aug|live debugging: broken char dev module	||[L22](lectures/L22.md)||[L23](lectures/L23.md)||||[F1](assignments/F1.md)      |
+
+### Course Communication
+
+* The primary location for course-related communication will be on the instructor-hosted matrix server
+
+  * Students will be provided access credentials at the start of the course
+
+  * These will be the same credentials students will use to access the course email patch submission system for assignments
+
+  * Students who have general questions about the course material or any other non-private course-related information will
+    post their questions in the #questions channel on matrix where discussion and answers will be available to all course participants.
+
+  * Students who have private questions about the course will reach out to a provided email address with their concerns.
+
+### Assignment Schedule
+
+
+
+|Week #|Start Date|Assignment Due|
+|00| 26 May|                             |
+|01| 02 Jun|[setup](assignments/setup.md)|
+|02| 09 Jun|                             |
+|03| 16 Jun|[E0](assignments/E0.md)      |
+|04| 23 Jun|[P0](assignments/P0.md)      |
+|05| 30 Jun|[E1](assignments/E1.md)      |
+|06| 07 Jul|[P1](assignments/P1.md)      |
+|07| 14 Jul|[Midpoint Presentation](assignments/mid_pres_guide.md)|
+|08| 21 Jul|[E2](assignments/E2.md)      |
+|09| 28 Jul|[P2](assignments/P2.md)      |
+|10| 04 Aug|[F0](assignments/F0.md)      |
+|11| 11 Aug|                             |
+|12| 18 Aug|[F1](assignments/F1.md)      |
+
+After the regular semester and final examinations are concluded,
+students will be required to complete and submit their final project and presentation.
+
+More information about this can be found here:
+
+[Final presentation](assignments/final_pres_guide.md)
