@@ -207,13 +207,12 @@ The times listed above are in Israel Daylight Time, which corresponds to the ins
 ### Assignment Schedule
 
 
-
 |Week #|Start Date|Assignment Due|
 |--|--|--|
 |00| 26 May|                             |
 |01| 02 Jun|[setup](assignments/setup.md)|
-|02| 09 Jun|                             |
-|03| 16 Jun|[E0](assignments/E0.md)      |
+|02| 09 Jun|[E0](assignments/E0.md)      |
+|03| 16 Jun|                             |
 |04| 23 Jun|[P0](assignments/P0.md)      |
 |05| 30 Jun|[E1](assignments/E1.md)      |
 |06| 07 Jul|[P1](assignments/P1.md)      |
@@ -226,7 +225,3 @@ The times listed above are in Israel Daylight Time, which corresponds to the ins
 
 After the regular semester and final examinations are concluded,
 students will be required to complete and submit their final project and presentation.
-
-More information about this can be found here:
-
-[Final presentation](assignments/final_pres_guide.md)
