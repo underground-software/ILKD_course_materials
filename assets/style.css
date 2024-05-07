@@ -1,0 +1,465 @@
+/*
+A template for near-instantaneous deployment of websites
+Copyright (C) 2019 Joel Savitz and Chris Odom
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
+*/
+
+/* Basic elements */
+html, body {
+	font-family: courier, mono;
+	font-size: 15px;
+}
+
+body {
+	margin: .5rem 20%;
+}
+
+a {
+	color: #2db8d4;
+}
+
+code {
+	font: inherit;
+	background: #eeeeee;
+}
+
+pre > code {
+	max-width: 100%;
+	display: block;
+	width: fit-content;
+}
+
+pre {
+	font: inherit;
+	width: fit-content;
+	margin: 1em;
+	padding: .2em;
+	background: #eeeeee;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+a:visited {
+	color: #005d70;
+}
+
+img {
+	display: block;
+	margin: auto;
+	max-width:100%;
+}
+
+h1 {
+	font-size: 2rem;
+	margin: 1rem 0 1rem 0;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin: 1rem 0 1rem 0;
+}
+
+h3 {
+	font-size: 1.4rem;
+	margin: 1rem 0 1rem 0;
+}
+
+h4 {
+	font-size: 1.3rem;
+	margin: 1rem 0 1rem 0;
+}
+
+h5 {
+	font-size: 1.2rem;
+	margin: 1rem 0 1rem 0;
+}
+
+input, select {
+	border: none;
+	border-bottom: 2px solid #e83d2a;
+	border-radius: 0;
+	background-color: #ffffcc;
+	font: inherit;
+}
+
+button {
+	border: 2px solid #e83d2a;
+	border-radius: 0;
+	background-color: #eeeeee;
+	font: inherit;
+}
+
+/* Login/logout/register page */
+#login, #register {
+	margin: 1em 0;
+}
+
+#login label,
+#register label {
+	font-size: 1.5em;
+	margin: .5em;
+}
+
+#login input,
+#register input {
+	font-size: 1.4em;
+	margin: 1em;
+}
+
+#login button,
+#register button {
+	margin-left: 2em;
+}
+
+#register button {
+	margin-bottom: .5rem;
+}
+
+.logout-info {
+	margin-top: .5rem;
+}
+
+.logout_buttons {
+	margin-bottom: .5rem;
+}
+
+/* Title + Navbar */
+img.logo {
+	width: 8em;
+	height: auto;
+	margin: 0 1rem 0 0;
+}
+
+div.logo {
+	display: flex;
+	align-items: center;
+	vertical-align: middle;
+	margin-bottom: .5rem;
+}
+
+h1.title {
+	margin: auto;
+}
+
+hr {
+	background: #e83d2a;
+	color: #e83d2a;
+	height: 2px;
+	margin: 0;
+}
+
+.nav {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+a.nav {
+	padding: 0.5em;
+	font-size: 1.3em;
+	border-left: 1px solid black;
+	background-color: #eeeeee;
+	color: #005d70;
+	text-decoration: none;
+}
+
+a.nav:last-child {
+	border-right: 1px solid black;
+}
+
+/* Tables */
+table {
+	min-width: 100%;
+	/**/
+	border-collapse: collapse;
+	/**/
+}
+
+table, th, td {
+	border: 1px solid;
+	padding: 0.5em;
+}
+
+	/* faq page table needs a lil spacing from the <hr> */
+table + hr {
+	margin-top: .5rem;
+}
+
+/* Lists */
+@counter-style hex {
+	system: alphabetic;
+	symbols: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9' 'A' 'B' 'C' 'D' 'E' 'F';
+}
+
+ol {
+	margin-left: 1em;
+	counter-reset: count 16;
+}
+
+ol > li {
+	counter-increment: count;
+}
+
+ol > li::marker {
+	content: '0x' counter(count, hex) ': ';
+}
+
+li > ul {
+	margin-left: -1em;
+}
+
+li > p {
+	/* Some list items have raw text, others hold `<p>`s that hold text?
+	this fixes inconsistent padding */
+	margin: 0;
+	padding: 0;
+}
+
+li > p > img {
+	margin: 1rem auto;
+}
+
+li {
+	padding-top: .4rem;
+}
+
+/* Screen size adjustments */
+@media only screen and (max-width: 1365px) {
+	body {
+		margin: .5rem 10%;
+	}
+}
+
+@media only screen and (max-width: 720px) {
+	body {
+		margin: .5rem 2%;
+	}
+}
+
+	/* Makes the course calendar completely visible, but hard to navigate */
+@media only screen and (max-width: 470px) {
+	table {
+		font-size: .75rem;
+	}
+}
+
+@media only screen and (max-width: 370px) {
+	body {
+		margin: .5rem 1%;
+	}
+	h1.title {
+		font-size: 1.8rem;
+	}
+}
+
+/* Cgit */
+#cgit {
+	margin: 1rem 0;
+}
+
+#cgit .logo {
+	display: none;
+}
+	/* Search bar */
+#cgit > table > tbody > tr > td > form {
+	float: right;
+}
+
+	/* Tabs (e.g. `summary` `refs` `log` `tree` ... links when in a repo,
+	`index` link on main page.) */
+#cgit > table.tabs > tbody > tr > td:first-child {
+	justify-content: space-between;
+	display: flex;
+	border-width: 0;
+}
+
+#cgit > table.tabs > tbody > tr > td:first-child a {
+	padding: 0 2px;
+}
+
+#cgit > table.tabs > tbody .form {
+	width: 40%;
+}
+
+#cgit > .footer {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	color: #ccc;
+}
+
+#cgit .footer a:first-child {
+	margin-left: .5em;
+}
+
+	/* remove border between columns in header & tabs */
+#cgit > table.tabs > tbody > tr > td , #cgit > table#header > tbody > tr > td {
+	border-width: 1px 0;
+}
+
+	/* fix double border between header & tabs */
+#cgit > #header, #cgit .sub {
+	border-bottom: 0;
+}
+
+#cgit > .content {
+	margin: 1rem 0;
+}
+
+#cgit > .content > .commit-info,
+#cgit > .content > .commit-msg,
+#cgit > .content > .cgit-panel,
+#cgit > .content > .diffstat-summary {
+	margin-bottom: 1rem;
+}
+
+	/* Decorations next to commit messages */
+#cgit .decoration > a {
+	margin: 0 .5em;
+	padding: 0 .25em;
+	border: solid 1px;
+	color: #000;
+	text-decoration: none;
+}
+	/* HEAD decoration */
+#cgit .deco {
+	background-color: #ff8888;
+	border-color: #770000;
+}
+	/* Branch decoration */
+#cgit .branch-deco {
+	background-color: #88ff88;
+	border-color: #007700;
+}
+
+/* `diff options` panel */
+#cgit .cgit-panel {
+	display: flex;
+	flex-direction: column;
+	float: right;
+	margin-left: 1rem;
+}
+
+#cgit .cgit-panel > b {
+	display:flex;
+	justify-content: center;
+	margin-bottom: .5rem;
+}
+
+#cgit .cgit-panel tr:last-child, #cgit .cgit-panel tr:first-child {
+	display: none;
+}
+
+#cgit .cgit-panel .label, #cgit .cgit-panel .ctrl {
+	border: 0;
+}
+
+#cgit .cgit-panel .ctrl {
+	float: right;
+}
+
+/* diff statistics, general commit overview + diff page stuff */
+#cgit .commit-info,
+#cgit .diffstat {
+	min-width: 0;
+}
+
+	/* Make columns in diffstat panel take up as little space as necessary */
+#cgit .diffstat .mode,
+#cgit .list .ls-mode,
+#cgit .diffstat .right {
+	width: 1%;
+	white-space: nowrap;
+}
+
+#cgit .diffstat .graph td {
+	padding: 0;
+	margin: 0;
+	height: .5rem;
+	border-width: 0;
+}
+
+#cgit tr > .add {
+	background-color: #5c5;
+}
+
+#cgit .rem {
+	background-color: #c55;
+}
+
+#cgit .commit-subject {
+	font-weight: bold;
+	font-size: 1.1rem;
+}
+
+#cgit .commit-subject,
+#cgit .diffstat {
+	margin-bottom: .2rem;
+}
+
+#cgit .commit-msg {
+	padding: 2px;
+	background-color: #eeeeee;
+	white-space: break-spaces;
+	text-align: left;
+	border: 1px solid black;
+}
+
+#cgit .diff .add {
+	color: #5c5;
+}
+
+#cgit .diff .hunk {
+	color: blue;
+}
+
+#cgit .diff .del {
+	color: #c55;
+}
+
+#cgit .linenumbers,
+#cgit .lines {
+	background-color: #eeeeee;
+}
+
+#cgit .linenumbers a,
+#cgit .lines code {
+	font-size: 15px;
+	font-family: courier, mono;
+}
+
+/* hide the 'plain' button from 'tree' view */
+#cgit .list > tbody > tr > td:last-child > .button:last-child {
+	display: none;
+}
+
+#cgit ul.pager {
+	display: flex;
+	justify-content: center;
+}
+
+#cgit ul.pager li {
+	padding: 0
+	10px;
+}
+
+#cgit ul.pager li::marker {
+	content: none;
+}
+
+#cgit .content > a {
+	display: none;
+}
