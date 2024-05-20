@@ -28,8 +28,11 @@ Week 02 | 15 September 2024
 
 Assignment due: [setup](assignments/setup.md)
 
+Tuesday
  - L03
    - Build a distro, working with makefiles, configure scripts <https://kdlp.underground.software/course/fall2023/lectures/L04.md> <https://youtu.be/aAoJyUaA1ok>
+
+Thursday:
  - L04
    - Write example C program + makefile <https://kdlp.underground.software/course/fall2023/lectures/L08.md>
    - Work through phases of C compilation, what is assembly vs machine code, what are object files, reveal all steps in makefile
@@ -125,6 +128,7 @@ Assignment due: [E2](assignments/E2.md)
 Tuesday:
  - L16
    - kernel data types `struct file`, `struct inode`, `struct file_operations`, `dev_t`, etc <https://kdlp.underground.software/course/fall2023/lectures/L15.md> <https://youtu.be/KiKGc67107Y> <https://kdlp.underground.software/course/fall2023/lectures/L16.md> <https://youtu.be/L1VJ9kEZ2zY>
+
 Thursday:
  - L17
    - advanced char dev operations, ioctl, lseek, etc *TBA: do we have stuff from an even earlier semester?*
