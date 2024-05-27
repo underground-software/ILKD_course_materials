@@ -159,18 +159,18 @@ If you see this, you have completed the basic installation of Fedora correctly. 
 
     * Set your identity and account information by adding: <pre><code>[user]
 		name = Your Name Here
-		email = YOUR_USERNAME@kdlp.underground.software
+		email = YOUR_USERNAME@COURSE_DOMAIN
 [sendemail]
 		smtpUser = YOUR_USERNAME
 		smtpPass = YOUR_PASSWORD
-		smtpserver = kdlp.underground.software
+		smtpserver = COURSE_DOMAIN
 		smtpserverport = 465
 		smtpencryption = ssl
 </code></pre>
 
     * Make sure to fill in the fields with your username and password (the ones you use to log into the website)
 
-* Clone [the assignment git repository](https://kdlp.underground.software/cgit/ILKD_assignments/): Run `git clone https://kdlp.underground.software/cgit/ILKD_assignments/`.
+* Clone [the assignment git repository](https://COURSE_DOMAIN/cgit/ILKD_assignments/): Run `git clone https://COURSE_DOMAIN/cgit/ILKD_assignments/`.
 
 * Change directory into the `introductions` folder within the repository.
 
@@ -228,9 +228,9 @@ If you see this, you have completed the basic installation of Fedora correctly. 
 
 * Send your patches to the class mailing list.
 
-    * Run the command `git send-email --to=introductions@kdlp.underground.software v1*.patch`
+    * Run the command `git send-email --to=introductions@COURSE_DOMAIN v1*.patch`
 
-        * Each assignment will have its own special address to send submissions to. In this case it is `introductions@kdlp.underground.software`
+        * Each assignment will have its own special address to send submissions to. In this case it is `introductions@COURSE_DOMAIN`
 
         * the expression `v1*.patch` will be exapanded by the shell into all file names matchin that pattern (any file whose name starts with `v1` and ends with `.patch`)
 
@@ -257,10 +257,11 @@ set my_password="YOUR_PASSWORD"
 set record=
 set folder=
 set sort=threads
-set from="$my_username@kdlp.underground.software"
+set from="$my_username@COURSE_DOMAIN"
 set header_cache=~/.cache/mutt
-set smtp_url="smtps://$my_username:$my_password@kdlp.underground.software:465"
-push "&lt;change-folder&gt;pops://$my_username:$my_password@kdlp.underground.software:995"\n
+set smtp_url="smtps://$my_username:$my_password@COURSE_DOMAIN:465"
+push "&lt;change-folder&gt;pops://$my_username:$my_password@COURSE_DOMAIN:995"\n
+macro index l "|git am -s"\n
 </code></pre>
 
     * Copy that block in verbatim, mutt will substitute the variables you set in the previous declarations for you.
@@ -335,6 +336,6 @@ push "&lt;change-folder&gt;pops://$my_username:$my_password@kdlp.underground.sof
 
 ### What to submit:
 
-* Generate a patchset from your commit with a cover letter.
+* Generate a patchset from your commit with a cover letter
 
-* Send the patchset to introductions@kdlp.underground.software.
+* Send the patchset to introductions@COURSE_DOMAIN

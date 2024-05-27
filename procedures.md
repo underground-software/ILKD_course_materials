@@ -1,256 +1,343 @@
-### Peer Review Procedure (only for coding assignments)**
+## Procedures and policies
 
-* Students must participate in the class mailing list for submissions by giving other students feedback on their work.
-* This is a part of each assignment grade and the tripartite scheme is as follows:
-  * The review process spans 2 days.
-  * Part 1: Initial submission
-    * The student makes their submission to the mailing list using git-send-email.
-    * This submission is due on the listed assignment "due date", see the [course schedule](course_spring2023.html).
-    * If the initial submission is late, the student will get a zero on the entire assignment.
-  * Part 2: Peer review
-    * A student is given two other student names (call them student A and student B).
-    * The student is assigned to review student A's and student B's submissions.
-    * If the student approves of a submission, then the student will reply to the approved email with what we call an "ack".
-      * An "ack" consists of a single line containing the following: Acked-by: Firstname Lastname <email@domain.tld\>.
-    * If the student sees problems with a submission, the student will reply to the problematic email with their feedback.
-    * In parallel, other students have been assigned the student's submission and the student should recieve feedback from two other students.
-    * These reviews are due one day past the initial submission, a late or no submission results in a zero for the review section of the assignment.
-    * Reviews are graded based on how many issues a student missed.
-      * The student receives 20% off for each unique issue not spotted with max penalty of 100%.
-  * Part 3: Final submission
-    * The student, if canny, will act on the feedback from the received reviews.
-    * Regardless of whether the student made changes to their initial submission, they must make a final submission.
-    * This is due two days after the initial submission, and due one day after receiving the reviews.
-  * Overall assignment grading scheme (percentages are relative to the total assignment grade):
-    * The initial submission is purely for the peer-review process. It is crucial that the initial submission is made on time, otherwise, as stated above, the student will recieve a zero on the entire assignment.
-    * Review 1: 10%
-    * Review 2: 10%
-    * Final Submission: 80%
+For the purposes of clarity in this document,
+we use the term "student" to denote the entity
+formed by each pair of collaborators.
 
+### How to get help in this course
 
-During a week where an assignment is due,
-the students must make two submissions and complete two peer reviews in three stages as follows:
+The `#questions` channel on Matrix is the best place to turn.
+If you're having an issue with something, chances are that
+you're not alone and sharing your question publicly helps
+everyone. Feel free to answer questions posted by other students.
 
-1. By 23:59 Tuesday, a student must make at least one submission.
-This is the "initial submission" stage.
-The student will not be graded on the content of this submission,
-however the student will receive a 0 for the assignment if they do not submit anything at all.
-Students may make as many resubmissions as they please,
-and only the last submission made before the initial submission deadline
-will be distributed as the target of peer review.
-Students will review each other's initial submissions in the following stage.
+Before posting a question, we encourage you to:
 
-2. By 23:59 Wednesday, a student must reply by email to two other students' initial submissions
-providing feedback on anything wrong with the patchset
-and any suggestions for the other student to improve their final submission.
-This is the "peer review" stage.
-Triggered by the event of the initial submission deadline, automation will make all students'
-submissions visible to the whole class and assign each student two others to peer review.
-Each peer review will comprise 10% of a students' assignment grade, for 20% of the total.
+* Carefully proofread your command or code for typos
 
-3. By 23:59 Thursday, a student must make at least one more submission for the assignment.
-This is the "final submission" stage.
-The wise students will take their peer's feedback and self-reflection into account and revise
-their work before the final submission, however they are not required to do so.
-Students can re-submit as many times as they please
-and they will only be graded on the content
-of last submission made before the deadline,
-provided they made at lease one initial submission.
-The grade students receive on the content of the final submission will comprise 80% of their assignment grade.
+* Thoroughly re-read the assignment instructions
 
-### Assignment Submission Guidelines
+* Read any relevant man pages or documentation
 
-TODO:
+* Read and research any error messsage or output
 
-    * Submissions must conform to all Linux kernel coding standards that are sane in a particular context.
-    * Submissions must not contain whitespace errors
-    * Submissions must not container binary blobs
+If you were stuck but manage to figure out something yourself,
+feel free to share on Matrix.
 
+If you are not able to figure out the solution yourself,
+we enourage you to include the following information in your post.
+The more complete this information is when you ask for help,
+the easier it will be to help you.
 
-  * Assignments must be submitted in the format of plaintext unless explicitly specified.
-  * The instructors will provide detailed guidelines for automated checking of these requirements, and will gladly explain them upon request to any interested student
-    * Therefore the instructors reserve the right to refuse to grade any submission that does not conform to these standards.
-  * Any code submission that fails to compile with zero warnings and zero errors will receive a zero.
-All homework submissions must be submitted in the form of an email patchset [0] generated by git format-patch [1] from commits [2] made in your local copy of [this repository](http://prod-01.kdlp.underground.software/cgit/KDLP_assignments.git/) with a cover letter [3] describing your work, and sent by git send-email [4] to our mailing list.
+* What you were doing when the error occurred and what steps are needed for someone to reperoduce it
 
-As part of the peer-review process for coding assignments in this class (described [here](course_policies.md)) each assignment will require you to submit each patchset at least twice [5].
+* Any input or output remotely relevant to the error, include as applicable all of the following:
 
-Try to start your assignments early. If you run into issues and get stuck it gives you time to ask questions and get help before the due date so you can submit something on time and get credit for the assignment, and if you finish early you can submit and potentially get feedback from us or other students that you can incorporate into a resubmission before the deadline in accordance with the resubmission policy [6].
+    * The command you ran and the output
+
+    * Your complete source code Makefile
+
+    * Any error messages
+
+    * Any dmesg or system log messages that seem relevant to the error
+
+* Any references or resources you consulted during your troubleshooting,
+e.g. manpages, websites, repositories, documentation
+
+* What you tried to do to fix your problem
+
+* Your best educated guess(es) as to what's wrong
+
+### Contributing
+
+If you notice any of the following:
+
+* The directions are incorrect or could be made clearer
+
+* There is a bug in our course infrastructure
+
+* You have an idea for a feature that could improve the course quality
+
+Feel free to let us know. We appreciate the feedback. In addition,
+we invite any interested students to work with us and improve the course.
+We can guide you through the process of making the appropriate changes
+and successful upstream contributions will result in extra credit.
+
+Keep in mind that this policy covers _anything_ in the course,
+including code, scripts, process, curriculum, formatting, style,
+security, design, testing, automation, devops, site reliability,
+IT, or any other aspect that you can imagine
+and convince us is a part of the course.
+
+### Coursework Policies 
+
+All homework submissions must be submitted in the form of an email patchset [0]
+generated by `git format-patch` [1] from commits [2] made in your local copy of
+[this repository](http://github.com/underground.software/KDLP_submissions.git/)
+with a cover letter [3] describing your work, and sent by `git send-email` [4] to
+our mailing list.
+
+As part of the peer-review process [5] for coding assignments in this class
+each assignment will require you to submit each patchset at least twice.
+
+Try to start your assignments early. If you run into issues and get stuck it gives
+you time to ask questions and get help before the due date so you can submit something
+on time and get credit for the assignment. If you finish early you can resubmit [6].
+
+Any code submission violating these guidelines or that fails to compile
+with zero warnings and zero errors will receive a zero.
+
+With the exception of presentations, all work in this course takes place on our mailing list.
+Students submit assignments and review peer submissions on this list.
+
+Each assignment involves the following three stages:
+
+1. Initial submission
+
+* The student makes their submission to the mailing list using `git-send-email`
+
+* This submission is due on Monday the week the assignment is listed
+
+* If the initial submission is late, the student will get a zero on the entire assignment
+
+2. Peer review
+
+* Each student is assigned two other students' work to review
+
+* If the student approves of a submission, then the student will reply to the cover letter
+of the patchset with a single line containing the following:
+
+```
+Acked-by: Firstname Lastname <USERNAME@COURSE_DOMAIN>.
+```
+
+* If the student finds issues with a submission, then the student will reply to the cover letter
+of the patchset with detailed feedback about their concerns and conclude the email
+with a single line containing the following:
+
+```
+Peer-reviewed-by: Firstname Lastname <USERNAME@COURSE_DOMAIN>.
+```
+
+* In parallel, other students have been assigned the student's submission
+and the student should receive feedback from two other students
+
+* These reviews are due one day past the initial submission, a late or no submission results in a zero for the review section of the assignment
+
+* Reviews are graded based on how many issues a student missed.
+The student receives 20% off for each unique issue not spotted with max penalty of 100%
+
+3. Final submission
+
+* The student, if canny, will act on the feedback from the received reviews.
+
+* Regardless of whether the student made changes to their initial submission,
+they must make a final submission
+
+* A late or missing final submission will result in a zero grade for the assignment
+
+* This is due two days after the initial submission, and due one day after the deadline for sending reviews
+
+* The total assignment grade is composed of 80% for the final submission, and 10% for each peer review
+
+* While the initial submisison is not explicitly graded, failure to submit anything or
+subissions devoid of content will result in a zero
 
 #### [0] Patchset Guidelines
 
-The specific assignment document will specify which files to edit, and how many commits you should be making which will inform the overall structure of your patchset, but every patchset in this class must follow these general guidelines:
+The specific assignment document will specify which files to edit, and how many commits
+you should be making which will inform the overall structure of your patchset, but every
+patchset in this class must follow these general guidelines:
 
 * Each commit gets its own patch with a title and body
 
 * The patch series is introduced with one additional patch, the cover letter
 
-Fortunately, git format-patch can generate the appropriate files for you automatically:
+Fortunately, git format-patch can generate the appropriate files for you:
 
-$ git format-patch -3 --cover-letter
+```shell
+$ git format-patch -3 --cover-letter --rfc -v1
+```
 
-$ # generates patches from the three most recent commits (change -3 to whatever you need for the amount of commits you have) and a cover letter template.
+This command generates git email patches from a base repository. The arguments mean the following:
 
-All of the patches must follow the patch guidelines [1]. Those generated from a commit should follow the commit guidelines [2] and the cover letter must follow the cover letter guidelines [3].
+ * `-3` specifies that the three most recent commits should be included, and therefore 3 patche email files will be generated. Change the number as needed.
 
-You will recieve an automatic zero on the assignment if any of the patches in your patchset are corrupt. This shouldn't be possible if you generate your patches with `git format-patch`, but if you edit the files manually they might get corrupted. You have been warned! The correct way to edit the patches is to edit the underlying commits (see `man git-rebase` and the `--amend` option from `man git-commit`) and then regenerate the patches. 
+  * `--cover-letter` specifies that a cover letter email template file is generated as "patch 0" of the patchset. You should always use this
+
+  * Use `-v<n>`, in this case `-v1` to specify the version number of this patchset.
+Increase this number each time you resubmit an assignment. Use `--rfc` to denote
+on each patch that the changes are a draft posted for review. Use this when generating
+initial submisison patchsets, but not when generating the final submission patchsets.
+
+All of the patches must follow the patch guidelines [1].
+Patches generated from a commit should follow the commit
+guidelines [2] and the cover letter must follow the cover letter guidelines [3].
+
+You will recieve an automatic zero on the assignment if any of the patches
+in your patchset are corrupt. This shouldn't be possible if you generate
+your patches with `git format-patch`, but if you edit the files manually
+they might get corrupted. You have been warned! The correct way to edit
+the patches is to edit the underlying commits and then regenerate the patches.
+To edit previous comits, see `man git-rebase` and the `--amend` option from `man git-commit`.
 
 #### [1] Patch Guidelines
 
-Every patch in the patch series (including the cover letter) must end with a “Signed-off-by” line, called the DCO (Developer Certificate of Origin). The line must exactly match this format:
+Assignments must be submitted in the format of git email text patches.
+Binary patches are forbidden because all work in this class is in plaintext.
 
-Signed-off-by: Firstname Lastname
+Every patch in the patch series (including the cover letter) must end with
+a "Signed-off-by" line, called the DCO (Developer Certificate of Origin).
+The line must exactly match this format:
+
+```
+Signed-off-by: Firstname Lastname <USERNAME@COURSE_DOMAIN>
+```
 
 The DCO line must be the final line of the email body right before the start of the patch diff.
 
 Fortunately, you can make git add this line automatically for you when you author a commit:
 
+```
 $ git commit -s
+```
 
-$ # include a DCO Signed-off-by line in the commit message automatically
+This will add the DCO line in the commit message automatically from information
+in the current user's git config, or if present the repository's `.git/config` file.
 
 You will need to remember to add your DCO to the cover letter manually.
 
-You should use the checkpatch.pl script in the scripts/ directory of Linus' kernel tree to make sure your patch is as close to upstream Linux kernel patch standards as possible.
+You should use the checkpatch.pl script in the scripts/ directory of Linus' kernel tree
+to make sure your patch is as close to upstream Linux kernel patch standards as possible.
 
 #### [2] Commit Guidelines
 
-Within the repository for this class there is a directory for each assignment (e.g. for A0, look in the A0 directory, for Mid 1, look in Mid1, etc.) and within that directory there should be everything you need to get started after you have read the specific document for the assignment you are working on.
+Within the submissions repository for this course each student will create a directory matching
+their username. If any starter files are needed, the assignment descriptions will specify the
+necessary details. You will do the assignment and turn your work into commits using `git commit -s`.
 
-You will make the necessary changes or additions and turn them into commits using git commit.
+When you author a commit the first line(s) you type into your editor will become the title,
+and by hitting enter twice and leaving a blank line the subsequent text will become the full
+commit message. The `git format-patch` utility will automatically put the title and message
+of a commit into the respective title and body of the corresponding genereated email patch file.
 
-When you author a commit the first line(s) you type into your editor will become the title, and by hitting enter twice and leaving a blank line the subsequent text will become the full commit message. The git format-patch utility will automatically put the title and message of a commit into the title and body respectively of the corresponding patch email it generates.
+Your commits should have a title that is a short summary of the changes in this commit and you
+should include any further details in the commit message.
 
-Your commits should have a title that is a short summary of the changes in this commit and you should include any further details in the commit message.
+You should make sure that the changes you are including in your commits are tidy.
+This means that code should follow the
+[kernel code style guidelines](https://www.kernel.org/doc/html/latest/process/coding-style.html),
+(tabs for indentation, tab width of 8, no lines exceeding 100 columns, etc).
 
-You should make sure that the changes you are including in your commits are tidy. This means that code should follow the [kernel code style guidelines](https://www.kernel.org/doc/html/latest/process/coding-style.html), (tabs for indentation, tab width of 8, no lines exceeding 80 columns, etc).
+You must also avoid whitespace errors. These include whitespace at the end of a line,
+lines with only whitespace on them, extra blank lines at the end of a file, forgetting
+the newline on the last line of the file, etc. A good editor will highlight and/or automatically
+fix these for you, but git will also detect these when formatting and applying patches.
 
-You must also avoid whitespace errors. These include whitespace at the end of a line, lines with only whitespace on them, extra blank lines at the end of a file, forgetting the newline on the last line of the file, etc. A good editor will highlight and/or automatically fix these for you, but git will also detect these when formatting and applying patches.
+You can check for the other whitespace errors by useing `git am <email patch file>` to attempt
+to apply your patch to the local tree. If `git am` prints a warning like this when you apply the patch:
 
-When you format a patch, if you forgot the newline at the end of the file git will put this line at the end of the diff \ No newline at end of file. If you see this, you should adjust the file contents and fix your patch. You can check for the other whitespace errors by running git am to try and apply your patch. If git am prints a warning like this when you apply the patch: warning: 2 lines add whitespace errors. You should adjust the indicated lines and fix your patch.
+```
+warning: 2 lines add whitespace errors.
+```
 
-Your patches also must apply cleanly to HEAD commit on the master branch of the upstream repository. You can verify this by checking out that branch and trying to apply your patches. We should NOT need to apply your previous versions of the patch in order for the latest version of your patchset to apply.
+You should adjust the indicated lines and fix your patch.
+
+Your patches also must apply cleanly to the `HEAD` commit on the `master` branch of the
+upstream repository. You can verify this by checking out that branch and trying to apply
+your patches. We should NOT need to apply your previous versions of the patchset in order
+for the latest version of your patchset to apply.
 
 Sample workflow to check that your patchset applies cleanly:
 
 * Generate your patches and put them in a known location and take note of the filenames
-* Make sure your git tree is up to date. You should do this each time you begin work within any git repository.
-  * Use `git remote update` to update all of your local copies of remote trees.
+
+* Make sure your local git worktree is up to date.
+You should do this each time you begin work within any git repository
+
+  * Use `git remote update` to update all of your local copies of remote trees
+
 * Create and checkout a local branch based on the upstream `origin/master` branch by using:
+
   * `git checkout -b <branch name> origin/master` (branch name can be anything convenient)
+
 * Apply your patchset to this branch using `git am <patch1> <patch2> ... <patchN>`
+
 * If there are no errors that appear, congratulations, your patchset applies cleanly!
-  * If there are whitespace errors or corrupt patches, revise as needed by amending or rebasing your commits.
+
+  * If there are whitespace errors or corrupt patches, revise as needed by amending or rebasing your commits
 
 #### [3] Cover Letter Guidelines
 
-When you open the cover letter file generated by git format-patch in your editor, it will contain a summary of all the changes made in the subsequent patches at the bottom and two filler lines indicating where you can add the title (\*\*\* SUBJECT HERE \*\*\*) and message (\*\*\* BLURB HERE \*\*\*) to the email.
+When you open the cover letter file generated by `git format-patch` in your editor,
+you will see a summary of all the changes made in the subsequent patches at the bottom
+and two filler lines indicating where you can add the title `(*** SUBJECT HERE ***)`
+and message `(*** BLURB HERE ***)` to the email.
 
-* You must replace the subject filler With your name and the assignment title. For example Charles Mirabile - Assignment 3
+* You must replace the subject filler text with the assignment name your username,
+separated by a dash (`'-'`). For example, "Exercise 18 - charles-joel".
 
-* You must replace the blurb filler with your writeup
+* You must replace the blurb filler text with your write-up
 
 * Failure to remove these filler lines including the asterisks will result in lost points
 
-Your cover letter writeup should include a short write-up that specifies the following:
+Your cover letter write-up should include a short discussion that includes the following:
 
 * What you think your degree of success with this assignment is (from 0% to 100%)
 
+* An estimate of how much time you spent working on this assignment
+
 * A brief discussion of your approach to the assignment
 
-* A detailed description of any problems that you were not able to resolve before submitting.
+* A detailed description of any problems that you were not able to resolve before submitting
 
-Failure to specifically provide this information will result in a 0 grade on your assignment. Further, If you do not disclose problems in your write-up and problems are discovered when your work is reviewed, you will receive a grade of 0. Note: These writeup guidelines are adapted from those of [Prof. Bill Moloney](https://cs.uml.edu/~bill/)
+Failure to cover each of the above  will result in a zero grade on your assignment.
+If your self-assessment of success is not 100%, please document all known issues.
+Be honest with your self-assessment. If obvious errors are discovered despite high
+self-assessment, then we reserve the right to give you a zero.
 
-#### [4] Submitting to the Mailing List
+#### [4] Mailing List Guidelines
 
-Your patches should be sent to the address for the specific assignment. Each assignment will list the appropriate email to use, but in general e0 -> exercise0@kdlp.underground.software, p0 -> programming0@kdlp.underground.software f0 -> final0@kdlp.underground.software and likewise for the subsequent numbers.
+Your patches should be sent to the address for the specific assignment.
+Each assignment will list the appropriate email to use like so:
 
-$ git send-email --to=whatever_assignment@kdlp.underground.software *.patch
+```
+$ git send-email --to=whatever_assignment@COURSE_DOMAIN *.patch
+```
 
-$ # send the emails to the mailing list. The list of patch files are passed as arguments
+This command attempts to send any file in the current directory ending in
+`.patch` to the mailing list. `*.patch` is an example of `glob` expansion
+in the shell. See `man 7 glob` for more information.
 
-$ # The *.patch wildcard expands to all of the files whose names end with .patch in the current directory
+#### [5] Peer Review Guidelines
 
-#### [5] Peer Review Submission Process
+For each student to whom you are assigned, you will do the following:
 
-The patch format should be as follows:
-* Send rfc patches for the submissions that are to be peer review (add the `--rfc` option when you format your patchset).
-* Send non-rfc patches for the final submission (omit the `--rfc` option).
+* Make a new branch off of master/main and switch over to that branch to apply the patches.
 
-#### [6] Late Assignment Submissions
+* Apply the student's latest patchset submission to your local tree
 
-Late submissions will result in an automatic grade of zero. The only exception is the one-time per semester oopsie (refer [here](course_policies.md)).
+* Make sure each patch applies cleanly IN ORDER (a.k.a no corrupt patches, whitespace errors, etc.)
 
-#### [7] Resubmissions
+* Make sure the code compiles without warnings or errors
 
-If you notice a mistake in your submission (or have it pointed out to you by one of the instructors or another student) before the due date, you are welcome to resubmit as many times as you'd like until said deadline. If you choose to resubmit, you must regenerate the patches from your (potentially altered) commit(s), and send the full patch series as your resubmission (i.e. a cover letter and one email for each commit even if some of the emails are identical to what you sent before).
+* Sanity check that any programs run without immediately crashing
 
-Further, you must make clear that it is a resubmission by adding a version number after PATCH in the square brackets (i.e. Subject: [PATCH x/n] My title here would become Subject: [PATCH v2 x/n] My title here) incrementing the number as needed for however many resubmissions you make (you can use the `-v` option with an argument, denoting the version number, when reformatting your patchset).
+* Make sure that the output looks reasonable
 
-You must also document what changed since the last submission in your writeup, include a section with a title like “changes since vN” where N is the number of your last submission and you explain what changed.
+* If there are any problems with the submission, report them in your review
 
-### How to submit a code review
+* If you determine that there are no issues with the submission, inform the recipient.
 
-* You will be assigned two students to peer review shortly after you complete your own initial submission.
-* For each student, which you are assigned, you will do the following:
-  * Locate their submissions and download all of the patches in the patchset (besides the cover letter).
-  * Make a new branch off of master/main and switch over to that branch to apply the patches.
-  * Make sure each patch applies cleanly IN ORDER (a.k.a no corrupt patches, whitespace errors, etc.)
-    * You can run checkpatch.pl on the patches, ignore any errors pertaining to maintainers.
-  * Make sure the code compiles without warnings or errors.
-  * Make sure the program runs without crashing.
-  * Make sure that the output is correct (passes all tests, if applicable).
-  * If there are any problems with the submission, document said issues and report them in your email reply to the student who you are reviewing.
-  * If you determine that there are no issues with the submission, inform the recipient.
-    * If it turns out that there were issues with the submission that you missed, points will be deducted from your overall assignment grade.
-  * Refer [here](course_policies.md) for the grading policy regarding peer reviewing.
+* If it turns out that there were issues with the submission that you missed, points will be deducted from your overall assignment grade
 
-### Presentation Guidelines 🎯 🏹
+#### [6] Resubmission Guidelines
 
-Duration: Tentative till further notice. Midterm will be a bit shorter, final a bit longer, neither longer than 20m
+You can resubmit as many times as they please before a deadline.
+If you resubmit, you must regenerate and resend all the patch files and cover letter
+as a new version of the entire patch series, incrementing the version number in
+the subject line appropriately
 
-<br></br>
-
-Content:
-
-What have you learned so far by doing the assignments?
-
-- How did the assignments relate to what we learned in class in your own words
-
-What challenges have you faced and overcome working on these tasks?
-
-- Your assignment write ups should be useful here
-
-Assignments you think you did an exceptional job on
-
-- Why do you think so? Maybe demonstrate your competence/understanding
-
-What assignments did you enjoy or not enjoy and any feedback
-
-<br></br>
-
-Suggestions on what to prepare:
-
-- Visual demonstrations if you think they are helpful
-
-Live example of how your project functions
-
-- Could do something in the terminal live
-
-Maybe show your program's inner workings
-
-- Explain your thought process
-
-<br></br>
-
-The presentation should demonstrate that you understand your work, you are able to explain what you did and why it matters to others, and you are able to show your thought process when you are faced with a problem.
-
-An example of a previous presentation can be found here.
-
-These are general guidelines for what we are looking for in a presentation. You do not need to follow it strictly but you should try to cover all of the areas at least somewhat.
-
-
-L08 import TODO
-
-E0 add modify linux_banner in init/version-timestamp.c
+You must also document what changed since the last submission in your write-up,
+include a section with a title like "changes since vN" where N is the number of
+your last submission and you explain what changed.

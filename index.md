@@ -138,7 +138,7 @@ the instructors reserve the right to give the student a final course grade of 0.
 During a week where an assignment is due,
 the students must make two submissions and complete two peer reviews in three stages as follows:
 
-1. By 23:59 Tuesday, a student must make at least one submission.
+1. By 23:59 Monday, a student must make at least one submission.
 This is the "initial submission" stage.
 The student will not be graded on the content of this submission,
 however the student will receive a 0 for the assignment if they do not submit anything at all.
@@ -147,7 +147,7 @@ and only the last submission made before the initial submission deadline
 will be distributed as the target of peer review.
 Students will review each other's initial submissions in the following stage.
 
-2. By 23:59 Wednesday, a student must reply by email to two other students' initial submissions
+2. By 23:59 Tuesday, a student must reply by email to two other students' initial submissions
 providing feedback on anything wrong with the patchset
 and any suggestions for the other student to improve their final submission.
 This is the "peer review" stage.
@@ -155,7 +155,7 @@ Triggered by the event of the initial submission deadline, automation will make 
 submissions visible to the whole class and assign each student two others to peer review.
 Each peer review will comprise 10% of a students' assignment grade, for 20% of the total.
 
-3. By 23:59 Thursday, a student must make at least one more submission for the assignment.
+3. By 23:59 Wednesday, a student must make at least one more submission for the assignment.
 This is the "final submission" stage.
 The wise students will take their peer's feedback and self-reflection into account and revise
 their work before the final submission, however they are not required to do so.
