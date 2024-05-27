@@ -225,3 +225,5 @@ The times listed above are in Israel Daylight Time, which corresponds to the ins
 
 After the regular semester and final examinations are concluded,
 students will be required to complete and submit their final project and presentation.
+
+For more information, please refer to our [detailed procedures and policies](procedures.md).
