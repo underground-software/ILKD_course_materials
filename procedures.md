@@ -102,16 +102,16 @@ Each assignment involves the following three stages:
 
 2. Peer review
 
-* Each student is assigned two other students' work to review
+  * Each student is assigned two other students' work to review
 
-* If the student approves of a submission, then the student will reply to the cover letter
+  * If the student approves of a submission, then the student will reply to the cover letter
 of the patchset with a single line containing the following:
 
 ```
 Acked-by: Firstname Lastname <USERNAME@COURSE_DOMAIN>.
 ```
 
-* If the student finds issues with a submission, then the student will reply to the cover letter
+  * If the student finds issues with a submission, then the student will reply to the cover letter
 of the patchset with detailed feedback about their concerns and conclude the email
 with a single line containing the following:
 
@@ -119,28 +119,28 @@ with a single line containing the following:
 Peer-reviewed-by: Firstname Lastname <USERNAME@COURSE_DOMAIN>.
 ```
 
-* In parallel, other students have been assigned the student's submission
+  * In parallel, other students have been assigned the student's submission
 and the student should receive feedback from two other students
 
-* These reviews are due one day past the initial submission, a late or no submission results in a zero for the review section of the assignment
+  * These reviews are due one day past the initial submission, a late or no submission results in a zero for the review section of the assignment
 
-* Reviews are graded based on how many issues a student missed.
+  * Reviews are graded based on how many issues a student missed.
 The student receives 20% off for each unique issue not spotted with max penalty of 100%
 
 3. Final submission
 
-* The student, if canny, will act on the feedback from the received reviews.
+  * The student, if canny, will act on the feedback from the received reviews.
 
-* Regardless of whether the student made changes to their initial submission,
+  * Regardless of whether the student made changes to their initial submission,
 they must make a final submission
 
-* A late or missing final submission will result in a zero grade for the assignment
+  * A late or missing final submission will result in a zero grade for the assignment
 
-* This is due two days after the initial submission, and due one day after the deadline for sending reviews
+  * This is due two days after the initial submission, and due one day after the deadline for sending reviews
 
-* The total assignment grade is composed of 80% for the final submission, and 10% for each peer review
+  * The total assignment grade is composed of 80% for the final submission, and 10% for each peer review
 
-* While the initial submisison is not explicitly graded, failure to submit anything or
+  * While the initial submisison is not explicitly graded, failure to submit anything or
 subissions devoid of content will result in a zero
 
 #### [0] Patchset Guidelines
