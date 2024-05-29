@@ -170,13 +170,12 @@ If you see this, you have completed the basic installation of Fedora correctly. 
 
     * Make sure to fill in the fields with your username and password (the ones you use to log into the website)
 
-* Clone [the assignment git repository](https://COURSE_DOMAIN/cgit/ILKD_assignments/): Run `git clone https://COURSE_DOMAIN/cgit/ILKD_assignments/`.
+* Clone
+[the assignment git repository](https://github.com/underground-software/ILKD_submissions)
 
-* Change directory into the `introductions` folder within the repository.
+* Create a directory in the repository named after your username
 
-* There are already introductions from the instructors in there, read them to see an example of what to do.
-
-* Add a file named `firstname_lastname.txt` (e.g. `joel_savitz.txt`), containing an introduction about yourself
+* Add a file named `introductions.txt` containing an introduction about yourself
 
     * The content can be whatever you want, whether it be why you are taking this class, your favorite ice cream flavor, or a fun fact about yourself.
 
