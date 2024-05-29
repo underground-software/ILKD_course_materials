@@ -108,7 +108,7 @@ Each assignment involves the following three stages:
 of the patchset with a single line containing the following:
 
 ```
-Acked-by: Firstname Lastname <USERNAME@COURSE_DOMAIN>.
+Acked-by: Firstname Lastname <USERNAME@COURSE_DOMAIN>
 ```
 
 * If the student finds issues with a submission, then the student will reply to the cover letter
@@ -116,7 +116,7 @@ of the patchset with detailed feedback about their concerns and conclude the ema
 with a single line containing the following:
 
 ```
-Peer-reviewed-by: Firstname Lastname <USERNAME@COURSE_DOMAIN>.
+Peer-reviewed-by: Firstname Lastname <USERNAME@COURSE_DOMAIN>
 ```
 
 * In parallel, other students have been assigned the student's submission
