@@ -179,11 +179,11 @@ If you see this, you have completed the basic installation of Fedora correctly. 
 
     * The content can be whatever you want, whether it be why you are taking this class, your favorite ice cream flavor, or a fun fact about yourself.
 
-* Run `uname -a >> firstname_lastname.txt` to append a line with information about the VM environment you set up to the end of your introduction file.
+* Run `uname -a >> introductions.txt` to append a line with information about the VM environment you set up to the end of your introduction file.
 
 * Make a commit out of your changes.
 
-    * By default git will not be tracking changes to newly created files. Add your file to the list that git is tracking with `git add firstname_lastname.txt`.
+    * By default git will not be tracking changes to newly created files. Add your file to the list that git is tracking with `git add introductions.txt`.
 
     * Make a commit to save this version of the repository so it can be shared. Run `git commit -s`.
 
