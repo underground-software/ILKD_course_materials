@@ -207,21 +207,21 @@ The times listed above are in Israel Daylight Time, which corresponds to the ins
 ### Assignment Schedule
 
 
-|Week #|Start Date|Assignment Due|
-|--|--|--|
-|00| 26 May|                             |
-|01| 02 Jun|[setup](assignments/setup.md)|
-|02| 09 Jun|[E0](assignments/E0.md)      |
-|03| 16 Jun|                             |
-|04| 23 Jun|[P0](assignments/P0.md)      |
-|05| 30 Jun|[E1](assignments/E1.md)      |
-|06| 07 Jul|[P1](assignments/P1.md)      |
-|07| 14 Jul|[Midpoint Presentation](assignments/mid_pres_guide.md)|
-|08| 21 Jul|[E2](assignments/E2.md)      |
-|09| 28 Jul|[P2](assignments/P2.md)      |
-|10| 04 Aug|[F0](assignments/F0.md)      |
-|11| 11 Aug|                             |
-|12| 18 Aug|[F1](assignments/F1.md)      |
+|Week #|Start Date|Assignment Due|Lecture notes|
+|--|--|--|--|
+|00| 26 May|                             |[L00](lectures/L00.md) [L01](lectures/L01.md)|
+|01| 02 Jun|[setup](assignments/setup.md)|[L02](lectures/L02.md) [L03](lectures/L03.md)|
+|02| 09 Jun|[E0](assignments/E0.md)      ||
+|03| 16 Jun|                             ||
+|04| 23 Jun|[P0](assignments/P0.md)      ||
+|05| 30 Jun|[E1](assignments/E1.md)      ||
+|06| 07 Jul|[P1](assignments/P1.md)      ||
+|07| 14 Jul|[Midpoint Presentation](assignments/mid_pres_guide.md)||
+|08| 21 Jul|[E2](assignments/E2.md)      ||
+|09| 28 Jul|[P2](assignments/P2.md)      ||
+|10| 04 Aug|[F0](assignments/F0.md)      ||
+|11| 11 Aug|                             ||
+|12| 18 Aug|[F1](assignments/F1.md)      ||
 
 After the regular semester and final examinations are concluded,
 students will be required to complete and submit their final project and presentation.
