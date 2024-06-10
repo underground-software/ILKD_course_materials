@@ -177,7 +177,7 @@ The times listed above are in Israel Daylight Time, which corresponds to the ins
 
   * Students receive a zero for assignments not submitted on time
 
-  * With advance notice, the instructors will appropriately accomadate students who have reserve duty to ensure they have the opportunity to receive full credit
+  * With advance notice, the instructors will appropriately accommodate students who have reserve duty to ensure they have the opportunity to receive full credit
 
 * One exception (a once per semester get out of jail free card):
 
