@@ -19,17 +19,17 @@ Before posting a question, we encourage you to:
 
 * Read any relevant man pages or documentation
 
-* Read and research any error messsage or output
+* Read and research any error message or output
 
 If you were stuck but manage to figure out something yourself,
 feel free to share on Matrix.
 
 If you are not able to figure out the solution yourself,
-we enourage you to include the following information in your post.
+we encourage you to include the following information in your post.
 The more complete this information is when you ask for help,
 the easier it will be to help you.
 
-* What you were doing when the error occurred and what steps are needed for someone to reperoduce it
+* What you were doing when the error occurred and what steps are needed for someone to reproduce it
 
 * Any input or output remotely relevant to the error, include as applicable all of the following:
 
@@ -140,8 +140,8 @@ they must make a final submission
 
 * The total assignment grade is composed of 80% for the final submission, and 10% for each peer review
 
-* While the initial submisison is not explicitly graded, failure to submit anything or
-subissions devoid of content will result in a zero
+* While the initial submission is not explicitly graded, failure to submit anything or
+submissions devoid of content will result in a zero
 
 #### [0] Patchset Guidelines
 
@@ -161,25 +161,25 @@ $ git format-patch -3 --cover-letter --rfc -v1
 
 This command generates git email patches from a base repository. The arguments mean the following:
 
- * `-3` specifies that the three most recent commits should be included, and therefore 3 patche email files will be generated. Change the number as needed.
+ * `-3` specifies that the three most recent commits should be included, and therefore 3 email patch files will be generated. Change the number as needed.
 
   * `--cover-letter` specifies that a cover letter email template file is generated as "patch 0" of the patchset. You should always use this
 
   * Use `-v<n>`, in this case `-v1` to specify the version number of this patchset.
 Increase this number each time you resubmit an assignment. Use `--rfc` to denote
 on each patch that the changes are a draft posted for review. Use this when generating
-initial submisison patchsets, but not when generating the final submission patchsets.
+initial submissison patchsets, but not when generating the final submission patchsets.
 
 All of the patches must follow the patch guidelines [1].
 Patches generated from a commit should follow the commit
 guidelines [2] and the cover letter must follow the cover letter guidelines [3].
 
-You will recieve an automatic zero on the assignment if any of the patches
+You will receive an automatic zero on the assignment if any of the patches
 in your patchset are corrupt. This shouldn't be possible if you generate
 your patches with `git format-patch`, but if you edit the files manually
 they might get corrupted. You have been warned! The correct way to edit
 the patches is to edit the underlying commits and then regenerate the patches.
-To edit previous comits, see `man git-rebase` and the `--amend` option from `man git-commit`.
+To edit previous commits, see `man git-rebase` and the `--amend` option from `man git-commit`.
 
 #### [1] Patch Guidelines
 
@@ -207,8 +207,27 @@ in the current user's git config, or if present the repository's `.git/config` f
 
 You will need to remember to add your DCO to the cover letter manually.
 
-You should use the checkpatch.pl script in the scripts/ directory of Linus' kernel tree
+You **must** use the `checkpatch.pl` script in the `scripts/` directory of Linus' kernel tree
 to make sure your patch is as close to upstream Linux kernel patch standards as possible.
+
+To do this quickly outside of the kernel tree, download the script and spellcheck file
+using the following two commands or some equivalent:
+
+```
+$ wget https://github.com/torvalds/linux/raw/master/scripts/checkpatch.pl
+$ wget https://github.com/torvalds/linux/raw/master/scripts/spelling.txt
+```
+
+Then, invoke the script with `./checkpatch.pl --no-tree --strict --show-types`
+
+* `--no-tree` indicates that we aren't checking a patch intended for the actual kernel tree
+
+* `--strict` will enable the some tests that are not enabled by default
+
+* `--show-types` will clearly indicate the types of errors
+
+You can input patches to the script by either standard in
+or via specifying the paths to the patch files as arguments following the flags.
 
 #### [2] Commit Guidelines
 
@@ -219,7 +238,7 @@ necessary details. You will do the assignment and turn your work into commits us
 When you author a commit the first line(s) you type into your editor will become the title,
 and by hitting enter twice and leaving a blank line the subsequent text will become the full
 commit message. The `git format-patch` utility will automatically put the title and message
-of a commit into the respective title and body of the corresponding genereated email patch file.
+of a commit into the respective title and body of the corresponding generated email patch file.
 
 Your commits should have a title that is a short summary of the changes in this commit and you
 should include any further details in the commit message.
@@ -234,7 +253,7 @@ lines with only whitespace on them, extra blank lines at the end of a file, forg
 the newline on the last line of the file, etc. A good editor will highlight and/or automatically
 fix these for you, but git will also detect these when formatting and applying patches.
 
-You can check for the other whitespace errors by useing `git am <email patch file>` to attempt
+You can check for the other whitespace errors by using `git am <email patch file>` to attempt
 to apply your patch to the local tree. If `git am` prints a warning like this when you apply the patch:
 
 ```
@@ -341,3 +360,8 @@ the subject line appropriately
 You must also document what changed since the last submission in your write-up,
 include a section with a title like "changes since vN" where N is the number of
 your last submission and you explain what changed.
+
+You can resubmit a peer review by making a new reply to the original cover letter
+with a new version of your complete review.
+
+For any patchset or peer review, we will only grade the most recent submission.
