@@ -1,37 +1,33 @@
-## Style Guide
+# Style Guide
 
-### Paragraphs
+## Content
 
   * Correct grammar and punctuation
 
-### Bullet-point lists
+  * Spell out a number if it less than 20
+
+  * Larger numbers potentially if they are one word (i.e. sixty but 65)
+
+## Bullet-point lists
 
   * Initial cap
 
-  * <= 1 sentance
+  * No more than one sentence (split to multiple bullets or a paragraph)
 
   * No period at the end
 
-  * More than one sentance should be more than one bullet, or a paragraph
-
 ## Headings:
 
-  * Title capitalization
+  * Title case for # and ##, sentence case for ### onward
 
-## Markdown rules:
+## Markdown Rules:
 
-  * separate bullets by a blank line
+  * Separate bullets by a blank line
 
-  * when splitting single paragraphs/bullets try to find
+  * When splitting single paragraphs/bullets try to find
 
-  * a natural breaking point, but prefer avoiding jagged
+  * A natural breaking point, but prefer avoiding jagged
 
-  * edges to breaking strictly on clauses or something
+  * Edges to breaking strictly on clauses or something
 
-  * spell out a number if it less than 20
-
-  * larger numbers potentially if they are one word (i.e. sixty but 65)
-
-  * top level headings within document should be at most `##` and decrease from there
-
-  * avoid unnecessary blank lines
+  * Avoid unnecessary blank lines
