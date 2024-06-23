@@ -212,8 +212,8 @@ The times listed above are in Israel Daylight Time, which corresponds to the ins
 |00| 26 May|                             |[L00](lectures/L00.md) [L01](lectures/L01.md)|
 |01| 02 Jun|[setup](assignments/setup.md)|[L02](lectures/L02.md) [L03](lectures/L03.md)|
 |02| 09 Jun|[E0](assignments/E0.md)      |[L04](lectures/L04.md)|
-|03| 16 Jun|                             |[L05](lectures/L05.md)|
-|04| 23 Jun|[P0](assignments/P0.md)      ||
+|03| 16 Jun|                             |[L05](lectures/L05.md) [L06](lectures/L06.md)|
+|04| 23 Jun|[P0](assignments/P0.md)      |[L07](lectures/L07.md)|
 |05| 30 Jun|[E1](assignments/E1.md)      ||
 |06| 07 Jul|[P1](assignments/P1.md)      ||
 |07| 14 Jul|[Midpoint Presentation](assignments/mid_pres_guide.md)||
