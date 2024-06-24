@@ -206,7 +206,6 @@ The times listed above are in Israel Daylight Time, which corresponds to the ins
 
 ### Assignment Schedule
 
-
 |Week #|Start Date|Assignment Due|Lecture notes|
 |--|--|--|--|
 |00| 26 May|                             |[L00](lectures/L00.md) [L01](lectures/L01.md)|
