@@ -213,16 +213,18 @@ The times listed above are in Israel Daylight Time, which corresponds to the ins
 |02| 09 Jun|[E0](assignments/E0.md)      |[L04](lectures/L04.md)|
 |03| 16 Jun|                             |[L05](lectures/L05.md) [L06](lectures/L06.md)|
 |04| 23 Jun|[P0](assignments/P0.md)      |[L07](lectures/L07.md) [L08](lectures/L08.md)|
-|05| 30 Jun|[E1](assignments/E1.md)      ||
-|06| 07 Jul|[P1](assignments/P1.md)      ||
-|07| 14 Jul|[Midpoint Presentation](assignments/mid_pres_guide.md)||
-|08| 21 Jul|[E2](assignments/E2.md)      ||
-|09| 28 Jul|[P2](assignments/P2.md)      ||
-|10| 04 Aug|[F0](assignments/F0.md)      ||
+|05| 30 Jun|[E1](assignments/E1.md) (due Tuesday)      ||
+|06| 07 Jul|||
+|07| 14 Jul|[P1](assignments/P1.md)      ||
+|08| 21 Jul|[Midpoint Presentation](assignments/mid_pres_guide.md)||
+|09| 28 Jul|[E2](assignments/E2.md)      ||
+|10| 04 Aug|[P2](assignments/P2.md)      ||
 |11| 11 Aug|                             ||
-|12| 18 Aug|[F1](assignments/F1.md)      ||
+|12| 18 Aug|[F0](assignments/F0.md)      ||
 
 After the regular semester and final examinations are concluded,
-students will be required to complete and submit their final project and presentation.
+students will be required to complete and submit their
+[final project](assignments/F1.md)
+and presentation by **23 September 2024.**
 
 For more information, please refer to our [detailed procedures and policies](procedures.md).
