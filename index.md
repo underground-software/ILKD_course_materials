@@ -213,8 +213,8 @@ The times listed above are in Israel Daylight Time, which corresponds to the ins
 |02| 09 Jun|[E0](assignments/E0.md)      |[L04](lectures/L04.md)|
 |03| 16 Jun|                             |[L05](lectures/L05.md) [L06](lectures/L06.md)|
 |04| 23 Jun|[P0](assignments/P0.md)      |[L07](lectures/L07.md) [L08](lectures/L08.md)|
-|05| 30 Jun|[E1](assignments/E1.md) (due Tuesday)      ||
-|06| 07 Jul|||
+|05| 30 Jun|[E1](assignments/E1.md) (due Tuesday)      |[L09](lectures/L09.md)|
+|06| 07 Jul||[L10](lectures/L10.md)|
 |07| 14 Jul|[P1](assignments/P1.md)      ||
 |08| 21 Jul|[Midpoint Presentation](assignments/mid_pres_guide.md)||
 |09| 28 Jul|[E2](assignments/E2.md)      ||
