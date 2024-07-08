@@ -50,6 +50,14 @@ Built as a `*.ko` file
 
 ---
 
+# ELF sidenote
+
+ELF: [Executable and linkable format](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format)
+
+1. Unix standard for executable binaries and more
+
+---
+
 # demo
 
 `file` on a module object file
