@@ -41,6 +41,7 @@ Use this as an opportunity to introduce yourself, get your feet wet with the ema
     * You can most likely get it from your system's package manager.
 
 ##### Figure out how many resources to give your VM
+
 * Depending on how powerful your machine is, you can give it more or less.
 
   * Generally, leave at least half of the cores and RAM for your host system.
@@ -338,3 +339,5 @@ macro index l "|git am -s"\n
 * Generate a patchset from your commit with a cover letter
 
 * Send the patchset to introductions@COURSE_DOMAIN
+
+[Policies & Procedures](/procedures.md)
