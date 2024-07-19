@@ -66,6 +66,10 @@
 
         1. Add/remove device from system
 
+        [`struct cdev`](https://elixir.bootlin.com/linux/v6.5/source/include/linux/cdev.h#L14)
+
+        [`struct cdev_alloc`](https://elixir.bootlin.com/linux/v6.5/source/fs/char_dev.c#L640)
+
         [`cdev_init`](https://elixir.bootlin.com/linux/v6.5/source/fs/char_dev.c#L658)
 
         [`cdev_add`](https://elixir.bootlin.com/linux/v6.5/source/fs/char_dev.c#L479)
