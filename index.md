@@ -162,8 +162,10 @@ their work before the final submission, however they are not required to do so.
 Students can re-submit as many times as they please
 and they will only be graded on the content
 of last submission made before the deadline,
-provided they made at lease one initial submission.
+provided they made at least one initial submission.
 The grade students receive on the content of the final submission will comprise 80% of their assignment grade.
+Even if you are satisified with your initial submission, you must make at least one final submission.
+Failure to make at least one final submission will result in a grade of zero.
 
 The times listed above are in Israel Daylight Time, which corresponds to the instructors' 16:59 Eastern Daylight Time in Boston, USA.
 
@@ -216,7 +218,7 @@ The times listed above are in Israel Daylight Time, which corresponds to the ins
 |05| 30 Jun|[E1](assignments/E1.md) (due Tuesday)      |[L09](lectures/L09.md)|
 |06| 07 Jul||[L10](lectures/L10.md) [L11](lectures/L11.md)|
 |07| 14 Jul|[P1](assignments/P1.md)      |[L12](lectures/L12.md) [L13](lectures/L13.md)|
-|08| 21 Jul|[Midpoint Presentation](assignments/mid_pres_guide.md)||
+|08| 21 Jul|[Midpoint Presentation](assignments/mid_pres_guide.md)|[L14](lectures/L14.md)|
 |09| 28 Jul|[E2](assignments/E2.md)      ||
 |10| 04 Aug|[P2](assignments/P2.md)      ||
 |11| 11 Aug|                             ||
