@@ -62,7 +62,7 @@
 
         [`register_chrdev_region`](https://elixir.bootlin.com/linux/v6.5/source/fs/char_dev.c#L200)
 
-        [`unregister_chrdev_region`](https://elixir.bootlin.com/linux/v6.5/source/include/linux/fs.h#L2447)
+        [`unregister_chrdev_region`](https://elixir.bootlin.com/linux/v6.5/source/fs/char_dev.c#L311)
 
         1. Add/remove device from system
 

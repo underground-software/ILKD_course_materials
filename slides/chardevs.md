@@ -164,7 +164,7 @@ Related: [`MAJOR`, `MINOR`, and `MKDEV`](https://elixir.bootlin.com/linux/v6.5/s
 
 In `init()`: [`alloc_chrdev_region()`](https://elixir.bootlin.com/linux/v6.5/source/fs/char_dev.c#L236)
 
-In `exit()`: [`unregister_chrdev_region()`](https://elixir.bootlin.com/linux/v6.5/source/include/linux/fs.h#L2447)
+In `exit()`: [`unregister_chrdev_region()`](https://elixir.bootlin.com/linux/v6.5/source/fs/char_dev.c#L311)
 
 ---
 
