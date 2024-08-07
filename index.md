@@ -220,7 +220,7 @@ The times listed above are in Israel Daylight Time, which corresponds to the ins
 |07| 14 Jul|[P1](assignments/P1.md)      |[L12](lectures/L12.md) [L13](lectures/L13.md)|
 |08| 21 Jul|[Midpoint Presentation](assignments/mid_pres_guide.md)|[L14](lectures/L14.md) [L15](lectures/L15.md)|
 |09| 28 Jul|[E2](assignments/E2.md)      |[L16](lectures/L16.md) [L17](lectures/L17.md)|
-|10| 04 Aug|[P2](assignments/P2.md)      |[L18](lectures/L18.md)|
+|10| 04 Aug|[P2](assignments/P2.md)      |[L18](lectures/L18.md) [L19](lectures/L19.md)|
 |11| 11 Aug|                             ||
 |12| 18 Aug|[F0](assignments/F0.md)      ||
 

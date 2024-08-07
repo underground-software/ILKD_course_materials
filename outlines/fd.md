@@ -413,3 +413,59 @@ syscall restarting semantics
 1. Go into ERESTARTSYS semantics in general
 
 1. Demo: restarting syscall
+
+# `read(2)`
+
+1. [`SYSCALL_DEFINE3(read, ...)`]( https://elixir.bootlin.com/linux/v6.5/source/fs/read_write.c#L621)
+
+    1. Just calls `ksys_read()`
+
+1. [`ksys_read()`](https://elixir.bootlin.com/linux/v6.5/source/fs/read_write.c#L60)
+
+
+    1. First, we get a reference to the file position using a `struct fd`
+
+    1. Problem: we don't always need to have our own reference to the struct file
+
+    1. struct fd contains borrowed or cloned references to a struct file
+
+        1. Along with information about the reference stored in the flags
+
+    1. struct fd and fdget/fdput allow us to borrow or clone a reference
+
+        1. Only allowed when we are going to drop the reference before returning to userspace
+
+        1. fine to borrow if fd table isn't shared
+
+        1. Similarly optmized for the file position
+
+        1. __fdget_pos() called by by fdget_pos()
+
+    [`__fdget()`](https://elixir.bootlin.com/linux/v6.5/source/fs/file.c#L1028 )
+
+        1. Just calls fdget light
+
+        1. We check if it's safe to borrow the reference
+
+[`__fdget_pos()`](https://elixir.bootlin.com/linux/v6.5/source/fs/file.c#L1055)
+
+
+[`__fdget()`](https://elixir.bootlin.com/linux/v6.5/source/fs/file.c#L1028)
+
+Relies on 
+[`__fdget_light()`](https://elixir.bootlin.com/linux/v6.5/source/fs/file.c#L1002)
+
+f.file => https://lore.kernel.org/all/20240730051625.14349-2-viro@kernel.org/
+
+
+1. 
+
+[`vfs_read()`](https://elixir.bootlin.com/linux/v6.5/source/fs/read_write.c#L450)
+
+[`file_ppos()`](https://elixir.bootlin.com/linux/v6.5/source/fs/read_write.c#L597)
+
+[`fdget_pos()`](https://elixir.bootlin.com/linux/v6.5/source/include/linux/file.h#L72)
+
+[`fdput_pos()`](https://elixir.bootlin.com/linux/v6.5/source/include/linux/file.h#L77)
+
+[`rw_verify_area()`](https://elixir.bootlin.com/linux/v6.5/source/fs/read_write.c#L355)
