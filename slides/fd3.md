@@ -36,7 +36,7 @@ Gain greater depth of understanding file descriptors by seeing how read uses the
 
 1. Obtain a reference to the file position or bail
 
-1. Create a local copy
+1. Create a local copy of the file position
 
 1. Perform virtual filesystem (vfs) read
 
@@ -324,7 +324,7 @@ Last steps to wrap up
 
 # Summary
 
-Read doens't need to do as much as open or write
+Read doesn't need to do as much as open or write
 
 ---
 
