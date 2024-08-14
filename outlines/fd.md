@@ -469,3 +469,96 @@ f.file => https://lore.kernel.org/all/20240730051625.14349-2-viro@kernel.org/
 [`fdput_pos()`](https://elixir.bootlin.com/linux/v6.5/source/include/linux/file.h#L77)
 
 [`rw_verify_area()`](https://elixir.bootlin.com/linux/v6.5/source/fs/read_write.c#L355)
+
+
+
+
+---
+
+# `write(2)`
+
+---
+
+# In the begining
+
+#### [`SYSCALL_DEFINE(write,...)`](https://elixir.bootlin.com/linux/v6.5/source/fs/read_write.c#L646)
+
+1. All it does is ksys_write
+
+1. Only one other caller in [s390 compat code](https://elixir.bootlin.com/linux/v6.5/source/arch/s390/kernel/compat_linux.c#L230)
+
+1. [Originally](https://github.com/torvalds/linux/commit/e7a3e8b2edf54) there were more callers
+
+
+---
+
+# Where did these callers go?
+
+While file descriptors are prefered as a userspace interface, the kernel is better off working directly with `struct file`s
+
+[`ksys_write()` removed from init/initramfs.c](https://github.com/torvalds/linux/commit/bf6419e4d5440c6d414a320506c5488857a5b001)
+
+[`ksys_write()` removed from init/do_mounts_rd.c](https://github.com/torvalds/linux/commit/bef173299613404f55b11180d9a865861637f31d)
+
+1. Notice that ksys_lseek is entirely removed
+
+---
+
+# The other kernel interface
+
+[`kernel_write()`](https://elixir.bootlin.com/linux/v6.5/source/fs/read_write.c#L548)
+
+1. Verify the write operation
+
+1. 
+
+---
+
+# Callable from userspace and the kernel
+
+####  [`ksys_write()`](https://elixir.bootlin.com/linux/v6.5/source/fs/read_write.c#L626)
+
+1. Obtain a reference to the file position or bail
+
+1. Create a local copy of the file position
+
+1. Perform virtual filesystem (vfs)
+
+1. If needed, update the file position
+
+1. Drop any held reference 
+
+---
+
+# Spot the difference
+
+####  [`ksys_write()`](https://elixir.bootlin.com/linux/v6.5/source/fs/read_write.c#L626)
+
+How does the function differ from `ksys_read()`?
+
+* `vfs_write()` instead of `vfs_read()`
+
+* `const char __user * buf` instead of `char __user * buf`
+
+
+---
+
+# Keeping these slides DRY
+
+1. DRY: "Don't Repeat Yourself"
+
+1. See the [slides on read](https://inst1.dev.underground.software/slides/fd3.html)
+
+1. We will skip right to `vfs_write()`
+
+---
+
+# Right into the meat
+
+#### [`vfs_write()`](https://elixir.bootlin.com/linux/v6.5/source/fs/read_write.c#L564)
+
+# `ioctl(2)`
+
+
+# `lseek(2)`
+
