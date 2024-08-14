@@ -31,7 +31,7 @@ and reflect on what you've learned in the course.
 
     * There is no peer review and additional final submission for this assignment
 
-    * **Submit the link to your video in the #midpoint channel on Matrix by midnight 23 September 2024**
+    * **Submit the link to your video in the #final channel on Matrix by midnight 23 September 2024**
 
 ### What to present:
 
