@@ -95,7 +95,7 @@ How does the function differ from `ksys_read()`?
 
 1. DRY: "Don't Repeat Yourself"
 
-1. See the [slides on read](https://inst1.dev.underground.software/slides/fd3.html)
+1. See the [slides on read](/slides/fd3.html)
 
 1. We will skip right to `vfs_write()`
 
