@@ -119,7 +119,9 @@ If you see this, you have completed the basic installation of Fedora correctly. 
 
   * Login with your root account.
 
-  * Run the command `dnf update -y`, (this may take a while to complete.)
+  * Run the command `dnf update -y` (this may take a while to complete)
+
+  * When this finishes, you'll want to make sure you reboot.
 
   * While you are waiting you can switch to a different console and continue following the steps.
 
@@ -148,10 +150,9 @@ If you see this, you have completed the basic installation of Fedora correctly. 
 
 * If you are a vim user, you can save yourself some substantial hassle chasing down whitespace errors by adding the following lines to your `.vimrc` file:
 
-```
-:highlight ExtraWhitespace ctermbg=red guibg=red
-:match ExtraWhitespace /\s\+$/
-```
+        :highlight ExtraWhitespace ctermbg=red guibg=red
+        :match ExtraWhitespace /\s\+$/
+
 
 #### Configure your account for the class email system and send your first email patches
 
