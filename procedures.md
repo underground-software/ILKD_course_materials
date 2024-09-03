@@ -360,6 +360,8 @@ For each student to whom you are assigned, you will do the following:
 
 * Make sure that the output looks reasonable
 
+* Scan through the rubric, as each assignment's peer review requirements will be different
+
 * If there are any problems with the submission, report them in your review
 
 * If you determine that there are no issues with the submission, inform the recipient.
