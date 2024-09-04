@@ -1,4 +1,4 @@
-## Introduction to Linux Kernel Development Spring 2024
+## Introduction to Linux Kernel Development: University of Massachusetts Lowell -- Fall 2024
 
 ### Course Summary and Purpose
 
@@ -116,6 +116,22 @@ Students will:
 | Midpoint Presentation                 | 15% |
 | Final Assignment + Final Presentation | 30% |
 
+#### Letter Grade Conversion
+
+|Percentage range|Letter grade|Grade points|
+|--|--|--|
+|90 ~ 100  |A |4.0|
+|85 ~ 89.99|A-|3.7|
+|80 ~ 84.99|B+|3.3|
+|75 ~ 79.99|B |3.0|
+|70 ~ 74.99|B-|2.7|
+|65 ~ 69.99|C+|2.3|
+|60 ~ 64.99|C |2.0|
+|55 ~ 59.99|C-|1.7|
+|50 ~ 54.99|D+|1.3|
+|40 ~ 49.99|D |1.0|
+|below 40  |F |0.0|
+
 ## Course Policies
 
 ### Attendance Policy
@@ -138,7 +154,7 @@ the instructors reserve the right to give the student a final course grade of 0.
 During a week where an assignment is due,
 the students must make two submissions and complete two peer reviews in three stages as follows:
 
-1. By 23:59 Monday, a student must make at least one submission.
+1. By 23:59 Tuesday, a student must make at least one submission.
 This is the "initial submission" stage.
 The student will not be graded on the content of this submission,
 however the student will receive a 0 for the assignment if they do not submit anything at all.
@@ -147,7 +163,7 @@ and only the last submission made before the initial submission deadline
 will be distributed as the target of peer review.
 Students will review each other's initial submissions in the following stage.
 
-2. By 23:59 Tuesday, a student must reply by email to two other students' initial submissions
+2. By 23:59 Wednesday, a student must reply by email to two other students' initial submissions
 providing feedback on anything wrong with the patchset
 and any suggestions for the other student to improve their final submission.
 This is the "peer review" stage.
@@ -155,7 +171,7 @@ Triggered by the event of the initial submission deadline, automation will make 
 submissions visible to the whole class and assign each student two others to peer review.
 Each peer review will comprise 10% of a students' assignment grade, for 20% of the total.
 
-3. By 23:59 Wednesday, a student must make at least one more submission for the assignment.
+3. By 23:59 Thursday, a student must make at least one more submission for the assignment.
 This is the "final submission" stage.
 The wise students will take their peer's feedback and self-reflection into account and revise
 their work before the final submission, however they are not required to do so.
@@ -166,8 +182,6 @@ provided they made at least one initial submission.
 The grade students receive on the content of the final submission will comprise 80% of their assignment grade.
 Even if you are satisified with your initial submission, you must make at least one final submission.
 Failure to make at least one final submission will result in a grade of zero.
-
-The times listed above are in Israel Daylight Time, which corresponds to the instructors' 16:59 Eastern Daylight Time in Boston, USA.
 
 * Instructors reserve the right to delay due dates within reason
 
@@ -192,6 +206,7 @@ The times listed above are in Israel Daylight Time, which corresponds to the ins
     so it is the sole responsibility of the student who chooses this path to ensure that their
     work is correct lest any defects in the submission negatively impact their final grade.
 
+Further details can be found on the [policies and procedures page](/procedures.md)
 
 ### Course Communication
 
@@ -206,29 +221,25 @@ The times listed above are in Israel Daylight Time, which corresponds to the ins
 
   * Students who have private questions about the course will reach out to a provided email address with their concerns.
 
-### Assignment Schedule
+## Course Overview
 
-|Week #|Start Date|Assignment Due|Lecture notes|
-|--|--|--|--|
-|00| 26 May|                             |[L00](lectures/L00.md) [L01](lectures/L01.md)|
-|01| 02 Jun|[setup](assignments/setup.md)|[L02](lectures/L02.md) [L03](lectures/L03.md)|
-|02| 09 Jun|[E0](assignments/E0.md)      |[L04](lectures/L04.md)|
-|03| 16 Jun|                             |[L05](lectures/L05.md) [L06](lectures/L06.md)|
-|04| 23 Jun|[P0](assignments/P0.md)      |[L07](lectures/L07.md) [L08](lectures/L08.md)|
-|05| 30 Jun|[E1](assignments/E1.md) (due Tuesday)      |[L09](lectures/L09.md)|
-|06| 07 Jul||[L10](lectures/L10.md) [L11](lectures/L11.md)|
-|07| 14 Jul|[P1](assignments/P1.md)      |[L12](lectures/L12.md) [L13](lectures/L13.md)|
-|08| 21 Jul|[Midpoint Presentation](assignments/mid_pres_guide.md)|[L14](lectures/L14.md) [L15](lectures/L15.md)|
-|09| 28 Jul|[E2](assignments/E2.md)      |[L16](lectures/L16.md) [L17](lectures/L17.md)|
-|10| 04 Aug|[P2](assignments/P2.md)      |[L18](lectures/L18.md) [L19](lectures/L19.md)|
-|11| 11 Aug|                             |[L20](lectures/L20.md) [L21](lectures/L21.md)|
-|12| 18 Aug|[F0](assignments/F0.md)      |[L22](lectures/L22.md) [L23](lectures/L23.md)|
-
-After the regular semester and final examinations are concluded,
-students will be required to complete and submit their
-[F1](assignments/F1.md)
-and 
-[final presentation](assignments/final_pres_guide.md)
-by **30 September 2024.**
+|Week #|Start Date|Topic|Lecture Notes|Assignment Due|
+|--|--|--|--|--|
+|00| 01 Sep|syllabus, course format, what is linux?	|                      |[L00](lectures/L00.md)|                             |
+|01| 08 Sep|commandline bootcamp, git intro		|[L01](lectures/L01.md)|[L02](lectures/L02.md)|                             |
+|02| 15 Sep|makefiles, C compilation deep dive		|[L03](lectures/L03.md)|[L04](lectures/L04.md)|[setup](assignments/setup.md)|
+|03| 22 Sep|file descriptors, processes, syscalls	|[L05](lectures/L05.md)|[L06](lectures/L06.md)|[E0](assignments/E0.md)      |
+|04| 29 Sep|CPU priv., reentrency, kernel vs user code	|[L07](lectures/L07.md)|[L08](lectures/L08.md)|[P0](assignments/P0.md)      |
+|05| 06 Oct|tracing how/when OS code runs on the CPU	|[L09](lectures/L09.md)|[L10](lectures/L10.md)|                             |
+|06| 13 Oct|midpoint pres, what a good pres. looks like	|monday schedule       |[L11](lectures/L11.md)|[Midpoint Presentation](assignments/mid_pres_guide.md)|
+|07| 20 Oct|assembly refresher, syscalls: end to end	|[L12](lectures/L12.md)|[L13](lectures/L13.md)|[E1](assignments/E1.md)      |
+|08| 27 Oct|kernel pseudo filesystems; kernel modules	|[L14](lectures/L14.md)|[L15](lectures/L15.md)|[P1](assignments/P1.md)      |
+|09| 03 Nov|character devices, ioctl, file position	|[L16](lectures/L16.md)|[L17](lectures/L17.md)|[E2](assignments/E2.md)      |
+|10| 10 Nov|kernel locking support			|[L18](lectures/L18.md)|[L19](lectures/L19.md)|[P2](assignments/P2.md)      |
+|11| 17 Nov|misc. devices for simple chardevs		|[L20](lectures/L20.md)|[L21](lectures/L21.md)|[F0](assignments/F0.md)      |
+|12| 24 Nov|live debugging: broken char dev module	|[L22](lectures/L22.md)|thanksgiving          |                             |
+|13| 01 Dec|guest lecture; final presentations		|[L23](lectures/L23.md)|[L24](lectures/L24.md)|[F1](assignments/F1.md)      |
+|14| 08 Dec|final presentations				|[L25](lectures/L25.md)|[L26](lectures/L26.md)|                             |
+|15| 15 Dec|final presentations; end of class		|[L27](lectures/L27.md)|[L28](lectures/L27.md)|[Final Presentation](assignments/final_pres_guide.md)|
 
 For more information, please refer to our [detailed procedures and policies](procedures.md).
