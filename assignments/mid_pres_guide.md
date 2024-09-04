@@ -1,34 +1,67 @@
-**KDLP Fall 2023 Midterm Presentation Guidelines**
+## Midpoint Presentation Guidelines 🕴️
 
-* Overview:
-    * Short presentation about research into a topic of your choice live during class
-    * Propose topic and outline ahead of time
-    * Plenty of room to be creative 🙂
-* Example midpoint presentation topics (pick one of these or propose your own):
-    * What is the OOM killer?
-    * Why are there multiple versions of some syscalls with numbers at the end? What issue were they added to address?
-        * pipe, pipe2, pipe3
-        * dup, dup2, dup3
-        * etc.
-    * Why do some syscalls have a version ending in `at`? What issue were they added to address?
-        * open vs openat
-        * fstat vs fstatat
-        * rename vs renameat
-        * symlink vs symlinkat
-        * etc
-    * What does .config do? How does it interact with the build process for the kernel?
-    * What is physical and virtual memory? Why is there a distinction between the two?
-    * What is the history of git? How does it fit into the bigger picture of version control software?
-    * Or pick your own!
-* Select a topic and submit your proposal with a short outline as soon as possible. The hard due date is at 23:59 Eastern on 10/31/2023
-* Presentation requirements:
-    * 10 ± 1 minutes long
-    * Must include some sort of visual component:
-        * Slideshow
-        * Diagrams
-        * Etc.
-    * Must include some sort of live demo in the terminal
-        * Must include discussion of some snippet(s) kernel code that is relevant to your topic
-    * Present live during class time in the class Jitsi
-        * Share your screen for terminal + visual elements
-        * There will be two presentations per day on L16, L17, L18, L19, and L20
+You will create a brief, pre-recorded presentation on research into a Linux kernel related topic of your choice
+
+### Presentation requirements
+
+* 10 ± 1 minutes long
+
+* Must include some sort of visual component
+
+    * Slideshow
+
+    * Diagrams
+
+    * Etc.
+
+* Must include some sort of live demo in the terminal, even if brief
+
+* Must include discussion of some snippet(s) of code that is relevant to your topic
+
+* Plenty of room to be creative 🙂
+
+### What and how to submit
+
+* You will propose your choice of topic ahead of time
+
+    * You may chose a topic from the list below or come up with your own
+
+    * Each student must choose a unique topic, so check the #midpoint channel to see if your choice is available
+
+    * **Submit your proposal in the #midpoint channel on Matrix by midnight 12 July 2024**
+
+    * Your proposal must be approved by course staff
+
+* You will submit your presentation by posting a link to your recording in Matrix
+
+    * Suggestion: use OBS to record your presentation as a livestream to youtube
+    and set the video visibility to "unlisted" so only those with the link can access
+
+    * You may use any video hosting platform of your choice, but make sure anyone with the link
+    can acces your video before you submit
+
+    * There is no peer review and additional final submission for this assignment
+
+    * **Submit the link to your video in the #midpoint channel on Matrix by midnight 22 July 2024**
+
+### Example topics
+
+* What is the OOM killer?
+
+* Why are there multiple versions of some syscalls with numbers at the end? What issue were they added to address?
+
+* Why do some syscalls have a version ending in `at`? What issue were they added to address?
+
+* What is the difference between Hurd and Linux?
+
+* How does one leverage kernel features to do performance profiling?
+
+* What role does the rust programming language play in the kernel?
+
+* How does Read-Copy-Update (RCU) locking work?
+
+* How do concurrent Linux kernel data structures mitigate race conditions?
+
+* What is BPFML? (performance optimization in page fault prediction using ML) <https://gitlab.com/aarcange/bpfml>
+
+* How does Facebook's sched_ext BPF extension re-implement the scheduler? <https://github.com/sched-ext/sched_extt>   <https://www.youtube.com/watch?v=8kAcnNVSAdI>

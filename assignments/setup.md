@@ -1,68 +1,98 @@
-# Introduction and course setup
+## Introduction and course setup
 
-Welcome to the class! Setting up a Linux environment is required for the course, and that is your first task should you choose to accept it.
-Use this as an opportunity to introduce yourself, get your feet wet with the email patch submission process we will use for this class.
+Welcome to the class! Setting up a Linux environment is required for the course,
+and this assignment will serve as a guide to get you started.
+Use this as an opportunity to introduce yourself to the class, and get your feet wet with the email patch submission process we'll be using.
 
 ### Outcomes:
-* Set up your Linux environment for the rest of the class.
-* Get familiar with git and git patches.
-* Get familiar with how to submit to the mailing list (`git send-email`).
-* Get familiar with the peer review process, which we will use for the rest of the course.
+
+* Set up your Linux environment for the rest of the class
+
+* Get familiar with git and git patches
+
+* Get familiar with how to submit to the mailing list via `git send-email`
+
+* Get familiar with the peer review process, which we will use for the rest of the course
 
 ### Procedure:
 
-#### Set up your VM and Linux environment
+#### Install Necessary Software
 
-##### Get the appropriate software
+Start by downloading [the standard ISO image for Fedora Server](https://getfedora.org/en/server/download) for your architecture.
+You'll likely want the ISO for x86\_64 unless you have an M-series Mac, or you are running Linux on ARM, in which case you want the aarch64 ISO.
+The ISO is large, so the download may take a while depending on your internet speed.
 
-* Start downloading the standard ISO image for Fedora for your architecture.
-  * You probably want the ISO for x86\_64, unless you have an M1 Mac or you are running Linux on ARM, in which case you want the aarch64 ISO.
-* This may take a while depending on your internet speed. <https://getfedora.org/en/server/download/>.
+Next, download and install hypervisor software for your operating system:
 
-* Download and install hypervisor software for your operating system
-  * Windows - [VirtualBox](https://www.virtualbox.org/wiki/Downloads):
-    * Click the download link for Windows hosts.
-  * MacOS - [UTM](https://mac.getutm.app/):
-    * You don't need to buy it from the App Store for (they charge $10 for it there),
-      there is a free download that is identical but you have to install it yourself (press the download button at the above link).
-  * Linux - [virt-manager](https://virt-manager.org/):
-    * You can most likely get it from your system's package manager.
+* Windows - [VirtualBox](https://www.virtualbox.org/wiki/Downloads):
 
-##### Figure out how many resources to give your VM
-* Depending on how powerful your machine is, you can give it more or less.
-  * Generally, leave at least half of the cores and RAM for your host system.
-    * The more you can give the VM the better.
-  * For the class you will need at least 30G of hard-disk space to hold the VM.
-* Balance it how you want. Feel free to reach out for specific advice, depending on the specs of your machine.
+    * VirtualBox also works on Intel Macs
 
-##### Set up the VM
-* Once the ISO image has finished downloading, you can begin the VM set-up process.
-* Depending on the software you downloaded, the exact procedure will vary.
-  However, you want to create a new virtual machine guest and set the resources to the values you decided to allocate.
-  Most likely just follow the set-up wizard of your software and it will guide you.
-  Make sure to create a virtual hard drive for the machine (at least 30G is suggested).
-* Attach the ISO image to the machine, this will allow it to boot into the Fedora live environment.
-* Start the VM for the first time and it will boot the Fedora ISO image.
+* MacOS - [UTM](https://mac.getutm.app/):
 
-##### Install Fedora to your virtual machine
-* Once it boots you will see a grub menu with two options "test this media and install fedora" and "install fedora"
-  * You can select either one, testing the media will verify that your ISO downloaded correctly, but it will take longer.
-* Once the actual operating system boots, the anaconda installer should open automatically.
-* Mostly follow the on-screen instructions to install fedora on to your VM's harddrive.
-* However, there may be some confusing steps. If you get stuck, there are numerous tutorials online on how to proceed based on the VM software you are using.
-* There are two settings you have to adjust before you can start the installation, the root password, and the installation destination.
-* Click on root password and setup the root account with a password you will remember then click done.
-* Next, this particular step where you have to set the "Installation Destination", depicted below, is especially confusing.
-  The installation destination icon will have a red warning triangle, to proceed, click on the icon and it will open the screen below. Just click "Done",
-  you don't need to change anything---it just wants you to confirm the default hard-drive and partitioning selections it has made.
+    * Use the download link instead of the App Store link, the software is identical
+but they charge $10 for it on the App Store
+
+* Linux - [virt-manager](https://virt-manager.org/):
+
+    * You can most likely get it from your system's package manager
+
+#### Set up the VM
+
+Once the ISO image has finished downloading, you can begin the VM set-up process.
+The exact procedure will vary depending on the software you're using, but
+the core idea is that you'll want to create a new virtual machine guest and decide what portion of your machine's resources to allocate to the VM.
+
+Most likely you can follow the set-up wizard of your software for creating a new guest
+and end up with a working machine, but you probably want to increase the default values
+for RAM, CPU cores, and disk space. The more you can give the VM, the better, but a good
+rule of thumb is to leave at least half of your cores and RAM for your host system.
+
+Feel free to reach out for specific advice depending on your machine.
+
+Be sure to allocate **at least 30G** for the virtual hard drive.
+
+At some point in the setup process, you'll be prompted to attach the ISO image to the machine,
+which will allow it to boot into the Fedora live environment.
+You can then start the VM for the first time and it will boot the Fedora ISO image.
+
+#### Install Fedora to your VM
+
+Once the VM boots you will see a grub menu with two options:
+
+* test this media and install fedora
+
+* install fedora
+
+You can select either one;
+testing the media will verify that your ISO downloaded correctly, but it will take longer.
+
+Once the actual operating system boots, the Fedora installer should open automatically.
+Before you begin the installation you **must** resolve the two items with orange warning icons shown in the below image:
+
+* Click on **Root Account** and set up root with a password you'll remember before clicking done
+
+* Click the **Installation Destination** icon, then click "Done" in the resultant menu
+    * You don't need to change anything--it just wants you to confirm the default hard-drive
+and partitioning selections it has made
 
 <img alt="fedora confusion image" src="/images/fedora_confusion.png"></img>
 
-* Once the installation has finished, Fedora will tell you to reboot. Shut down the machine and remove the ISO image from where you attached it to the VM
-  (once this is done and you confirmed the installation was successful, you can remove the ISO image from your host machine to free up disk space).
-* Boot the VM and you should be greeted with a Fedora login prompt, use the username "root" and then enter the root password you selected during installation
-  (it won't look like you are typing any characters when you enter the password, but they are being received, and hiding them is just a security measure).
-* If you logged in correctly, you should be greeted with a command prompt that looks something like:
+If you get stuck, there are numerous tutorials online on how to proceed based on the VM software you are using.
+Note that on Fedora 40 you may see "create user account" with a similar warning icon,
+but that warning will be resolved when you configure the root account,
+and can be safely ignored.
+
+Once the installation has finished, Fedora will tell you to reboot.
+Shut down the machine and remove the ISO image from where you attached it to the VM
+(once this is done and you confirmed the installation was successful,
+you can remove the ISO image from your host machine to free up disk space).
+
+Next, boot up the VM. You should be greeted with a Fedora login prompt;
+use the username "root" and then enter the root password you selected during installation
+(it won't look like you are typing any characters when you enter the password, but they are being received--hiding them is just a security measure).
+
+If you logged in correctly, you should be greeted with a command prompt that looks something like:
 
 ```
 [root@localhost ~]# _
@@ -70,144 +100,234 @@ Use this as an opportunity to introduce yourself, get your feet wet with the ema
 
 If you see this, you have completed the basic installation of Fedora correctly. Congrats!
 
-##### Post Install Setup
-* Set a hostname for the machine:
-  * Login with your root account.
-  * Pick a hostname for the machine (e.g. `joels-fedora-vm`)
-  * Run the command `echo hostname > /etc/hostname` where you replace *hostname* with the name you picked.
-  * Run the command `hostname --file /etc/hostname` to update it for this boot without needing to restart the machine.
-  * Log out and the login prompt will include the new hostname before the word login (e.g. `joels-fedora-vm login: _`
-* Run a software update:
-  * Login with your root account.
-  * Run the command `dnf update -y`, (this may take a while to complete.)
-  * While you are waiting you can switch to a different console and continue following the steps.
-    * Press `ctrl+alt+f2` (on some keyboards you might need a function key to press f2).
-    * You can check back on the update any time by pressing `ctrl+alt+f1`.
-* Create yourself a non-root account with sudo permissions.
-  * Login to the other console as root.
-  * Pick a username (e.g. `jsavitz`) for your account.
-  * Run the command `useradd username` where *username* is the username you picked.
-  * Run the command `usermod -aG wheel username` to give the new user permission to run commands as the superuser (root).
-  * Run `passwd username` and select a password.
-  * Log out of root (type `exit` or hit `ctrl+d`).
-  * Try logging in as your new user with the username and password you selected.
-  * Verify that you have root access via running `sudo whoami`, you should be prompted for a password
-   and when you enter your password the `whoami` command should execute and output `root`.
+#### Post Install Setup
 
-#### Configure your account for the class email system and send your first email patches
+First, set a hostname for the machine.
+While logged in as root, run the following commands:
 
-* Login as your non root user account
-* Install `git` and `git-email`. Run `sudo dnf install -y git git-email`.
-* Configure your `.gitconfig`, which lives in `~/.gitconfig`, using a text editor (e.g. `nano ~/.gitconfig` or `vi ~/.gitconfig`).
-    * You can pick your default editor by adding: <pre><code>[core]
-        editor = nano # Or which ever editor you prefer
-</code></pre>
-    * Set your identity and account information by adding: <pre><code>[user]
+* `echo hostname > /etc/hostname` where you replace `hostname` with whatever name you'd like to use (e.g. `joels-fedora-vm`)
+
+* `hostname --file /etc/hostname` to update it without needing to restart the machine
+
+To verify, log out, and the login prompt will include the new hostname before the word login
+(e.g. `joels-fedora-vm login: _`).
+
+You'll then want to run a software update. While logged in on your root account,
+run `dnf update -y` (this may take a while), and reboot when it completes.
+
+If you'd like to continue following these steps instead of waiting for this to complete,
+you can switch to a different console by pressing `ctrl+alt+f2`
+(on some keyboards you might need a function key to press f2), which will open the second tty.
+
+You can check back on the update any time by pressing `ctrl+alt+f1`, which will switch you back to your original tty.
+
+The next step is to create a non-root account for yourself with sudo permissions.
+While logged in as root, run
+
+* `useradd username` where `username` is whatever username you'd like to have
+
+* `usermod -aG wheel username` to give `username` permission to run commands as the superuser (root)
+
+* `passwd username` to create a password for `username`
+
+You can then log out of root (type `exit` or hit `ctrl+d`)
+and try to log in as your new user with the username and password you selected.
+
+Once logged in, you'll want to verify that you have root access. Running `sudo whoami`
+should prompt you for a password which, once entered,
+will allow the `whoami` command to execute and output `root`.
+
+At this point, you can go no further without `dnf update -y` finishing.
+If it's still running, let it finish, reboot, and then continue.
+
+#### Configure Class Email
+
+Login as your non root user account, then run `sudo dnf install -y git git-email`
+to install the necessary packages for this step.
+
+When this has finished, configure your `.gitconfig`, which lives in your home directory `~/`, using a text editor (e.g. `nano ~/.gitconfig` or `vi ~/.gitconfig`).
+
+You can pick your default editor by adding
+```
+editor = nano # Or which ever editor you prefer
+```
+then set your identity and account information by adding
+```
+[user]
 		name = Your Name Here
-		email = YOUR_USERNAME@kdlp.underground.software
+		email = YOUR_USERNAME@COURSE_DOMAIN
 [sendemail]
 		smtpUser = YOUR_USERNAME
 		smtpPass = YOUR_PASSWORD
-		smtpserver = kdlp.underground.software
+		smtpserver = COURSE_DOMAIN
 		smtpserverport = 465
 		smtpencryption = ssl
-</code></pre>
-    * Make sure to fill in the fields with your username and password (the ones you use to log into the website)
-* Clone [the assignment git repository](https://kdlp.underground.software/cgit/ILKD_assignments/): Run `git clone https://kdlp.underground.software/cgit/ILKD_assignments/`.
-* Change directory into the `introductions` folder within the repository.
-* There are already introductions from the instructors in there, read them to see an example of what to do.
-* Add a file named `firstname_lastname.txt` (e.g. `joel_savitz.txt`), containing an introduction about yourself
-    * The content can be whatever you want, whether it be why you are taking this class, your favorite ice cream flavor, or a fun fact about yourself.
-* Run `uname -a >> firstname_lastname.txt` to append a line with information about the VM environment you set up to the end of your introduction file.
-* Make a commit out of your changes.
-    * By default git will not be tracking changes to newly created files. Add your file to the list that git is tracking with `git add firstname_lastname.txt`.
-    * Make a commit to save this version of the repository so it can be shared. Run `git commit -s`.
-        * the `-s` flag makes git include the `Signed-off-by` DCO line for you automatically.
-    * Git will open an instance of your preferred text editor to let you input a message for the commit.
-        * Put a title containing a short summay of what you did on the first line (e.g. `Introductions: Added introduction for so and so`).
-        * Press enter twice and write a more detailed explanation that will act as the body of the commit.
-        * There should already be a signed off by DCO line for your account at the bottom. If not, add one.
-        * Save your changes and exit the editor to finish the commit.
-    * Check to make sure you see the commit and it looks good by running `git log -p`.
-        * Your new commit should be the top most one, and you should see the title, message, DCO, and difference view containing the changes.
-        * If there is more output than can fit on one screen, git will open a scrolling view that you can maneuver up and down within using the arrow keys. Press `q` to go back to the terminal.
-* Create a patch series with a cover letter out of your commit.
-    * Run the command `git format-patch -1 --cover-letter -v1 --rfc`
-        * `-1` means include the most recent 1 commit
-        * `--cover-letter` means generate a cover letter for the whole patch series with a summary
-        * `-v1` means mark this as the first version of this patch set
-        * `--rfc` means mark these patches as a request for comment. This is required for all intial submissions since they will be recieving peer feedback.
-    * Git will generate two `.patch` files for you.
-    * Edit the file `v1-0000-cover-letter.patch` and write your cover letter.
-        * Follow the directions in the assignment submission guidelines
-        * Don't forget to add the DCO `Signed-off-by` line at the end of they body.
-* Send your patches to the class mailing list.
-    * Run the command `git send-email --to=introductions@kdlp.underground.software v1*.patch`
-        * Each assignment will have its own special address to send submissions to. In this case it is `introductions@kdlp.underground.software`
-        * the expression `v1*.patch` will be exapanded by the shell into all file names matchin that pattern (any file whose name starts with `v1` and ends with `.patch`)
-    * Git send email will prompt you to ask whether it should send the emails. Type `a` and hit enter to send them all.
-        * If it is successful, the output should end with `Result: 250` which indicates that the server accepted your emails.
-        * If it does not work. Do not hesistate to reach out and we can help with troubleshooting.
+```
 
-#### Check your work
-* While Logged in as your non root user account
-* Install `mutt` a terminal program for viewing email. Run `sudo dnf install -y mutt`
-* Configure your `.muttrc` which lives in `~/.muttrc`, using a text editor (e.g. `nano ~/.muttrc` or `vi ~/.muttrc`).
-    * Set your identity and account information by adding: <pre><code>set realname="Your Name Here"
+Make sure to fill in the fields with your class username and password (the ones you use to log into the course website).
+
+Next, clone
+[the assignment git repository](https://github.com/underground-software/ILKD_submissions).
+Use `cd` to enter the directory, then `mkdir your-username`, to create a directory in the repo, where `your-username` is the username you use to log into the course website.
+
+Add a file named `setup.txt` to this folder containing an introduction about yourself.
+The content can be whatever you want, whether it be why you are taking this class, your favorite ice cream flavor, or a fun fact about yourself.
+
+Run `uname -a >> setup.txt` to append a line with information about the VM environment you set up to the end of the file.
+
+When you're done, make a commit out of your changes.
+By default git will not be tracking changes to newly created files.
+Add your file to the list that git is tracking with `git add setup.txt`, then
+make a commit to save this version of the repository so it can be shared with `git commit -s`.
+Note that the `-s` flag makes git include the `Signed-off-by` DCO line for you automatically.
+
+Git will then open an instance of your preferred text editor to let you input a message for the commit.
+Put a title containing a short summary of what you did on the first line,
+e.g. `Setup: Added introduction for so and so`.
+Press enter twice,
+and then write a more detailed explanation that will act as the body of the commit.
+
+There should already be a `Signed-off by` line for your account at the bottom. If not, add one, then save your changes and exit the editor to finish the commit.
+
+Check to make sure you see the commit and it looks good by running `git log -p`.
+Your new commit should be the top most one, and you should see the title, message, DCO,
+and difference view containing the changes.
+
+If there is more output than can fit on one screen, git will open a scrolling view that you can maneuver up and down within using the arrow keys. Press `q` to go back to the terminal.
+
+Next, you'll want to create a patch series with a cover letter out of your commit.
+To do this, run `git format-patch -1 --cover-letter -v1 --rfc`
+
+* `-1` includes the most recent 1 commit
+
+* `--cover-letter` generates a cover letter for the whole patch series with a summary
+
+* `-v1` marks this as the first version of this patch set
+
+* `--rfc` marks these patches as a request for comment, which is required for all initial submissions (since they will be receiving peer feedback)
+
+The result of this command should be your directory containing two new `.patch` files,
+courtesy of git.
+You'll want to open the first of these, `v1-0000-cover-letter.patch`,
+in your text editor so that you can write your cover letter according to the
+[assignment submission guidelines](../procedures.md#cover-letter-guidelines).
+
+Don't forget to add the `Signed-off-by` line at the end of they body.
+
+Once you've finished your cover letter, send your patches to the class mailing list.
+You can do this by running the command
+`git send-email --to=setup@COURSE_DOMAIN v1*.patch`.
+
+* Each assignment will have its own special address to send submissions to, in this case `setup@COURSE_DOMAIN`
+
+* The expression `v1*.patch` will be expanded by the shell into all file names matching
+that pattern (any file whose name starts with `v1` and ends with `.patch`)
+
+* `git send-email` will prompt you to ask whether it should send the emails, typing `a` and hitting enter will send them all
+
+If it is successful, the output should end with `Result: 250` which indicates that the server accepted your emails.
+
+If not, **do not hesitate to reach out** in `#questions` on the course Matrix so that we can help with troubleshooting.
+
+#### Check Your Work
+
+While logged in as your non root user account, install `mutt` (a terminal program for viewing email) by running `sudo dnf install -y mutt`.
+Next, configure your `.muttrc` which lives in `~/`, using a text editor (e.g. `nano ~/.muttrc` or `vi ~/.muttrc`).
+First you'll want to set your identity and account information by adding:
+
+```
+set realname="Your Name Here"
 set my_username="YOUR_USERNAME"
 set my_password="YOUR_PASSWORD"
-</code></pre>
-    * Fill in your credentials that you use for the website and your full name.
-    * Set some sane defaults, and configure the server addresses by adding: <pre><code>set spoolfile=
+```
+
+Fill in your credentials that you use for the website and your full name.
+Next, set some sane defaults, and configure the server addresses by adding:
+
+```
+set spoolfile=
 set record=
 set folder=
 set sort=threads
-set from="$my_username@kdlp.underground.software"
-set smtp_url="smtps://$my_username:$my_password@kdlp.underground.software:465"
-push "&lt;change-folder&gt;pops://$my_username:$my_password@kdlp.underground.software:995"\n
-</code></pre>
-    * Copy that block in verbatim, mutt will substitute the variables you set in the previous declarations for you.
-* Open the email list by running the `mutt` command. You can quit by pressing `q` or hitting `ctrl+c`
-* You will see a list of email threads navigate up and down with the arrow keys or `j` and `k`
-* You should see a welcome to the email system message at the top and then all subsequent emails in chronological order.
-* Press enter to view which message you have highlighted and press `q` to exit back to the main screen. Press the spacebar to scroll to the next page within the email.
-* You should see your patch series including your introduction in the list of messages.
-    * If you do, congratulations, you successfully completed the setup. You can shut down the VM and go do something else :)
-    * If not, feel free to reach out with questions we are happy to help.
-* Once you are finished, you can shut down the vm with the command `sudo poweroff`.
-    * Before running it, you should check back in on the updates running in `tty1`. Press `ctrl+alt+f1` and make sure that the update command is done and you are back in a shell.
-    * If it is finished, switch back to tty2 (`ctrl+alt+f2`) and run the poweroff command.
+set from="$my_username@COURSE_DOMAIN"
+set header_cache=~/.cache/mutt
+set smtp_url="smtps://$my_username:$my_password@COURSE_DOMAIN:465"
+push "<change-folder>pops://$my_username:$my_password@COURSE_DOMAIN:995"\n
+macro index l "|git am -s"\n
+```
+
+Copy that block in verbatim
+and `mutt` will substitute the variables you set in the previous declarations for you.
+Once that's out of the way, open the email list by running the `mutt` command.
+
+In `mutt`, you will see a list of email threads, which should begin
+with a "welcome to the email system" message,
+and then all subsequent emails in chronological order.
+
+Press:
+
+* `enter` to view which message you have highlighted
+
+* `q` while viewing a message to exit back to the main screen.
+
+* `space` to scroll to the next page within the email.
+
+* `q` or `ctrl+c` to exit `mutt`.
+
+You should see your patch series including your introduction in the list of messages.
+If you do, congratulations! You successfully completed the setup.
 
 #### Optional VM Configuration
 
-* Set up SSH access:
-    * While logged in to the machine on the tty, run the command `ip -br a | grep UP`, read the ip address listed there.
-    * On your host machine, open a terminal and try running `ssh username@ip-address` where *username* is the username you picked earlier and the *ip-address* is the one you just found.
-        * The first time you connect to a new server via ssh, ssh will not know the server and will say it cannot establish the authenticity of the machine you are connecting to.
-        * It will ask if you are sure you want to continue connecting. Type `yes` and hit enter.
-        * You will be prompted for your password. This is the password for your account on the VM.
-    * After you enter it you will be able to access your vm from your host machine.
-        * You will be accessing a shell exactly like the tty you get by logging in within the vm window.
-        * You can log out by typing `exit` and hitting enter, or pressing `ctrl+d` just like the tty.
-    * If you want to obviate the need to enter the password every time you log in, you can set up SSH-keys.
-          * Open a terminal on your host machine (`cmd.exe` on windows)
-          * If you have never set up SSH-keys (you might have done it already if you use ssh for github or gitlab):
-          * Run the command `ssh-keygen` in a terminal on your host machine and accept the default values.
-    * If you already have SSH-keys or you just created them using the step above:
-          * If you are not on Windows, run `ssh-copy-id username@ip-address` to copy your keys to the VM.
-          * If you are on Windows, run `type $env:USERPROFILE\.ssh\id_rsa.pub | ssh username@ip-address "cat >> .ssh/authorized_keys"`
-          * You will be prompted for your vm password one final time, enter it, and the command should finish.
-    * Try logging in with `ssh username@ip-address` and you should not need to enter your password ever again.
-* Make the VM headless:
-    * Power down the machine with `sudo poweroff`
-    * Open the VM Settings and disable the graphical output, the exact settings depends on the VM software you are using.
-    * Most of the time you will be able to keep the graphics off, since you already set up SSH access.
-    * This will lighten the load on your computer since it won't have to render the GUI and will make the VM run faster.
+You may decide you'd like to better prepare your VM for the remainder of the course.
+Here are some recommended steps you might take:
 
+1. **Set up SSH access.** While logged in to the machine on the tty,
+run the command `ip -br a | grep UP` and read the ip address listed there.
+On your host machine, open a terminal and try running `ssh username@ip-address`
+where `username` is the username you picked earlier and `ip-address` is the one you just found.
+
+    The first time you connect to a new server,
+`ssh` will not know the server and will say it cannot establish the authenticity of the machine you are connecting to, asking if you are sure you want to continue connecting.
+Type `yes` and hit enter.
+
+    You will be prompted for your password--this is the password for your account on the VM.
+Once entered, you will be able to access your VM from your host machine
+through a shell exactly like the tty you get by logging in within the VM window.
+You can log out by typing `exit` and hitting enter, or pressing `ctrl+d` just like the tty.
+
+    If you want to obviate the need to enter the password every time you log in, you can set up SSH-keys.
+
+    Open a terminal on your host machine (`cmd.exe` on windows).
+If you have never set up SSH-keys (you might have done it already if you use ssh for github or gitlab), run the command `ssh-keygen` in a terminal on your host machine and accept the default values. Once done, (or if you already have SSH-keys):
+
+    * On linux or MacOS, run `ssh-copy-id username@ip-address` to copy your keys to the VM.
+
+    * On Windows, run `type $env:USERPROFILE\.ssh\id_rsa.pub | ssh username@ip-address "cat >> .ssh/authorized_keys"`
+
+    You may be prompted for your VM password one final time. Enter it, and the command should finish.
+
+    Now, try logging in with `ssh username@ip-address` to make sure you are no longer being prompted for your password.
+
+1. **Make the VM headless.** If you only ever plan on using your VM via SSH,
+you can lighten the load on your computer and increase the speed at which the VM runs
+by disabling graphical output.
+
+    The exact process for this will vary depending on
+which hypervisor you're using, but the basic process will involve turning the VM off
+with `sudo poweroff`, then looking through the VM settings for some kind of
+"graphical output" checkbox.
+
+1. **Easy whitespace spotting.** If you are a `vim` user,
+you can save yourself some substantial hassle chasing down whitespace errors
+by adding the following lines to your `~/.vimrc` file:
+
+        :highlight ExtraWhitespace ctermbg=red guibg=red
+        :match ExtraWhitespace /\s\+$/
 
 
 ### What to submit:
-* Generate a patchset from your commit with a cover letter.
-* Send the patchset to introductions@kdlp.underground.software.
 
-[Submission Guidelines](../policies/submission_guidelines.md)
+* The generated patchset from your commit with your cover letter, sent to `setup@COURSE_DOMAIN`
+
+[Policies & Procedures](/procedures.md)
