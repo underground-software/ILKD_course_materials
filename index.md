@@ -229,6 +229,6 @@ students will be required to complete and submit their
 [F1](assignments/F1.md)
 and 
 [final presentation](assignments/final_pres_guide.md)
-by **23 September 2024.**
+by **30 September 2024.**
 
 For more information, please refer to our [detailed procedures and policies](procedures.md).
