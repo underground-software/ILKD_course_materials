@@ -18,7 +18,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 /* Basic elements */
 html, body {
-	font-family: courier, mono;
+	font-family: monospace;
 	font-size: 15px;
 }
 
