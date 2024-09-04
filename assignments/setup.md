@@ -119,7 +119,9 @@ If you see this, you have completed the basic installation of Fedora correctly. 
 
   * Login with your root account.
 
-  * Run the command `dnf update -y`, (this may take a while to complete.)
+  * Run the command `dnf update -y` (this may take a while to complete)
+
+  * When this finishes, you'll want to make sure you reboot.
 
   * While you are waiting you can switch to a different console and continue following the steps.
 
@@ -145,6 +147,12 @@ If you see this, you have completed the basic installation of Fedora correctly. 
 
   * Verify that you have root access via running `sudo whoami`, you should be prompted for a password
    and when you enter your password the `whoami` command should execute and output `root`.
+
+* If you are a vim user, you can save yourself some substantial hassle chasing down whitespace errors by adding the following lines to your `.vimrc` file:
+
+        :highlight ExtraWhitespace ctermbg=red guibg=red
+        :match ExtraWhitespace /\s\+$/
+
 
 #### Configure your account for the class email system and send your first email patches
 
@@ -242,18 +250,21 @@ If you see this, you have completed the basic installation of Fedora correctly. 
 
 #### Check your work
 
-* While Logged in as your non root user account
+While Logged in as your non root user account, install `mutt` (a terminal program for viewing email) by running `sudo dnf install -y mutt`.
+Next, configure your `.muttrc` which lives in `~/.muttrc`, using a text editor (e.g. `nano ~/.muttrc` or `vi ~/.muttrc`).
+First you'll want to set your identity and account information by adding:
 
-* Install `mutt` a terminal program for viewing email. Run `sudo dnf install -y mutt`
-
-* Configure your `.muttrc` which lives in `~/.muttrc`, using a text editor (e.g. `nano ~/.muttrc` or `vi ~/.muttrc`).
-
-    * Set your identity and account information by adding: <pre><code>set realname="Your Name Here"
+```
+set realname="Your Name Here"
 set my_username="YOUR_USERNAME"
 set my_password="YOUR_PASSWORD"
-</code></pre>
-    * Fill in your credentials that you use for the website and your full name.
-    * Set some sane defaults, and configure the server addresses by adding: <pre><code>set spoolfile=
+```
+
+Fill in your credentials that you use for the website and your full name.
+Next, set some sane defaults, and configure the server addresses by adding:
+
+```
+set spoolfile=
 set record=
 set folder=
 set sort=threads
@@ -262,9 +273,9 @@ set header_cache=~/.cache/mutt
 set smtp_url="smtps://$my_username:$my_password@COURSE_DOMAIN:465"
 push "&lt;change-folder&gt;pops://$my_username:$my_password@COURSE_DOMAIN:995"\n
 macro index l "|git am -s"\n
-</code></pre>
-
-    * Copy that block in verbatim, mutt will substitute the variables you set in the previous declarations for you.
+```
+Copy that block in verbatim, `mutt` will substitute the variables you set in the previous declarations for you.
+Once that's out of the way:
 
 * Open the email list by running the `mutt` command. You can quit by pressing `q` or hitting `ctrl+c`
 
@@ -338,6 +349,6 @@ macro index l "|git am -s"\n
 
 * Generate a patchset from your commit with a cover letter
 
-* Send the patchset to introductions@COURSE_DOMAIN
+* Send the patchset to `introductions@COURSE_DOMAIN`
 
 [Policies & Procedures](/procedures.md)
