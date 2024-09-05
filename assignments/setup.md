@@ -250,7 +250,7 @@ Next, set some sane defaults, and configure the server addresses by adding:
 set spoolfile=
 set record=
 set folder=
-set sort=threads
+set sort=reverse-threads
 set from="$my_username@$my_domain"
 set header_cache=~/.cache/mutt
 set smtp_url="smtps://$my_username:$my_password@$my_domain:465"
