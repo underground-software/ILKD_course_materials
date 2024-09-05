@@ -1,4 +1,4 @@
-## Introduction to Linux Kernel Development: University of Massachusetts Lowell -- Fall 2024
+## Introduction to Linux Kernel Development: University of Massachusetts Lowell - Fall 2024
 
 ### Course Summary and Purpose
 
