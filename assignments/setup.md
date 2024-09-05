@@ -58,7 +58,8 @@ testing the media will verify that your ISO downloaded correctly, but it will ta
 Once the actual operating system boots, the Fedora installer should open automatically.
 Before you begin the installation you **must** resolve the two items with orange warning icons shown in the below image:
 
-* Click on **Root Account** and set up root with a password you'll remember before clicking done
+* Click on **Root Account**, enable it,
+and then set up root with a password you'll remember before clicking "Done"
 
 * Click the **Installation Destination** icon, then click "Done" in the resultant menu
     * You don't need to change anything--it just wants you to confirm the default hard-drive
@@ -67,7 +68,7 @@ and partitioning selections it has made
 <img alt="fedora confusion image" src="/images/fedora_confusion.png"></img>
 
 If you get stuck, there are numerous tutorials online on how to proceed based on the VM software you are using.
-Note that on Fedora 40 you may see "create user account" with a similar warning icon,
+Note that on Fedora 40 you may see "User Creation" with a similar warning icon,
 but that warning will be resolved when you configure the root account,
 and can be safely ignored.
 
@@ -93,7 +94,7 @@ If you see this, you have completed the basic installation of Fedora correctly. 
 First, set a hostname for the machine.
 While logged in as root, run the following commands:
 
-* `echo hostname > /etc/hostname` where you replace `hostname` with whatever name you'd like to use (e.g. `joels-fedora-vm`)
+* `echo your-hostname > /etc/hostname` where you replace `your-hostname` with whatever name you'd like to use (e.g. `joels-fedora-vm`)
 
 * `hostname --file /etc/hostname` to update it without needing to restart the machine
 
@@ -116,7 +117,7 @@ While logged in as root, run
 
 * `usermod -aG wheel username` to give `username` permission to run commands as the superuser (root)
 
-* `passwd username` to create a password for `username`
+* `passwd username` which will prompt you to create a password for `username`
 
 You can then log out of root (type `exit` or hit `ctrl+d`)
 and try to log in as your new user with the username and password you selected.
@@ -124,6 +125,11 @@ and try to log in as your new user with the username and password you selected.
 Once logged in, you'll want to verify that you have root access. Running `sudo whoami`
 should prompt you for a password which, once entered,
 will allow the `whoami` command to execute and output `root`.
+
+Although you allocated the requisite 30+G of space, Fedora defaults to only using 15G for your filesystem. You can resize it to use all available space with:
+```
+lvextend -r -l +100%free /dev/fedora/root
+```
 
 **At this point, you can go no further without** `dnf update -y` **finishing.
 If it's still running, let it finish, reboot, and then continue.**
@@ -137,7 +143,8 @@ When this has finished, configure your `.gitconfig`, which lives in your home di
 
 You can pick your default editor by adding
 ```
-editor = nano # Or which ever editor you prefer
+[core]
+    editor = nano # Or which ever editor you prefer
 ```
 then set your identity and account information by adding
 ```
@@ -161,7 +168,13 @@ Use `cd` to enter the directory, then `mkdir your-username`, to create a directo
 Add a file named `setup.txt` to this folder containing an introduction about yourself.
 The content can be whatever you want, whether it be why you are taking this class, your favorite ice cream flavor, or a fun fact about yourself.
 
-Run `uname -a >> setup.txt` to append a line with information about the VM environment you set up to the end of the file.
+Now, run:
+
+* `whoami >> setup.txt` to append your chosen local username
+
+* `uname -a >> setup.txt` to append a line with information about the VM environment you set up
+
+* `df -H >> setup.txt` to append your available disk space
 
 When you're done, make a commit out of your changes.
 By default git will not be tracking changes to newly created files.
@@ -227,6 +240,7 @@ First you'll want to set your identity and account information by adding:
 set realname="Your Name Here"
 set my_username="YOUR_USERNAME"
 set my_password="YOUR_PASSWORD"
+set my_domain="COURSE_DOMAIN"
 ```
 
 Fill in your credentials that you use for the website and your full name.
@@ -237,10 +251,10 @@ set spoolfile=
 set record=
 set folder=
 set sort=threads
-set from="$my_username@COURSE_DOMAIN"
+set from="$my_username@$course_domain"
 set header_cache=~/.cache/mutt
-set smtp_url="smtps://$my_username:$my_password@COURSE_DOMAIN:465"
-push "<change-folder>pops://$my_username:$my_password@COURSE_DOMAIN:995"\n
+set smtp_url="smtps://$my_username:$my_password@$my_domain:465"
+push "<change-folder>pops://$my_username:$my_password@$my_domain:995"\n
 macro index l "|git am -s"\n
 ```
 
