@@ -251,7 +251,7 @@ set spoolfile=
 set record=
 set folder=
 set sort=threads
-set from="$my_username@$course_domain"
+set from="$my_username@$my_domain"
 set header_cache=~/.cache/mutt
 set smtp_url="smtps://$my_username:$my_password@$my_domain:465"
 push "<change-folder>pops://$my_username:$my_password@$my_domain:995"\n
