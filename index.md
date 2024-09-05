@@ -42,9 +42,9 @@ Students will:
 
 ### Required Materials
 
-* A computer that can run a virtual machine to give you access to a Linux environment.
+* A computer that can run a virtual machine to give you access to a Linux environment
 
-* Patience, determination, and an ability to focus on a potentially frustrating task for sustained periods of time.
+* Patience, determination, and an ability to focus on a potentially frustrating task for sustained periods of time
 
 * The ability to join a live video call with camera/microphone from that computer
   (i.e. the necessary equipment and a stable internet connection)
@@ -61,47 +61,47 @@ Students will:
 
 * Exercises are about practicing skills and learning by doing
 
-  * Students will follow a series of instructions (e.g. to execute certain
+    * Students will follow a series of instructions (e.g. to execute certain
     commands), and answer questions about what they did
 
-  * A submission will be proof that the student completed the steps
+    * A submission will be proof that the student completed the steps
     correctly, and their answers to the questions
 
-  * As a general rule exercises will not involve much programming,
+    * As a general rule exercises will not involve much programming,
     and are weighted lesser in the overall course grade
 
 * Programs are about getting your hands dirty and actually writing some code
 
-  * Students will have specific requirements their code has to meet, and a way
-    to test that what they have written completes the requirements successfully.
+    * Students will have specific requirements their code has to meet, and a way
+    to test that what they have written completes the requirements successfully
 
-  * A submission will consists of proof that the program works correctly, and its source code.
+    * A submission will consists of proof that the program works correctly, and its source code
 
-  * Since programs involve more actual coding, they will be weighted more in the overall course grade.
+    * Since programs involve more actual coding, they will be weighted more in the overall course grade
 
 * The final project is broken into two parts
 
-  * The students will have freedom to engineer a creative project
+    * The students will have freedom to engineer a creative project
 
-  * However, there is an emphasis on designing rigorous specifications and tests to clarify and enforce that vision
+    * However, there is an emphasis on designing rigorous specifications and tests to clarify and enforce that vision
 
-  * The student will implement a peers specification instead of their own.
+    * The student will implement a peers specification instead of their own
 
 * As a part of every assignment (except the very final one) students will perform peer review
 
-  * Students will be assigned two others' submissions to review
+    * Students will be assigned two others' submissions to review
 
-  * Part of the grade on each assignment will be determined by the quality and thoroughness of the review
+    * Part of the grade on each assignment will be determined by the quality and thoroughness of the review
 
 #### Presentation Assignments
 
 * Students will be required to complete two presentations throughout the course
 
-  * Students must deliver their presentations over a live video call (with a camera)
+    * Students must deliver their presentations over a live video call (with a camera)
 
-  * Presentations must include original visual content, such as slides
+    * Presentations must include original visual content, such as slides
 
-  * Students are required to include live demonstrations of their code by sharing their screen during the presentation
+    * Students are required to include live demonstrations of their code by sharing their screen during the presentation
 
 ### Grading Details
 
@@ -179,29 +179,31 @@ and they will only be graded on the content
 of last submission made before the deadline,
 provided they made at least one initial submission.
 The grade students receive on the content of the final submission will comprise 80% of their assignment grade.
-Even if you are satisified with your initial submission, you must make at least one final submission.
+Even if you are satisfied with your initial submission, you must make at least one final submission.
 Failure to make at least one final submission will result in a grade of zero.
+
+<br>
 
 * Instructors reserve the right to change due dates within reason
 
-  * In such a case, we will provide advance notice to students
+    * In such a case, we will provide advance notice to students
 
-  * If the due date is being pushed forward, the notification will occur at least one week before the new due date
+    * If the due date is being pushed forward, the notification will occur at least one week before the new due date
 
 * The instructors will not accept late work
 
-  * Students receive a zero for assignments not submitted on time
+    * Students receive a zero for assignments not submitted on time
 
 * One exception (a once per semester get out of jail free card):
 
-  * Students may choose to opt out of the peer review process for a given coding assignment
+    * Students may choose to opt out of the peer review process for a given coding assignment
 
-  * By skipping the process---both giving and receiving---students can use the two days that the process
-    would normally entail to take more time to work on their final (and only) submission.
+    * By skipping the process---both giving and receiving---students can use the two days that the process
+    would normally entail to take more time to work on their final (and only) submission
 
-  * Skipping peer review means forgoing the safety net of receiving early feedback from peers,
+    * Skipping peer review means forgoing the safety net of receiving early feedback from peers,
     so it is the sole responsibility of the student who chooses this path to ensure that their
-    work is correct lest any defects in the submission negatively impact their final grade.
+    work is correct lest any defects in the submission negatively impact their final grade
 
 Further details can be found on the [policies and procedures page](/procedures.md)
 
@@ -209,14 +211,14 @@ Further details can be found on the [policies and procedures page](/procedures.m
 
 * The primary location for course-related communication will be on the instructor-hosted matrix server
 
-  * Students will be provided access credentials at the start of the course
+    * Students will be provided access credentials at the start of the course
 
-  * These will be the same credentials students will use to access the course email patch submission system for assignments
+    * These will be the same credentials students will use to access the course email patch submission system for assignments
 
-  * Students who have general questions about the course material or any other non-private course-related information will
-    post their questions in the #questions channel on matrix where discussion and answers will be available to all course participants.
+    * Students who have general questions about the course material or any other non-private course-related information will
+    post their questions in the #questions channel on matrix where discussion and answers will be available to all course participants
 
-  * Students who have private questions about the course will reach out to a provided email address with their concerns.
+    * Students who have private questions about the course will reach out to a provided email address with their concerns
 
 ## Course Overview
 
