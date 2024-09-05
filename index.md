@@ -8,7 +8,7 @@ and more broadly to the skills necessary for work as a professional open source 
 ### Course Description
 
 Linux is the most widely used operating system in the world.
-It powers the world's top supercomputers, every android phone,
+It powers the world's top supercomputers, every Android phone,
 and the servers that host the internet's most popular websites.
 At the core of Linux is a software component called the kernel.
 It performs critical roles including managing communication with
@@ -135,17 +135,17 @@ Students will:
 
 ### Attendance Policy
 
-* Attendance is required.
+* Attendance is required in person or via the class video call
 
-  * The instructors will be joining remotely
+* The instructors will be joining remotely
 
-  * Students are welcome (and encouraged) to join the meeting as well so they can contribute more easily
+* Students are welcome (and encouraged) to join the meeting as well so they can contribute more easily
 
 ### Automatic Course Failure
 
 If a student fails to complete a task by a deadline with no prior notice,
 an instructor will reach out to you via email and direct message on matrix.
-If the student fails to respond to this message within seven days of it's receipt,
+If the student fails to respond to this message within seven days of its receipt,
 the instructors reserve the right to give the student a final course grade of F.
 
 ### Due date Policies
