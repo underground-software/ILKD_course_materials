@@ -162,7 +162,7 @@ then set your identity and account information by adding
 Make sure to fill in the fields with your class username and password (the ones you use to log into the course website).
 
 Next, clone
-[the assignment git repository](https://github.com/underground-software/ILKD_submissions).
+[the assignment git repository](https://fall2024-uml.kdlp.underground.software/cgit/ILKD_Submissions/).
 Use `cd` to enter the directory, then `mkdir your-username`, to create a directory in the repo, where `your-username` is the username you use to log into the course website.
 
 Add a file named `setup.txt` to this folder containing an introduction about yourself.
