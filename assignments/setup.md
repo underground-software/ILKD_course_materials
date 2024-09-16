@@ -198,7 +198,7 @@ e.g. `Setup: Added introduction for so and so`.
 Press enter twice,
 and then write a more detailed explanation that will act as the body of the commit.
 
-There should already be a `Signed-off by` line for your account at the bottom. If not, add one, then save your changes and exit the editor to finish the commit.
+There should already be a `Signed-off-by` line for your account at the bottom. If not, add one, then save your changes and exit the editor to finish the commit.
 
 Check to make sure you see the commit and it looks good by running `git log -p`.
 Your new commit should be the top most one, and you should see the title, message, DCO,
