@@ -286,8 +286,12 @@ Press:
 
 * `q` or `ctrl+c` to exit `mutt`.
 
-You should see your patch series including your introduction in the list of messages.
-If you do, congratulations! You successfully completed the setup.
+Before the initial submission deadline, you will see no messages.
+Following the deadline, all submissions are revealed and peer review begins.
+
+If your `git send-email` output ends in `Result: 250` then, congratulations! You successfully completed the setup.
+
+After submitting all later asssignments, you can check the course dashboard to make sure your submission was successfully received.
 
 ### Optional VM Configuration
 
