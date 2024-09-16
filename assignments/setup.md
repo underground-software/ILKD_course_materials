@@ -4,6 +4,16 @@ Welcome to the class! Setting up a Linux environment is required for the course,
 and this assignment will serve as a guide to get you started.
 Use this as an opportunity to introduce yourself to the class, and get your feet wet with the `git send-email` patch submission process we'll be using.
 
+#### What to submit:
+
+* Patch 1 adds a file named `setup.txt` to a new directory `username` (`username/setup.txt`) containing the content described below
+
+* Don't forget a cover letter
+
+* All email code patches are expected to pass `checkpatch.pl` as described in the [policies and procedures](/procedures.md)
+
+* Submit your patches to setup@COURSE_DOMAIN
+
 ### Install Necessary Software
 
 Start by downloading [the standard ISO image for Fedora Server](https://getfedora.org/en/server/download) for your architecture.
