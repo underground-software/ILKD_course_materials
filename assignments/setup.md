@@ -48,7 +48,7 @@ rule of thumb is to leave at least half of your cores and RAM for your host syst
 
 Feel free to reach out for specific advice depending on your machine.
 
-Be sure to allocate **at least 30G** for the virtual hard drive.
+Be sure to allocate **at least 50G** for the virtual hard drive.
 
 At some point in the setup process, you'll be prompted to attach the ISO image to the machine,
 which will allow it to boot into the Fedora live environment.
@@ -136,7 +136,7 @@ Once logged in, you'll want to verify that you have root access. Running `sudo w
 should prompt you for a password which, once entered,
 will allow the `whoami` command to execute and output `root`.
 
-Although you allocated the requisite 30+G of space, Fedora defaults to only using 15G for your filesystem. You can resize it to use all available space with:
+Although you allocated the requisite 50+G of space, Fedora defaults to only using 15G for your filesystem. You can resize it to use all available space with:
 ```
 lvextend -r -l +100%free /dev/fedora/root
 ```
