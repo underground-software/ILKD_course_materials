@@ -6,7 +6,7 @@ Use this as an opportunity to introduce yourself to the class, and get your feet
 
 #### What to submit:
 
-* Patch 1 adds a file named `setup.txt` to a new directory `username` (`username/setup.txt`) containing the content described below
+* Patch 1 adds `username/setup.txt` containing the content described below
 
 * Don't forget a cover letter
 
