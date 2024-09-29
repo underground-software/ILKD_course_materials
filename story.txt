@@ -1,0 +1,90 @@
+# The story of Intro to Linux Kernel Development
+
+* What is Linux kernel development?
+- Software engineering work done on the Linux kernel
+
+	* What is the Linux kernel?
+	- A large, C-based core component of many open source operating systems
+
+		* What is C?
+		- A minimal yet powerful language well-suited to writing operating system kernels
+
+			* What makes C minimal compared to other languages?
+			- There are few keywords and the syntax is relatively simple and uniform without many edge cases, making it easy to interpret
+
+			* What makes C powerful compared to other languages?
+			- It provides direct, unrestricted access to abstractions that map directly to hardware primitives
+
+		* What is an operating system?
+		- A userspace and kernel
+
+			* What is userspace?
+			- One or more programs running in parallel isolation
+
+				* What is the relationship between programs and the kernel?
+				- Programs control and are managed by the kernel
+
+				* How does a userspace program invoke the kernel
+				- system calls, which may operate on kernel-provided filesystems like /proc, /sys, and /dev
+
+
+		* What is a kernel?
+		- A program that controls computer hardware in order to provide resources to user programs satisfying certain conditions
+
+			* What is computer hardware?
+			- Physical computational devices connected to the CPU
+
+			* What are the resources that the kernel manages?
+			- Two types: virtual and physical resources
+
+			* What are the virtual resources managed by the kernel?
+			- file descriptors, processes and threads, virtual memory, signals, locks
+
+			* What are the physical resources managed by the kernel?
+			- interupts, physical memory, IO peripherals
+
+			* What conditions does the kernel strive to guarantee?
+			- Resource virtualization and concurrency, security mechanisms, and system stability
+
+			* How does the kernel control hardware?
+			- By running special instruction on the CPU
+
+				* Why can't userspace run these special instructions?
+				- Because the kernel disables them before letting userspace run
+
+				* Why can the kernel perform these operations?
+				- Because it's first to run on boot and they are enabled on the CPU by default
+
+		* What is open source?
+		- Public code and a community whose purpose is to develop it
+
+			* How do I contribute to Linux?
+			- send git email patches to the kernel mailing list
+
+				* What is git?
+				- A distributed version control system created by Linus Torvalds for his Linux project
+
+					* What is version control
+					- Software that allows one or more developers to work on code and track changes and versions
+
+				* What is an email patch?
+				- A specially formatted email that contains code changes and a description
+
+			* What is the Linux kernel mailing list?
+			- lore.kernel.org
+
+	* Where do I begin developing code for the Linux kernel?
+	- Start by compiling the kernel from source, and then pick a specifc focus are
+
+		* How do I compile, install, and boot my own kernel?
+		- Use the kernel build system and have patience
+
+		* What are the specifc areas of the kernel to focus on?
+		- The subsystems are many but include: scheduler, memory management, cgroup, namespace, locking, realtime, modules, many different drivers, arch-specific code
+
+		* How do I know what's going on inside the kernel?
+		- Use tracing tools and subsystems like ftrace, ptrace, bpf, strace
+
+	* What is software engineering?
+	- The application of programming and collaboration to solve complex problems with software
+
