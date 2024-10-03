@@ -19,6 +19,10 @@
     * What does `.config` do? How does it interact with the build process for the kernel?
     * What is physical and virtual memory? Why is there a distinction between the two?
     * What is the history of git? How does it fit into the bigger picture of version control software?
+    * How do container technologies like Podman, Docker, or LXC "share" a kernel with the host machine? What do they not share? What mechanisms of the linux kernel underly this technology?
+    * How does the linux BPF system let userspace run arbitrary code in kernel mode? What techniques does it use to ensure that this is safe?
+    * What concept does the phrase "Don't break userspace" refer to in the linux kernel? What does it look like in practice?
+    * What is the linux VDSO? What problem does it try to solve? How does it compare to other historical techniques like vsyscall?
     * Or suggest your own!
 * Select a topic and submit your proposal with a short outline as soon as possible. The hard due date is at 23:59 Eastern on 10/31/2023
 * Presentation requirements:
