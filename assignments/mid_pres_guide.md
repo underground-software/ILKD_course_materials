@@ -19,7 +19,7 @@
     * What does `.config` do? How does it interact with the build process for the kernel?
     * What is physical and virtual memory? Why is there a distinction between the two?
     * What is the history of git? How does it fit into the bigger picture of version control software?
-    * Or pick your own!
+    * Or suggest your own!
 * Select a topic and submit your proposal with a short outline as soon as possible. The hard due date is at 23:59 Eastern on 10/31/2023
 * Presentation requirements:
     * 10 ± 1 minutes long
