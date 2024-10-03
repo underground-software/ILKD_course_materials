@@ -31,4 +31,5 @@
         * Must include discussion of some snippet(s) kernel code that is relevant to your topic
     * Present live during class time in the class Jitsi
         * Share your screen for terminal + visual elements
-        * There will be two presentations per day on L16, L17, L18, L19, and L20
+        * There will be three presentations per day at the start of class during L11, L12, L13, L14, L15, L16, L17, L18, L19, L20, and L21
+        * The exact schedule for which student is presenting on what day will be posted on matrix in the general channel
