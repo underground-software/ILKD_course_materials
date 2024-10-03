@@ -6,16 +6,8 @@
     * Plenty of room to be creative 🙂
 * Example midpoint presentation topics (pick one of these or propose your own):
     * What is the OOM killer?
-    * Why are there multiple versions of some syscalls with numbers at the end? What issue were they added to address?
-        * `pipe`, `pipe2`, `pipe3`
-        * `dup`, `dup2`, `dup3`
-        * etc.
-    * Why do some syscalls have a version ending in `at`? What issue were they added to address?
-        * open vs openat
-        * fstat vs fstatat
-        * rename vs renameat
-        * symlink vs symlinkat
-        * etc
+    * Why are there multiple versions of some syscalls with numbers at the end (e.g. `accept`, `dup`, `pipe`, etc)? What do the numbers refer to? What issue were they added to address?
+    * Why do some syscalls have a version ending in `at` (e.g. `open`, `fstat`, `rename`, `symlink`, etc)? What issue were they added to address?
     * What does `.config` do? How does it interact with the build process for the kernel?
     * What is physical and virtual memory? Why is there a distinction between the two?
     * What is the history of git? How does it fit into the bigger picture of version control software?
