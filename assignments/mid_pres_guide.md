@@ -16,7 +16,11 @@
     * What concept does the phrase "Don't break userspace" refer to in the linux kernel? What does it look like in practice?
     * What is the linux VDSO? What problem does it try to solve? How does it compare to other historical techniques like vsyscall?
     * Or suggest your own!
-* Select a topic and submit your proposal with a short outline as soon as possible. The hard due date is at 23:59 Eastern on 10/31/2023
+* Select a topic and submit your proposal with a short outline as soon as possible in the new `#midpoint` channel on matrix.
+    * The hard due date for proposals is 23:59 on 10/10/2024
+    * The proposal must begin with a one setance summary of the topic you wish to cover (e.g. "What does .config do?")
+    * The proposal must contain a rough outline of what you plan to discuss in the form of approximately a half dozen bullet points
+    * We will reply to your message with the proposal to let you know if it is approved or what our concerns are if we cannot approve it
 * Presentation requirements:
     * 10 ± 1 minutes long
     * Must include some sort of visual component:
