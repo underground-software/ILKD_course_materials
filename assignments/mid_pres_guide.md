@@ -22,7 +22,7 @@
     * The proposal must contain a rough outline of what you plan to discuss in the form of approximately a half dozen bullet points
     * We will reply to your message with the proposal to let you know if it is approved or what our concerns are if we cannot approve it
 * Presentation requirements:
-    * 10 ± 1 minutes long
+    * 6 (+/- 1) minutes long
     * Must include some sort of visual component:
         * Slideshow
         * Diagrams
@@ -33,3 +33,4 @@
         * Share your screen for terminal + visual elements
         * There will be three presentations per day at the start of class during L11, L12, L13, L14, L15, L16, L17, L18, L19, L20, and L21
         * The exact schedule for which student is presenting on what day will be posted on matrix in the general channel
+        * We will not wait for you, so make sure you are not late on the day that your presentation is scheduled
