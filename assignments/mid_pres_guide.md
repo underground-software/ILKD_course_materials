@@ -1,4 +1,4 @@
-**KDLP Fall 2023 Midterm Presentation Guidelines**
+**KDLP Fall 2024 Midterm Presentation Guidelines**
 
 * Overview:
     * Short presentation about research into a topic of your choice live during class
@@ -18,7 +18,7 @@
     * Or suggest your own!
 * Select a topic and submit your proposal with a short outline as soon as possible in the new `#midpoint` channel on matrix.
     * The hard due date for proposals is 23:59 on 10/10/2024
-    * The proposal must begin with a one setance summary of the topic you wish to cover (e.g. "What does .config do?")
+    * The proposal must begin with a one sentence summary of the topic you wish to cover (e.g. "What does .config do?")
     * The proposal must contain a rough outline of what you plan to discuss in the form of approximately a half dozen bullet points
     * We will reply to your message with the proposal to let you know if it is approved or what our concerns are if we cannot approve it
 * Presentation requirements:
