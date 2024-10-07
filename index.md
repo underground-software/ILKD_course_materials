@@ -228,7 +228,7 @@ Further details can be found on the [policies and procedures page](/procedures.m
 |01| 08 Sep|commandline bootcamp, git intro		|[L01](coming_soon.md)|[L02](coming_soon.md)|                             |
 |02| 15 Sep|makefiles, C compilation deep dive		|[L03](coming_soon.md)|[L04](coming_soon.md)|[setup](assignments/setup.md)|
 |03| 22 Sep|file descriptors, processes, syscalls	|[L05](coming_soon.md)|[L06](lectures/L06.md)|[E0](assignments/E0.md)      |
-|04| 29 Sep|CPU priv., reentrency, kernel vs user code	|[L07](coming_soon.md)|[L08](coming_soon.md)|[P0](assignments/P0.md)      |
+|04| 29 Sep|CPU priv., reentrancy, kernel vs user code	|[L07](coming_soon.md)|[L08](coming_soon.md)|[P0](assignments/P0.md)      |
 |05| 06 Oct|tracing how/when OS code runs on the CPU	|[L09](coming_soon.md)|[L10](coming_soon.md)|                             |
 |06| 13 Oct|midpoint pres, what a good pres. looks like	|monday schedule       |[L11](coming_soon.md)|[Midpoint Presentation](assignments/mid_pres_guide.md)|
 |07| 20 Oct|assembly refresher, syscalls: end to end	|[L12](coming_soon.md)|[L13](coming_soon.md)|[E1](coming_soon.md)      |
