@@ -231,7 +231,7 @@ Further details can be found on the [policies and procedures page](/procedures.m
 |04| 29 Sep|CPU priv., reentrancy, kernel vs user code	|[L07](coming_soon.md)|[L08](coming_soon.md)|[P0](assignments/P0.md)      |
 |05| 06 Oct|tracing how/when OS code runs on the CPU	|[L09](coming_soon.md)|[L10](coming_soon.md)|                             |
 |06| 13 Oct|midpoint pres, what a good pres. looks like	|monday schedule       |[L11](coming_soon.md)|[Midpoint Presentation](assignments/mid_pres_guide.md)|
-|07| 20 Oct|assembly refresher, syscalls: end to end	|[L12](coming_soon.md)|[L13](coming_soon.md)|[E1](coming_soon.md)      |
+|07| 20 Oct|assembly refresher, syscalls: end to end	|[L12](coming_soon.md)|[L13](coming_soon.md)|[E1](assignments/E1.md)      |
 |08| 27 Oct|kernel pseudo filesystems; kernel modules	|[L14](coming_soon.md)|[L15](coming_soon.md)|[P1](coming_soon.md)      |
 |09| 03 Nov|character devices, ioctl, file position	|[L16](coming_soon.md)|[L17](coming_soon.md)|[E2](coming_soon.md)      |
 |10| 10 Nov|kernel locking support			|[L18](coming_soon.md)|[L19](coming_soon.md)|[P2](coming_soon.md)      |
