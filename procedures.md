@@ -203,7 +203,8 @@ The line must exactly match this format:
 Signed-off-by: Firstname Lastname <USERNAME@COURSE_DOMAIN>
 ```
 
-The DCO line must be the final line of the email body right before the start of the patch diff.
+The DCO line must be the final line of the email body right before the start of the patch diff,
+or in the case of the cover letter, before the start of the patchset summary and diffstat output.
 
 Fortunately, you can make git add this line automatically for you when you author a commit:
 
