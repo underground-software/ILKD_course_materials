@@ -33,7 +33,7 @@ the easier it will be to help you.
 
     * The command you ran and the output
 
-    * Your complete source code Makefile
+    * Your complete source code and makefile
 
     * Any error messages
 
