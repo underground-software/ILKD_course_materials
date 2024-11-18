@@ -141,6 +141,10 @@ Although you allocated the requisite 50+G of space, Fedora defaults to only usin
 lvextend -r -l +100%free /dev/fedora/root
 ```
 
+In the case that you experience errors due to lacking memory, follow [this guide](https://fedoramagazine.org/add-storage-to-your-fedora-system-with-lvm/) after adding a new disk in your VM software.
+
+Note: If you receive a "bad magic number" error with resize2fs, try xfs_growfs <file_system>.
+
 **At this point, you can go no further without** `dnf update -y` **finishing.
 If it's still running, let it finish, reboot, and then continue.**
 
