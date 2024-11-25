@@ -237,7 +237,7 @@ Further details can be found on the [policies and procedures page](/procedures.m
 |10| 10 Nov|kernel locking support			|[L18](coming_soon.md)|[L19](coming_soon.md)|[P2](assignments/P2.md)      |
 |11| 17 Nov|misc. devices for simple chardevs		|[L20](coming_soon.md)|[L21](coming_soon.md)|[F0](assignments/F0.md)      |
 |12| 24 Nov|live debugging: broken char dev module	|[L22](coming_soon.md)|thanksgiving          |                             |
-|13| 01 Dec|guest lecture; final presentations		|[L23](coming_soon.md)|[L24](coming_soon.md)|[F1](coming_soon.md)      |
+|13| 01 Dec|guest lecture; final presentations		|[L23](coming_soon.md)|[L24](coming_soon.md)|[F1](assignments/F1.md)      |
 |14| 08 Dec|final presentations				|[L25](coming_soon.md)|[L26](coming_soon.md)|                             |
 |15| 15 Dec|final presentations; end of class		|[L27](coming_soon.md)|[L28](coming_soon.md)|[Final Presentation](coming_soon.md)|
 
