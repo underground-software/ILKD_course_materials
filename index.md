@@ -239,6 +239,6 @@ Further details can be found on the [policies and procedures page](/procedures.m
 |12| 24 Nov|live debugging: broken char dev module	|[L22](coming_soon.md)|thanksgiving          |                             |
 |13| 01 Dec|guest lecture; final presentations		|[L23](coming_soon.md)|[L24](coming_soon.md)|[F1](assignments/F1.md)      |
 |14| 08 Dec|final presentations				|[L25](coming_soon.md)|[L26](coming_soon.md)|                             |
-|15| 15 Dec|final presentations; end of class		|[L27](coming_soon.md)|[L28](coming_soon.md)|[Final Presentation](coming_soon.md)|
+|15| 15 Dec|final presentations; end of class		|[L27](coming_soon.md)|[L28](coming_soon.md)|[Final Presentation](assignments/final_pres_guide.md)|
 
 For more information, please refer to our [detailed procedures and policies](procedures.md).
