@@ -307,6 +307,8 @@ where `username` is the username you picked earlier and `ip-address` is the one 
 `ssh` will not know the server and will say it cannot establish the authenticity of the machine you are connecting to, asking if you are sure you want to continue connecting.
 Type `yes` and hit enter.
 <br><br>
+    If you're using VirtualBox, you may need to setup port forwarding to enable 'ssh' access. To do this, navigate to the network settings of your VM, then create a new port forwarding rule. Set the **Host Port** to 2222 and the **Guest Port** to 22. Next, you can start your VM and connect via `ssh` using `ssh -p 2222 your-username@127.0.0.1`
+<br><br>
     You will be prompted for your password--this is the password for your account on the VM.
 Once entered, you will be able to access your VM from your host machine
 through a shell exactly like the tty you get by logging in within the VM window.
