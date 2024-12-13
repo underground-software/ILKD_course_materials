@@ -6,7 +6,9 @@ Use this as an opportunity to introduce yourself to the class, and get your feet
 
 #### What to submit:
 
-* Patch 1 adds `username/setup.txt` containing the content described below
+* Patch 1 adds `username/setup.txt` containing an introduction about yourself.
+
+* Patch 2 adds the updates to `username/setup.txt` including the output of `whoami`, `uname -a`, and `df -H`
 
 * Don't forget a cover letter
 
@@ -178,14 +180,6 @@ Use `cd` to enter the directory, then `mkdir your-username`, to create a directo
 Add a file named `setup.txt` to this folder containing an introduction about yourself.
 The content can be whatever you want, whether it be why you are taking this class, your favorite ice cream flavor, or a fun fact about yourself.
 
-Now, run:
-
-* `whoami >> setup.txt` to append your chosen local username
-
-* `uname -a >> setup.txt` to append a line with information about the VM environment you set up
-
-* `df -H >> setup.txt` to append your available disk space
-
 When you're done, make a commit out of your changes.
 By default git will not be tracking changes to newly created files.
 Add your file to the list that git is tracking with `git add setup.txt`, then
@@ -206,10 +200,22 @@ and difference view containing the changes.
 
 If there is more output than can fit on one screen, git will open a scrolling view that you can maneuver up and down within using the arrow keys. Press `q` to go back to the terminal.
 
-Next, you'll want to create a patch series with a cover letter out of your commit.
-To do this, run `git format-patch -1 --cover-letter -v1 --rfc`
+Now, run:
 
-* `-1` includes the most recent 1 commit
+* `whoami >> setup.txt` to append your chosen local username
+
+* `uname -a >> setup.txt` to append a line with information about the VM environment you set up
+
+* `df -H >> setup.txt` to append your available disk space
+
+Add your file to the list that git is tracking once again using `git add setup.txt`
+and make another commit with these changes. Don't forget to add a title, detailed description,
+and verify the `Signed-off-by:` line is included in the commit.
+
+Next, you'll want to create a patch series with a cover letter out of your commit.
+To do this, run `git format-patch -2 --cover-letter -v1 --rfc`
+
+* `-2` includes the most recent 2 commits
 
 * `--cover-letter` generates a cover letter for the whole patch series with a summary
 
@@ -217,7 +223,7 @@ To do this, run `git format-patch -1 --cover-letter -v1 --rfc`
 
 * `--rfc` marks these patches as a request for comment, which is required for all initial submissions (since they will be receiving peer feedback)
 
-The result of this command should be your directory containing two new `.patch` files,
+The result of this command should be your directory containing three new `.patch` files,
 courtesy of git.
 You'll want to open the first of these, `v1-0000-cover-letter.patch`,
 in your text editor so that you can write your cover letter according to the
