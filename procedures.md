@@ -250,8 +250,9 @@ and by hitting enter twice and leaving a blank line the subsequent text will bec
 commit message. The `git format-patch` utility will automatically put the title and message
 of a commit into the respective title and body of the corresponding generated email patch file.
 
-Your commits should have a title that is a short summary of the changes in this commit and you
-should include any further details in the commit message.
+The commit title should include the assignment prefix followed by a colon and a space,
+then a short summary of the changes in this commit in the imperative tense.
+e.g. `E0: Add username/E0.txt`. Any further details should be included in the commit message.
 
 You should make sure that the changes you are including in your commits are tidy.
 This means that code should follow the
