@@ -362,7 +362,7 @@ From [`include/linux/slab.h`](https://elixir.bootlin.com/linux/v6.5/source/inclu
 
 # It's just an unsigned int
 
-From [`include/linux/typtes.h`](https://elixir.bootlin.com/linux/v6.5/source/include/linux/types.h#L154)
+From [`include/linux/types.h`](https://elixir.bootlin.com/linux/v6.5/source/include/linux/types.h#L154)
 
 ```c
 typedef unsigned int __bitwise gfp_t;
