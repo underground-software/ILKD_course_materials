@@ -4,7 +4,7 @@
 
 # Learning objective
 
-Gain a broad overview of many aspects of the kenrel by understanding what's necessary to close a file descriptor
+Gain a broad overview of many aspects of the kernel by understanding what's necessary to close a file descriptor
 
 ---
 
