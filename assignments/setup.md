@@ -187,8 +187,9 @@ make a commit to save this version of the repository so it can be shared with `g
 Note that the `-s` flag makes git include the `Signed-off-by` DCO line for you automatically.
 
 Git will then open an instance of your preferred text editor to let you input a message for the commit.
-Put a title containing a short summary of what you did on the first line,
-e.g. `Setup: Added introduction for so and so`.
+On the first line, put a title beginning with the assignment prefix followed by a colon and a space,
+then a short summary of what you did in the imperative tense.,
+e.g. `Setup: Add introduction for so and so`.
 Press enter twice,
 and then write a more detailed explanation that will act as the body of the commit.
 
