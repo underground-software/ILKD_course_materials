@@ -297,7 +297,14 @@ Following the deadline, all submissions are revealed and peer review begins.
 
 If your `git send-email` output ends in `Result: 250` then, congratulations! You successfully completed the setup.
 
-After submitting all later asssignments, you can check the course dashboard to make sure your submission was successfully received.
+You can check the Course Dashboard on the course website to confirm your submission was received.
+On the dashboard there is a section for each assignment that has been assigned.
+Look for the section labeled `setup`. In the table beneath it,
+if you see a Timestamp and Submission ID in their respective cells,
+your submission was received successfully. If instead, you see ` - ` in those fields,
+your submission was not received.
+
+After submitting all later assignments, you can check the course dashboard to make sure your submission was successfully received.
 
 ### Optional VM Configuration
 
