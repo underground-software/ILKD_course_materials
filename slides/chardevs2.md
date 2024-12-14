@@ -352,7 +352,7 @@ Use read system call on any /dev/kkeyXXX
 
 # An analogy
 
-If the timer interupt is the "heartbeat" of the kernel, then `kkey` reads it's pulse
+If the timer interrupt is the "heartbeat" of the kernel, then `kkey` reads it's pulse
 
 1. This is not rigorous
 
