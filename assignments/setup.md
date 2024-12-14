@@ -278,6 +278,13 @@ Press:
 You should see your patch series including your introduction in the list of messages.
 If you do, congratulations! You successfully completed the setup.
 
+You can check the Course Dashboard to confirm your submission was received.
+On the Course Dashboard there is a section for each assignment that has been assigned.
+Look for the section labeled `setup`. In the table beneath it,
+if you see a Timestamp and Submission ID in their respective cells,
+your submission was received successfully. If instead, you see ` - ` in those fields,
+your submission was not received.
+
 #### Optional VM Configuration
 
 You may decide you'd like to better prepare your VM for the remainder of the course.
