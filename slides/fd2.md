@@ -198,7 +198,7 @@ Verify with `strace` that `close(3)` indeed calls `close(2)`
 
 1. Can `open(2)` a file with `O_PATH`
 
-1. Lighweight efernce to filesystem path entry
+1. Lighweight reference to filesystem path entry
 
 1. No I/O
 
