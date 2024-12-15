@@ -442,7 +442,7 @@ Two possible callers of [`__fput()`](https://elixir.bootlin.com/linux/v6.5/sourc
 
 1. `____fput()` when using task work
 
-1. `delayed_fput` when using global delayed work
+1. `delayed_fput()` when using global delayed work
 
 ---
 
