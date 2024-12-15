@@ -476,7 +476,7 @@ Two possible callers of [`__fput()`](https://elixir.bootlin.com/linux/v6.5/sourc
 
 What do we need to do?
 
-1. Clean up file-associated resoruces 
+1. Clean up file-associated resources
 
 1. Drop references held by file
 
