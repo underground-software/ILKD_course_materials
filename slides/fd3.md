@@ -26,7 +26,7 @@ Gain greater depth of understanding file descriptors by seeing how read uses the
 
 1. Only one other caller in [s390 compat code](https://elixir.bootlin.com/linux/v6.5/source/arch/s390/kernel/compat_linux.c#L230)
 
-1. [Originally](https://github.com/torvalds/linux/commit/e7a3e8b2edf54) there were more callers
+1. [Originally](https://github.com/torvalds/linux/commit/3ce4a7bf66263748194b77ccefd284be963c6304) there were more callers
 
 ---
 
