@@ -224,7 +224,7 @@ For files with I/O context
 
 1. Added in 2001 in Linux 2.4.0
 
-1. Monitor CRUD chagnes in directory
+1. Monitor CRUD changes in directory
 
 1. Notifed via `SIGIO` usually
 
