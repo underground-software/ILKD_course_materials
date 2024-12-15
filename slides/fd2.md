@@ -721,7 +721,7 @@ We return to userspace, concluding the `close(2)` implementation
 
 # Summary
 
-The `close(2)` systemcall contains plenty of complexity and many layers
+The `close(2)` system call contains plenty of complexity and many layers
 
 ---
 
