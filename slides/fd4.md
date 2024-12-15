@@ -42,8 +42,6 @@ While file descriptors are prefered as a userspace interface, the kernel is bett
 
 [`ksys_write()` removed from init/do_mounts_rd.c](https://github.com/torvalds/linux/commit/bef173299613404f55b11180d9a865861637f31d)
 
-1. Notice that `ksys_lseek()` is entirely removed
-
 ---
 
 # The other kernel interface
