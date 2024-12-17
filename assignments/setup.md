@@ -140,7 +140,7 @@ will allow the `whoami` command to execute and output `root`.
 
 Although you allocated the requisite 50+G of space, Fedora defaults to only using 15G for your filesystem. You can resize it to use all available space with:
 ```
-lvextend -r -l +100%free /dev/fedora/root
+$ lvextend -r -l +100%free /dev/fedora/root
 ```
 
 **At this point, you can go no further without** `dnf update -y` **finishing.
