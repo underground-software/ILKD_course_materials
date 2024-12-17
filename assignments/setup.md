@@ -106,15 +106,15 @@ If you see this, you have completed the basic installation of Fedora correctly. 
 First, set a hostname for the machine.
 While logged in as root, run the following commands:
 
-* `echo your-hostname > /etc/hostname` where you replace `your-hostname` with whatever name you'd like to use (e.g. `joels-fedora-vm`)
+* `$ echo your-hostname > /etc/hostname` where you replace `your-hostname` with whatever name you'd like to use (e.g. `joels-fedora-vm`)
 
-* `hostname --file /etc/hostname` to update it without needing to restart the machine
+* `$ hostname --file /etc/hostname` to update it without needing to restart the machine
 
 To verify, log out, and the login prompt will include the new hostname before the word login
 (e.g. `joels-fedora-vm login: _`).
 
 You'll then want to run a software update. While logged in on your root account,
-run `dnf update -y` (this may take a while), and reboot when it completes.
+run `$ dnf update -y` (this may take a while), and reboot when it completes.
 
 If you'd like to continue following these steps instead of waiting for this to complete,
 you can switch to a different console by pressing `ctrl+alt+f2`
@@ -125,33 +125,33 @@ You can check back on the update any time by pressing `ctrl+alt+f1`, which will 
 The next step is to create a non-root account for yourself with sudo permissions.
 While logged in as root, run
 
-* `useradd username` where `username` is whatever username you'd like to have
+* `$ useradd username` where `username` is whatever username you'd like to have
 
-* `usermod -aG wheel username` to give `username` permission to run commands as the superuser (root)
+* `$ usermod -aG wheel username` to give `username` permission to run commands as the superuser (root)
 
-* `passwd username` which will prompt you to create a password for `username`
+* `$ passwd username` which will prompt you to create a password for `username`
 
 You can then log out of root (type `exit` or hit `ctrl+d`)
 and try to log in as your new user with the username and password you selected.
 
-Once logged in, you'll want to verify that you have root access. Running `sudo whoami`
+Once logged in, you'll want to verify that you have root access. Running `$ sudo whoami`
 should prompt you for a password which, once entered,
 will allow the `whoami` command to execute and output `root`.
 
 Although you allocated the requisite 50+G of space, Fedora defaults to only using 15G for your filesystem. You can resize it to use all available space with:
 ```
-lvextend -r -l +100%free /dev/fedora/root
+$ lvextend -r -l +100%free /dev/fedora/root
 ```
 
-**At this point, you can go no further without** `dnf update -y` **finishing.
+**At this point, you can go no further without** `$ dnf update -y` **finishing.
 If it's still running, let it finish, reboot, and then continue.**
 
 ### Configure Class Email
 
-Login as your non root user account, then run `sudo dnf install -y git git-email`
+Login as your non root user account, then run `$ sudo dnf install -y git git-email`
 to install the necessary packages for this step.
 
-When this has finished, configure your `.gitconfig`, which lives in your home directory `~/`, using a text editor (e.g. `nano ~/.gitconfig` or `vi ~/.gitconfig`).
+When this has finished, configure your `.gitconfig`, which lives in your home directory `~/`, using a text editor (e.g. `$ nano ~/.gitconfig` or `$ vi ~/.gitconfig`).
 
 You can pick your default editor by adding
 ```
@@ -175,15 +175,15 @@ Make sure to fill in the fields with your class username and password (the ones 
 
 Next, clone
 [the assignment git repository](https://fall2024-uml.kdlp.underground.software/cgit/ILKD_Submissions/).
-Use `cd` to enter the directory, then `mkdir your-username`, to create a directory in the repo, where `your-username` is the username you use to log into the course website.
+Use `cd` to enter the directory, then `$ mkdir your-username`, to create a directory in the repo, where `your-username` is the username you use to log into the course website.
 
 Add a file named `setup.txt` to this folder containing an introduction about yourself.
 The content can be whatever you want, whether it be why you are taking this class, your favorite ice cream flavor, or a fun fact about yourself.
 
 When you're done, make a commit out of your changes.
 By default git will not be tracking changes to newly created files.
-Add your file to the list that git is tracking with `git add setup.txt`, then
-make a commit to save this version of the repository so it can be shared with `git commit -s`.
+Add your file to the list that git is tracking with `$ git add setup.txt`, then
+make a commit to save this version of the repository so it can be shared with `$ git commit -s`.
 Note that the `-s` flag makes git include the `Signed-off-by` DCO line for you automatically.
 
 Git will then open an instance of your preferred text editor to let you input a message for the commit.
@@ -194,7 +194,7 @@ and then write a more detailed explanation that will act as the body of the comm
 
 There should already be a `Signed-off-by` line for your account at the bottom. If not, add one, then save your changes and exit the editor to finish the commit.
 
-Check to make sure you see the commit and it looks good by running `git log -p`.
+Check to make sure you see the commit and it looks good by running `$ git log -p`.
 Your new commit should be the top most one, and you should see the title, message, DCO,
 and difference view containing the changes.
 
@@ -202,18 +202,18 @@ If there is more output than can fit on one screen, git will open a scrolling vi
 
 Now, run:
 
-* `whoami >> setup.txt` to append your chosen local username
+* `$ whoami >> setup.txt` to append your chosen local username
 
-* `uname -a >> setup.txt` to append a line with information about the VM environment you set up
+* `$ uname -a >> setup.txt` to append a line with information about the VM environment you set up
 
-* `df -H >> setup.txt` to append your available disk space
+* `$ df -H >> setup.txt` to append your available disk space
 
-Add your file to the list that git is tracking once again using `git add setup.txt`
+Add your file to the list that git is tracking once again using `$ git add setup.txt`
 and make another commit with these changes. Don't forget to add a title, detailed description,
 and verify the `Signed-off-by:` line is included in the commit.
 
 Next, you'll want to create a patch series with a cover letter out of your commit.
-To do this, run `git format-patch -2 --cover-letter -v1 --rfc`
+To do this, run `$ git format-patch -2 --cover-letter -v1 --rfc`
 
 * `-2` includes the most recent 2 commits
 
@@ -233,14 +233,14 @@ Don't forget to add the `Signed-off-by` line at the end of they body.
 
 Once you've finished your cover letter, send your patches to the class mailing list.
 You can do this by running the command
-`git send-email --to=setup@COURSE_DOMAIN v1*.patch`.
+`$ git send-email --to=setup@COURSE_DOMAIN v1*.patch`.
 
 * Each assignment will have its own special address to send submissions to, in this case `setup@COURSE_DOMAIN`
 
 * The expression `v1*.patch` will be expanded by the shell into all file names matching
 that pattern (any file whose name starts with `v1` and ends with `.patch`)
 
-* `git send-email` will prompt you to ask whether it should send the emails, typing `a` and hitting enter will send them all
+* `$ git send-email` will prompt you to ask whether it should send the emails, typing `a` and hitting enter will send them all
 
 If it is successful, the output should end with `Result: 250` which indicates that the server accepted your emails.
 
@@ -248,8 +248,8 @@ If not, **do not hesitate to reach out** in `#questions` on the course Matrix so
 
 ### Check Your Work
 
-While logged in as your non root user account, install `mutt` (a terminal program for viewing email) by running `sudo dnf install -y mutt`.
-Next, configure your `.muttrc` which lives in `~/`, using a text editor (e.g. `nano ~/.muttrc` or `vi ~/.muttrc`).
+While logged in as your non root user account, install `mutt` (a terminal program for viewing email) by running `$ sudo dnf install -y mutt`.
+Next, configure your `.muttrc` which lives in `~/`, using a text editor (e.g. `$ nano ~/.muttrc` or `$ vi ~/.muttrc`).
 First you'll want to set your identity and account information by adding:
 
 ```
@@ -276,7 +276,7 @@ macro index l "|git am -s"\n
 
 Copy that block in verbatim
 and `mutt` will substitute the variables you set in the previous declarations for you.
-Once that's out of the way, open the email list by running the `mutt` command.
+Once that's out of the way, open the email list by running the `$ mutt` command.
 
 In `mutt`, you will see a list of email threads, which should begin
 with a "welcome to the email system" message,
@@ -295,7 +295,7 @@ Press:
 Before the initial submission deadline, you will see no messages.
 Following the deadline, all submissions are revealed and peer review begins.
 
-If your `git send-email` output ends in `Result: 250` then, congratulations! You successfully completed the setup.
+If your `$ git send-email` output ends in `Result: 250` then, congratulations! You successfully completed the setup.
 
 After submitting all later asssignments, you can check the course dashboard to make sure your submission was successfully received.
 
@@ -305,8 +305,8 @@ You may decide you'd like to better prepare your VM for the remainder of the cou
 Here are some recommended steps you might take:
 
 1. **Set up SSH access.** While logged in to the machine on the tty,
-run the command `ip -br a | grep UP` and read the ip address listed there.
-On your host machine, open a terminal and try running `ssh username@ip-address`
+run the command `$ ip -br a | grep UP` and read the ip address listed there.
+On your host machine, open a terminal and try running `$ ssh username@ip-address`
 where `username` is the username you picked earlier and `ip-address` is the one you just found.
 <br><br>
     The first time you connect to a new server,
@@ -324,13 +324,13 @@ You can log out by typing `exit` and hitting enter, or pressing `ctrl+d` just li
 Open a terminal on your host machine (`cmd.exe` on windows).
 If you have never set up SSH-keys (you might have done it already if you use ssh for github or gitlab), run the command `ssh-keygen` in a terminal on your host machine and accept the default values. Once done, (or if you already have SSH-keys):
 
-    * On linux or MacOS, run `ssh-copy-id username@ip-address` to copy your keys to the VM.
+    * On linux or MacOS, run `$ ssh-copy-id username@ip-address` to copy your keys to the VM.
 
     * On Windows, run `type $env:USERPROFILE\.ssh\id_rsa.pub | ssh username@ip-address "cat >> .ssh/authorized_keys"`
 <br><br>
 
     You may be prompted for your VM password one final time. Enter it, and the command should finish.
-Now, try logging in with `ssh username@ip-address` to make sure you are no longer being
+Now, try logging in with `$ ssh username@ip-address` to make sure you are no longer being
 prompted for your password.
 
 1. **Make the VM headless.** If you only ever plan on using your VM via SSH,
@@ -338,7 +338,7 @@ you can lighten the load on your computer and increase the speed at which the VM
 by disabling graphical output.
 <br><br>
     The exact process for this will vary depending on
-which hypervisor you're using, but after turning the VM off with `sudo poweroff`,
+which hypervisor you're using, but after turning the VM off with `$ sudo poweroff`,
 the idea is to look through the VM settings for some kind of "graphical output" checkbox.
 
 1. **Easy whitespace spotting.** If you are a `vim` user,
