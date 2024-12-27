@@ -1,4 +1,4 @@
-**KDLP Fall 2024 Midterm Presentation Guidelines**
+## KDLP Fall 2024 Midterm Presentation Guidelines
 
 * Overview:
     * Short presentation about research into a topic of your choice live during class

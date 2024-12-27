@@ -1,4 +1,4 @@
-### Final Presentation Guidelines 🎯 🏹
+## Final Presentation Guidelines 🎯 🏹
 
 This is your last opportunity to demonstrate your skills
 and reflect on what you've learned in the course.
