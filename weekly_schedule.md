@@ -1,4 +1,4 @@
-### Course Schedule
+## Course Schedule
 
 Week 00 | 1 September 2024
 --
