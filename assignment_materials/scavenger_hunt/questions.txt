@@ -1,0 +1,44 @@
+0. What assembly instructions prepare the arguments for your system call, specify the system call number, and invoke the kernel on your local architecture?
+
+*answer here*
+
+1. What are the corresponding line(s) in the output from running the program under strace?
+
+*answer here*
+
+2. What does your system call do?
+
+*answer here*
+
+3. What are your system call's parameters and return value and what are their purposes?
+
+*answer here*
+
+4. What arguments is the program passing to your system call, what is the return value, and what do they mean?
+
+*answer here*
+
+5. What is your best estimate of the higher-level purpose of your system call in the program? (i.e. what was the author trying to accomplish?)
+
+*answer here*
+
+6. What is the filename and line number of the definition of the system call in the Linux source code? (i.e. the line starting with SYSCALL_DEFINE...)
+
+*answer here*
+
+7. Use `git blame` to identify who last modified any of the lines in the function you located in question 5.
+Who is the name and email of the author?
+
+*answer here*
+
+8. What is the commit hash for the commit that introduced those changes?
+
+*answer here*
+
+9. What was the reason for the change?
+
+*answer here*
+
+10. Why do you think it was merged into the master branch?
+
+*answer here*

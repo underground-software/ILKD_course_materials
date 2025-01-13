@@ -1,0 +1,26 @@
+KDLP proc module
+
+This module will create an entry in /proc that holds a fixed message for all users to read.
+
+The file will show up in /proc as a file named *fill in the blank*.
+
+The file will be owned by user *fill in the blank* and group *fill in the blank*.
+
+The permissions for the file will be *fill in the blank*.
+
+Operations:
+	- Read:
+		***REPLACE ME***
+		* Describe what happens when a user reads from the file in /proc
+		* How does reading interact with the file position?
+		* Be sure to consider edge cases like a buffer that is too small, or a pointer to invalid memory
+		* Don't forget to describe what value will be returned
+		***REPLACE ME***
+	- Write:
+		***REPLACE ME***
+		* What happens if a user tries to write to the file?
+		***REPLACE ME***
+	- Seek:
+		***REPLACE ME***
+		* How can a user reposition the file position pointer using lseek?
+		***REPLACE ME***

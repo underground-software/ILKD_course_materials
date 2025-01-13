@@ -1,0 +1,205 @@
+## Add a new system call 🤫
+
+Add a new system call to the kernel
+
+#### Outcomes:
+
+* Get comfortable with the concept of a system call from both kernelspace and userspace
+
+    * Learn how userspace programs make system calls
+
+    * Learn how those calls are handled by the kernel
+
+* Understand how C relates to assembly language
+
+    * Write a C program to call your system call
+
+    * Write the same program in the assembly language of your platform
+
+#### What to submit:
+
+* Patch 1 adds `username/new_syscall/syscall.patch`, which patches the v6.11 kernel code to implement your system call
+
+    * This patch adds the patch file you generated from the kernel repo *as a .patch file* to the course submissions repo
+
+        * Note that this is the **only time** it is acceptable to submit a patch that contains whitespace errors as this is an artifact of committing an email code patch
+
+        * Ignore the dashboard message about any detected whitespace errors
+
+    * Generate a single patch from your commit to the Linux kernel using the command `git format-patch -1` within your linux repo
+
+    * Take the `.patch` file outputted, and put it in your named directory (e.g. `cp 0001*.patch ~/ILKD_Submissions/your_name/new_syscall/syscall.patch`)
+
+    * Add *the email patch itself* as a file named `syscall.patch` to the staged git files and commit this
+
+* Patch 2 adds `username/new_syscall/syscall.c`, a C program which invokes your new system call, and `username/new_syscall/Makefile`, which builds an executable named `syscall_C` via the default target
+
+    * Make sure to have compiler warnings enabled (at least `-Wall` but ideally `-Wextra` and `-Wpedantic` too, or even `-Weverything` if you use clang)
+
+    * Make sure that your code doesn't have any warnings or errors
+
+* Patch 3 adds `username/new_syscall/syscall.s`, an assembly program which invokes your new system call, and modifies `username/new_syscall/Makefile` to build `syscall_asm` via the default target in addition to `syscall_C`
+
+    * Edit the makefile to add rules for assembling and linking your assembly program using `as` and `ld`
+
+    * You are welcome to leverage the C preprocessor when writing your assembly for e.g. includes, macro
+
+    * If you do this, be sure to modify your makefile appropriately and use the correct file extension for your assembly source code
+
+* Patch 4 adds `username/new_syscall/strace.log`, which contains the output of running `strace` on your assembly program as it uses the new system call
+
+* Don't forget a cover letter
+
+* All email code patches are expected to pass `checkpatch.pl` as described in the [policies and procedures](/procedures.md)
+
+* Submit your patches to new_syscall@COURSE_DOMAIN
+
+#### Procedure:
+
+0. Start by adding a new system call to your copy of the Linux kernel
+
+    0. Create a new `.c` file in the `kernel` directory within the linux repo named `kdlp.c`
+
+    0. Using the appropriately numbered `SYSCALL_DEFINE` macro, define a system call entry function for a new `kdlp` system call in the `kdlp.c` file that behaves as follows:
+
+        * Takes two arguments, an argument of type `char __user *` to specify the buffer and an argument of type `size_t` to specify the size of the buffer
+
+        * Formats a message into a local buffer that includes at least the student's name and the name of the current task that is running on the CPU (see the `get_task_comm` macro)
+
+        * Determines the amount of data to send: equal to the lesser of the size of the kernel message and how much space the user provided (see `min` macro)
+
+        * Copies that many bytes from the local message buffer into the user pointer (see the `copy_to_user` function)
+
+        * Returns a negative error code of `-EFAULT` (errno 14, bad address) if the copy is not successful
+
+        * Otherwise, returns the amount of data that was copied
+
+    0. The system call implementation should take care to prevent any possibility of a buffer overflow
+
+    0. Modify the makefile for the kernel subdirectory in `kernel/Makefile` to add `kdlp.o` to the list of objects that are always compiled (add it to the end of the `obj-y` variable)
+
+    0. Add an `asmlinkage` declaration of `sys_kdlp` to the bottom of `include/linux/syscalls.h` (take inspiration from the numerous examples of other system calls in that file)
+
+    0. Add an entry to the system call table for your architecture
+
+        * On aarch64 the list comes from the modern shared table located in `include/uapi/asm-generic/unistd.h`
+
+            * Find where `__NR_syscalls` is defined and increment the value
+
+            * Just above that line, add a `#define` for `__NR_kdlp` with the next system call number that is free
+
+            * add an invocation of the `__SYSCALL` macro with the `__NR_kdlp` number and and the `sys_kdlp` entry point
+
+            * Take inspiration from the other nearby system calls
+
+        * On x86-64, this is in a special table format located at `arch/x86/entry/syscalls/syscall_64.tbl` for historical reasons
+
+            * You need to pick a number for it, put it in order with the next highest number after the last `common` entry in the table
+
+            * Your system call will be `common` (i.e. shared between 32 and 64 bit userspace programs transparently by the kernel)
+
+            * The name is `kdlp` and the entry point is `sys_kdlp`
+
+            * Take inspiration from the other nearby system calls
+
+    0. Update the `localversion` file to create a distinct release string so you can tell this kernel that has your system call apart from the other kernel you compiled
+
+    0. Update the config using `make oldconfig` (this should only take a few seconds, and shouldn't require you to answer any questions)
+
+    0. Before compiling the entire kernel, you will find it helpful to compile your new kdlp.c file in isolation using `make kernel/kdlp.o`
+
+    0. Compile your new kernel with `make -j $(nproc)`
+
+    0. If the command finishes, make sure it was successful: `echo $?` should output `0`
+
+        * If it does not, re-run `make` without `-j $(nproc)` to get a better error message
+
+        * Fix whatever issue you see, and re-run `make -j $(nproc)`
+
+        * Repeat this process of checking the result and fixing any errors until it compiles successfully
+
+    0. Install your new kernel and its modules `sudo make -j $(nproc) modules_install install`
+
+0. Reboot your VM and pick the new kernel
+
+    * If all is well it should boot successfully
+
+    * Congrats, you just wrote your first kernel code!
+
+0. Make a patch out of your kernel code
+
+    * Find all untracked files, and files you modified by looking at the output of `git status` within your linux kernel repository
+
+    * Add them to the staging area with `git add` and then run `git commit -s` and provide a message
+
+    * Format the resulting patch as a `.patch` file with `git format-patch -1`
+
+        * You don't need `--rfc` or `-v1` or `--cover-letter` because this `.patch` is not getting emailed directly
+
+    * Copy the `.patch` file into your named folder within the `new_syscall` folder in the ILKD submissions repo
+
+    * You can make your first commit for the assignment
+
+0. Write a C program named `syscall.c` that invokes the new system call
+
+    * This userspace program may only use `unistd.h`, `stdio.h`, and `stdilb.h` header files.
+
+    * Use the `syscall(2)` function from the C standard library to invoke your system call
+
+        * Pass the number you gave it in the table as the first argument and then pass the rest of the arguments
+
+    * Check for any errors and print an appropriate message if they occur
+
+    * Otherwise, print the message you received from the kernel using the `write(2)` system call
+
+    * You can now make your second commit for the assignment
+
+0. Write an assembly language program named `syscall.s` that behaves exactly the same as your C program with the following minor differences because you are not using the C standard library:
+
+    * Your program starts at a label named `_start` instead of a function named `main`
+
+    * You need to explicitly call the `exit` system call to terminate your program (trying to return from `_start` will segfault)
+
+    * You explicitly invoke the system calls by following the conventions of the linux system call ABI (application binary interface)
+
+        * For aarch64:
+
+            * Arguments go into specific registers in order (`x0`, `x1`, `x2`, `x3`, `x4`, `x5`)
+
+            * The system call number goes into `x8`
+
+            * The system call is invoked using the `svc #0` instruction
+
+            * The return value is in `x0` and is either a non-negative return value, or or negative error number (errno variable is a C library concept)
+
+        * For x86-64:
+
+            * Arguments go into specific registers in order (`%rdi`, `%rsi`, `%rdx`, `%r10`, `%r8`, `%r9`)
+
+            * The system call number goes into `%rax`
+
+            * The system call is invoked using the `syscall` instruction
+
+            * The return value is in `%rax` and is either a non-negative return value, or a negative error number (errno variable is a C library concept)
+
+    * Make sure to update the makefile to assemble and link your program
+
+    * You can now make your third commit for the assignment
+
+0. Test your C program and assembly program
+
+    * They should both print a message including your name and the name of executable file when you try them on the kernel you just compiled
+
+    * Try running `strace` on your assembly program. Capture the output into a file using `2> strace_log` on the end of the command and add it to the repo as your fourth patch
+
+    * You can also test the error case by booting into a kernel without your system call (i.e. the regular upstream kernel you compiled or the one packaged by fedora)
+
+        * The kernel will return `-ENOSYS` to indicate that the system call is not implemented
+
+        * Both programs should print some sort of error message and exit early with a nonzero code
+
+This page should be useful: <https://elixir.bootlin.com/linux/latest/ident/get_task_comm>
+
+Refer to the [Linux kernel documentation about adding system calls](https://www.kernel.org/doc/html/latest/process/adding-syscalls.html) for further guidance.
+
+[Policies & Procedures](/procedures.md)

@@ -1,0 +1,13 @@
+Congrats, you did it!
+
+0. How many attempts did it take before you suceeded? (more is not worse)
+*answer here*
+
+1. output of `uname -a`
+*include output here*
+
+2. output of `dmesg | head`
+*include output here*
+
+3. output of `whoami`
+*include output here*
