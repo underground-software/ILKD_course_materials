@@ -226,6 +226,8 @@ Sections:
 * Managing grading operations and student communication (1)
 * Developing singularity to support all the above (4)
 
+### division
+
 Charlie:
 - demos
 
@@ -242,9 +244,6 @@ Denis:
 Sam
 - Manage grader?
 - turing lecture output into public content
-- slop
-- dirty work
-- clean toilets
 
 
 #### Timeline:
