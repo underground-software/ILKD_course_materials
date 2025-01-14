@@ -78,9 +78,19 @@ data comes out via panic message
 
 Now we have an operating system. But not much else.
 
+1. GDB
+
+Silent and deadly. What's going on?
+What the hell is the kernel up to?
+
+Enable GDB to allow us to see what the kernel is up to.
+
+Now, we can step through the execution of kernel code
+
 1. Logging with printk
 
-The kernel runs. What the hell is the kernel up to?
+The kernel runs. We can debug by freezing execution.
+This is too slow. We want to let it rip and get output in real time.
 
 Add the ability to log to the kernel ring buffer
 What is the kernel ring buffer
@@ -206,15 +216,66 @@ Sections:
 
 ### The work:
 
-* Coming with demos
-* Revising and creating assignment to re-inforce linux kernel internals knowledge
-* Building lecture around demos
-* Delivering the lectures
-* Creating text and video content for public consumption from lecture materials
+* Coming up with demos (2)
+* Revising and creating assignments to re-inforce linux kernel internals knowledge (3)
+* Building lecture around demos (2)
+* Delivering the lectures (1)
+* Creating text and video content for public consumption from lecture materials (5)
     * Lecture notes
     * Textbook chapters
-* Managing grading operations and student communication
-* Developing singularity to support all the above
+* Managing grading operations and student communication (1)
+* Developing singularity to support all the above (4)
+
+Charlie:
+- demos
+
+Joel:
+- deliver lectures
+
+Michael:
+- updating assignments and potentially modifying/adding to them
+- singularity autograder minor features as appropriate
+
+Denis:
+- Turning demos into lecture content
+
+Sam
+- Manage grader?
+- turing lecture output into public content
+- slop
+- dirty work
+- clean toilets
+
+
+#### Timeline:
+
+demos have 2 week lead time
+
+e.g:
+
+Monday:
+start demos for 2 weeks from this Tuesday/Thursday to be done by the following Monday
+start converting demos to lecture for 1 week from this Tuesday/Thursday
+start reviewing prepared lecture content for this week
+
+Concrete:
+
+21/23 Jan syllabus/policies/setup
+28/30 Jan (setup due) barebones linux
+04/06 Feb
+11/13 Feb
+18/20 Feb
+25/27 Feb
+04/06 Mar
+11/13 Mar SPRING BREAK
+18/19 Mar
+25/27 Mar
+01/03 Apr
+08/10 Apr
+15/17 Apr
+22/24 Apr
+29/01 Apr
+06/08 May
 
 
 ### assignments we have so far
