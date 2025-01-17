@@ -18,11 +18,11 @@
 
   * More than one sentance should be more than one bullet, or a paragraph
 
-## Headings:
+### Headings:
 
   * Title capitalization
 
-## Markdown rules:
+### Markdown rules:
 
   * separate bullets by a blank line
 
@@ -39,3 +39,13 @@
   * top level headings within document should be at most `##` and decrease from there
 
   * avoid unnecessary blank lines
+
+### Abbreviations
+
+  * Avoid abbreviations as much as possible
+
+  * KDLP is approved to general use but it is preferrable to spell out Kernel Devlopment Learning Pipeline at least once per page
+
+  * ILKD is acceptable but better spell out Introduction to Linux Kernel Development
+
+  * USI should only be used internally and Underground Software or Underground Software Incorporated should be preferred in any public document
