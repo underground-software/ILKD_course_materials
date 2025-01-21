@@ -135,10 +135,10 @@ FIXME: version?
 0. Copy the provided
 [`init.config`](assignment_materials/setup/init.config)
 file and
-[`init.S`](assignment_materials/setup/init.S)
+[`init.s`](assignment_materials/setup/init.s)
 init program into the `linux` dir
 
-        cp init.config init.S linux/
+        cp init.config init.s linux/
 
 0. Change the current directory to the kernel tree with
 
@@ -165,7 +165,7 @@ For example, `cat localversion` might return
 0. Build the init program from the provided assembly source and place the binary output in a directory that will be used as the initial root filesystem for the virtual machine
 
         mkdir rootfs
-        riscv64-linux-gnu-gcc -pie -ffreestanding -nostdlib init.S -static -march=rv64i -mabi=lp64 -shared -o rootfs/init
+        riscv64-linux-gnu-gcc -pie -ffreestanding -nostdlib init.s -static -march=rv64i -mabi=lp64 -shared -o rootfs/init
 
 0. Create a root filesystem
 
