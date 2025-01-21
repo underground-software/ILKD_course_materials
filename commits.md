@@ -48,16 +48,16 @@ Sample workflow to check that your patchset applies cleanly:
 
 0. Make sure your local git worktree is up to date
 
-  * You should do this each time you begin work within any git repository
+    * You should do this each time you begin work within any git repository
 
-  * Use `git remote update` to update all of your local copies of remote trees
+    * Use `git remote update` to update all of your local copies of remote trees
 
 0. Create and checkout a local branch based on the upstream `origin/master` branch by using:
 
-  * `git checkout -b <branch name> origin/master` (branch name can be anything convenient)
+    * `git checkout -b <branch name> origin/master` (branch name can be anything convenient)
 
 0. Apply your patchset to this branch using `git am <patch1> <patch2> ... <patchN>`
 
 0. If no errors appear: congratulations, your patchset applies cleanly!
 
-  * If there are whitespace errors or corrupt patches, revise as needed by amending or rebasing your commits
+    * If there are whitespace errors or corrupt patches, revise as needed by amending or rebasing your commits
