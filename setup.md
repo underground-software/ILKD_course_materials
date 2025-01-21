@@ -65,7 +65,7 @@ about yourself and the output of `uname -a`
 
 0. Build your container using the Containerfile we serve you: FIXME: validate these
 
-    Linux/MacOS: `sh -c "read -rp 'username: ' username && curl -u $username https://spring2025-utsa.kdlp.underground.software/Containerfile | podman build -t kdlp_container -"`
+    Linux/MacOS: `sh -c 'read -rp "username: " username && curl -u $username https://spring2025-utsa.kdlp.underground.software/Containerfile | podman build -t kdlp_container -'`
 
     Windows: `cmd /v /c "set /p "username=username: " && curl -u !username! https://spring2025-utsa.kdlp.underground.software/Containerfile | podman build -t kdlp_container -"`
 
