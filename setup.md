@@ -160,7 +160,7 @@ For example, `cat localversion` might return
 
 0. Build the kernel
 
-        ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- time make -j $(nproc)
+        ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- make -j $(nproc)
 
 0. Build the init program from the provided assembly source and place the binary output in a directory that will be used as the initial root filesystem for the virtual machine
 
