@@ -1,7 +1,7 @@
 ## Patch Guidelines
 
 Assignments must be submitted in the format of git email text patches grouped into
-[patchesets](patchsets.md).
+[patchsets](patchsets.md).
 
 Binary patches are forbidden because all work in this class is in plaintext.
 
