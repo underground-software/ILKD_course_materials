@@ -9,12 +9,12 @@ and message `(*** BLURB HERE ***)` to the email.
 
 You must:
 
-* Replace the subject filler text with the assignment name and your username,
-separated by a dash `'-'` (for example, "Exercise 18 - charles-joel")
+* Replace the subject filler text with the assignment name and your username separated by a dash `'-'`.
+For example: `Linux kernel - linus_torvalds`
 
 * Replace the blurb filler text with your write-up
 
-Failure to remove these filler lines including the asterisks will result in lost points
+Failure to remove these filler lines including the asterisks will result in lost points.
 
 The first line of your cover letter write up should state what you think your degree of success for the assignment was (from 0% to 100%), formatted as follows:
 
@@ -34,5 +34,4 @@ Failure to cover each of the above will result in a zero grade on your assignmen
 If your self-assessment of success is not 100%, please document all known issues.
 Be honest with your self-assessment. If obvious errors are discovered despite high
 self-assessment, then we reserve the right to give you a zero.
-We also reserve the right to dock points for grammatical mistakes.
-
+We also reserve the right to dock points for grammatical mistakes and spelling errors.

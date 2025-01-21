@@ -18,11 +18,11 @@
 
   * More than one sentance should be more than one bullet, or a paragraph
 
-### Headings:
+### Headings
 
   * Title capitalization
 
-### Markdown rules:
+### Markdown rules
 
   * separate bullets by a blank line
 
@@ -49,3 +49,13 @@
   * ILKD is acceptable but better spell out Introduction to Linux Kernel Development
 
   * USI should only be used internally and Underground Software or Underground Software Incorporated should be preferred in any public document
+
+### Other
+
+  * Prefer "Matrix" over "matrix" when referring to the Matrix protocol
+
+  * Text used as a placeholder to be substituted should be formatted like shell variable dereference syntax, i.e. `$PLACEHOLDER`
+
+  * Exception to previous rule: within command descriptions `<description>` should be preferred to describe parameters
+
+  * Ooopsie is a proper noun

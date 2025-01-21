@@ -10,7 +10,9 @@ If you notice any of the following:
 
 * You have an idea for a feature that could improve the course quality
 
-Feel free to let us know. We appreciate the feedback. In addition,
+Feel free to let us know by opening issues on our
+[GitHub repositories](https://github.com/underground-software)
+We appreciate the feedback. In addition,
 we invite any interested students to work with us and improve the course.
 We can guide you through the process of making the appropriate changes
 and successful upstream contributions will result in extra credit.

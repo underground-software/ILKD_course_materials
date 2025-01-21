@@ -37,4 +37,8 @@ in your patchset are corrupt. This shouldn't be possible if you generate
 your patches with `git format-patch`, but if you edit the files manually
 they might get corrupted. You have been warned! The correct way to edit
 the patches is to edit the underlying commits and then regenerate the patches.
+
+Note that version numbers are maintained between RFC and non-RFC patchsets--in the best case,
+your RFC would be v1 and your final submission would be v2.
+Your cover letter shoud include a summary of changes since the previous version.
 To edit previous commits, see `man git-rebase` and the `--amend` option from `man git-commit`.

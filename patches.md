@@ -1,7 +1,11 @@
 ## Patch Guidelines
 
-Assignments must be submitted in the format of git email text patches.
+Assignments must be submitted in the format of git email text patches grouped into
+[patchesets](patchsets.md).
+
 Binary patches are forbidden because all work in this class is in plaintext.
+
+---
 
 Every patch in the patch series (including the cover letter) must end with
 a "Signed-off-by" line, called the DCO (Developer Certificate of Origin).

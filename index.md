@@ -3,7 +3,7 @@
 | Week # | Class dates | Useful information |
 | -- | -- | -- |
 | 0 | 21/23 Jan | syllabus/policies/setup |
-| 1 | 28/30 Jan | [setup due](setup.md) barebones linux |
+| 1 | 28/30 Jan | [setup due](setup.md) barebones Linux |
 | 2 | 04/06 Feb | |
 | 3 | 11/13 Feb | |
 | 4 | 18/20 Feb | |
@@ -19,20 +19,12 @@
 | 14 | 29/01 Apr | |
 | 15 | 06/08 May | |
 
-### Useful links
-
-[Frequently Asked Questions](faq.md)
-
-[Joining the course matrix server](matrix.md)
-
-[Submitting Homework](submitting.md)
-
-[setup.txt](assignment_materials/setup.txt)
+#### [Frequently Asked Questions](faq.md)
 
 ### Course Summary and Purpose
 
 We guide students into the depths of the Linux kernel, introducing the concepts, tools, and frameworks
-necessary to become indepenent contributors to the Linux kernel in particular and open source software more broadly.
+necessary to become independent contributors to the Linux kernel in particular and open source software more broadly.
 
 ### Course Description
 
@@ -67,7 +59,7 @@ Students will:
 
 * Develop the ability to autonomously participate in the open source software community
 
-* Demonstrate the ability to explain your code and your knowledge of Linux in your own words
+* Demonstrate the ability to explain technical topics in your own words
 
 * Learn how to give and receive feedback on code patches
 

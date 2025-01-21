@@ -1,3 +1,3 @@
-# Common reasons for submission rejection
+## Common reasons for submission rejection
 
 FORTHCOMING

@@ -6,27 +6,37 @@ A: [Read this](help.md)
 
 Q: Where will course communication take place?
 
-A: [On the course matrix server](matrix.md)
+Q: How do I connect to the course Matrix server?
+
+A: [Read about connecting to the Matrix server here](matrix.md)
 
 Q: How do the course login credentials work?
 
+Q: How can I reset my password?
+
 A: [Read about it here](credentials.md)
-
-Q: How do I connect to the course matrix server?
-
-A: [Follow these simple steps](matrix.md)
 
 Q: How do assignment due dates work?
 
-A: [The three part process is explained here](duedates.md)
+Q: What happens if I submit after the deadline?
 
-Q: How do I submit assginments
+A: [The three part assignment submission process is explained here along with due date policies](duedates.md)
+
+Q: How do I submit assignments?
 
 A: [Read the submission guidelines](submitting.md)
 
 Q: How do I structure my commits to prepare them for submission?
 
+Q: How do I locally test that my patches apply?
+
+Q: How do I check for whitespace errors and fix them
+
 A: [Check out the commit guidelines](commits.md)
+
+Q: How to I generate patchsets correctly formatted for submission?
+
+A: [Read about it here](patchsets.md)
 
 Q: How do I know if my assignment is accepted?
 
@@ -36,61 +46,43 @@ Q: Why was my submission rejected?
 
 A: [Here are common reasons why that can happen](rejection.md)
 
-Q: What hapepns if I submit after the deadline?
-
-A: [You recieve a zero for the assignment](duedates.md)
-
-Q: How does the oopsie work?
+Q: How does the Oopsie work?
 
 A: [Read all about the oopsie here](oopsie.md)
 
-Q: How do I locally test that my patches apply?
-
-A: [We discuss this in the commit guidelines](commits.md)
-
-Q: How do I learn git?
-
-A: [Here's a very comprehensive guide](https://git-scm.com/book/en/v2) although we expect some familiarity as a pre-requisite.
-
-Q: What text editor or IDE do you reccomend?
-
-e: Whichever one lets you write code
-
-Q: How can I reset my password?
-
-A: [Reach out to an instructor](credentials.md)
-
-Q: How do I check for whitespace errors and fix them
-
-A: [We discuss this in the commit guidelines](commits.md)
+Q: What are patches?
 
 Q: What is the DCO and what do I need it for?
 
 A: [We disccuss this in the patch guidelines](patches.md)
 
-Q: What is a cover letter and what content should go in on?
+Q: What is a cover letter and what content should go in one?
 
 A: [If you can believe it, we have a whole page on this](coverletters.md)
 
+Q: How do I learn git?
+
+A: [Here's a very comprehensive guide](https://git-scm.com/book/en/v2) although we expect some familiarity as a pre-requisite.
+
+Q: What text editor or IDE do you reccommend?
+
+A: Whichever one lets you write code
+
 Q: How do I configure and use `mutt`?
 
-A: FORTHCOMING
+A: [Read about it here](mutt.md)
 
 Q: What is a container and what is podman?
 
-A: FORTHCOMING
+A: [Here's a page on this](containers.md)
 
 Q: What is singularity?
 
 A: [Underground Software's novel open source course infrastructure system and patchset-based Learning Management System, created because Canvas et al. are bloat](https://github.com/underground-software/singularity)
 
-Q: What is open source software?
-
-A: FORTHCOMING
-
 Q: Why do we need to submit our homework as a patchset?
 
-A: FORTHCOMING 
+A: [To learn the workflow of upstream Linux kernel development](https://docs.kernel.org/process/submitting-patches.html)
 
 Q: Can I resubmit my homework before the deadline and how many times can I do it?
 

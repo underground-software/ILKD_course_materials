@@ -25,7 +25,9 @@ the easier it will be to help you.
 
 * What you were doing when the error occurred and what steps are needed for someone to reproduce it
 
-* Any input or output remotely relevant to the error, include as applicable all of the following:
+* Any input or output remotely relevant to the error
+
+* Include as applicable all of the following:
 
     * The command you ran and the output
 
@@ -33,11 +35,11 @@ the easier it will be to help you.
 
     * Any error messages
 
-    * Any dmesg or system log messages that seem relevant to the error
+    * Any `dmesg` or system log messages that seem relevant to the error
 
 * Any references or resources you consulted during your troubleshooting,
-e.g. manpages, websites, repositories, documentation
+such as man pages, websites, repositories, or documentation
 
-* What you tried to do to fix your problem
+* What you have tried so far to fix your problem
 
-* Your best educated guess(es) as to what's wrong
+* Your best educated guess(es) as to what is wrong
