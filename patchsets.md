@@ -4,9 +4,9 @@ The specific assignment document will specify which files to edit, and how many 
 you should be making which will inform the overall structure of your patchset, but every
 patchset in this class must follow these general guidelines:
 
-0. Each [commit](commits.md) gets its own [patch](patches.md) with a title and body
+* Each [commit](commits.md) gets its own [patch](patches.md) with a title and body
 
-0. The patch series is introduced with one additional patch, the [cover letter](coverletters.md)
+* The patch series is introduced with one additional patch, the [cover letter](coverletters.md)
 
 Fortunately, git format-patch can generate the appropriate files for you:
 
@@ -27,16 +27,18 @@ initial submissison patchsets, but not when generating the final submission patc
 
 All of the patches must follow the
 [patch guidelines](patches.md).
-Patches generated from a commit should follow the
+Commits, from which the patches are generated, should follow the
 [commit guidelines](commits.md)
 and the cover letter must follow the
 [cover letter guidelines](coverletters.md)
 
 You will receive an automatic zero on the assignment if any of the patches
-in your patchset are corrupt. This shouldn't be possible if you generate
-your patches with `git format-patch`, but if you edit the files manually
-they might get corrupted. You have been warned! The correct way to edit
-the patches is to edit the underlying commits and then regenerate the patches.
+in your patchset are corrupt. A patch is considered corrupt if it does not apply.
+
+Always test to see if your generated patchset applies cleanly before submission.
+Generating corrupt patches shouldn't be possible if you use `git format-patch`, but
+if you edit the files manually they might get corrupted. You have been warned!
+The correct way to edit patches is to edit the underlying commits and then regenerate the patches.
 
 Note that version numbers are maintained between RFC and non-RFC patchsets--in the best case,
 your RFC would be v1 and your final submission would be v2.
