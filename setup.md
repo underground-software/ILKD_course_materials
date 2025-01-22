@@ -72,7 +72,7 @@ about yourself and the output of `uname -a`
 
 0. Get into the container
 
-        podman run -it kdlp_container /bin/bash
+        podman run -it kdlp_container
 
 0. Navigate to your home directory
 
