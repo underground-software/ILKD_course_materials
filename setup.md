@@ -36,11 +36,15 @@ about yourself and the output of `uname -a`
 
     * Windows: from the above link, select `Podman CLI for Windows` from the `Download` dropdown menu.
 
-        * FIXME: better instructions? I already have WSL set up, I don't know how things differ with a new WSL install.
-
         * Select WSLv2 as your virtualization provider
 
         * Check the `Install WSLv2 if not present` box
+
+        * You will also need to create a `.ssh` folder in your User directory if it doesn't already exist
+
+            * Open the file explorer and navigate to `C:\Users\$YOUR_WINDOWS_USERNAME`
+
+            * Add a new folder and name it `.ssh`
 
     * MacOS: from the above link, select `Podman CLI for MacOS` from the `Download` dropdown menu.
 
