@@ -67,82 +67,82 @@ about yourself and the output of `uname -a`
         podman machine init
         podman machine start
 
-0. Build your container using the Containerfile we serve you: FIXME: validate these
+0. Build your container using the Containerfile we serve you:
 
     Linux/MacOS: `sh -c 'read -rp "username: " username && curl -u $username https://spring2025-utsa.kdlp.underground.software/Containerfile | podman build -t kdlp_container -'`
 
     Windows: `cmd /v /c "set /p "username=username: " && curl -u !username! https://spring2025-utsa.kdlp.underground.software/Containerfile | podman build -t kdlp_container -"`
 
+0. Create a podman volume for persistent storage
+
+        podman volume create kdlp_volume
 
 0. Get into the container
 
-        podman run -it kdlp_container
+        podman run -it --rm --hostname kdlp --name kdlp -v kdlp_volume:/home kdlp_container
 
-0. Navigate to your home directory
+0. Clone the course repository
 
-        cd
+        git clone https://spring2025-utsa.kdlp.underground.software/cgit/submissions
 
-0. Clone the course git repo
+0. Create a directory in the repo with your username
 
-        git clone https://spring2025-utsa.kdlp.underground.software/cgit/ILKD_Submissions/
-        FIXME:? course git repo link?
-
-0. Go into the course repo directory, and create a directory in the repo where `$USERNAME` is
-the username you use to log into the course website.
-FIXME: is this the way ILKD_Submissions is set up? I forget. 
-
-        cd ILKD_Submissions
+        cd submissions
         mkdir $USERNAME
         cd $USERNAME
 
 0. Add a file named setup.txt to this folder containing an introduction about yourself.
-FIXME: should copy this from either the ILKD_submissions repo or `wget spring2025-utsa.kdlp.underground.software/assignment_materials/setup/setup.txt`.
-The content can be whatever you want, whether it be why you are taking this class, your favorite ice cream flavor, or a fun fact about yourself.
-Use whichever text editor you prefer. `nano` has keybindings that should be familiar to most people, however we include `vim` in the container for advanced users.
 
-        vim setup.txt # or: nano setup.txt
+    The content can be whatever you want, whether it be why you are taking this class,
+    your favorite ice cream flavor, or a fun fact about yourself.
+    Use whichever text editor you prefer.
+    `nano` has keybindings that should be familiar to most people,
+    however we include `vim` in the container for advanced users.
+
+        nano setup.txt # or: vim setup.txt
 
 0. Save and exit your text editor
-
-0. Append a line with information about the container environment you set up to the end of the file.
-
-        uname -a >> setup.txt
 
 0. Make a commit out of your changes
 
     By default, git will not be tracking changes to newly created files.
-    Add your file to the list that git is tracking with `git add setup.txt`, then make a commit to save this version of the repository
-    so it can be shared with `git commit -s`. Note that the -s flag makes git include the "Signed-off-by:" or DCO line for you automatically.
+    Add your file to the list that git is tracking with `git add setup.txt`,
+    then make a commit to save this version of the repository
+    so it can be shared with `git commit -s`.
+    Note that the -s flag makes git include the "Signed-off-by:" or DCO line for you automatically.
     See our page on [patches](patches.md) for more information on the DCO.
 
     Git will then open an instance of your preferred text editor to let you input a message for the commit. Put a title containing a
     short summary of what you did on the first line, e.g. `setup: add introduction for Linus Torvalds`. Press enter twice, and then write a more
     detailed explanation that will act as the body of the commit.
 
-    There should already be a "Signed-off-by:" line for your account at the bottom. If not, add one, then save your changes and exit the editor to finish the commit.
+    There should already be a "Signed-off-by:" line for your account at the bottom.
+    If not, add one, then save your changes and exit the editor to finish the commit.
 
-    Check to make sure you see the commit and it looks good by running `git log -p`. Your new commit should be the top most one, and you should see the title,
+    Check to make sure you see the commit and it looks good by running `git log -p`.
+    Your new commit should be the top most one, and you should see the title,
     message, DCO, and difference view containing the changes.
 
-    If there is more output than can fit on one screen, git will open a scrolling view that you can maneuver up and down within using the arrow keys. Press q to go back to the terminal.
+    If there is more output than can fit on one screen, git will open a scrolling view that you
+    can maneuver up and down within using the arrow keys. Press q to go back to the terminal.
 
-0. Navigate out of the ILKD_Submissions directory
+0. Go home
+
+    cd
 
 0. Clone the v6.13 Linux kernel release from git.kernel.org. It's recommended that you
 set `--depth=1` to minimize the download size.
-FIXME: version?
 
         git clone --depth=1 --branch v6.13 https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
 
-0. Copy the provided
-[`init.config`](assignment_materials/setup/init.config)
 file and
 [`init.s`](assignment_materials/setup/init.s)
 init program into the `linux` dir
 
         cp init.config init.s linux/
 
-0. Change the current directory to the kernel tree with
+0. Download our privided
+[`init.config`](assignment_materials/setup/init.config)
 
         cd linux
 
