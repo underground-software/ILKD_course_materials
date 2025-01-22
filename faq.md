@@ -88,6 +88,10 @@ Q: Can I resubmit my homework before the deadline and how many times can I do it
 
 A: [It's all all you can resubmit buffet](resubmitting.md)
 
+Q: Which version of the upstream Linux kernel will this course operate on?
+
+A: v6.13
+
 Q. How can I get extra credit, and possibly cash?
 
 A: [Contribute to the course materials and infrastructure](contributing.md)

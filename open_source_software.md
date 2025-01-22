@@ -69,7 +69,7 @@ Your colleague's tests will pass when run against your implementation.
 0. Using the now thoroughly reviewed spec, implement the character device it describes
 
 	*  Use the kernel's
-[miscdevice API](https://www.kernel.org/doc/html/v6.11/driver-api/misc_devices.html)
+[miscdevice API](https://www.kernel.org/doc/html/v6.13/driver-api/misc_devices.html)
 to register and de-register your character device
 
         * This is standard practice for simple kernel drivers implemented as character devices

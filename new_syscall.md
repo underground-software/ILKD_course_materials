@@ -18,7 +18,7 @@ Add a new system call to the kernel
 
 #### What to submit:
 
-* Patch 1 adds `username/new_syscall/syscall.patch`, which patches the v6.11 kernel code to implement your system call
+* Patch 1 adds `username/new_syscall/syscall.patch`, which patches the v6.13 kernel code to implement your system call
 
     * This patch adds the patch file you generated from the kernel repo *as a .patch file* to the course submissions repo
 

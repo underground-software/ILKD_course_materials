@@ -113,9 +113,9 @@ that it will create in `/proc`
     * The makefile's `clean` target must remove the module build artifacts and should return success even when no artifacts exist to be deleted
 
     * The kernel code in
-[`fs/proc/cmdline.c`](https://elixir.bootlin.com/linux/v6.11/source/fs/proc/cmdline.c)
+[`fs/proc/cmdline.c`](https://elixir.bootlin.com/linux/v6.13/source/fs/proc/cmdline.c)
     and
-[`kernel/configs.c`](https://elixir.bootlin.com/linux/v6.11/source/kernel/configs.c)
+[`kernel/configs.c`](https://elixir.bootlin.com/linux/v6.13/source/kernel/configs.c)
     contain examples that create simple `/proc` entries
     that providing access read-only data
 
