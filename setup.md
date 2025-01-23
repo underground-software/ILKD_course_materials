@@ -93,11 +93,11 @@ patch submission process we'll be using.
 
         git init /home/$USERNAME/submissions
 
-0. Create a directory in the repo with your username
+0. Create the `$USERNAME/setup` directory and subdirectory
 
         cd /home/$USERNAME/submissions
-        mkdir $USERNAME
-        cd $USERNAME
+        mkdir -p $USERNAME/setup
+        cd $USERNAME/setup
 
 0. Add a file named setup.txt to this folder containing an introduction about yourself.
 
@@ -202,13 +202,14 @@ For example, `cat localversion` might return
 
 0. Re-run `qemu` using shell redirection to capture the output in the file you will submit as patch 2
 
-        qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -net none -kernel arch/riscv/boot/Image -initrd rootfs.cpio > /home/$USERNAME/submissions/$USERNAME/setup/qemu.txt
+        qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -net none -kernel arch/riscv/boot/Image -initrd ../rootfs.cpio > /home/$USERNAME/submissions/$USERNAME/setup/qemu.txt
 
     Nothing will be printed when you do this correctly, howver you must exit qemu as before with `Ctrl-a` and then `x`
 
 0. Create another commit containing just the new `$USERNAME/setup/qemu.txt` file
 
-        git add /home/$USERNAME/submissions/$USERNAME/setup/qemu.txt
+        cd /home/$USERNAME/submissions
+        git add $USERNAME/setup/qemu.txt
         git commit -s
 
 0. Next, you'll want to create a patch series, also known as a [patchset](patchsets.md), with a [cover letter](coverletters.md) out of your [commits](commits.md).
