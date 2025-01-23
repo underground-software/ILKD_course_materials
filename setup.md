@@ -27,7 +27,7 @@ patch submission process we'll be using.
 
     * The first line of this file contains your new version string described below
 
-    * The last line of this file is "QEMU: Terminated"
+    * The last line of this file is "reboot: Power down"
 
 * Don't forget a cover letter
 
@@ -190,17 +190,9 @@ For example, `cat localversion` might return
 
     At the top of the qemu output you will see the linux kernel version, along with the custom version string you set before in `localversion`.
 
-0. To exit qemu, press `Ctrl-a`, then press `x`
-
-    * You will see the text "QEMU: Terminated" printed to the terminal
-
-    * You will now find yourself back in the container shell
-
 0. Re-run `qemu` using shell redirection to capture the output in the file you will submit as patch 2
 
         qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -net none -kernel arch/riscv/boot/Image -initrd ../rootfs.cpio > ~/submissions/$USER/setup/qemu.txt
-
-    Nothing will be printed when you do this correctly, howver you must exit qemu as before with `Ctrl-a` and then `x`
 
 0. Create another commit containing just the new `$USER/setup/qemu.txt` file
 
