@@ -21,10 +21,13 @@ patch submission process we'll be using.
 
 #### What to submit:
 
-* Patch 1 adds `username/setup/setup.txt` which contains a brief introduction
-about yourself and the output of `uname -a`
+* Patch 1 adds `$USERNAME/setup/setup.txt` which contains a brief introduction about yourself
 
-* Patch 2 adds the output of your qemu vm, which should contain your new version string. FIXME: settle on what proof will look like
+* Patch 2 adds `$USERNAMAE/setup/qemu.txt` which contains the output of your qemu vm booting your new kernel
+
+    * The first line of this file contains your new version string described below
+
+    * The last line of this file is "QEMU: Terminated"
 
 * Don't forget a cover letter
 
@@ -81,13 +84,14 @@ about yourself and the output of `uname -a`
 
         podman run -it --rm --hostname kdlp --name kdlp -v kdlp_volume:/home kdlp_container
 
-0. Clone the course repository
 
-        git clone https://spring2025-utsa.kdlp.underground.software/cgit/submissions
+0. Create a new repository for submissions
+
+        git init /home/$USERNAME/submissions
 
 0. Create a directory in the repo with your username
 
-        cd submissions
+        cd /home/$USERNAME/submissions
         mkdir $USERNAME
         cd $USERNAME
 
@@ -102,6 +106,11 @@ about yourself and the output of `uname -a`
         nano setup.txt # or: vim setup.txt
 
 0. Save and exit your text editor
+
+0. Modify the files `/home/$USERNAME/.gitconfig` and `/home/$USERNAME/.muttrc`
+
+Replace "Your Name Here" with your actual full name.
+If you don't do this you will lose points for not following the directions 😉
 
 0. Make a commit out of your changes
 
@@ -140,7 +149,6 @@ set `--depth=1` to minimize the download size.
 file and
 [`init.s`](assignment_materials/setup/init.s)
 init program into the your home directory
-FIXME: init.S or init.s, make sure URL is good
 
         wget spring2025-utsa.kdlp.underground.software/assignment_materials/setup/init.s
         wget spring2025-utsa.kdlp.underground.software/assignment_materials/setup/init.config
@@ -180,18 +188,24 @@ For example, `cat localversion` might return
 
         qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -net none -kernel arch/riscv/boot/Image -initrd ../rootfs.cpio
 
+    At the top of the qemu output you will see the linux kernel version, along with the custom version string you set before in `localversion`.
+
 0. To exit qemu, press `Ctrl-a`, then press `x`
-FIXME: should the vm shutdown properly at this point?
 
-0. At the top of the qemu output you will see the linux kernel version, along with the custom version string you set before in `localversion`.
-FIXME: copy all of the output? Copy some of the output? Run vm again but redirect output to append to the setup.txt file?
+    * You will see the text "QEMU: Terminated" printed to the terminal
 
-0. Navigate back to your `$USERNAME` directory
+    * You will now find yourself back in the container shell
 
-0. Create another commit with the new changes to your `setup.txt`. You can either manually add the `setup.txt` changes with `git add setup.txt`, or use the
-`-a` flag with `git commit` to automatically add all changes to tracked files to the current commit.
+0. Re-run `qemu` using shell redirection to capture the output in the file you will submit as patch 2
 
-        git commit -as
+        qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -net none -kernel arch/riscv/boot/Image -initrd rootfs.cpio > /home/$USERNAME/submissions/$USERNAME/setup/qemu.txt
+
+    Nothing will be printed when you do this correctly, howver you must exit qemu as before with `Ctrl-a` and then `x`
+
+0. Create another commit containing just the new `$USERNAME/setup/qemu.txt` file
+
+        git add /home/$USERNAME/submissions/$USERNAME/setup/qemu.txt
+        git commit -s
 
 0. Next, you'll want to create a patch series, also known as a [patchset](patchsets.md), with a [cover letter](coverletters.md) out of your [commits](commits.md).
 To do this, run `git format-patch -2 --cover-letter -v1 --rfc`
