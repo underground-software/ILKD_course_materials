@@ -80,6 +80,8 @@ patch submission process we'll be using.
 
         cmd /v /c "set /p "username=username: " && curl -u !username! https://spring2025-utsa.kdlp.underground.software/Containerfile | podman build -t kdlp_container -"
 
+    If you want `vim` to be your default editor in your container, include the query parameter `?vim=yes` at the end of the above URL.
+
 0. Create a podman volume for persistent storage
 
         podman volume create kdlp_volume
