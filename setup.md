@@ -135,14 +135,26 @@ set `--depth=1` to minimize the download size.
 
         git clone --depth=1 --branch v6.13 https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
 
+0. Download our provided
+[`init.config`](assignment_materials/setup/init.config)
 file and
 [`init.s`](assignment_materials/setup/init.s)
-init program into the `linux` dir
+init program into the your home directory
+FIXME: init.S or init.s, make sure URL is good
 
-        cp init.config init.s linux/
+        wget spring2025-utsa.kdlp.underground.software/assignment_materials/setup/init.s
+        wget spring2025-utsa.kdlp.underground.software/assignment_materials/setup/init.config
 
-0. Download our privided
-[`init.config`](assignment_materials/setup/init.config)
+0. Make a directory called `rootfs` and compile the init program, outputting to this rootfs directory
+
+        mkdir rootfs
+        riscv64-linux-gnu-gcc -pie -ffreestanding -nostdlib init.s -static -march=rv64i -mabi=lp64 -shared -o rootfs/init
+
+0. Create a root filesystem
+
+        cd rootfs && find . | cpio -co > ../rootfs.cpio && cd ..
+
+0. Enter the `linux` directory
 
         cd linux
 
@@ -158,24 +170,15 @@ For example, `cat localversion` might return
 
 0. Make a complete config from the provided config file
 
-        ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- make KCONFIG_ALLCONFIG=init.config allnoconfig
+        ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- make KCONFIG_ALLCONFIG=../init.config allnoconfig
 
 0. Build the kernel
 
         ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- make -j $(nproc)
 
-0. Build the init program from the provided assembly source and place the binary output in a directory that will be used as the initial root filesystem for the virtual machine
-
-        mkdir rootfs
-        riscv64-linux-gnu-gcc -pie -ffreestanding -nostdlib init.s -static -march=rv64i -mabi=lp64 -shared -o rootfs/init
-
-0. Create a root filesystem
-
-        cd rootfs && find . | cpio -co > ../rootfs.cpio && cd ..
-
 0. Boot!
 
-        qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -net none -kernel arch/riscv/boot/Image -initrd rootfs.cpio
+        qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -net none -kernel arch/riscv/boot/Image -initrd ../rootfs.cpio
 
 0. To exit qemu, press `Ctrl-a`, then press `x`
 FIXME: should the vm shutdown properly at this point?
