@@ -21,9 +21,9 @@ patch submission process we'll be using.
 
 #### What to submit:
 
-* Patch 1 adds `$USERNAME/setup/setup.txt` which contains a brief introduction about yourself
+* Patch 1 adds `$USER/setup/setup.txt` which contains a brief introduction about yourself
 
-* Patch 2 adds `$USERNAME/setup/qemu.txt` which contains the output of your qemu vm booting your new kernel
+* Patch 2 adds `$USER/setup/qemu.txt` which contains the output of your qemu vm booting your new kernel
 
     * The first line of this file contains your new version string described below
 
@@ -88,16 +88,15 @@ patch submission process we'll be using.
 
         podman run -it --rm --hostname kdlp --name kdlp -v kdlp_volume:/home kdlp_container
 
+0. Clone the submission repository
 
-0. Create a new repository for submissions
+        git clone https://spring2025-utsa.kdlp.underground.software/cgit/submissions
 
-        git init /home/$USERNAME/submissions
+0. Create the `$USER/setup` directory and subdirectory
 
-0. Create the `$USERNAME/setup` directory and subdirectory
-
-        cd /home/$USERNAME/submissions
-        mkdir -p $USERNAME/setup
-        cd $USERNAME/setup
+        cd submissions
+        mkdir -p $USER/setup
+        cd $USER/setup
 
 0. Add a file named setup.txt to this folder containing an introduction about yourself.
 
@@ -111,7 +110,7 @@ patch submission process we'll be using.
 
 0. Save and exit your text editor
 
-0. Modify the files `/home/$USERNAME/.gitconfig` and `/home/$USERNAME/.muttrc`
+0. Modify the files `/home/$USER/.gitconfig` and `/home/$USER/.muttrc`
 
     Replace "Your Name Here" with your actual full name.
     If you don't do this you will lose points for not following the directions 😉
@@ -202,14 +201,14 @@ For example, `cat localversion` might return
 
 0. Re-run `qemu` using shell redirection to capture the output in the file you will submit as patch 2
 
-        qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -net none -kernel arch/riscv/boot/Image -initrd ../rootfs.cpio > /home/$USERNAME/submissions/$USERNAME/setup/qemu.txt
+        qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -net none -kernel arch/riscv/boot/Image -initrd ../rootfs.cpio > /home/$USER/submissions/$USER/setup/qemu.txt
 
     Nothing will be printed when you do this correctly, howver you must exit qemu as before with `Ctrl-a` and then `x`
 
-0. Create another commit containing just the new `$USERNAME/setup/qemu.txt` file
+0. Create another commit containing just the new `$USER/setup/qemu.txt` file
 
-        cd /home/$USERNAME/submissions
-        git add $USERNAME/setup/qemu.txt
+        cd /home/$USER/submissions
+        git add $USER/setup/qemu.txt
         git commit -s
 
 0. Next, you'll want to create a patch series, also known as a [patchset](patchsets.md), with a [cover letter](coverletters.md) out of your [commits](commits.md).
