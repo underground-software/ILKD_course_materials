@@ -141,7 +141,7 @@ patch submission process we'll be using.
 
 0. Go home
 
-    cd
+        cd
 
 0. Clone the v6.13 Linux kernel release from git.kernel.org. It's recommended that you
 set `--depth=1` to minimize the download size.
