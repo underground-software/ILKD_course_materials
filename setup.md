@@ -198,13 +198,13 @@ For example, `cat localversion` might return
 
 0. Re-run `qemu` using shell redirection to capture the output in the file you will submit as patch 2
 
-        qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -net none -kernel arch/riscv/boot/Image -initrd ../rootfs.cpio > /home/$USER/submissions/$USER/setup/qemu.txt
+        qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -net none -kernel arch/riscv/boot/Image -initrd ../rootfs.cpio > ~/submissions/$USER/setup/qemu.txt
 
     Nothing will be printed when you do this correctly, howver you must exit qemu as before with `Ctrl-a` and then `x`
 
 0. Create another commit containing just the new `$USER/setup/qemu.txt` file
 
-        cd /home/$USER/submissions
+        cd ~/submissions
         git add $USER/setup/qemu.txt
         git commit -s
 
