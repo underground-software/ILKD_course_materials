@@ -23,7 +23,7 @@ patch submission process we'll be using.
 
 * Patch 1 adds `$USERNAME/setup/setup.txt` which contains a brief introduction about yourself
 
-* Patch 2 adds `$USERNAMAE/setup/qemu.txt` which contains the output of your qemu vm booting your new kernel
+* Patch 2 adds `$USERNAME/setup/qemu.txt` which contains the output of your qemu vm booting your new kernel
 
     * The first line of this file contains your new version string described below
 
@@ -72,9 +72,13 @@ patch submission process we'll be using.
 
 0. Build your container using the Containerfile we serve you:
 
-    Linux/MacOS: `sh -c 'read -rp "username: " username && curl -u $username https://spring2025-utsa.kdlp.underground.software/Containerfile | podman build -t kdlp_container -'`
+    Linux/MacOS:
 
-    Windows: `cmd /v /c "set /p "username=username: " && curl -u !username! https://spring2025-utsa.kdlp.underground.software/Containerfile | podman build -t kdlp_container -"`
+        sh -c 'read -rp "username: " username && curl -u $username https://spring2025-utsa.kdlp.underground.software/Containerfile | podman build -t kdlp_container -'
+
+    Windows:
+
+        cmd /v /c "set /p "username=username: " && curl -u !username! https://spring2025-utsa.kdlp.underground.software/Containerfile | podman build -t kdlp_container -"
 
 0. Create a podman volume for persistent storage
 
