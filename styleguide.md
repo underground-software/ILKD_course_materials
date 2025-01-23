@@ -58,4 +58,4 @@
 
   * Exception to previous rule: within command descriptions `<description>` should be preferred to describe parameters
 
-  * Ooopsie is a proper noun
+  * Oopsie is a proper noun

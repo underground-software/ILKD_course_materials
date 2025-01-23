@@ -38,7 +38,7 @@ in your patchset are corrupt. A patch is considered corrupt if it does not apply
 Always test to see if your generated patchset applies cleanly before submission.
 Generating corrupt patches shouldn't be possible if you use `git format-patch`, but
 if you edit the files manually they might get corrupted. You have been warned!
-The correct way to edit patches is to edit the underlying commits and then regenerate the patches.
+The correct way to edit patches is to edit the underlying commits and then regenerate the patchset.
 
 Note that version numbers are maintained between RFC and non-RFC patchsets--in the best case,
 your RFC would be v1 and your final submission would be v2.

@@ -48,7 +48,7 @@ A: [Here are common reasons why that can happen](rejection.md)
 
 Q: How does the Oopsie work?
 
-A: [Read all about the oopsie here](oopsie.md)
+A: [Read all about the Oopsie here](oopsie.md)
 
 Q: What are patches?
 

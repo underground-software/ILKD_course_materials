@@ -17,4 +17,4 @@ work is correct lest any defects in the submission negatively impact their final
 
 [Here's more information on assignment due dates](duedates.md).
 
-To exercise your oopsie, click the button on the [assignment dashboard](dashboard.md).
+To exercise your Oopsie, click the button on the [assignment dashboard](dashboard.md).
