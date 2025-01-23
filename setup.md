@@ -110,11 +110,6 @@ patch submission process we'll be using.
 
 0. Save and exit your text editor
 
-0. Modify the files `/home/$USER/.gitconfig` and `/home/$USER/.muttrc`
-
-    Replace "Your Name Here" with your actual full name.
-    If you don't do this you will lose points for not following the directions 😉
-
 0. Make a commit out of your changes
 
     By default, git will not be tracking changes to newly created files.
