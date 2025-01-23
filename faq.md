@@ -74,7 +74,7 @@ A: [Read about it here](mutt.md)
 
 Q: What is a container and what is podman?
 
-A: [Here's a page on this](containers.md)
+A: [The podman documentation will help you](https://docs.podman.io/en/latest/)
 
 Q: What is singularity?
 
