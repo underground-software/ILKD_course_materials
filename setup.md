@@ -113,8 +113,8 @@ patch submission process we'll be using.
 
 0. Modify the files `/home/$USERNAME/.gitconfig` and `/home/$USERNAME/.muttrc`
 
-Replace "Your Name Here" with your actual full name.
-If you don't do this you will lose points for not following the directions 😉
+    Replace "Your Name Here" with your actual full name.
+    If you don't do this you will lose points for not following the directions 😉
 
 0. Make a commit out of your changes
 
