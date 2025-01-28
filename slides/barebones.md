@@ -1,7 +1,9 @@
 ---
-theme: black
----
-
+<!--
+theme: default
+_backgroundColor: black
+_color: white
+-->
 ---
 
 # Barebones Linux
@@ -52,15 +54,15 @@ Core component of Linux that manages communication between hardware and software
 
 Responsible for:
 
-0. Resource management
+* Resource management
 
-0. Process control
+* Process control
 
-0. Device drivers
+* Device drivers
 
-0. Security
+* Security
 
-0. More!
+* More!
 
 ---
 
@@ -78,11 +80,13 @@ Could have over 4000 options enabled by default!
 
 What is the smallest config possible?
 
-0. Pros
+* Pros
 
-0. Cons
+* Cons
 
 ---
+
+# The Smallest Config
 
 ```
 # Allow turning off even more stuff
@@ -175,18 +179,24 @@ qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -net none -ke
 
 ---
 
+# A `gdbinit` file
+
 ```
-$ cat linux/gdbinit
 # disable confirmation prompts to save time (for kill/quit)
 set confirm off
-# automatically disaassemble the next line when stepping through code
+
+# automatically disassemble the next line when stepping through code
 set disassemble-next-line auto
+
 # set arch to RISC-V (64-bit variant)
 set architecture riscv:rv64
+
 # load the symbol table from the vmlinux file
 symbol-file vmlinux
+
 # load the vmlinux file for debugging
 file vmlinux
+
 # connect to the remote host at localhost on port 1234
 target remote localhost:1234
 ```
@@ -265,7 +275,7 @@ CONFIG_SERIAL_8250_CONSOLE=y
 
 Why?
 
-0. How does the kernel know to use this device?
+* How does the kernel know to use this device?
 
 ---
 
@@ -349,7 +359,7 @@ ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- make  menuconfig
 
 ---
 
-# Drop `-append
+# Drop `-append`
 
 ```
 qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -net none -kernel arch/riscv/boot/Image
@@ -406,7 +416,7 @@ Look for the function in the [source](https://elixir.bootlin.com/linux/v6.13/sou
 
 ---
 
-# V:: big Brain
+# V: Big Brain
 
 Use `addr2line` on address found in GDB output
 
@@ -483,43 +493,43 @@ do_filep_open()
 
 # Summary
 
-* The essential functionality of the Linux kernel is quite minimal
+- The essential functionality of the Linux kernel is quite minimal
 
 ---
 
 # Summary
 
-* Cross compiling the kernel can be relatively simple
+- Cross compiling the kernel can be relatively simple
 
 ---
 
 # Summary
 
-* The kernel is just another program that you can debug
+- The kernel is just another program that you can debug
 
 ---
 
 # Summary
 
-* Because the kernel is open source, you can read the complete source and documentation
+- Because the kernel is open source, you can read the complete source and documentation
 
 ---
 
 # Summary
 
-* GDB is a powerful and versatile tool with advanced features
+- GDB is a powerful and versatile tool with advanced features
 
 ---
 
 # Summary
 
-* The kernel is highly configurable and customizable
+- The kernel is highly configurable and customizable
 
 ---
 
 # Summary
 
-* There is no magic in the Linux kernel; just engineering
+- There is no magic in the Linux kernel; just engineering
 
 ---
 
