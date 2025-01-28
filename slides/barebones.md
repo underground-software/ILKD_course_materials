@@ -202,6 +202,10 @@ target remote localhost:1234
 ```
 ---
 
+# Relaunch the emulator
+
+Why does it hang?
+
 ```
 qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -net none -kernel arch/riscv/boot/Image -S -s
 ```
