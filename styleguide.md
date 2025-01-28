@@ -59,3 +59,5 @@
   * Exception to previous rule: within command descriptions `<description>` should be preferred to describe parameters
 
   * Oopsie is a proper noun
+
+  * Use makefile in prose and `Makefile` in filenames
