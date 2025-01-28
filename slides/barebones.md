@@ -1,24 +1,14 @@
-## Lecture 01: Tuesday, January 28 2025
+---
+theme: black
+---
 
-[Previous](/lectures/L00.md)
+---
 
-### Announcements
+# Barebones Linux
 
-0. Initial submission for the [setup](/setup.md) assignment is due today at midnight
+---
 
-    0. Peer review for setup due by Wednesday midnight
-
-    0. Mandatory final submission due by Thursday midnight
-
-0. We encourage you to turn your camera and on and use the microphone to participate
-
-### Review
-
-Welcome to the [Matrix](/matrix.md). If you have not joined yet please do so ASAP. This is not optional.
-
-Read through the [FAQ](/faq.md). This and the [homepage](/index.md) is what we covered in [L00](/lectures/L00.md).
-
-### Lecture overview
+# Lecture overview
 
 0. Why [setup](/setup.md)?
 
@@ -32,19 +22,67 @@ Read through the [FAQ](/faq.md). This and the [homepage](/index.md) is what we c
 
 0. Basic Debugging
 
-### Slides
+---
 
-[The Barebones Kernel](/slides/barebones.html)
+# Why setup
 
-### Notes
+* Understand how small the kernel can be
 
-Start from scratch
+* See how easy building the kernel can be
 
-#### The Barebones Kernel
+* Setup your development environment
+
+---
+
+# Refresher: What is the Linux Kernel?
+
+Linux vs Linux
+
+An ecosystem and a kernel
+
+---
+
+# Refresher: What is the Linux Kernel?
+
+Core component of Linux that manages communication between hardware and software.
+
+---
+
+# Refresher: What is the Linux Kernel?
+
+Responsible for:
+
+0. Resource management
+
+0. Process control
+
+0. Device drivers
+
+0. Security
+
+0. More!
+
+---
+
+# What is a config file?
+
+Could have over 4000 options enabled by default!
+
+---
+
+# Start from scratch
+
+---
+
+# The Barebones Kernel
 
 What is the smallest config possible?
 
-[silent.config](/demo_materials/silent.config)
+0. Pros
+
+0. Cons
+
+---
 
 ```
 # Allow turning off even more stuff
@@ -57,14 +95,16 @@ CONFIG_KERNEL_UNCOMPRESSED=y
 # Build a kernel to run in m-mode so we can avoid needing a bios
 CONFIG_RISCV_M_MODE=y
 ```
+---
 
-Build the config
+# Build the config
 
 ```
 ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- make KCONFIG_ALLCONFIG=no.config allnoconfig
 ```
+---
 
-Breakdown:
+# Command Breakdown
 
 * `ARCH=riscv`: specify non-host architecture to kernel build system ([Kbuild](https://docs.kernel.org/kbuild/kbuild.html))
 
@@ -76,13 +116,17 @@ Breakdown:
 
 * `allnoconfig`: the makefile target to generate a config with everything set to no unless specified in `no.config`
 
-Cross compile the kernel
+---
+
+# Cross compile the kernel
 
 ```
 ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- make -j $(nproc)
 ```
 
-Breakdown:
+---
+
+# Command Breakdown
 
 * `ARCH=riscv`: specify non-host architecture to kernel build system ([Kbuild](https://docs.kernel.org/kbuild/kbuild.html))
 
@@ -94,13 +138,17 @@ Breakdown:
 
 * No target is specified, therefore `make` falls back to the default target, i.e. build the kernel (and generate `arch/riscv/boot/Image`)
 
-Launch the emulator
+---
+
+# Launch the emulator
 
 ```
 qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -net none -kernel arch/riscv/boot/Image
 ```
 
-Breakdown:
+---
+
+# Command Breakdown
 
 * `qemu-system-riscv64`: invoke the RISC-V 64-bit emulator
 
@@ -116,9 +164,16 @@ Breakdown:
 
 * `-kernel arch/riscv/boot/Image`: assuming we invoke this within the kernel repo post-build, pass the resulting binary to QEMU
 
-#### GDB
+---
 
-How do we see what's going on?
+
+# How do we see what's going on?
+
+---
+
+# GDB
+
+---
 
 ```
 $ cat linux/gdbinit
@@ -135,49 +190,55 @@ file vmlinux
 # connect to the remote host at localhost on port 1234
 target remote localhost:1234
 ```
-
+---
 
 ```
 qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -net none -kernel arch/riscv/boot/Image -S -s
 ```
 
-Breakdown of new arguments:
+---
+
+# Breakdown of new arguments:
 
 * `-s`: enable debug socket on port 1234
 * `-S`: freeze the CPU and wait for continue from debugger before running any instructions
 
+---
 
-In a separate shell session
+# In a separate shell session
 
 ```
 gdb -x gdbinit
 ... c to continue
 ... Ctrl+C to send interrupt
 ... bt to backtrace
-#0  0x000000008012559c in udelay ()
-#1  0x000000008000133c in panic ()
-#2  0x0000000080127184 in kernel_init ()
-#3  0x000000008012b4d8 in ret_from_fork ()
+...................
 ... kill to stop the machine
-(back in the other terminal)
-qemu-system-riscv64: QEMU: Terminated via GDBstub
 ```
+---
 
-How do we make this more detailed? Where are the line numbers?
+# Puzzling...
 
-Enable debuginfo in config
+How do we make this more detailed?
+
+Where are the line numbers?
+
+---
+
+# Enable debuginfo in .config
+
 ```
 # Include debug symbols
 CONFIG_DEBUG_INFO_DWARF4=y
 ```
 
-#### Printk
+---
 
-Why did the kernel panic? 🤔
+# Why did the kernel panic? 🤔
 
-Enable some more options in the config
+---
 
-[noise.config](/demo_materials/noise.config)
+# Enable Printk & A Serial Console Device
 
 ```
 ... (trimmed)
@@ -194,31 +255,35 @@ CONFIG_SERIAL_8250=y
 CONFIG_SERIAL_8250_CONSOLE=y
 ```
 
-Rebuild config & kernel, then relaunch the emulator
-```
-ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- make KCONFIG_ALLCONFIG=noise.config allnoconfig
-ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- make -j $(nproc)
-qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -net none -kernel arch/riscv/boot/Image
-```
+---
 
-Silence... Why?
+# Run the new kernel!
 
-How does the kernel know to use this device?
+---
 
-(question for audience)
+# Silence...
 
+Why?
 
-Another QEMU argument: `-append`
+0. How does the kernel know to use this device?
+
+---
+
+# Another QEMU argument: `-append`
 
 What do you think this does?
 
-Kernel command line arguments:
+---
+
+# Kernel command line arguments
 
 ```
 earlycon=uart8250,mmio,0x10000000 console=uart8250,mmio,0x10000000
 ```
 
-Breakdown:
+---
+
+# Kernel command line arguments: Breakdown
 
 * `{earlycon,console}=`: specify information needed to print to a console early in the boot process and then during normal execution
 
@@ -230,29 +295,29 @@ Breakdown:
 
 [(console= vs earlycon= and friends)](https://docs.kernel.org/admin-guide/kernel-parameters.html)
 
+---
 
+# Let's run it!
 
-Let's run it!
-
-```
-$ qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -net none -kernel arch/riscv/boot/Image -append 'earlycon=uart8250,mmio,0x10000000 console=uart8250,mmio,0x10000000'
-Linux version 6.13.0 (joel@fedora) (riscv64-linux-gnu-gcc (GCC) 14.1.1 20240507 (Red Hat Cross 14.1.1-1), GNU ld version 2.41-1.fc40) #7 Fri Jan 24 12:08:42 EST 2025
-..... (trimmed)
-Run /sbin/init as init process
-Run /etc/init as init process
-Run /bin/init as init process
-Run /bin/sh as init process
-Kernel panic - not syncing: No working init found.  Try passing init= option to kernel. See Linux Documentation/admin-guide/init.rst for guidance.
----[ end Kernel panic - not syncing: No working init found.  Try passing init= option to kernel. See Linux Documentation/admin-guide/init.rst for guidance. ]---
-```
+---
 
 What is the [admin guide](https://docs.kernel.org/admin-guide/init.html)?
 
-#### The Device Tree
+---
 
-Can we do detect the device automatically?
+# The Device Tree
 
-Introducing the `menuconfig` makefile target of Kbuild.
+Can we detect the device automatically?
+
+---
+
+# Introducing: `menuconfig`
+
+A makefile target in Kbuild
+
+---
+
+# Enabling Device Tree for our serial device
 
 ```
 ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- make  menuconfig
@@ -264,40 +329,54 @@ ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- make  menuconfig
 ... press y to enable
 ```
 
-Can we search menuconfig this faster?
+---
 
-'/' to search: CONFIG_SERIAL_OF_PLATFORM, press 1
+# How can we find this option more quickly?
 
-Note that we see the above path, which is also manual navigation instructions
+---
 
+# This is how
 
-Config is already recompiled, so just build the kernel
-```
-ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- make -j $(nproc)
-```
+* '/' to search
 
-Now we can drop the `-append...` argument to QEMU
+* `CONFIG_SERIAL_OF_PLATFORM`
+
+* press 1
+
+* Save and exit
+
+* New config is ready for compilation
+
+---
+
+# Drop `-append
 
 ```
 qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -net none -kernel arch/riscv/boot/Image
 ..... (panic)
 ```
 
-Without menuconfig, you can use [this baseline config](/demo_materials/dt_noise.config) and pass it as above.
+---
 
-#### Debugging the Panic
+# Debugging the Panic
 
 Why are we panicing?
 
-Let's figure it out
+---
 
-First: brain dead
+# I: Brain Dead
 
 Give up and change majors
 
-Second: small brain
+---
+
+# II: Small Brain
 
 Grep for text "no working init found"
+
+How?
+
+---
 
 `grep -rnw -e <pattern>`
 
@@ -311,17 +390,23 @@ Grep for text "no working init found"
 
 * `-e`: specify pattern after this argument (optional if pattern is last argument)
 
-Third: Small-medium brain
+---
+
+# III: Small-medium brain
 
 `git grep`
 
 Optimized search using git's database
 
-Fourth: medium brain
+---
+
+# IV: Medium Brain
 
 Look for the function in the [source](https://elixir.bootlin.com/linux/v6.13/source/init/main.c#L1528)
 
-Fifth: big brain
+---
+
+# V:: big Brain
 
 Use `addr2line` on address found in GDB output
 
@@ -329,29 +414,37 @@ Use `addr2line` on address found in GDB output
 addr2line <address> -e vmlinux
 ```
 
-Sixth: Galaxy brain
+---
+# VI: Galaxy Brain
 
 Get good at GDB
 
-Run the kernel and interrupt it
+---
+
+# Run the kernel and interrupt it
 ```
 c
 ...Ctrl+c
 ```
 
-Do a backtrace and select a frame
+---
+
+# Do a backtrace and select a frame
 ```
 bt
 frame <n>
 ```
+---
 
-Disassemble the current function or list the source
+# Disassemble the current function or list the source
+
 ```
 disas
 list
 ```
+---
 
-Switch between various Text-user-interface formats
+# Switch between various Text-user-interface formats
 ```
 layout asm
 layout src
@@ -360,16 +453,25 @@ tui focus next
 tui disable
 ```
 
+---
 
-#### Init
+# Init
 
 What is `try_to_run_init_process("/etc/init")`?
 
-Why does this fail?
+---
 
-Note: kernel is optimized during build so some code is skipped or inlined
+# Why does this fail?
 
-Interesting functions to explore
+---
+
+# Note
+
+Kernel is optimized during build so some code is skipped or inlined
+
+---
+
+# Interesting functions to explore
 
 ```
 kernel_execve()
@@ -377,18 +479,48 @@ kernel_execve()
 do_filep_open()
 ```
 
-#### Summary
+---
+
+# Summary
 
 * The essential functionality of the Linux kernel is quite minimal
 
+---
+
+# Summary
+
 * Cross compiling the kernel can be relatively simple
 
-* GDB is a powerful and versatile tool with advanced features
+---
+
+# Summary
 
 * The kernel is just another program that you can debug
 
-* The kernel is highly configurable and customizable
+---
+
+# Summary
 
 * Because the kernel is open source, you can read the complete source and documentation
 
-* There is no magic in the Linux kernel, just engineering
+---
+
+# Summary
+
+* GDB is a powerful and versatile tool with advanced features
+
+---
+
+# Summary
+
+* The kernel is highly configurable and customizable
+
+---
+
+# Summary
+
+* There is no magic in the Linux kernel; just engineering
+
+---
+
+# END
