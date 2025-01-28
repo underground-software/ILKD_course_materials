@@ -1,5 +1,9 @@
 ## Style Guide
 
+### Title
+
+  * Each document's first line is a `## Title` so that radius can grab it for the page's HTML `<title>` tag
+
 ### Paragraphs
 
   * Correct grammar and punctuation
