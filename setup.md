@@ -242,3 +242,5 @@ your submission was received successfully. If instead, you see ` - ` in those fi
 your submission was not received.
 
 After submitting all later assignments, you can check the course dashboard to make sure your submission was successfully received.
+
+[Frequently Asked Questions](/faq.md)

@@ -1,4 +1,4 @@
-# Objectives:
+## Objectives:
 
 * Develop Linux kernel internals knowledge
 
