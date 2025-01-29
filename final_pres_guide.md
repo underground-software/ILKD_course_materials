@@ -85,4 +85,4 @@ and reflect on what you've learned in the course.
 
             - Do you have any advice for future students?
 
-[Policies & Procedures](/procedures.md)
+[Policies & Procedures](/faq/procedures.md)

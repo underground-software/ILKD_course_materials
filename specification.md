@@ -30,7 +30,7 @@ For [Contributing to Open Source Software](open_source_software.md), you will ra
 
 * Don't forget a cover letter
 
-* All email code patches are expected to pass `checkpatch.pl` as described in the [policies and procedures](/procedures.md)
+* All email code patches are expected to pass `checkpatch.pl` as described in the [policies and procedures](/faq/procedures.md)
 
 * Submit your patches to specification@COURSE_DOMAIN
 
@@ -128,4 +128,4 @@ so that the person implementing the module can understand your thinking
 but we do reserve the right to take points off if the tests
 are completely incoherent and prove impossible to work with
 
-[Policies & Procedures](/procedures.md)
+[Policies & Procedures](/faq/procedures.md)

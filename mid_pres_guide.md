@@ -66,4 +66,4 @@ You will create a short presentation about research into a topic of your choice 
 
     - Or suggest your own!
 
-[Policies & Procedures](/procedures.md)
+[Policies & Procedures](/faq/procedures.md)

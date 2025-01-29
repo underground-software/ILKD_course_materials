@@ -67,4 +67,4 @@ and a makefile `username/ctf/solution/Makefile` to build `solution.c` into an ex
 
         * The non-error return values from the system calls will not obey the rules specified in their manpages
 
-[Policies & Procedures](/procedures.md)
+[Policies & Procedures](/faq/procedures.md)

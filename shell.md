@@ -153,7 +153,7 @@ redirections from the `|`.
 
 * Add support for control flow operators (e.g. loops, conditionals, selection statements)
 
-[Policies & Procedures](/procedures.md)
+[Policies & Procedures](/faq/procedures.md)
 
 [^1]: This is because the glibc implementation of `getpwnam` will open a shared library
 with `dlopen` to try and find the specified user by other means if its search of

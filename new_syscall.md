@@ -184,4 +184,4 @@ This page could be useful: This page should be useful: https://elixir.bootlin.co
 
 Refer to the [Linux kernel documentation about adding system calls](https://www.kernel.org/doc/html/latest/process/adding-syscalls.html) for further guidance.
 
-[Frequently Asked Questions](/faq.md)
+[Frequently Asked Questions](/faq/faq.md)

@@ -110,4 +110,4 @@ userspace and kernelspace and document your observations.
 
 * `bpftrace` and other BPF tooling
 
-[Policies & Procedures](/procedures.md)
+[Policies & Procedures](/faq/procedures.md)

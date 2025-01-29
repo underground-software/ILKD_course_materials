@@ -130,4 +130,4 @@ that it will create in `/proc`
 
     * Don't overcomplicate things
 
-[Policies & Procedures](/procedures.md)
+[Policies & Procedures](/faq/procedures.md)

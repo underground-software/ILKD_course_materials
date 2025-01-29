@@ -93,4 +93,4 @@ to register and de-register your character device
 
 	* Your module added by the previous patch must pass these tests without further modification
 
-[Policies & Procedures](/procedures.md)
+[Policies & Procedures](/faq/procedures.md)

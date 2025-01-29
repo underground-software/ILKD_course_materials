@@ -119,7 +119,7 @@ patch submission process we'll be using.
     then make a commit to save this version of the repository
     so it can be shared with `git commit -s`.
     Note that the -s flag makes git include the "Signed-off-by:" or DCO line for you automatically.
-    See our page on [patches](patches.md) for more information on the DCO.
+    See our page on [patches](/faq/patches.md) for more information on the DCO.
 
     Git will then open an instance of your preferred text editor to let you input a message for the commit. Put a title containing a
     short summary of what you did on the first line, e.g. `setup: add introduction for Linus Torvalds`. Press enter twice, and then write a more
@@ -200,7 +200,7 @@ For example, `cat localversion` might return
         git add $USER/setup/qemu.txt
         git commit -s
 
-0. Next, you'll want to create a patch series, also known as a [patchset](patchsets.md), with a [cover letter](coverletters.md) out of your [commits](commits.md).
+0. Next, you'll want to create a patch series, also known as a [patchset](/faq/patchsets.md), with a [cover letter](/faq/coverletters.md) out of your [commits](/faq/commits.md).
 To do this, run `git format-patch -2 --cover-letter -v1 --rfc`
 
     * `-2` includes the most recent 2 commits
@@ -213,7 +213,7 @@ To do this, run `git format-patch -2 --cover-letter -v1 --rfc`
 
 0. The result of this command should be your directory containing three new `.patch` files, courtesy of git.
 You'll want to open the first of these, `v1-0000-cover-letter.patch`,
-in your text editor so that you can write your cover letter according to the [guidelines](coverletters.md).
+in your text editor so that you can write your cover letter according to the [guidelines](/faq/coverletters.md).
 Don't forget to add the `Signed-off-by` line at the end of the body.
 
 0. Once you've finished your cover letter, send your patches to the class mailing list.
