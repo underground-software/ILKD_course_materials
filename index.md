@@ -3,8 +3,8 @@
 | Week # | Class dates | Useful information |
 | -- | -- | -- |
 | 0 | 21/23 Jan | syllabus/policies/setup [L00](lectures/L00.md) |
-| 1 | 28/30 Jan | [setup due](setup.md) barebones Linux [L01](lectures/L01.md)|
-| 2 | 04/06 Feb | |
+| 1 | 28/30 Jan | [setup due](setup.md) barebones Linux [L01](lectures/L01.md) [L02](lectures/L02.md)|
+| 2 | 04/06 Feb | [new_syscall due](new_syscall.md)|
 | 3 | 11/13 Feb | |
 | 4 | 18/20 Feb | |
 | 5 | 25/27 Feb | |
