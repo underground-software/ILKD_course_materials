@@ -145,9 +145,9 @@ set `--depth=1` to minimize the download size.
         git clone --depth=1 --branch v6.13 https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
 
 0. Download our provided
-[`init.config`](assignment_materials/setup/init.config)
+[`init.config`](/assignment_materials/setup/init.config)
 file and
-[`init.s`](assignment_materials/setup/init.s)
+[`init.s`](/assignment_materials/setup/init.s)
 init program into the your home directory
 
         wget spring2025-utsa.kdlp.underground.software/assignment_materials/setup/init.s
