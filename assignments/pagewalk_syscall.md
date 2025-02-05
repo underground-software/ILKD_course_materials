@@ -53,7 +53,7 @@ physical addresses
 
     * The definition of the system call and appropriately numbered `SYSCALL_DEFINE` macro should be written in a new file `arch/riscv/mm/riscv_pagetable_walk.c`
 
-    * This new system call takes two arguments argument: a `void *` pointer that is the virtual memory address to locate in the page table and a `unsigned long __user *`
+    * This new system call takes two arguments: a `void *` pointer that is the virtual memory address to locate in the page table and a `unsigned long __user *`
     which is an array of 6 `unsigned long`s
 
         * This system call will walk the page table to try and locate a given pointer's corresponding page table entry (PTE)
