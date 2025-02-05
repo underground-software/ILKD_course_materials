@@ -50,6 +50,14 @@
 
   * USI should only be used internally and Underground Software or Underground Software Incorporated should be preferred in any public document
 
+### Links
+
+  * Use relative links to a file in the same directory
+
+  * Use absolute links in any other case
+
+  * Images and other static content should be stored in and loaded from kdlp.underground.software
+
 ### Other
 
   * Prefer "Matrix" over "matrix" when referring to the Matrix protocol
