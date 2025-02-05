@@ -77,17 +77,17 @@ physical addresses
                 * These instructions assume you are using the Sv32 virtual memory system, read the `satp` register yourself to determine which
                 virtual addressing mode your virtual machine is using and find the specification for that mode
 
-        * You will probably need the following new kernel functions
+        * You will probably need the following new kernel functions and macros
 
-            * phys_to_virt
+            * `phys_to_virt`
 
-            * csr_read
+            * `csr_read`
 
-            * CSR_SATP
+            * `CSR_SATP`
 
     * Because of the architecture-specific nature of this pagetable walk, this system call should be avialable only on RISC-V
 
-        * The process for adding an architecture-specific system call is different from the process you followed in the [new_syscall](/new_syscall.md) assignment
+        * The process for adding an architecture-specific system call is different from the process you followed in the [new_syscall](new_syscall.md) assignment
 
     * Add `riscv_pagetable_walk.o` to `obj-$(CONFIG_MMU)` in `arch/riscv/mm/Makefile`
 
@@ -97,15 +97,19 @@ physical addresses
 
         * The kernel provides a `__NR_arch_specific_syscall` macro
 
-            * See the [definition and a brief explanation here](https://elixir.bootlin.com/linux/v6.13.1/source/include/uapi/asm-generic/unistd.h#L628)
+            * See the [definition and a brief explanation here](https://elixir.bootlin.com/linux/v6.13/source/include/uapi/asm-generic/unistd.h#L628)
 
         * Define `__NR_riscv_pagetable_walk` in `tools/arch/riscv/include/uapi/asm/unistd.h`
 
-            * See the difinition of `__NR_riscv_flush_icache` in this file for guidance
+            * See the definition of `__NR_riscv_flush_icache` in this file for guidance
 
             * Assign your system call the number `__NR_arch_specific_syscall + 13`
 
-                * `__NR_arch_specific_syscall + 14` and `__NR_arch_specific_syscall + 15` are already taken by other RISC-V-specific sytem calls, so `+ 13` logically comes next
+                * `__NR_arch_specific_syscall + 14` and `__NR_arch_specific_syscall + 15` are already taken by other RISC-V-specific sytem calls
+
+                * There is a [limit of 16 architecture specific syscalls](https://elixir.bootlin.com/linux/v6.13/source/include/uapi/asm-generic/unistd.h#L625)
+
+                * Use `+ 13` which is available in riscv kernel v6.13
 
     * Add a table entry to `scripts/syscall.tbl`
 
@@ -133,7 +137,7 @@ physical addresses
 
         * Your program should extract the physical page number (PPN), and the dirty, accessed, global, user, execute, write, read, and valid flags
 
-    * Call your system call at least five times, where each call yields a unique combination of flags
+    * Call your system call at least five times where each call yields a unique combination of flags
 
         * You shouldn't have a hard time finding five different flag combinations by passing pointers to different kinds of data that exist in the address space of a normal C program
 
@@ -142,6 +146,8 @@ physical addresses
         * In your cover letter when discussing your approach to completing the assignment:
             
             * Document how you went about finding new combinations of flags
+
+            * Explain why each type of the data is market by its particular flags
 
     * Call the `reboot` system call
 

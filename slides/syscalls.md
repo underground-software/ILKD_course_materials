@@ -666,6 +666,8 @@ Return to assembly for another context switch
 
 1. [`mret`](https://elixir.bootlin.com/linux/v6.13/source/arch/riscv/kernel/entry.S#L277) gives up control to the hardware
 
+1. `sret` used in supervisor mode while `mret` used in machine mode
+
 ---
 
 # Kernel handles request: arm64 returns
