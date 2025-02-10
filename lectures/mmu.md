@@ -70,4 +70,14 @@ Working Demo:
   1. is there address protection baked into RISCV?
     1. when booting a qemu riscv, mmu=off option may be necessary in order to truly run without adress protection
     1. the `no address protection` message gets triggered regardless of whether the option is set
-  1. 
+  1. seems like when NOMMU, there is no address protection and a child process is able to modify the shared address!
+  1. now lets turn off the NOMMU
+  1. what do you think will happen?
+  1. yes, we get EFAULT
+  1. but where does it fault?
+  1. seems like MMU does indeed provide address protection
+  1. does the mmu cpu flag on QEMU make a difference?
+    1. if the flag is on with NOMMU kernel, behaviour doesn't change
+    1. if flag is on with MMU kernel, then it will hang, we will not even see an EFAULT
+1. now see the C version of init
+  1. easier to discern what is going on, command execution and debugging
