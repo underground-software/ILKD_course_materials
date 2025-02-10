@@ -61,3 +61,13 @@ Possible demos:
 1. nommu programs that touch each other
 
 1. busybox in MMU mode, now we have a userspace
+
+Working Demo:
+--------
+1. asm init program which spawns a child and waits for it to execute, then reboots
+  1. we want to see if the child can access and modify shared memory with NOMMU
+  1. with NOMMU enabled, show that there should not be any address protection by default.
+  1. is there address protection baked into RISCV?
+    1. when booting a qemu riscv, mmu=off option may be necessary in order to truly run without adress protection
+    1. the `no address protection` message gets triggered regardless of whether the option is set
+  1. 
