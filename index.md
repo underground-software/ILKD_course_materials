@@ -5,7 +5,7 @@
 | 0 | 21/23 Jan | syllabus/policies/setup [L00](/lectures/L00.md) |
 | 1 | 28/30 Jan | [setup due](/assignments/setup.md) barebones Linux [L01](/lectures/L01.md) [L02](/lectures/L02.md)|
 | 2 | 04/06 Feb | [new_syscall due](/assignments/new_syscall.md) syscalls [L03](/lectures/L03.md) [L04](/lectures/L04.md)|
-| 3 | 11/13 Feb | |
+| 3 | 11/13 Feb | [L05](/lectures/L05.md) |
 | 4 | 18/20 Feb | [page_walk due](/assignments/page_walk.md) |
 | 5 | 25/27 Feb | |
 | 6 | 04/06 Mar |
