@@ -79,7 +79,7 @@ and reflect on what you've learned in the course.
 
             - How will your approach differ if you did it again?
 
-        - Pick and assignment you excelled at:
+        - Pick an assignment you excelled at:
 
             - What made your work exceptional?
 
