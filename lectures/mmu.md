@@ -2,11 +2,20 @@
 
 Memory management
 
-Virtual memory, and memory separation (software/HW interaction)
+(maybe link OSTEP)
 
-Address space isolation
+What is memory management?
 
-Disuss namespaces
+Allocation, paging, phsyical, virtual
+
+## Virtual memory
+
+
+Start without any: this is NOMMU mode
+
+### Address space isolation
+
+discuss clone system call
 
 namespasce basic demo
 
@@ -17,7 +26,10 @@ CLONE_FS (Optional): Shares file system information.
 CLONE_FILES (Optional): Shares file descriptors.
 CLONE_SIGHAND (Optional): Shares signal handlers.
 
+Question: How is fork defined?
+
 fork definition:
+
 it's just clone lol
 
 2887 #ifdef __ARCH_WANT_SYS_FORK
@@ -36,19 +48,71 @@ it's just clone lol
 2900 }
 2901 #endif
 
+Disuss namespaces: isolated view of system resources
+
+Mount Namespace (mnt) – Isolates filesystem mount points.
+Process Namespace (pid) – Provides separate process ID trees.
+Network Namespace (net) – Gives processes their own networking stack.
+User Namespace (user) – Provides separate user and group IDs.
+UTS Namespace (uts) – Isolates hostname and domain name.
+IPC Namespace (ipc) – Isolates inter-process communication mechanisms.
+Cgroup Namespace (cgroup) – Provides separate views of control groups.
 
 address space isolation with NOMMU: not possible
 
+Page tables and the TLB
+
+Can we acheive address space isolation without the MMU? No
+
+Building the page tables
+
+Types of kernel kernel addresses: logical, virtual
+
+## Slob/Slab/Slub allocators
 
 memory allocation, deallocation,slub, and reclaim
 
-page reclaim :D
+## Paging, page reclaim, swap
+
+What's bigger: 10G of physical memory of 10G of virtual memory (joke)
+
+What's bigger: physical or virtual memory?
+
+Answer: virtual memory. Why?
+
+On 64 bit system each process had address space of size (1ULL << 63)!
+
+Therefore: need to swap out pages so phys mem doesn't get full
+
+
+What is swap?
+
+Demo: look at `free -mh`
+
+Move memory pages onto disk
+
+Least recently used (LRU) algorithm
+
+
+### OOM
+
+What happens when you run out of memory?
+
+Answer: out of memory killer is activated to kill a memory-hogging process
+
+Demo: look at mm/oom_kill.c
+
+### Page allocation: buddy system
+
+Pages allocation in power-of-two groups
+
+## Memory topology
 
 Topology and tracking physical and virtual memory
 
-NUMA
+### NUMA
 
-do
+## Summary
 
 Possible demos:
 --------
