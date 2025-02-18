@@ -1,8 +1,12 @@
-## Overview
+# Memory Management
+
+---
+
+# Overview
 
 What is memory management?
 
-1. Phsyical and virtual memory
+1. Physical and virtual memory
 
 1. Allocation
 
@@ -10,42 +14,39 @@ What is memory management?
 
 Just scratching the surface!
 
-## Virtual memory
+---
+
+# Virtual memory
 
 We start without any: this is NOMMU mode
 
-### Address space isolation
+---
+
+# Address space isolation
 
 Clone system call
 
-Demo: `man 2 clone`
+* Demo: `man 2 clone`
 
-Aside: See `posix_spawn(3)`
+* Aside: See `posix_spawn(3)`
 
-Question: How is fork defined?
+---
 
-A: it's just clone
+# Question
+
+How is fork defined?
+
+---
+
+# Answer
+
+It's just clone
 
 `kernel/fork.c`
-```
-2887 #ifdef __ARCH_WANT_SYS_FORK
-2888 SYSCALL_DEFINE0(fork)
-2889 {
-2890 #ifdef CONFIG_MMU
-2891         struct kernel_clone_args args = {
-2892                 .exit_signal = SIGCHLD,
-2893         };
-2894
-2895         return kernel_clone(&args);
-2896 #else
-2897         /* can not support in nommu mode */
-2898         return -EINVAL;
-2899 #endif
-2900 }
-2901 #endif
-```
 
-Namespace interlude
+---
+
+# Namespace interlude
 
 `clone(CLONE_VM)`
 
@@ -54,7 +55,11 @@ Namespace interlude
 1. `CLONE_FILES`: Shares file descriptors.
 1. `CLONE_SIGHAND`: Shares signal handlers.
 
-Discuss namespaces: isolated view of system resources
+---
+
+# Namespaces
+
+Isolated view of system resources
 
 * Mount Namespace (mnt) – Isolates filesystem mount points.
 * Process Namespace (pid) – Provides separate process ID trees.
@@ -64,7 +69,9 @@ Discuss namespaces: isolated view of system resources
 * IPC Namespace (ipc) – Isolates inter-process communication mechanisms.
 * Cgroup Namespace (cgroup) – Provides separate views of control groups.
 
-Demo: `unshare`
+---
+
+# Demo: `unshare`
 
 ```
 sudo unshare --pid --fork --mount-proc bash
@@ -76,6 +83,10 @@ sudo unshare --pid --fork --mount-proc bash
 
 `--mount-proc`: Mounts a new `/proc` filesystem for the new PID namespace.
 
+---
+
+# Demo: `unshare`
+
 Look at `ps auxf` inside and outside the new shell
 
 Find the external PID X of the new internal PID 1
@@ -83,17 +94,27 @@ Find the external PID X of the new internal PID 1
 Look at both of `sudo ls -l /proc/{$X,$$}/ns`
 
 
-### NOMMU demo
+---
 
-Q: Can we achieve address space isolation without the MMU?
+# Question
 
-A: No
+Can we achieve address space isolation without the MMU?
 
-#### What can a nommu do?
+---
 
-1. NOMMU lack of memory isolation demo
+# Answer
 
-#### Enabling the MMU:
+No
+
+---
+
+# What can a nommu do?
+
+Demo: NOMMU lack of memory isolation
+
+---
+
+# Enabling the MMU:
 
 1. Enable the MMU (disable RISCV_M_MODE, enable MMU in menuconfig)
 
@@ -101,7 +122,9 @@ A: No
 
 1. Successful segfault!
 
-Types of kernel addresses in MMU mode
+---
+
+# Types of kernel addresses in MMU mode
 
 Logical: fixed offset from physical memory
 
@@ -109,9 +132,11 @@ Logical: fixed offset from physical memory
 
 Virtual: has entry in page tables
 
-## Slob/Slab/Slub allocators
+---
 
-1. SLOB
+# Slab allocators
+
+SLOB
 
     * Simple list of blocks
 
@@ -119,7 +144,11 @@ Virtual: has entry in page tables
 
     * Uses global `slob_lock`
 
-1. SLAB
+---
+
+# Slab allocators
+
+SLAB
 
     * Newer, but not the best
 
@@ -127,7 +156,11 @@ Virtual: has entry in page tables
 
     * Improved performance via caching and per-cpu lists
 
-1. SLUB
+---
+
+# Slab allocators
+
+SLUB
 
     * fastest, newest
 
@@ -135,28 +168,53 @@ Virtual: has entry in page tables
 
     * Locks only when crossing CPU boundary
 
+---
+
+# Slab allocators
+
 Demo: `/proc/slabinfo`
 
 To set allocator: add `slab_allocator=sl{u,a,o}b` to kernel command line at boot
 
 Collectively, these are the "slab allocators" or "slab layer"
 
-## Paging, page reclaim, swap
+---
+
+# Paging, page reclaim, swap
 
 What weighs more: 10G of physical memory of 10G of virtual memory (joke)
 
+---
+
+# Paging, page reclaim, swap
+
 Technically: virtual memory requires pagetables so there is some overhead
+
+---
+
+# Paging, page reclaim, swap
 
 What's bigger: physical or virtual memory?
 
+---
+
+# Paging, page reclaim, swap
+
 Answer: virtual memory. Why?
 
-On 64 bit system each process had maximum address space of size 2^64!
+---
 
-Therefore: we need to swap out pages so physical memory doesn't get full
+# Paging, page reclaim, swap
 
+On 64 bit system each process had maximum theoretical address space of size 2^64!
 
-### What is page reclaim
+* Most real systems only use 48 bits, some up to 57
+
+* Therefore: we need to swap out pages so physical memory doesn't get full
+
+---
+
+# What is page reclaim
 
 When kernel is under memory pressure:
 
@@ -166,7 +224,9 @@ When kernel is under memory pressure:
 
 * Swap out **Anonymous** pages
 
-### What is swap?
+---
+
+# What is swap?
 
 Move memory pages into swap space
 
@@ -178,34 +238,72 @@ Can be a swap file, partition, or compressed RAM
 
 Uses least recently used (LRU) algorithm
 
-### OOM
+---
+
+# OOM: Out of Memory
 
 Q: What happens when you run out of memory?
 
-Answer: out of memory killer is activated to kill a memory-hogging process
+---
+
+# OOM: Out of Memory
+
+A: The out of memory killer is activated to kill a memory-hogging process
 
 Demo: look at `mm/oom_kill.c`
 
-### Page allocation: buddy system
+---
+
+# Page allocation: buddy system
 
 Pages allocation in power-of-two groups
 
-Use `get_free_pages()` API
+* Use `get_free_pages()` API
 
-You can go around the slab allocators
+* You can go around the slab allocators
 
-## Summary
+---
+
+# Summary
 
 * `fork()` is a mirage
 
+---
+
+# Summary
+
 * Virtual memory is not strictly required
+
+---
+
+# Summary
 
 * Virtual memory provides important protections
 
+---
+
+# Summary
+
 * The kernel contains multiple memory allocators
+
+---
+
+# Summary
 
 * The slab allocators rely on the page allocator on the backend
 
+---
+
+# Summary
+
 * There are many aspects to the kernel memory management system beyond this intro
 
+---
+
+# Summary
+
 * We are only scratching the surface
+
+---
+
+# END
