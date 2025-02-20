@@ -60,7 +60,7 @@ You will create a brief, pre-recorded presentation on research into a Linux kern
 
 * Why do some syscalls have a version ending in `at` (e.g. `open`, `fstat`, `rename`, `symlink`, etc)? What issue were they added to address?
 
-* What mechasnisms can be used in the kernel to do performance profiling and how?
+* What mechanisms can be used in the kernel to do performance profiling and how?
 
 * What role does the rust programming language play in the kernel?
 
