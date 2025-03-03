@@ -7,7 +7,7 @@
 | 2 | 04/06 Feb | [new_syscall due](/assignments/new_syscall.md) syscalls [L03](/lectures/L03.md) [L04](/lectures/L04.md)|
 | 3 | 11/13 Feb | syscall [L05](/lectures/L05.md) [L06](/lectures/L06.md) |
 | 4 | 18/20 Feb | [page_walk due](/assignments/page_walk.md) memory management [L07](/lectures/L07.md) [L08](/lectures/L08.md) |
-| 5 | 25/27 Feb | [midpoint proposal due Thurs](/assignments/midpoint.md) mm cont. [L09](/lectures/L09.md) |
+| 5 | 25/27 Feb | [midpoint proposal due Thurs](/assignments/midpoint.md) mm cont. [L09](/lectures/L09.md) [L10](/lectures/L10.md) |
 | 6 | 04/06 Mar | [shell due](/assignments/shell.md) |
 | 7 | 11/13 Mar | SPRING BREAK: no class |
 | 8 | 18/19 Mar | [midpoint presentation due Thurs](/assignments/midpoint.md) |
