@@ -20,9 +20,9 @@ Follow the outline of the open syscall
 
 Thoughts?
 
-- Get a handle to an `inode`
-- Create entry in the file descriptor table
-- Invoke underlying filesystem-specific code
+* Get a handle to an `inode`
+* Create entry in the file descriptor table
+* Invoke underlying filesystem-specific code
 
 ---
 
