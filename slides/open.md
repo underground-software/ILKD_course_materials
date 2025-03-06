@@ -231,13 +231,13 @@ Important enough for [fundamental changes to pathname lookup](https://elixir.boo
 
 # Putting the file in the table
 
-[`fd_install()`](https://elixir.bootlin.com/linux/v6.13/source/fs/file.c#L602)
+[`fd_install()`](https://elixir.bootlin.com/linux/v6.13/source/fs/file.c#L631)
 
 ---
 
 # demo
 
-`sudo bpftrace -e 'k:kkey_open { printf("%s\n", kstack); }'`
+`sudo bpftrace -e 'k:do_dentry_open /comm=="kdlp_hello"/ { printf("%s\n", kstack); }'`
 
 ---
 

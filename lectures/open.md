@@ -176,11 +176,35 @@ Important enough for [fundamental changes to pathname lookup](https://elixir.boo
 
 ### Putting the file in the table
 
-[`fd_install()`](https://elixir.bootlin.com/linux/v6.13/source/fs/file.c#L602)
+[`fd_install()`](https://elixir.bootlin.com/linux/v6.13/source/fs/file.c#L631)
 
 ### demo
 
-`sudo bpftrace -e 'k:kkey_open { printf("%s\n", kstack); }'`
+`sudo bpftrace -e 'k:do_dentry_open /comm=="kdlp_hello"/ { printf("%s\n", kstack); }'`
+
+```c
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/syscall.h>
+#include <fcntl.h>
+#include <linux/openat2.h>
+#include <err.h>
+
+int main(void)
+{
+	struct open_how how = {
+		.flags = O_RDONLY,
+		.mode = 0,
+		.resolve = 0,
+	};
+	int fd = syscall(SYS_openat2, AT_FDCWD, "hello.txt", &how, sizeof how);
+	if (fd < 0)
+		err(1, "openat2 failed");
+
+	close(fd);
+	return 0;
+}
+```
 
 ### Summary
 
