@@ -13,7 +13,7 @@
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" lang="POSIX">
 <h1 id="learning-objective">Learning objective</h1>
-<p>Gain a broad overview of many aspects of the kenrel by understanding what's necessary to close a file descriptor</p>
+<p>Gain a broad overview of many aspects of the kernel by understanding what's necessary to close a file descriptor</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" lang="POSIX">
 <h1 id="overview">Overview</h1>
@@ -76,7 +76,7 @@
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-marpit-fragments="1" lang="POSIX">
 <h1 id="first-layer">First layer</h1>
-<h4 id="close_fd"><a href="https://elixir.bootlin.com/linux/v6.13/source/fs/file.c#L690"><code>close_fd()</code></a></h4>
+<h4 id="file_close_fd"><a href="https://elixir.bootlin.com/linux/v6.13/source/fs/file.c#L690"><code>file_close_fd()</code></a></h4>
 <ol>
 <li>
 <p>Use <code>int fd</code> arugment to index into FDT</p>
@@ -182,7 +182,7 @@
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" lang="POSIX">
 <h1 id="return-to-the-first-layer">Return to the first layer</h1>
-<h4 id="close_fd-1"><a href="https://elixir.bootlin.com/linux/v6.13/source/fs/file.c#L690"><code>close_fd()</code></a></h4>
+<h4 id="close_fd"><a href="https://elixir.bootlin.com/linux/v6.13/source/fs/file.c#L690"><code>close_fd()</code></a></h4>
 <ol>
 <li>
 <p>No file? Then <code>-EBADF</code></p>

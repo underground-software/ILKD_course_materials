@@ -4,7 +4,7 @@
 
 # Learning objective
 
-Gain a broad overview of many aspects of the kenrel by understanding what's necessary to close a file descriptor
+Gain a broad overview of many aspects of the kernel by understanding what's necessary to close a file descriptor
 
 ---
 
@@ -62,7 +62,7 @@ Verify with `strace` that `close(3)` indeed calls `close(2)`
 
 # First layer
 
-#### [`close_fd()`](https://elixir.bootlin.com/linux/v6.13/source/fs/file.c#L690)
+#### [`file_close_fd()`](https://elixir.bootlin.com/linux/v6.13/source/fs/file.c#L690)
 
 1. Use `int fd` arugment to index into FDT
 
