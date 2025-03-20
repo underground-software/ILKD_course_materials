@@ -10,7 +10,7 @@
 | 5 | 25/27 Feb | [midpoint proposal due Thurs](/assignments/midpoint.md) mm cont. [L09](/lectures/L09.md) [L10](/lectures/L10.md) |
 | 6 | 04/06 Mar | [shell due](/assignments/shell.md) VFS: open [L11](/lectures/L11.md) [L12](/lectures/L12.md) |
 | 7 | 11/13 Mar | SPRING BREAK: no class |
-| 8 | 18/19 Mar | [midpoint presentation due Thurs](/assignments/midpoint.md) VFS: close [L13](/lectures/L13.md) |
+| 8 | 18/19 Mar | [midpoint presentation due Thurs](/assignments/midpoint.md) VFS: close [L13](/lectures/L13.md) [L14](/lectures/L14.md)|
 | 9 | 25/27 Mar | |
 | 10 | 01/03 Apr | |
 | 11 | 08/10 Apr | |
