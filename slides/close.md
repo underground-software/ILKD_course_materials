@@ -1,4 +1,4 @@
-# file descriptors: close syscall
+# VFS: close syscall
 
 ---
 
