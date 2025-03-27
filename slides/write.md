@@ -207,7 +207,7 @@ How does the function differ from `ksys_read()`?
 
 `xmacros_example`
 
---
+---
 
 # Example `file_permission` hooks
 
