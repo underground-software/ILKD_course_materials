@@ -15,7 +15,7 @@
 | 10 | 01/03 Apr | |
 | 11 | 08/10 Apr | |
 | 12 | 15/17 Apr | |
-| 13 | 22/24 Apr | [final project](/assignments/final.md) |
+| 13 | 22/24 Apr | [final project](/assignments/final_project.md) |
 | 14 | 29/01 Apr | |
 | 15 | 06/08 May | |
 
