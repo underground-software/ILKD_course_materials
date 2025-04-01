@@ -186,9 +186,31 @@ to register and de-register your character device
 
             - Do you have any advice for future students?
 
-## Slots
+## Presentation Slots
 
-Slot 1: 3:30-4:05
-Slot 2: 4:10-4:45
+#### L24: April 24
+
+Slot 0: 3:30-4:05
+Slot 1: 4:10-4:45
+
+#### L25: April 29
+
+Slot 2: 3:30-4:05
+Slot 3: 4:10-4:45
+
+#### L26: May 1
+
+Slot 4: 3:30-4:05
+Slot 5: 4:10-4:45
+
+#### L27: May 6
+
+Slot 6: 3:30-4:05
+Slot 7: 4:10-4:45
+
+#### L28: May 8
+
+Slot 8: 3:30-4:05
+Slot 9: 4:10-4:45
 
 [Policies & Procedures](/faq/procedures.md)

@@ -12,7 +12,7 @@
 | 7 | 11/13 Mar | SPRING BREAK: no class |
 | 8 | 18/19 Mar | [midpoint presentation due Thurs](/assignments/midpoint.md) VFS: close [L13](/lectures/L13.md) [L14](/lectures/L14.md)|
 | 9 | 25/27 Mar | VFS: read/write [L15](/lectures/L15.md) [L16](/lectures/L16.md) |
-| 10 | 01/03 Apr | |
+| 10 | 01/03 Apr | VFS: write/ioctl/seek [L17](/lectures/L17.md) |
 | 11 | 08/10 Apr | |
 | 12 | 15/17 Apr | |
 | 13 | 22/24 Apr | [final project](/assignments/final_project.md) |
