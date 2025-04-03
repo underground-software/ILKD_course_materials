@@ -9,8 +9,8 @@ review and a live presentation to the class that will
 include a coding challenge.
 
 Your will submit the patchset described in the "What to submit"
-by midnight the day before the first in class presentation on
-April 24 (L24).
+by midnight the Tuesday before the first in class presentation,
+that is to say, midnight April 22 2025.
 
 
 ### Outcomes:
