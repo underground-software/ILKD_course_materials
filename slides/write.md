@@ -23,7 +23,7 @@ Gain greater depth of understanding file descriptors by comparing read and write
 
 # In the beginning
 
-#### [`SYSCALL_DEFINE(write,...)`](https://elixir.bootlin.com/linux/v6.13/source/fs/read_write.c#L739)
+#### [`SYSCALL_DEFINE3(write,...)`](https://elixir.bootlin.com/linux/v6.13/source/fs/read_write.c#L739)
 
 1. All it does is `ksys_write()`
 
@@ -42,7 +42,7 @@ While file descriptors are preferred as a userspace interface, the kernel is bet
 
 [`ksys_write()` removed from init/do_mounts_rd.c](https://github.com/torvalds/linux/commit/bef173299613404f55b11180d9a865861637f31d)
 
-1. Notice that `ksys_lseek()` is entirely removed
+1. Notice that `ksys_lseek()` is restricted to static linkage
 
 ---
 
@@ -70,7 +70,7 @@ Almost a  simplified `vfs_write()`
 
 1. Create a local copy of the file position
 
-1. Perform virtual filesystem (VFS)
+1. Perform virtual filesystem (VFS) write
 
 1. If needed, update the file position
 
@@ -131,7 +131,7 @@ How does the function differ from `ksys_read()`?
 
 # Verifying the target
 
-#### [`rw_verify_area`](https://elixir.bootlin.com/linux/v6.13/source/fs/read_write.c#L444)
+#### [`rw_verify_area()`](https://elixir.bootlin.com/linux/v6.13/source/fs/read_write.c#L444)
 
 1. Disallow count values with top bit set
 
@@ -151,8 +151,6 @@ How does the function differ from `ksys_read()`?
 
 1. Call an arbitrary number of `file_permission` security hooks
 
-1. If permission is granted, set off notifications
-
 ---
 
 # The hook caller
@@ -167,7 +165,7 @@ How does the function differ from `ksys_read()`?
 
     1. Where is `file_permission_default` defined?
 
-1. Call each hook at stop if one fails
+1. Call each hook and stop if one fails
 
 1. Statement expression evaluates to return code
 

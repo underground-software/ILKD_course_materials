@@ -118,7 +118,7 @@ Get a reference to a file descriptor unless it's opened in path mode
 
 1. Call [`files_lookup_fd_raw()`](https://elixir.bootlin.com/linux/v6.13/source/include/linux/fdtable.h#L72) directly
 
-1. The `unsinged long` return value will be cast
+1. The `unsigned long` return value will be cast
 
 ---
 
@@ -311,7 +311,6 @@ Question: When does control flow call this function?
 
 ### [`fdput_pos()`](https://elixir.bootlin.com/linux/v6.13/source/include/linux/file.h#L76)
 
-
 1. If we locked the file position: [`__f_unlock_pos()`](https://elixir.bootlin.com/linux/v6.13/source/fs/file.c#L1197)
 
 1. If we locked the file: [`fdput()`](https://elixir.bootlin.com/linux/v6.13/source/include/linux/file.h#L60) calls `fput()`
@@ -320,7 +319,7 @@ Question: When does control flow call this function?
 
 # Summary
 
-Read doesn't need to do as much as open or write
+`read()` doesn't need to do as much as `open()` or `write()`
 
 ---
 
