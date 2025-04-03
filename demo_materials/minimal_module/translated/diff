@@ -1,0 +1,107 @@
+--- user_code.c	2024-07-09 16:21:33.794784466 -0400
++++ kernel_code.c	2024-07-09 16:21:32.495786668 -0400
+@@ -1,9 +1,6 @@
+-#include <err.h>
+-#include <errno.h>
+-#include <stdbool.h>
+-#include <stdio.h>
+-#include <stdlib.h>
+-#include <string.h>
++#include <linux/module.h>
++#include <linux/string.h>
++#include <linux/slab.h>
+ 
+ struct example
+ {
+@@ -13,16 +10,16 @@ struct example
+ 
+ static struct example *example_create(const char *msg)
+ {
+-	struct example *ex = malloc(sizeof *ex);
++	struct example *ex = kmalloc(sizeof *ex, GFP_KERNEL);
+ 	if(!ex)
+ 		goto out;
+ 	ex->size = strlen(msg);
+-	ex->message = strdup(msg);
++	ex->message = kstrdup(msg, GFP_KERNEL);
+ 	if(!ex->message)
+ 		goto out_free;
+ 	return ex;
+ out_free:
+-	free(ex);
++	kfree(ex);
+ 	ex = NULL;
+ out:
+ 	return ex;
+@@ -30,17 +27,17 @@ out:
+ 
+ static void example_destroy(struct example *ex)
+ {
+-	free(ex->message);
+-	free(ex);
++	kfree(ex->message);
++	kfree(ex);
+ }
+ 
+ static bool example_update_message(struct example *ex, const char *msg)
+ {
+ 	size_t size = strlen(msg);
+-	char *data = strdup(msg);
++	char *data = kstrdup(msg, GFP_KERNEL);
+ 	if(!data)
+ 		return false;
+-	free(ex->message);
++	kfree(ex->message);
+ 	ex->message = data;
+ 	ex->size = size;
+ 	return true;
+@@ -51,19 +48,38 @@ static char *example_get_message(struct
+ 	return ex->message;
+ }
+ 
+-int main(void)
++int example_init(void)
+ {
++	int ret = -ENOMEM;
++	const char *msg;
+ 	struct example *ex = example_create("hello");
++	msg = KERN_ERR "unable to allocate memory";
+ 	if(!ex)
+-		err(1, "unable to allocate memory");
+-	printf("%s\n", example_get_message(ex));
+-	if(!example_update_message(ex, "goodbye")) {
+-		int temperrno = errno;
+-		example_destroy(ex);
+-		errno = temperrno;
+-		err(1, "unable to update");
+-	}
+-	printf("%s\n", example_get_message(ex));
++		goto out;
++
++	pr_info("%s\n", example_get_message(ex));
++
++	msg = KERN_ERR "unable to update\n";
++	if(!example_update_message(ex, "goodbye"))
++		goto out_free;
++
++	pr_info("%s\n", example_get_message(ex));
++
++	ret = 0;
++	msg = NULL;
++out_free:
+ 	example_destroy(ex);
+-	return 0;
++out:
++	if(msg)
++		printk(msg);
++	return ret;
++}
++
++void example_exit(void)
++{
+ }
++
++module_init(example_init);
++module_exit(example_exit);
++
++MODULE_LICENSE("GPL");

@@ -1,0 +1,23 @@
+#define FOOARGS \
+	X(a, b) \
+	X(c, d) \
+	X(e, f)
+
+#define X(x, y) x
+FOOARGS
+#undef X
+
+resolves to:
+a
+c
+e
+
+
+#define X(x, y) x + 2, y
+FOOARGS
+#undef X
+
+resolves to:
+a + 2, b
+c + 2, d
+e + 2, f
