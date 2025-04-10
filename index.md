@@ -13,7 +13,7 @@
 | 8 | 18/19 Mar | [midpoint presentation due Thurs](/assignments/midpoint.md) VFS: close [L13](/lectures/L13.md) [L14](/lectures/L14.md)|
 | 9 | 25/27 Mar | VFS: read/write [L15](/lectures/L15.md) [L16](/lectures/L16.md) |
 | 10 | 01/03 Apr | VFS: write/ioctl/seek [L17](/lectures/L17.md) [L18](/lectures/L18.md) |
-| 11 | 08/10 Apr | modules [L19](/lectures/L19.md) |
+| 11 | 08/10 Apr | modules [L19](/lectures/L19.md) [L20](/lectures/L20.md)|
 | 12 | 15/17 Apr | |
 | 13 | 22/24 Apr | [final project](/assignments/final_project.md) |
 | 14 | 29/01 Apr | |
