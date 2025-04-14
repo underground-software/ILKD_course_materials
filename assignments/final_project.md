@@ -51,6 +51,28 @@ that is to say, midnight April 22 2025.
 
 ### Procedure:
 
+0. Enable loadable modules, as well as the `proc`, `sys`, and `dev` file systems
+
+    * In the Linux kernel `menuconfig`:
+
+        * At the top level, select 'y' on "Enable loadable module support"
+
+            * Navigate into the sub-menu for that item and select 'y' on "Module unloading"
+
+        * Navigate to `File systems`->`Pseudo filesystems`
+
+            * Enable `/proc file system support` and `sysfs file system support`
+
+        * Return to the the main menu, then proceed to `Device Drivers`->`Generic Driver Options`
+
+            * Enable `Maintain a devtmpfs filesystem...` and `Automount devtmpfs at /dev...`
+
+        * Save and exit `menuconfig`
+
+0. Compile your kernel using the new config
+
+    0. Boot with this [new rootfs](/assignment_materials/final/rootfs.tar) to enable complete busybox functionality
+
 0. Locate and examine your assigned spec, tests, and makefile
 
 	*  The default target of the provided makefile should build the tests as a binary file `tests`
