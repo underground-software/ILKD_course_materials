@@ -3,18 +3,18 @@
 | Week # | Class dates | Useful information |
 | -- | -- | -- |
 | 0 | 21/23 Jan | syllabus/policies/setup [L00](/lectures/L00.md) |
-| 1 | 28/30 Jan | [setup due](/assignments/setup.md) barebones Linux [L01](/lectures/L01.md) [L02](/lectures/L02.md)|
-| 2 | 04/06 Feb | [new_syscall due](/assignments/new_syscall.md) syscalls [L03](/lectures/L03.md) [L04](/lectures/L04.md)|
+| 1 | 28/30 Jan | [setup due](/assignments/setup.md) barebones Linux [L01](/lectures/L01.md) [L02](/lectures/L02.md) |
+| 2 | 04/06 Feb | [new_syscall due](/assignments/new_syscall.md) syscalls [L03](/lectures/L03.md) [L04](/lectures/L04.md) |
 | 3 | 11/13 Feb | syscall [L05](/lectures/L05.md) [L06](/lectures/L06.md) |
 | 4 | 18/20 Feb | [page_walk due](/assignments/page_walk.md) memory management [L07](/lectures/L07.md) [L08](/lectures/L08.md) |
 | 5 | 25/27 Feb | [midpoint proposal due Thurs](/assignments/midpoint.md) mm cont. [L09](/lectures/L09.md) [L10](/lectures/L10.md) |
 | 6 | 04/06 Mar | [shell due](/assignments/shell.md) VFS: open [L11](/lectures/L11.md) [L12](/lectures/L12.md) |
 | 7 | 11/13 Mar | SPRING BREAK: no class |
-| 8 | 18/19 Mar | [midpoint presentation due Thurs](/assignments/midpoint.md) VFS: close [L13](/lectures/L13.md) [L14](/lectures/L14.md)|
+| 8 | 18/19 Mar | [midpoint presentation due Thurs](/assignments/midpoint.md) VFS: close [L13](/lectures/L13.md) [L14](/lectures/L14.md) |
 | 9 | 25/27 Mar | VFS: read/write [L15](/lectures/L15.md) [L16](/lectures/L16.md) |
 | 10 | 01/03 Apr | VFS: write/ioctl/seek [L17](/lectures/L17.md) [L18](/lectures/L18.md) |
-| 11 | 08/10 Apr | modules [L19](/lectures/L19.md) [L20](/lectures/L20.md)|
-| 12 | 15/17 Apr | |
+| 11 | 08/10 Apr | modules [L19](/lectures/L19.md) [L20](/lectures/L20.md) |
+| 12 | 15/17 Apr | modules [L21](/lectures/L21.md) |
 | 13 | 22/24 Apr | [final project](/assignments/final_project.md) |
 | 14 | 29/01 Apr | |
 | 15 | 06/08 May | |
