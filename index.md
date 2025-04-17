@@ -14,7 +14,7 @@
 | 9 | 25/27 Mar | VFS: read/write [L15](/lectures/L15.md) [L16](/lectures/L16.md) |
 | 10 | 01/03 Apr | VFS: write/ioctl/seek [L17](/lectures/L17.md) [L18](/lectures/L18.md) |
 | 11 | 08/10 Apr | modules [L19](/lectures/L19.md) [L20](/lectures/L20.md) |
-| 12 | 15/17 Apr | modules [L21](/lectures/L21.md) |
+| 12 | 15/17 Apr | modules/chardevs [L21](/lectures/L21.md) [L22](/lectures/L22.md) |
 | 13 | 22/24 Apr | [final project](/assignments/final_project.md) |
 | 14 | 29/01 Apr | |
 | 15 | 06/08 May | |
