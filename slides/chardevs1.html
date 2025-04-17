@@ -202,15 +202,19 @@
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" lang="POSIX">
 <h1 id="necessary-structs">Necessary structs</h1>
 <p><a href="https://elixir.bootlin.com/linux/v6.13/source/include/linux/cdev.h#L14"><code>struct cdev</code></a></p>
-<p><a href="https://elixir.bootlin.com/linux/v6.13/source/include/linux/fs.h#L2071"><code>struct file operations</code></a></p>
+<p><a href="https://elixir.bootlin.com/linux/v6.13/source/include/linux/fs.h#L2071"><code>struct file_operations</code></a></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" lang="POSIX">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-marpit-fragments="2" lang="POSIX">
 <h1 id="register-our-character-device">Register our character device</h1>
 <p>In <code>init()</code>: <a href="https://elixir.bootlin.com/linux/v6.13/source/fs/char_dev.c#L658"><code>cdev_init()</code></a> and <a href="https://elixir.bootlin.com/linux/v6.13/source/fs/char_dev.c#L479"><code>cdev_add()</code></a></p>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code>* Alternative: [`cdev_alloc()`](https://elixir.bootlin.com/linux/v6.13/source/fs/char_dev.c#L640)
-
-* Why or why not?
-</code></pre>
+<ul>
+<li data-marpit-fragment="1">
+<p>Alternative: <a href="https://elixir.bootlin.com/linux/v6.13/source/fs/char_dev.c#L640"><code>cdev_alloc()</code></a></p>
+</li>
+<li data-marpit-fragment="2">
+<p>Why or why not?</p>
+</li>
+</ul>
 <p>In <code>exit()</code>: <a href="https://elixir.bootlin.com/linux/v6.13/source/fs/char_dev.c#L601"><code>cdev_del()</code></a></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" lang="POSIX">
@@ -266,7 +270,7 @@
 <p>Not required</p>
 </li>
 <li>
-<p>Only the major and minor matte to the kernel</p>
+<p>Only the major and minor matter to the kernel</p>
 </li>
 </ol>
 </section>

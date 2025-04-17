@@ -188,7 +188,7 @@ In `exit()`: [`unregister_chrdev_region()`](https://elixir.bootlin.com/linux/v6.
 
 [`struct cdev`](https://elixir.bootlin.com/linux/v6.13/source/include/linux/cdev.h#L14)
 
-[`struct file operations`](https://elixir.bootlin.com/linux/v6.13/source/include/linux/fs.h#L2071)
+[`struct file_operations`](https://elixir.bootlin.com/linux/v6.13/source/include/linux/fs.h#L2071)
 
 ---
 
@@ -196,9 +196,9 @@ In `exit()`: [`unregister_chrdev_region()`](https://elixir.bootlin.com/linux/v6.
 
 In `init()`: [`cdev_init()`](https://elixir.bootlin.com/linux/v6.13/source/fs/char_dev.c#L658) and [`cdev_add()`](https://elixir.bootlin.com/linux/v6.13/source/fs/char_dev.c#L479)
 
-    * Alternative: [`cdev_alloc()`](https://elixir.bootlin.com/linux/v6.13/source/fs/char_dev.c#L640)
+* Alternative: [`cdev_alloc()`](https://elixir.bootlin.com/linux/v6.13/source/fs/char_dev.c#L640)
 
-    * Why or why not?
+* Why or why not?
 
 In `exit()`: [`cdev_del()`](https://elixir.bootlin.com/linux/v6.13/source/fs/char_dev.c#L601)
 
@@ -268,7 +268,7 @@ Character devices are generally located in `/dev`
 
 1. Not required
 
-1. Only the major and minor matte to the kernel
+1. Only the major and minor matter to the kernel
 
 ---
 

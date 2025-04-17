@@ -366,7 +366,7 @@ We cache the MIDI file when it's generated
 
 ---
 
-![bg fit](/slides/kkey_pics/cache.md)
+![bg fit](/slides/kkey_pics/cache.jpeg)
 
 ---
 
