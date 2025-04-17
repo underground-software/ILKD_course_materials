@@ -1,13 +1,14 @@
 #include <linux/module.h>
 
+#undef pr_fmt
 #define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
 
-int __init kdlpdev_init(void) {
+static int __init kdlpdev_init(void) {
 	pr_info("init\n");
 	return 0;
 }
 
-void kdlpdev_cleanup(void) {
+static void kdlpdev_cleanup(void) {
 	pr_info("cleanup\n");
 }
 

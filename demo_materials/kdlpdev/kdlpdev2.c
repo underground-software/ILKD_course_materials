@@ -4,17 +4,18 @@
 #include <linux/errname.h>
 #include <linux/kdev_t.h>
 
+#undef pr_fmt
 #define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
 
-struct cdev kdlpdev;
+static struct cdev kdlpdev;
 
-dev_t major_minor;
+static dev_t major_minor;
 
-struct file_operations kdlp_fops = {
+static struct file_operations kdlp_fops = {
 	.owner = THIS_MODULE,
 };
 
-int __init kdlpdev_init(void) {
+static int __init kdlpdev_init(void) {
 	pr_info("init\n");
 
 	int ret = alloc_chrdev_region(&major_minor, 0, 10, "kdlpdev");
@@ -32,7 +33,7 @@ int __init kdlpdev_init(void) {
 	return 0;
 }
 
-void kdlpdev_cleanup(void) {
+static void kdlpdev_cleanup(void) {
 	pr_info("cleanup\n");
 	unregister_chrdev_region(major_minor, 10);
 	cdev_del(&kdlpdev);

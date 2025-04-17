@@ -4,13 +4,14 @@
 #include <linux/errname.h>
 #include <linux/kdev_t.h>
 
+#undef pr_fmt
 #define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
 
-struct cdev kdlpdev;
+static struct cdev kdlpdev;
 
-dev_t major_minor;
+static dev_t major_minor;
 
-int kdlpdev_open(struct inode * inode, struct file * filep) {
+static int kdlpdev_open(struct inode * inode, struct file * filep) {
 
 	unsigned long bytes;
 	get_random_bytes(&bytes, sizeof(bytes));
@@ -22,17 +23,17 @@ int kdlpdev_open(struct inode * inode, struct file * filep) {
 	return 0;
 }
 
-int kdlpdev_close(struct inode * inode, struct file * filep) {
+static int kdlpdev_close(struct inode * inode, struct file * filep) {
 	pr_info("close %d:%d\n", imajor(inode), iminor(inode));
 
 	return 0;
 }
 
-ssize_t kdlpdev_read(struct file * filep, char * __user buf, size_t count, loff_t * fpos) {
+static ssize_t kdlpdev_read(struct file * filep, char * __user buf, size_t count, loff_t * fpos) {
 	pr_info("read %d:%d\n", imajor(filep->f_inode), iminor(filep->f_inode));
 
 	char _buf[64];
-	size_t buflen = sprintf(_buf, "kdlpdev's random number is %lu\n", (unsigned)filep->private_data % 256);
+	size_t buflen = sprintf(_buf, "kdlpdev's random number is %lu\n", (unsigned long)filep->private_data % 256);
 	if (buflen < 0) {
 		pr_err("Unable to write to _buf\n");
 		return -ENOMEM;
@@ -50,18 +51,18 @@ ssize_t kdlpdev_read(struct file * filep, char * __user buf, size_t count, loff_
 
 	*fpos += count;
 
-	pr_info("read %d bytes\n", count);
+	pr_info("read %zu bytes\n", count);
 
 	return count;
 }
 
-ssize_t kdlpdev_write(struct file * filep, const char * __user buf, size_t count, loff_t * fpos) {
+static ssize_t kdlpdev_write(struct file * filep, const char * __user buf, size_t count, loff_t * fpos) {
 	pr_info("write %d:%d\n", imajor(filep->f_inode), iminor(filep->f_inode));
 
 	return -ENOTRECOVERABLE;
 }
 
-struct file_operations kdlp_fops = {
+static struct file_operations kdlp_fops = {
 	.owner = THIS_MODULE,
 	.open = kdlpdev_open,
 	.release = kdlpdev_close,
@@ -69,7 +70,7 @@ struct file_operations kdlp_fops = {
 	.write = kdlpdev_write,
 };
 
-int __init kdlpdev_init(void) {
+static int __init kdlpdev_init(void) {
 	pr_info("init\n");
 
 	int ret = alloc_chrdev_region(&major_minor, 0, 10, "kdlpdev");
@@ -87,7 +88,7 @@ int __init kdlpdev_init(void) {
 	return 0;
 }
 
-void kdlpdev_cleanup(void) {
+static void kdlpdev_cleanup(void) {
 	pr_info("cleanup\n");
 	unregister_chrdev_region(major_minor, 10);
 	cdev_del(&kdlpdev);

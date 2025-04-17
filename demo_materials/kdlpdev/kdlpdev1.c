@@ -4,13 +4,14 @@
 #include <linux/errname.h>
 #include <linux/kdev_t.h>
 
+#undef pr_fmt
 #define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
 
-struct cdev kdlpdev;
+static struct cdev kdlpdev;
 
-dev_t major_minor;
+static dev_t major_minor;
 
-int kdlpdev_open(struct inode * inode, struct file * filep) {
+static int kdlpdev_open(struct inode * inode, struct file * filep) {
 
 	unsigned long bytes;
 
@@ -23,19 +24,19 @@ int kdlpdev_open(struct inode * inode, struct file * filep) {
 	return 0;
 }
 
-int kdlpdev_close(struct inode * inode, struct file * file) {
+static int kdlpdev_close(struct inode * inode, struct file * file) {
 	pr_info("close %d:%d\n", imajor(inode), iminor(inode));
 
 	return 0;
 }
 
-struct file_operations kdlp_fops = {
+static struct file_operations kdlp_fops = {
 	.owner = THIS_MODULE,
 	.open = kdlpdev_open,
 	.release = kdlpdev_close,
 };
 
-int __init kdlpdev_init(void) {
+static int __init kdlpdev_init(void) {
 	pr_info("init\n");
 
 	int ret = alloc_chrdev_region(&major_minor, 0, 10, "kdlpdev");
@@ -53,7 +54,7 @@ int __init kdlpdev_init(void) {
 	return 0;
 }
 
-void kdlpdev_cleanup(void) {
+static void kdlpdev_cleanup(void) {
 	pr_info("cleanup\n");
 	unregister_chrdev_region(major_minor, 10);
 	cdev_del(&kdlpdev);
