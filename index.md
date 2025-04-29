@@ -16,8 +16,8 @@
 | 11 | 08/10 Apr | modules [L19](/lectures/L19.md) [L20](/lectures/L20.md) |
 | 12 | 15/17 Apr | modules/chardevs [L21](/lectures/L21.md) [L22](/lectures/L22.md) |
 | 13 | 22/24 Apr | [final project](/assignments/final_project.md) chardevs [L23](/lectures/L23.md) [L24](/lectures/L24.md) |
-| 14 | 29/01 Apr | |
-| 15 | 06/08 May | |
+| 14 | 29/01 Apr | final presentations [L25](/lectures/L25.md) [L26](/lectures/L26.md) |
+| 15 | 06/08 May | final presentations [L27](/lectures/L27.md) [L28](/lectures/L28.md) |
 
 #### [Frequently Asked Questions](faq.md)
 
