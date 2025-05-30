@@ -1,8 +1,8 @@
 # ILKD_course_materials
 
-This respository contains Underground Softrware's primary Introduction to Linux Kernel Development materials for the KDLP program.
+This repository contains Underground Software's primary Introduction to Linux Kernel Development materials for the KDLP program.
 
-The similarly-named branches in the repository correspond to semesters that KDLP has deliered their course using this material.
+The similarly-named branches in the repository correspond to semesters that KDLP has delivered their course using this material.
 
 Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 
