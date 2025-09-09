@@ -82,7 +82,7 @@ Late work will not be accepted.
 If a student fails to complete a task by a deadline or fails to attend class with no prior notice,
 and we do not hear from the student within a week, we reserve the right to give the student a final course grade of F.
 
-### Grading Breakdown and Letter Grade Conversion
+### Grading Breakdown
 
 | Category | Percentage |
 |--|--|
@@ -90,6 +90,8 @@ and we do not hear from the student within a week, we reserve the right to give 
 | Homework Exercises			| 15% |
 | Midpoint Project			| 15% |
 | Final Project				| 35% |
+
+### Letter Grade Conversion
 
 | Percentage range | Letter grade | Grade points |
 |--|--|--|
