@@ -18,6 +18,8 @@
 | 0xD | 12/09 |	F1	| final presentations |
 | 0xE |  TBD  |		| 2 Additional sessions for more presentations during finals week |
 
+#### [Frequently Asked Questions](faq.md)
+
 ### Course Summary and Purpose
 
 We guide students into the depths of the Linux kernel, introducing the concepts, tools, and frameworks
