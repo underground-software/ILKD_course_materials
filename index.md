@@ -3,7 +3,7 @@
 | Week # | Class date | Assignment Due | Topic |
 | -- | -- | -- | -- |
 | 0x0 | 09/01 |	   | introductions, syllabus, what is linux? |
-| 0x1 | 09/08 | setup | architecture specific code, interrupts & exceptions, MMIO |
+| 0x1 | 09/08 | [setup](/assignments/setup.md) | architecture specific code, interrupts & exceptions, MMIO |
 | 0x2 | 09/15 | E0 | threads and processes, interprocess communication |
 | 0x3 | 09/22 | P0 | execution contexts, userspace vs kernelspace |
 | 0x4 | 09/29 | E1 | symmetric multiprocessing, locking, scheduling |
