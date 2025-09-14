@@ -57,6 +57,24 @@ patch submission process we'll be using.
 
     * Linux: Install Podman through your package manager
 
+        * Note: if you are using Ubuntu or a distribution based on Ubuntu like Linux Mint you will need to jump through some hoops because Ubuntu does not yet package podman version 5
+
+            0. Install podman from your package manager (`sudo apt install podman`)
+
+            0. Check the installed version with `podman --version`. If the version is greater than 5.0.0 you are all set and can continue with the next steps and stop reading these special instructions
+
+            0. Otherwise, run `podman run --hostname builder --name builder --privileged -it --rm quay.io/podman/stable`
+
+            0. Within that container, run the linux command from the step "Build your container using the Containerfile we serve you"
+
+            0. Wait for the build to finish and for the shell prompt to reappear.
+
+            0. Open a second terminal and execute `podman exec builder podman image save kdlp_container:latest | podman image load`
+
+            0. Once that command finishes, close the second terminal and go back to the first terminal. Type `exit` and hit enter
+
+            0. Proceed with the rest of the instructions starting with "Create a podman volume for persistent storage"
+
 0. Open a terminal
 
     * Linux: open your terminal
