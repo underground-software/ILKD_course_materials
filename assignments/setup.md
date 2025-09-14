@@ -201,8 +201,8 @@ For example, `cat localversion` might print
     edit the provided init program to make it interactive, prompt the user for their name by printing a message, then set up a buffer and use the read system call to
     get a line of input. Print hello followed by echoing back out whatever the user entered to create a custom greeting. The output might look something like
 
-    What is your name? <type in e.g. Linus Torvalds and hit enter>
-    Hello, Linus Torvalds
+        What is your name? <type in e.g. Linus Torvalds and hit enter>
+        Hello, Linus Torvalds
 
     If you choose to do this extra credit, be sure to leave comments in your code since assembly can be hard to read without them. Copy your modified `init.s` file back
     into your `~/submissions/$USER/setup/` folder. You will make a commit containing that file as an additional third commit at the end.
