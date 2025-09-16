@@ -264,6 +264,21 @@ You'll want to open the first of these, `v1-0000-cover-letter.patch`,
 in your text editor so that you can write your cover letter according to the [guidelines](/faq/coverletters.md).
 Don't forget to add the `Signed-off-by` line at the end of the body right before the automatically generated section containing a summary of the patchset (the first line will have your name and the number of patches in parenthesis e.g. Linus Torvalds (2):).
 
+0. Verify that your patches apply correctly on the master branch by making a new branch to try applying them
+
+        git checkout -b test origin/master
+
+0. Apply your patches making sure to exclude the cover letter which does not contain any actual changes. Ensure that no errors or warnings are printed. If the patches do not apply, ensure that you created the right number of commits and formatted them into the right number of patches. If there are warnings from whitespace errors, correct the commits using git rebase.
+
+        git am v1-0001*.patch
+        git am v1-0002*.patch
+        git am v1-0003*.patch #you only need this command if you did the extra credit
+
+0. Switch back to the previous branch and remove your testing branch
+
+        git switch -
+        git branch -D test
+
 0. Once you've finished your cover letter, send your patches to the class mailing list.
 You can do this by running the command `git send-email --to=setup@fall2025-uml.kdlp.underground.software v1*.patch`.
 
