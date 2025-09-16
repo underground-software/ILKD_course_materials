@@ -112,6 +112,10 @@ patch submission process we'll be using.
 
         git clone https://fall2025-uml.kdlp.underground.software/cgit/submissions
 
+0. Create a new branch that is a copy of the origin master branch to do your work for the setup assignment
+
+        git checkout --no-track -b setup origin/master
+
 0. Create the `$USER/setup` directory and subdirectory
 
         cd submissions
