@@ -213,7 +213,7 @@ For example, `cat localversion` might print
 
 0. Boot!
 
-        qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -kernel arch/riscv/boot/Image -initrd ../rootfs.cpio
+        qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -kernel arch/riscv/boot/Image -initrd ../rootfs.cpio -append 'panic=-1'
 
     At the top of the qemu output you will see the linux kernel version, along with the custom version string you set before in `localversion`.
     At the bottom, shortly before the kernel messages about powering down, you will the message "Hello!" that was printed by the sample init program.
@@ -234,7 +234,7 @@ This command uses a shell pipe and the tee program to send a second copy of the 
 The `tr` program then deletes the carriage return characters that would cause whitespace errors.
 The final stage uses output redirection to save the processed text into a file in your folder.
 
-        qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -net none -kernel arch/riscv/boot/Image -initrd ../rootfs.cpio | tee /dev/stderr | tr -d '\r' > ~/submissions/$USER/setup/qemu.txt
+        qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -net none -kernel arch/riscv/boot/Image -initrd ../rootfs.cpio -append 'panic=-1' | tee /dev/stderr | tr -d '\r' > ~/submissions/$USER/setup/qemu.txt
 
 0. Create another commit containing just the new `$USER/setup/qemu.txt` file
 
