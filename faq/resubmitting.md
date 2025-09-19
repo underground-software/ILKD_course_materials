@@ -15,5 +15,5 @@ with a new version of your complete review.
 For any
 [patchset](patchsets.md)
 or
-[peer review](peerreview.md), we will only grade the 
+[peer review](peerreview.md), we will only grade the
 [most recent submission](duedates.md).
