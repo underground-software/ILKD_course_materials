@@ -7,6 +7,8 @@ Use this as an opportunity to introduce yourself to the class,
 and get your feet wet with the `git send-email`
 patch submission process we'll be using.
 
+For the purposes of grading, this assignment will be part of the "Homework Exercises" category.
+
 #### Outcomes:
 
 * Set up your Linux environment for the rest of the class
