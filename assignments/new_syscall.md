@@ -175,6 +175,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
             cd
             riscv64-linux-gnu-gcc -gdwarf-5 -static-pie -fPIC --sysroot=sysroot libc_test.c -o rootfs/init
             cd rootfs && find . | cpio -co > ../rootfs.cpio && cd ..
+            cd linux
             qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -kernel arch/riscv/boot/Image -initrd ../rootfs.cpio -append 'panic=-1'
 
     * If you are successful, you should see a message "Hello from C!" at the end of the kernel output.
