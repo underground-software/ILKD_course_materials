@@ -242,7 +242,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
 0. Run `qemu` with your original kernel and your new init program again, capturing the output in `~/submissions/$USER/new_syscall/original_output.txt`
 
-    * You can now make your third commit for the assignment
+    * You can now make your fourth commit for the assignment
 
 0. Extra Credit opportunity:
 
