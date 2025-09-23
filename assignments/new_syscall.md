@@ -50,7 +50,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
     0. Create a new `.c` file in the `kernel` directory within the linux repo named `kdlp.c`
 
-    0. Using the appropriately numbered `SYSCALL_DEFINE` macro, define a system call entry function for a new `kdlp` system call in the `kdlp.c` file that behaves as follows:
+    0. Using the appropriately numbered `SYSCALL_DEFINE` macro, define a system call entry function for a new system call named `kdlp` (1st argument to `SYSCALL_DEFINE`) in the `kdlp.c` file that behaves as follows:
 
         * Takes two arguments, an argument of type `char __user *` to specify the buffer and an argument of type `size_t` to specify the size of the buffer
 
