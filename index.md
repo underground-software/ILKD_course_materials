@@ -5,7 +5,7 @@
 | 0x0 | 09/09 | 	| introductions, syllabus, what is linux? |
 | 0x1 | 09/16 |	[setup](/assignments/setup.md)	| architecture specific code, interrupts, MMIO |
 | 0x2 | 09/23 |	[new syscall](/assignments/new_syscall.md)	| symmetric multiprocessing, locking, scheduling |
-| 0x3 | 09/30 |	P0	| memory management, memory allocation, virtual memory |
+| 0x3 | 09/30 |	[shell](/assignments/shell.md)	| memory management, memory allocation, virtual memory |
 | 0x4 | 10/07 |	E1	| block devices, partition tables, block drivers |
 | 0x5 | 10/14 |	P1	| kernel modules, in-tree vs out-of-tree development |
 | 0x6 | 10/21 |	E2	| generic kernel virtual filesystem code, filesystems |
