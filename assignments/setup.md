@@ -113,6 +113,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 0. Clone the submission repository
 
         git clone https://fall2025-uml.kdlp.underground.software/cgit/submissions
+        cd submissions
 
 0. Create a new branch that is a copy of the origin master branch to do your work for the setup assignment
 
@@ -120,7 +121,6 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
 0. Create the `$USER/setup` directory and subdirectory
 
-        cd submissions
         mkdir -p $USER/setup
         cd $USER/setup
 
