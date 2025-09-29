@@ -53,6 +53,10 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
             cp submissions/shell/inittab rootfs/etc/inittab
 
+    * Set BusyBox as the init program by creating a symlink
+
+            ln -s ../usr/bin/busybox rootfs/sbin/init
+
 0. Create your shell program that will act as `/bin/sh`
 
     * Do your work in the appropriate folder `~/submissions/$USER/shell` as with all other assignments
