@@ -7,10 +7,10 @@
 | 0x2 | 09/23 |	[new syscall](/assignments/new_syscall.md)	| symmetric multiprocessing, locking, scheduling |
 | 0x3 | 09/30 |	[shell](/assignments/shell.md)	| memory management, memory allocation, virtual memory |
 | 0x4 | 10/07 |	[page walk](/assignments/page_walk.md)	| block devices, partition tables, block drivers |
-| 0x5 | 10/14 |	P1	| kernel modules, in-tree vs out-of-tree development |
+| 0x5 | 10/14 |		| kernel modules, in-tree vs out-of-tree development |
 | 0x6 | 10/21 |	E2	| generic kernel virtual filesystem code, filesystems |
-| 0x7 | 10/28 |	P2	| network devices, address families, protocols |
-| 0x8 | 11/04 |	E3	| drivers, hardware description tables, probing, I2C |
+| 0x7 | 10/28 |	P1	| network devices, address families, protocols |
+| 0x8 | 11/04 |	P2	| drivers, hardware description tables, probing, I2C |
 | 0x9 | 11/11 |		| class is cancelled - university closed for veterans day |
 | 0xA | 11/18 |	P3	| character drivers, device major and minor numbers, file operations |
 | 0xB | 11/25 |		| guest lecture - topic TBD |
