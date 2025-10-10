@@ -200,7 +200,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
     * Re run `qemu` and capture the output for your seconnd commit.
 
-        *  Run the following commands 
+        *  Run the following commands
 
                 cd bin
                 ./uname -m | od -t d1 -An -vw0 | /usr/bin/sort -n | tail -n 1 > a.txt
