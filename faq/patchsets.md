@@ -42,5 +42,5 @@ The correct way to edit patches is to edit the underlying commits and then regen
 
 Note that version numbers are maintained between RFC and non-RFC patchsets--in the best case,
 your RFC would be v1 and your final submission would be v2.
-Your cover letter shoud include a summary of changes since the previous version.
+Your cover letter should include a summary of changes since the previous version.
 To edit previous commits, see `man git-rebase` and the `--amend` option from `man git-commit`.

@@ -54,7 +54,7 @@ Q: What are patches?
 
 Q: What is the DCO and what do I need it for?
 
-A: [We disccuss this in the patch guidelines](/faq/patches.md)
+A: [We discuss this in the patch guidelines](/faq/patches.md)
 
 Q: What is a cover letter and what content should go in one?
 
@@ -64,7 +64,7 @@ Q: How do I learn git?
 
 A: [Here's a very comprehensive guide](https://git-scm.com/book/en/v2) although we expect some familiarity as a pre-requisite.
 
-Q: What text editor or IDE do you reccommend?
+Q: What text editor or IDE do you recommend?
 
 A: Whichever one lets you write code
 

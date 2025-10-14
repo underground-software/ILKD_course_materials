@@ -19,6 +19,6 @@ Press:
 
 You can configure your own email client (e.g. thunderbird) to use your course account
 if you wish, but the instructors may not be able to help troubleshoot any issues that
-might occur, so you aknowledge that any problems that result from using a different
+might occur, so you acknowledge that any problems that result from using a different
 email client are your own responsibility to resolve and do not form the grounds for
 excusing any failure to complete required course submissions.

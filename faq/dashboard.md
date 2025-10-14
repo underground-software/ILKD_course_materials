@@ -1,4 +1,4 @@
-## The Course Dashbaord and Activity Log
+## The Course Dashboard and Activity Log
 
 The [Activity Log](/activity) records all email you send as a part of this course.
 

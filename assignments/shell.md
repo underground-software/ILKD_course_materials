@@ -71,7 +71,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
         * Be sure to include appropriate standard `.PHONY` make targets like `all` and `clean` that do the right thing
 
-    * Implement the features outlined below. They are layed out in order increasing in sophisitication, you should complete and thoroughly test each bullet point before moving on to the next, but it might be helpful to read them all before starting to get the big picture
+    * Implement the features outlined below. They are laid out in order increasing in sophisitication, you should complete and thoroughly test each bullet point before moving on to the next, but it might be helpful to read them all before starting to get the big picture
 
     * You can test the shell by running it inside the container without needing to set up the VM by relying on qemu userspace emulation with the `qemu-riscv64-static` command
 
@@ -114,7 +114,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
                 * The command specified by the first argument is executed within the child using all of the command's arguments (see `man 2 execve`)
 
-                * Because the VM is running without a memory management unit, the traditional `fork` library function is not provided by libc as it is not possible to achieve its normal sematics without virtual memory
+                * Because the VM is running without a memory management unit, the traditional `fork` library function is not provided by libc as it is not possible to achieve its normal semantics without virtual memory
 
                 * You have to use the raw kernel `clone` syscall
 

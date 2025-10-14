@@ -88,7 +88,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
             * `CSR_SATP`
 
-    * Because of the architecture-specific nature of this pagetable walk, this system call should be avialable only on RISC-V
+    * Because of the architecture-specific nature of this pagetable walk, this system call should be available only on RISC-V
 
         * The process for adding an architecture-specific system call is different from the process you followed in the [new_syscall](new_syscall.md) assignment
 
@@ -100,7 +100,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
         * Each architecture is allowed up to 16 [architecture specific syscalls](https://elixir.bootlin.com/linux/v6.16/source/scripts/syscall.tbl#L291)
 
-        * Add your entry at the apropriate location according to its number
+        * Add your entry at the appropriate location according to its number
 
         * Choose an appropriate number given the two existing riscv specific syscalls and the acceptable range of numbers
 

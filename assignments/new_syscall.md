@@ -196,7 +196,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
         * Feel free to start with the libc test program
 
-        * Notice how the C library abtracts some of the details of the `reboot` system call for you and how you can use nice named constants instead of random numbers
+        * Notice how the C library abstracts some of the details of the `reboot` system call for you and how you can use nice named constants instead of random numbers
 
     * Create a makefile that compiles your program using the appropriate flags
 
