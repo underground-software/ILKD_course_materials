@@ -9,7 +9,7 @@
 | 0x4 | 10/07 |	[page walk](/assignments/page_walk.md)	| block devices, partition tables, block drivers |
 | 0x5 | 10/14 |	[midpoint](/assignments/midpoint.md)	| kernel modules, in-tree vs out-of-tree development |
 | 0x6 | 10/21 |	[first module](/assignments/first_module.md)	| generic kernel virtual filesystem code, filesystems |
-| 0x7 | 10/28 |	P1	| network devices, address families, protocols |
+| 0x7 | 10/28 |	[block device](/assignments/block_device.md)	| network devices, address families, protocols |
 | 0x8 | 11/04 |	P2	| drivers, hardware description tables, probing, I2C |
 | 0x9 | 11/11 |		| class is cancelled - university closed for veterans day |
 | 0xA | 11/18 |	P3	| character drivers, device major and minor numbers, file operations |
