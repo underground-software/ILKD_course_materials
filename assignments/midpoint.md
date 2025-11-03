@@ -121,3 +121,5 @@ You will deliver a brief presentation on research into a kernel related topic of
     * Rather than listing specific suggestions, I encourage you to come up with something that really interests you
 
     * Should be related to the kernel, with a particular emphasis on design decisions, their supporting rationale and the resulting code
+
+[Frequently Asked Questions](/faq.md)
