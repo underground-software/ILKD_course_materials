@@ -129,3 +129,5 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
         * How did you find new combinations of flags?
 
         * For each of the five (or more) flag combinations you found, answer: Why does the pointer you passed refer to memory in a page with the particular flags you found?
+
+[Frequently Asked Questions](/faq.md)
