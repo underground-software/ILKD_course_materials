@@ -166,4 +166,4 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
         * You will need to create some of your own rust bindings for the C functions related to manipulating entries in the procfs
 
-[Policies & Procedures](/faq/procedures.md)
+[Frequently Asked Questions](/faq.md)

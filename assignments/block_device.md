@@ -210,5 +210,4 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
         * Demonstrate running it in the VM with your patched kernel and making partitions on your memblk driver
 
-[Policies & Procedures](/faq/procedures.md)
-
+[Frequently Asked Questions](/faq.md)
