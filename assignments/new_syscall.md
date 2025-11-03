@@ -266,4 +266,4 @@ This page could be useful: <https://elixir.bootlin.com/linux/latest/ident/get_ta
 
 Refer to the [Linux kernel documentation about adding system calls](https://www.kernel.org/doc/html/latest/process/adding-syscalls.html) for further guidance.
 
-[Frequently Asked Questions](/faq/faq.md)
+[Frequently Asked Questions](/faq.md)
