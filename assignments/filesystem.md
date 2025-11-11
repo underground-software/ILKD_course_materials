@@ -30,7 +30,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
             * These are useful for your testing efforts since you can just create a new file and then attach a loopdev to it
 
-            * The `losetup` utility from busybox can be used to manipulate them, or you can directly configure them using the calls to `ioctl` described in `man 4 loop`
+            * You can configure them using the calls to `ioctl` described in `man 4 loop`
 
         * virtio virtual disk drive that provides a simple mechanism for having persistent storage for the QEMU vm
 
