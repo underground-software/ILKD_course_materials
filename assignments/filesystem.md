@@ -522,7 +522,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
                 * If the superblock metadata is not modified and the driver just knows to look past the stated end of the inode table the disk image of a filesystem using this optimization could be mounted on a version of the module without this optimization and the entries would simply be invisible
 
-                * To ensure that these entries would not interact poorly with rmdir (i.e. parent dir is unaware of these and gets deleted even though they exist) these inodes could be reserved exclusively for files created in the root directory (which is unable to be removed) 
+                * To ensure that these entries would not interact poorly with rmdir (i.e. parent dir is unaware of these and gets deleted even though they exist) these inodes could be reserved exclusively for files created in the root directory (which is unable to be removed)
 
         * Make the appropriate changes to your driver and the sfsutils program to implement this optimization
 
