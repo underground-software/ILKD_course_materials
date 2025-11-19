@@ -15,7 +15,7 @@
 | 0xA | 11/18 |	[filesystem](/assignments/filesystem.md)	| character drivers, device major and minor numbers, file operations |
 | 0xB | 11/25 |		| guest lecture - topic TBD |
 | 0xC | 12/02 |	[specification](/assignments/specification.md)	| live driver debugging exercise |
-| 0xD | 12/09 |	F1	| final presentations |
+| 0xD | 12/09 |	[character device](/assignments/character_device.md)	| final presentations |
 | 0xE |  TBD  |		| 2 Additional sessions for more presentations during finals week |
 
 #### [Frequently Asked Questions](faq.md)
