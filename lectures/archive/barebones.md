@@ -1,0 +1,353 @@
+### The Barebones Kernel
+
+What is the smallest config possible?
+
+[silent.config](/demo_materials/silent.config)
+
+```
+# Allow turning off even more stuff
+CONFIG_EXPERT=y
+CONFIG_NONPORTABLE=y
+
+# Save time by skipping compressing the kernel, we only want an uncompressed image for qemu
+CONFIG_KERNEL_UNCOMPRESSED=y
+
+# Build a kernel to run in m-mode so we can avoid needing a bios
+CONFIG_RISCV_M_MODE=y
+```
+
+Build the config
+
+```
+ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- make KCONFIG_ALLCONFIG=no.config allnoconfig
+```
+
+Breakdown:
+
+* `ARCH=riscv`: specify non-host architecture to kernel build system ([Kbuild](https://docs.kernel.org/kbuild/kbuild.html))
+
+* `CROSS_COMPILE=riscv64-linux-gnu-`: specify prefix for `gcc` command in order to invoke cross-compiler
+
+* `make`: invoke the make program (the real command)
+
+* `KCONFIG_ALLCONFIG=no.config`: generate a full config using this file as a starting point
+
+* `allnoconfig`: the makefile target to generate a config with everything set to no unless specified in `no.config`
+
+Cross compile the kernel
+
+```
+ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- make -j $(nproc)
+```
+
+Breakdown:
+
+* `ARCH=riscv`: specify non-host architecture to kernel build system ([Kbuild](https://docs.kernel.org/kbuild/kbuild.html))
+
+* `CROSS_COMPILE=riscv64-linux-gnu-`: specify prefix for `gcc` command in order to invoke cross-compiler
+
+* `make`: invoke the make program (the real command)
+
+* `-j $(nproc)`: perform a multi-threaded build, creating as many threads as there are visible CPU cores on the system
+
+* No target is specified, therefore `make` falls back to the default target, i.e. build the kernel (and generate `arch/riscv/boot/Image`)
+
+Launch the emulator
+
+```
+qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -net none -kernel arch/riscv/boot/Image
+```
+
+Breakdown:
+
+* `qemu-system-riscv64`: invoke the RISC-V 64-bit emulator
+
+* `-machine virt`: specify a hardware configuration suitable for general purpose virtualization
+
+* `-bios none`: disable bios loading (and later directly specify a kernel binary image)
+
+* `-nographic`: disable graphical output
+
+* `-no-reboot`: don't automatically reboot the OS exits or errors
+
+* `-net none`: disable networking
+
+* `-kernel arch/riscv/boot/Image`: assuming we invoke this within the kernel repo post-build, pass the resulting binary to QEMU
+
+#### GDB
+
+How do we see what's going on?
+
+```
+$ cat linux/gdbinit
+# disable confirmation prompts to save time (for kill/quit)
+set confirm off
+# automatically disassemble the next line when stepping through code
+set disassemble-next-line auto
+# set arch to RISC-V (64-bit variant)
+set architecture riscv:rv64
+# load the symbol table from the vmlinux file
+symbol-file vmlinux
+# load the vmlinux file for debugging
+file vmlinux
+# connect to the remote host at localhost on port 1234
+target remote localhost:1234
+```
+
+Relaunch the emulator. Why does it hang?
+
+```
+qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -net none -kernel arch/riscv/boot/Image -S -s
+```
+
+Breakdown of new arguments:
+
+* `-s`: enable debug socket on port 1234
+* `-S`: freeze the CPU and wait for continue from debugger before running any instructions
+
+
+In a separate shell session
+
+```
+gdb -x gdbinit
+... c to continue
+... Ctrl+C to send interrupt
+... bt to backtrace
+#0  0x000000008012559c in udelay ()
+#1  0x000000008000133c in panic ()
+#2  0x0000000080127184 in kernel_init ()
+#3  0x000000008012b4d8 in ret_from_fork ()
+... kill to stop the machine
+(back in the other terminal)
+qemu-system-riscv64: QEMU: Terminated via GDBstub
+```
+
+How do we make this more detailed? Where are the line numbers?
+
+Enable debuginfo in config
+```
+# Include debug symbols
+CONFIG_DEBUG_INFO_DWARF4=y
+```
+
+#### Printk
+
+Why did the kernel panic? 🤔
+
+Enable some more options in the config
+
+[noise.config](/demo_materials/noise.config)
+
+```
+... (trimmed)
+# enable kernel printing output
+CONFIG_PRINTK=y
+
+# enable serial subsystem
+CONFIG_TTY=y
+
+# Add driver for serial device for machine
+CONFIG_SERIAL_8250=y
+
+# Allow using that serial port for console
+CONFIG_SERIAL_8250_CONSOLE=y
+```
+
+Rebuild config & kernel, then relaunch the emulator
+```
+ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- make KCONFIG_ALLCONFIG=noise.config allnoconfig
+ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- make -j $(nproc)
+qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -net none -kernel arch/riscv/boot/Image
+```
+
+Silence... Why?
+
+How does the kernel know to use this device?
+
+(question for audience)
+
+
+Another QEMU argument: `-append`
+
+What do you think this does?
+
+Kernel command line arguments:
+
+```
+earlycon=uart8250,mmio,0x10000000 console=uart8250,mmio,0x10000000
+```
+
+Breakdown:
+
+* `{earlycon,console}=`: specify information needed to print to a console early in the boot process and then during normal execution
+
+* `uart8250`: Use the 8250 UART driver that we enabled in the config
+
+* `mmio`: The kernel should communicate with the driver using memory-mapped I/O rather than I/O ports
+
+* `0x10000000`: Base address for the UART device in physical memory
+
+[(console= vs earlycon= and friends)](https://docs.kernel.org/admin-guide/kernel-parameters.html)
+
+
+
+Let's run it!
+
+```
+$ qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -net none -kernel arch/riscv/boot/Image -append 'earlycon=uart8250,mmio,0x10000000 console=uart8250,mmio,0x10000000'
+Linux version 6.13.0 (joel@fedora) (riscv64-linux-gnu-gcc (GCC) 14.1.1 20240507 (Red Hat Cross 14.1.1-1), GNU ld version 2.41-1.fc40) #7 Fri Jan 24 12:08:42 EST 2025
+..... (trimmed)
+Run /sbin/init as init process
+Run /etc/init as init process
+Run /bin/init as init process
+Run /bin/sh as init process
+Kernel panic - not syncing: No working init found.  Try passing init= option to kernel. See Linux Documentation/admin-guide/init.rst for guidance.
+---[ end Kernel panic - not syncing: No working init found.  Try passing init= option to kernel. See Linux Documentation/admin-guide/init.rst for guidance. ]---
+```
+
+What is the [admin guide](https://docs.kernel.org/admin-guide/init.html)?
+
+#### The Device Tree
+
+Can we do detect the device automatically?
+
+Introducing the `menuconfig` makefile target of Kbuild.
+
+```
+ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- make  menuconfig
+  │     -> Device Drivers                                                                                                                                           │
+  │       -> Character devices                                                                                                                                      │
+  │         -> Enable TTY (TTY [=y])                                                                                                                                │
+  │           -> Serial drivers                                                                                                                                     │
+  │ (1)         -> Devicetree based probing for 8250 ports (SERIAL_OF_PLATFORM [=n])
+... press y to enable
+```
+
+Can we search menuconfig this faster?
+
+'/' to search: CONFIG_SERIAL_OF_PLATFORM, press 1
+
+Note that we see the above path, which is also manual navigation instructions
+
+
+Config is already recompiled, so just build the kernel
+```
+ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- make -j $(nproc)
+```
+
+Now we can drop the `-append...` argument to QEMU
+
+```
+qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -net none -kernel arch/riscv/boot/Image
+..... (panic)
+```
+
+Without menuconfig, you can use [this baseline config](/demo_materials/dt_noise.config) and pass it as above.
+
+#### Debugging the Panic
+
+Why are we panicing?
+
+Let's figure it out
+
+First: brain dead
+
+Give up and change majors
+
+Second: small brain
+
+Grep for text "no working init found"
+
+`grep -rnw -e <pattern>`
+
+* `-r`: recursive search
+
+* `-n`: display line number in file of results
+
+* `-w`: only match full words
+
+* `-i`: be case insensitive
+
+* `-e`: specify pattern after this argument (optional if pattern is last argument)
+
+Third: Small-medium brain
+
+`git grep`
+
+Optimized search using git's database
+
+Fourth: medium brain
+
+Look for the function in the [source](https://elixir.bootlin.com/linux/v6.13/source/init/main.c#L1528)
+
+Fifth: big brain
+
+Use `addr2line` on address found in GDB output
+
+```
+addr2line <address> -e vmlinux
+```
+
+Sixth: Galaxy brain
+
+Get good at GDB
+
+Run the kernel and interrupt it
+```
+c
+...Ctrl+c
+```
+
+Do a backtrace and select a frame
+```
+bt
+frame <n>
+```
+
+Disassemble the current function or list the source
+```
+disas
+list
+```
+
+Switch between various Text-user-interface formats
+```
+layout asm
+layout src
+layout next
+tui focus next
+tui disable
+```
+
+
+#### Init
+
+What is `try_to_run_init_process("/etc/init")`?
+
+Why does this fail?
+
+Note: kernel is optimized during build so some code is skipped or inlined
+
+Interesting functions to explore
+
+```
+kernel_execve()
+
+do_filep_open()
+```
+
+#### Summary
+
+* The essential functionality of the Linux kernel is quite minimal
+
+* Cross compiling the kernel can be relatively simple
+
+* GDB is a powerful and versatile tool with advanced features
+
+* The kernel is just another program that you can debug
+
+* The kernel is highly configurable and customizable
+
+* Because the kernel is open source, you can read the complete source and documentation
+
+* There is no magic in the Linux kernel, just engineering
