@@ -28,7 +28,7 @@ Your colleague's tests will pass when run against your implementation.
 
     * The `clean` target of this makefile must remove all module build artifacts
 
-* Patch 3 adds additional tests to the provided program
+* Patch 4 adds additional tests to the provided program
 
 * Don't forget a cover letter
 
