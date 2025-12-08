@@ -224,21 +224,21 @@ gcc -o simple_container simple_container.c -lcap-ng -lseccomp
 
 Submit patches-by-mail with a single C file named **simple\_container.c**, a **README** and a **Makefile**.
 
-* Patch 1 adds your makefile as to the file `<username>/crun/Makefile`
+* Patch 1 adds your makefile as to the file `<username>/ACTC2/Makefile`
 
-* Patch 2 implements phase 1 by creating `<username>/crun/simple_container.c`
+* Patch 2 implements phase 1 by creating `<username>/ACTC2/simple_container.c`
 
-* Patch 3 implements phase 2 by modifying `<username>/crun/simple_continer.c`
+* Patch 3 implements phase 2 by modifying `<username>/ACTC2/simple_continer.c`
 
-* Patch 4 implements phase 3 by modifying `<username>/crun/simple_continer.c`
+* Patch 4 implements phase 3 by modifying `<username>/ACTC2/simple_continer.c`
 
-* Patch 5 implements phase 4 by modifying `<username>/crun/simple_continer.c`
+* Patch 5 implements phase 4 by modifying `<username>/ACTC2/simple_continer.c`
 
-* Patch 6 implements phase 5 by modifying `<username>/crun/simple_continer.c`
+* Patch 6 implements phase 5 by modifying `<username>/ACTC2/simple_continer.c`
 
-* Patch 7 implements phase 6 by modifying `<username>/crun/simple_continer.c`
+* Patch 7 implements phase 6 by modifying `<username>/ACTC2/simple_continer.c`
 
-* Don't forget a cover letter containing what you would put in the README
+* Don't forget a cover letter (Patch 0) containing what you would put in the README
 
 * Submit your patches to `runtime@winter2025-iit.actc.underground.software`
 
