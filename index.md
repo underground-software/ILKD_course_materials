@@ -17,6 +17,7 @@ Why do this, why skip... etc TODO
 **Due dates**
 
 |Component|Date|
+|---------|----|
 |Initial Submission Deadline|EOD Thursday, 25 December 2025|
 |Peer Review Deadline|EOD Sunday, 28 December 2025|
 |Final Submission Deadline|EOD Tuesday, 30 December 2025|
