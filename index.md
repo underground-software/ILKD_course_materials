@@ -4,7 +4,7 @@ This assignment will be formatted and submitted using a simulated Linux kernel m
 
 Details of the assignment itself are presented first, followed by submission instructions.
 
-Before beginning work for this assignment, please obtain your credentials by entering your student ID on the [registration](https://winter2025-iit.actc.underground.software) page.
+Before beginning work for this assignment, please obtain your credentials by entering your student ID on the [registration](https://winter2025-iit.actc.underground.software/register) page.
 
 Then, please enter our fedora container with the following invocation, setting `$username` and `$password` appropriately beforehand.
 
@@ -166,7 +166,7 @@ Prevent the container from consuming all system memory using **Cgroup v2**.
 
 The root user inside a container shouldn't be as powerful as the real root.
 
-  * **Goal**: Drop dangerous capabilities (like rebooting, loading kernel modules).
+  * **Goal**: Drop dangerous capabilities
   * **Library**: Use **libcap-ng**.
 
 ###### Tasks (in Child Process):
@@ -222,7 +222,7 @@ gcc -o simple_container simple_container.c -lcap-ng -lseccomp
 ### 6\. Submission
 
 
-Submit a directory/zipfile/tarfile/patches-by-mail with a single C file named **simple\_container.c**, a **README** and **Makefile**.
+Submit patches-by-mail with a single C file named **simple\_container.c**, a **README** and a **Makefile**.
 
 * Patch 1 adds your makefile as to the file `<username>/crun/Makefile`
 
