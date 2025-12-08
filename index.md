@@ -64,7 +64,7 @@ sudo ./simple_container <rootfs_path> <command> [args...]
 #### Core Rules
 
   * **Strict Error Handling**: Every system call (e.g., `mount`, `unshare`) must be checked. If it fails, print a descriptive error message and exit.
-  * **Comments**: Explain why you are making specific calls (e.g., "Remounting / as private to prevent mount leakage").
+  * **Comments**: Explain your code.
 
 -----
 
@@ -80,18 +80,24 @@ Create the basic process structure. Container runtimes typically use `clone` or 
 
 1.  Use `fork()` to create a child process.
 2.  The parent waits for the child to exit.
-3.  Child uses `unshare(CLONE_NEWUTS)` to detach its hostname from the host.
+3.  Child uses `unshare(CLONE_NEWUTS)` to detach its hostname from the host. Unshare other namespaces such as CLONE_NEWNS, CLONE_NEWIPC and CLONE_NEWPID
 4.  Child changes its hostname to `mycontainer`.
 
 <!-- end list -->
 
   * **Verify**: Running `hostname` inside the container shows the new name, while the host remains unchanged.
 
+###### Manual pages:
+1. man 2 fork
+1. man 2 unshare
+1. man 7 uts_namespaces
+1. man 2 clone
+
 -----
 
 #### Phase 2: Filesystem Isolation (The Jail)
 
-Now, trap the process inside the provided `rootfs` directory. **Do not use chroot**. You must use **pivot\_root** for better security.
+Trap the process inside the provided `rootfs` directory. **Do not use chroot**. You must use **pivot\_root** for better security.
 
   * **Goal**: The process sees `<rootfs_path>` as `/`. The old host filesystem is inaccessible.
 
@@ -104,7 +110,10 @@ Now, trap the process inside the provided `rootfs` directory. **Do not use chroo
 
 <!-- end list -->
 
-  * **Verify**: Running `ls /` inside the container shows only the Alpine filesystem.
+  * **Verify**: Running `ls /` inside the container shows only the container filesystem.
+
+###### Manual pages:
+1. man 2 pivot_root
 
 -----
 
@@ -113,17 +122,25 @@ Now, trap the process inside the provided `rootfs` directory. **Do not use chroo
 Isolate the process IDs so the container cannot see host processes.
 
   * **Goal**: The command running inside the container should be **PID 1**. Running `ps` should show only container processes.
-  * **Concept**: `unshare(CLONE_NEWPID)` affects the children of the calling process, not the process itself. To make our child PID 1, we must set up the namespace **before forking**.
+  * **Concept**: `unshare(CLONE_NEWPID)` affects the children of the calling process, not the process itself.
 
-###### Tasks:
 
-1.  **Refactor Unshare**: Move your `unshare(CLONE_NEWPID)` call from the Child process to the **Parent** process (before the `fork`).
-2.  **Single Fork**: You do not need to fork twice. The existing `fork` from Phase 1 is sufficient.
-3.  **Mount /proc**: The `ps` command relies on the `/proc` filesystem. You must mount a fresh `proc` filesystem at `/proc` **after** pivoting root.
+###### Food for thought
+There are two ways to make the child PID 1
+  * Unshare the namespace **before forking**.
+  * The child forks for a second time.
+
+###### Tasks (follow the first way):
+
+1.  **Refactor Unshare**: Add `unshare(CLONE_NEWPID)` to the **Parent** process (before the `fork`) and remove it from the Child's unshare.
+1.  **Mount /proc**: The `ps` command relies on the `/proc` filesystem. You must mount a fresh `proc` filesystem at `/proc` **after** pivoting root.
 
 <!-- end list -->
 
   * **Verify**: Run `ps aux` inside the container. You should see very few processes, and your shell should be PID 1.
+
+###### Manual pages:
+1. man 7 pid_namespaces
 
 -----
 
@@ -140,6 +157,9 @@ Prevent the container from consuming all system memory using **Cgroup v2**.
 3.  **Add Process**: Write the Child's PID to `cgroup.procs`.
 4.  **Cleanup**: After the child exits, remove the cgroup directory using `rmdir`.
 
+###### Man pages
+1. man 7 cgroups
+
 -----
 
 #### Phase 5: Security - Capabilities
@@ -151,10 +171,14 @@ The root user inside a container shouldn't be as powerful as the real root.
 
 ###### Tasks (in Child Process):
 
-1.  Create a **whitelist** of allowed capabilities (e.g., `CAP_CHOWN`, `CAP_KILL`, `CAP_NET_BIND_SERVICE`).
-2.  Use `capng_clear(CAPNG_SELECT_BOTH)` to wipe the slate clean.
+1.  Create a **whitelist** of exactly these allowed capabilities: CAP_KILL, CAP_SETGID, CAP_SETUID, CAP_NET_BIND_SERVICE, CAP_SYS_CHROOT
+2.  Use `capng_clear` to wipe the slate clean.
 3.  Use `capng_update` to add your whitelist to **Effective**, **Permitted** and **Bounding** sets.
 4.  Apply the changes with `capng_apply`.
+
+###### Man pages
+1. man 7 capabilities
+2. man 3 capng_clear, capng_update, capng_apply
 
 -----
 
@@ -168,9 +192,11 @@ Restrict which system calls the container can make to the kernel.
 ###### Tasks (in Child Process):
 
 1.  Initialize a filter with `seccomp_init(SCMP_ACT_ALLOW)` (**Allow-list** by default).
-2.  Add rules to block specific syscalls: `reboot`, `swapon`, `swapoff`, `init_module`, etc. Use `SCMP_ACT_ERRNO(EPERM)` to return a permission error.
+2.  Add rules to block specific syscalls: `reboot`, `swapon`, `swapoff`, `init_module`, `finit_module` and `delete_module`. Use `SCMP_ACT_ERRNO(EPERM)` to return a permission error. Using the `SCMP_SYS()` macro is recommended.
 3.  Load the filter into the kernel using `seccomp_load`.
 
+###### Man pages
+1. man 2 seccomp
 -----
 
 ### 5\. Helpful Snippets
@@ -187,6 +213,8 @@ static int pivot_root(const char *new_root, const char *put_old) {
 
 ```bash
 gcc -o simple_container simple_container.c -lcap-ng -lseccomp
+# pkg-config --libs libcap-ng  libseccomp # to see these flags
+
 ```
 
 -----
