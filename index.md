@@ -38,13 +38,14 @@ By the end of this task, you will have a program that can run a shell inside a c
   * **Permissions**: Root access (`sudo`) is required for namespace operations.
   * **Packages**: You will need the development headers for capabilities and seccomp:
     ```bash
-    sudo apt-get install libcap-ng-dev libseccomp-dev
+    sudo dnf install gcc make libcap-ng-devel libseccomp-devel
+    # sudo apt-get install gcc make libcap-ng-dev libseccomp-dev
     ```
   * **Knowledge**: Basic C, Linux system calls (`fork`, `exec`, `mount`), and CLI usage.
-  * **Resources: Root Filesystem (rootfs)**: You can export one from Alpine Linux using Docker:
+  * **Resources: Root Filesystem (rootfs)**: You can export one from Alpine Linux or Fedora Linux using podman:
     ```bash
-    mkdir rootfs
-    docker export $(docker create alpine) | tar -C rootfs -xvf -
+    [sudo] mkdir rootfs
+    [sudo] podman export $(podman create alpine) | tar -C rootfs -xvf -
     ```
 
 -----
