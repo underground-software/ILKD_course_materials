@@ -2,15 +2,48 @@
 
 This assignment will be formatted and submitted using a simulated Linux kernel mailing list patchset submission and review workflow.
 
-Details of the assignment itself are presented first, followed by submission instructions.
+We first present the details of the assignment itself, followed by submission instructions.
 
 Before beginning work for this assignment, please obtain your credentials by entering your student ID on the [registration](https://winter2025-iit.actc.underground.software/register) page.
 
-Then, please enter our fedora container with the following invocation, setting `$username` and `$password` appropriately beforehand.
+Then, please create our fedora container with the following invocation, setting `$username` and `$password` appropriately beforehand.
 
 ```bash
 sh -c 'read -rp "username: " username && curl -u $username https://winter2025-iit.actc.underground.software/Containerfile | podman build -t kdlp_container -'
 ```
+
+Create a podman volume for persistent storage.
+
+```bash
+podman volume create kdlp_volume
+```
+
+Get into the container
+
+```bash
+podman run -it --rm --hostname kdlp --name kdlp -v kdlp_volume:/home kdlp_container
+```
+
+Clone the submission repository
+```bash
+git clone https://winter2025-iit.actc.underground.software/cgit/submissions
+cd submissions
+```
+
+Create a new branch that is a copy of the origin master branch to do your work for the ACTC2 assignment
+
+```bash
+git checkout --no-track -b ACTC2 origin/master
+```
+
+Create the `$USER/ACTC2` directory and subdirectory
+
+```
+mkdir -p $USER/ACTC2
+cd $USER/ACTC2
+```
+
+Do the assignment and make your commits in this directory.
 
 This is not mandatory, however this container will provide you with a Linux environment with the necessary packages, git config, and mutt config to easily complete this assignment, submit them to our mailing list, and review the submissions of your peers.
 
@@ -36,7 +69,7 @@ The human feedback section will contain the remarks from the grader once your fi
 |Peer Review Deadline|EOD Sunday, 28 December 2025|
 |Final Submission Deadline|EOD Tuesday, 30 December 2025|
 
-*All due dates are 23:59 IST on the day stated*
+*All due dates are 23:59 IST on the day stated in the table above*
 
 
 ### 1\. Overview
@@ -213,8 +246,10 @@ Restrict which system calls the container can make to the kernel.
 3.  Load the filter into the kernel using `seccomp_load`.
 
 ###### Man pages
+
 1. `man 2 seccomp`
------
+
+---
 
 ### 5\. Helpful Snippets
 
@@ -257,7 +292,7 @@ Submit patches-by-mail with a single C file named **simple\_container.c**, a **R
 
 * Don't forget a cover letter (Patch 0) containing what you would put in the README
 
-* Submit your patches to `runtime@winter2025-iit.actc.underground.software`
+* Submit your patches to `ACTC2@winter2025-iit.actc.underground.software`
 
 ##### Submitting this assignment
 
@@ -276,7 +311,6 @@ If you finish early, you can resubmit as many times as you'd like.
 
 Any submission that violates these guidelines or fails to compile with no warnings or errors will receive a zero.
 
-With the exception of presentations, all work in this course takes place on our mailing list.
 Students submit assignments and review peer submissions on this list.
 
 Each assignment involves the following three stages:
@@ -289,7 +323,7 @@ Each assignment involves the following three stages:
 
 * The subject line of the initial submission patchset should be tagged as a "Request for Comments", otherwise known as RFC, as explained in the patchset guidelines section below.
 
-* Each re-submission should increment the version number in the subject line, as explained inthe resubmission guidelines below.
+* Each re-submission should increment the version number in the subject line, as explained in the resubmission guidelines below.
 
 **Step 2: Peer Review (due _23:59 IST on Sunday, 28 December 2025_)**
 
@@ -363,7 +397,7 @@ they must make a final submission
 submissions devoid of any effort whatsoever will result in a zero
 
 
-_**Patchset Guidelines**_
+**Patchset Guidelines**
 
 The specific assignment instructions above specify which files to edit, and how many commits
 you should be making which will inform the overall structure of your patchset, but every
@@ -388,7 +422,7 @@ This command generates git email patches from a base repository. The arguments m
 Use `-v<n>`, in this case `-v1` to specify the version number of this patchset.
 Increase this number each time you resubmit an assignment. Use `--rfc` to denote
 on each patch that the changes are a draft posted for review. Use this when generating
-initial submissison patchsets, but not when generating the final submission patchsets.
+initial submission patchsets, but not when generating the final submission patchsets.
 
 All of the patches must follow the patch guidelines below.
 
@@ -420,7 +454,7 @@ a "Signed-off-by" line, called the DCO (Developer Certificate of Origin).
 The line must exactly match this format:
 
 ```
-Signed-off-by: $FIRSTNAME $LASTNAME <$USERNAME@fall2025-uml.kdlp.underground.software>
+Signed-off-by: $FIRSTNAME $LASTNAME <$USERNAME@winter2025-iit.actc.underground.software>
 ```
 
 The DCO line must be the final line of the email body right before the start of the patch diff,
@@ -439,7 +473,7 @@ You will need to remember to add your DCO to the cover letter manually.
 
 **Commit Guidelines**
 
-Within the submissions repository for this course each student will create a directory matching
+Within the submissions repository each student will create a directory matching
 their username. If any starter files are needed, the assignment descriptions will specify the
 necessary details. You will do the assignment and turn your work into commits using `git commit -s`.
 
