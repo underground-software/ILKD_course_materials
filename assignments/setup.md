@@ -258,8 +258,8 @@ The final stage uses output redirection to save the processed text into a file i
 
 0. If you completed the extra credit, make a commit containing just the `init.s` file.
 
-       git add $USER/setup/init.s
-       git commit -s
+        git add $USER/setup/init.s
+        git commit -s
 
 0. Next, you'll want to create a patch series, also known as a [patchset](/faq/patchsets.md), with a [cover letter](/faq/coverletters.md) out of your [commits](/faq/commits.md).
 To do this, run `git format-patch -2 --cover-letter -v1 --rfc` (or substitute `-3` for `-2` if you did the extra credit).
