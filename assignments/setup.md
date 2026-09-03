@@ -108,7 +108,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
 0. Get into the container
 
-        podman run -it --rm --hostname kdlp --name kdlp -v kdlp_volume:/home f26_kdlp_container
+        podman run -it --rm --hostname kdlp --name kdlp -v f26_kdlp_volume:/home f26_kdlp_container
 
 0. Clone the submission repository
 
