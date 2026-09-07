@@ -105,3 +105,12 @@ Q: How can I improve my grade in this class?
 Q: Are there opportunities to receive extra credit?
 
 A: [Contribute to the course materials and infrastructure](/faq/contributing.md)
+
+Q: What happens if I need to miss class?
+
+
+Q: Will class be recorded?
+
+Q: How do I unlock a class recording file?
+
+A: [See the page about class recordings for more information](/faq/recordings.md)
