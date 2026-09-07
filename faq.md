@@ -1,6 +1,6 @@
 ## Frequently Asked Questions
 
-Q. How do I get help in this course?
+Q: How do I get help in this course?
 
 A: [Read this](/faq/help.md)
 
@@ -100,8 +100,8 @@ Q: Which version of the upstream Linux kernel will this course operate on?
 
 A: v7.2
 
-Q. How can I improve my grade in this class?
+Q: How can I improve my grade in this class?
 
-Q. Are there opportunities to receive extra credit?
+Q: Are there opportunities to receive extra credit?
 
 A: [Contribute to the course materials and infrastructure](/faq/contributing.md)
