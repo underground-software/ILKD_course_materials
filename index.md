@@ -5,7 +5,7 @@
 | 0x0 | 09/01 |	   | introductions, syllabus, what is linux? |
 | 0x1 | 09/08 | [setup](/assignments/setup.md) | architecture specific code, interrupts & exceptions, MMIO |
 | 0x2 | 09/15 | E0 | threads and processes, interprocess communication |
-| 0x3 | 09/22 | P0 | execution contexts, userspace vs kernelspace |
+| 0x3 | 09/22 | P0 [midpoint](/assignments/midpoint.md) | execution contexts, userspace vs kernelspace |
 | 0x4 | 09/29 | E1 | symmetric multiprocessing, locking, scheduling |
 | 0x5 | 10/06 | P1 | virtual memory, page tables, memory protection |
 | 0x6 | 10/13 |	   | class is cancelled - tuesday follows monday schedule |
