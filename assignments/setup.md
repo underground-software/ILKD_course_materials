@@ -110,6 +110,16 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
         podman run -it --rm --hostname kdlp --name kdlp -v f26_kdlp_volume:/home f26_kdlp_container
 
+    Note: A previous version of these instructions incorrectly used the volume name `kdlp_volume`. If you've previously started on this assignment and lost progress:
+
+      * Run `podman volume ls` and check if you have two volumes called `kdlp_volume` and `f26_kdlp_volume`. If not, do not follow these instructions.
+
+      * Migrate your old volume by running `podman volume export kdlp_volume | podman volume import f26_kdlp_volume -`.
+
+      * Enter your container using the above `podman run` command again. Ensure that all your data are intact and correctly migrated over.
+
+      * Delete your old volume by running `podman volume rm kdlp_volume`.
+
 0. Clone the submission repository
 
         git clone https://fall2026-uml.kdlp.underground.software/cgit/submissions
