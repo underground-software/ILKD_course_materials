@@ -212,7 +212,7 @@ set `--depth=1` to minimize the download size.
 
 0. Create a branch to make it easier to track your future work.
 You will notice a message about being in a "detached head state".
-When the `--branch` argument to git clone is supplied with a tag (v6.16 in this case), git doesn't make a branch automatically.
+When the `--branch` argument to git clone is supplied with a tag (e.g vX.Y), git doesn't make a branch automatically.
 
         git checkout -b master
 
