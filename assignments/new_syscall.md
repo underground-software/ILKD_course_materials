@@ -147,7 +147,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
             ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- make -j $(nproc) headers
 
     * Populate the sysroot with the generated kernel headers
-1
+
             ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- make INSTALL_HDR_PATH=../sysroot/usr headers_install
 
     * Copy the provided `libc.config` configuration file and `libc_test.c` test program from the submissions folder into your home directory
