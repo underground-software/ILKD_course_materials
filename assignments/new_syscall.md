@@ -36,7 +36,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
 * Don't forget a cover letter
 
-* Submit your patches to new_syscall@fall2026-uml.kdlp.underground.software
+* Submit your patches to `new_syscall@fall2026-uml.kdlp.underground.software`
 
 #### Procedure:
 
