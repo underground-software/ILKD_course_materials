@@ -114,7 +114,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
         * Use the same `qemu` command from [setup](/assignments/setup.md)
 
-        qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -kernel arch/riscv/boot/Image -initrd ../rootfs.cpio -append 'panic=-1'
+                qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -kernel arch/riscv/boot/Image -initrd ../rootfs.cpio -append 'panic=-1'
 
         * If all is well it should boot successfully
 
@@ -167,7 +167,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
     You will notice a message about being in a "detached head state".
     When the `--branch` argument to git clone is supplied with a tag (e.g. vX.Y.Z), git doesn't make a branch automatically.
 
-        git checkout -b master
+            git checkout -b master
 
     * Generate a minimal config based on the provided seed
 
