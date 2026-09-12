@@ -157,7 +157,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
     * Clone the v1.0.59 release of the uClibc embedded C library from from git.uclibc-ng.org
 
-            git clone --branch=v1.0.59 https://git.uclibc-ng.org/git/uclibc-ng.git 
+            git clone --branch=v1.0.59 https://git.uclibc-ng.org/git/uclibc-ng.git
 
     * Enter the new directory for the clone
 
