@@ -36,7 +36,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
 * Don't forget a cover letter
 
-* Submit your patches to new_syscall@fall2026-uml.kdlp.underground.software
+* Submit your patches to `new_syscall@fall2026-uml.kdlp.underground.software`
 
 #### Procedure:
 
@@ -114,7 +114,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
         * Use the same `qemu` command from [setup](/assignments/setup.md)
 
-        qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -kernel arch/riscv/boot/Image -initrd ../rootfs.cpio -append 'panic=-1'
+                qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -kernel arch/riscv/boot/Image -initrd ../rootfs.cpio -append 'panic=-1'
 
         * If all is well it should boot successfully
 
@@ -147,7 +147,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
             ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- make -j $(nproc) headers
 
     * Populate the sysroot with the generated kernel headers
-1
+
             ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- make INSTALL_HDR_PATH=../sysroot/usr headers_install
 
     * Copy the provided `libc.config` configuration file and `libc_test.c` test program from the submissions folder into your home directory
@@ -157,7 +157,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
     * Clone the v1.0.59 release of the uClibc embedded C library from from git.uclibc-ng.org
 
-            git clone --branch=v1.0.59 https://git.uclibc-ng.org/git/uclibc-ng.git 
+            git clone --branch=v1.0.59 https://git.uclibc-ng.org/git/uclibc-ng.git
 
     * Enter the new directory for the clone
 
@@ -167,7 +167,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
     You will notice a message about being in a "detached head state".
     When the `--branch` argument to git clone is supplied with a tag (e.g. vX.Y.Z), git doesn't make a branch automatically.
 
-        git checkout -b master
+            git checkout -b master
 
     * Generate a minimal config based on the provided seed
 
