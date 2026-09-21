@@ -87,7 +87,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
             * This emulation is not perfect and not every system call is fully implemented, but it should be adequate for writing your shell
 
-        * You can pass `-g 1234` bewtween `qemu-riscv64-static` and the name of the binary to make the emulator wait for a debugger connection
+        * You can pass `-g 1234` between `qemu-riscv64-static` and the name of the binary to make the emulator wait for a debugger connection
 
             * You can launch a second terminal in your container with `podman exec -it kdlp bash` and start the GNU Debugger
 
@@ -119,11 +119,11 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
                 * If `chdir` fails, an error message is printed
 
-            * `exec` takes *at least one* argument and replaces the shell with an instance of the executable file whose path is provided as the first argument (see man 2 execve)
+            * `exec` takes *at least one* argument and replaces the shell with an instance of the executable file whose path is provided as the first argument (see `man 2 execve`)
 
                 * It provides all its arguments as the `argv` for the called command, i.e. `argv[0]` is the first argument to `exec`, `argv[1]` is the second argument (if it exists), etc
 
-                * If execve fails, an error message with a description of the errno is printed, and the shell continues running
+                * If `execve` fails, an error message with a description of the `errno` is printed, and the shell continues running
 
         0. The shell supports running executable files as commands within child processes
 
@@ -141,13 +141,13 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
                 * Unlike two proper threads however, the two processes are also sharing a stack
 
-                    * You almost certainly want to use the `CLONE_VFORK` flag to freeze the parent until the child exits or calls execve
+                    * You almost certainly want to use the `CLONE_VFORK` flag to freeze the parent until the child exits or calls `execve`
 
                     * Be careful to never let the child process return past the function where clone was called or it will likely corrupt the stack that the parent will need
 
             * If executing the command fails, the child process prints an error message
 
-                * Do not modify any global variables between clone and execve as they are shared between both processes
+                * Do not modify any global variables between `clone` and `execve` as they are shared between both processes
 
                     * This means you also cannot use many functions in the C library which implicitly modify global data (e.g. stdio which buffers output)
 
@@ -195,7 +195,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
     * Once you have a shell you are happy with, you can make your first commit
 
-0. Try running your shell it in the VM
+0. Try running your shell in the VM
 
     * Compile your shell and copy the binary into the rootfs
 
