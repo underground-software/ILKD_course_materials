@@ -55,7 +55,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
     * Set BusyBox as the init program by creating an appropriately named symbolic link
 
-            ln -s ../usr/bin/busybox rootfs/init
+            ln -s usr/bin/busybox rootfs/init
 
 0. Create your shell program that will act as `/bin/sh`
 
