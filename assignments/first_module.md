@@ -64,7 +64,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
         * Be sure to write tests for all conceivable aspects of its behavior (existence of the file, file permissions, behavior of reading, writing, seeking, etc)
 
-        * Make sure to also test error conditions to make sure strange user input to your module won't crash the system, e.g. a null or invalid pointer
+        * Make sure to also test error conditions to make sure strange user input to your module won't crash the system
 
     * You should have at least 10 distinct tests that the module can pass or fail
 
