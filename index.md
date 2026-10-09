@@ -9,7 +9,7 @@
 | 0x4 | 09/29 | [first_module](/assignments/first_module.md) | symmetric multiprocessing, locking, scheduling |
 | 0x5 | 10/06 |    | virtual memory, page tables, memory protection |
 | 0x6 | 10/13 |	   | class is cancelled - tuesday follows monday schedule |
-| 0x7 | 10/20 | P1 | kernel modules, modalias, udev, in vs out-of tree development |
+| 0x7 | 10/20 | [page walk](/assignments/page_walk.md) | kernel modules, modalias, udev, in vs out-of tree development |
 | 0x8 | 10/27 |    | block devices, partition tables, block drivers |
 | 0x9 | 11/03 |	E2 | generic kernel virtual filesystem code|
 | 0xA | 11/10 |	   | file systems, super blocks, inodes |
