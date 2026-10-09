@@ -7,13 +7,13 @@
 | 0x2 | 09/15 | [new syscall](/assignments/new_syscall.md) | threads and processes, interprocess communication |
 | 0x3 | 09/22 | [shell](/assignments/shell.md) [midpoint](/assignments/midpoint.md) | execution contexts, userspace vs kernelspace |
 | 0x4 | 09/29 | [first_module](/assignments/first_module.md) | symmetric multiprocessing, locking, scheduling |
-| 0x5 | 10/06 | P1 | virtual memory, page tables, memory protection |
+| 0x5 | 10/06 |    | virtual memory, page tables, memory protection |
 | 0x6 | 10/13 |	   | class is cancelled - tuesday follows monday schedule |
-| 0x7 | 10/20 | P2 | kernel modules, modalias, udev, in vs out-of tree development |
-| 0x8 | 10/27 | E2 | block devices, partition tables, block drivers |
-| 0x9 | 11/03 |	E3 | generic kernel virtual filesystem code|
+| 0x7 | 10/20 | P1 | kernel modules, modalias, udev, in vs out-of tree development |
+| 0x8 | 10/27 |    | block devices, partition tables, block drivers |
+| 0x9 | 11/03 |	E2 | generic kernel virtual filesystem code|
 | 0xA | 11/10 |	   | file systems, super blocks, inodes |
-| 0xB | 11/17 |	P3 | character drivers, file operations, device numbers |
+| 0xB | 11/17 |	P2 | character drivers, file operations, device numbers |
 | 0xC | 11/24 |	   | network devices, address families, protocols |
 | 0xD | 12/01 | F0 | live driver debugging exercise |
 | 0xE | 12/08 |	F1 | final presentations |
