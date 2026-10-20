@@ -78,7 +78,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
                 * Sv32 is only used on 32 bit RISC-V, so our 64 bit machine will not be using it, but the other addressing modes are explained only in how they differ from Sv32
 
-                * Read the `satp` register yourself to determine which virtual addressing mode your virtual machine is using and act occording to the specification for that mode
+                * Read the `satp` register yourself to determine which virtual addressing mode your virtual machine is using and act according to the specification for that mode
 
         * You will probably need the following new kernel functions and macros
 
