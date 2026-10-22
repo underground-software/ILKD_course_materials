@@ -11,7 +11,7 @@
 | 0x6 | 10/13 |	   | class is cancelled - tuesday follows monday schedule |
 | 0x7 | 10/20 | [page walk](/assignments/page_walk.md) | kernel modules, modalias, udev, in vs out-of tree development |
 | 0x8 | 10/27 |    | block devices, partition tables, block drivers |
-| 0x9 | 11/03 |	E2 | generic kernel virtual filesystem code|
+| 0x9 | 11/03 |	[block device](/assignments/block_device.md) | generic kernel virtual filesystem code|
 | 0xA | 11/10 |	   | file systems, super blocks, inodes |
 | 0xB | 11/17 |	P2 | character drivers, file operations, device numbers |
 | 0xC | 11/24 |	   | network devices, address families, protocols |
