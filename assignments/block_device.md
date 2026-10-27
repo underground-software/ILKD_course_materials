@@ -134,7 +134,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
             * Access to the `struct bio_vecs` that make up the request is granted by a `struct bvec_iter` member `bi_iter` which can be used to iterate over each bvec sparing your driver the gory details of how and where they are stored
 
-        * You can find the struct gendisk corresponding to the given disk in `->bi_bdev->bd_disk` of the `struct bio`
+        * You can find the `struct gendisk` corresponding to the given disk in `->bi_bdev->bd_disk` of the `struct bio`
 
             * This will let you find the appropriate backing RAM buffer because you stored it in the gendisk's `private_data` field
 
