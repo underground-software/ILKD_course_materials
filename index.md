@@ -13,7 +13,7 @@
 | 0x8 | 10/27 |    | block devices, partition tables, block drivers |
 | 0x9 | 11/03 |	[block device](/assignments/block_device.md) | generic kernel virtual filesystem code|
 | 0xA | 11/10 |	   | file systems, super blocks, inodes |
-| 0xB | 11/17 |	P2 | character drivers, file operations, device numbers |
+| 0xB | 11/17 |	[filesystem](/assignments/filesystem.md) | character drivers, file operations, device numbers |
 | 0xC | 11/24 |	   | network devices, address families, protocols |
 | 0xD | 12/01 | F0 | live driver debugging exercise |
 | 0xE | 12/08 |	F1 | final presentations |
