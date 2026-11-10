@@ -30,6 +30,8 @@ Following this, your cover letter write-up should include a short discussion tha
 
 * A detailed description of any problems that you were not able to resolve before submitting
 
+* A summary of any changes since the previous version.
+
 Failure to cover each of the above will result in a zero grade on your assignment.
 If your self-assessment of success is not 100%, please document all known issues.
 Be honest with your self-assessment. If obvious errors are discovered despite high
