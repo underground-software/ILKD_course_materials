@@ -230,7 +230,7 @@ def check_lists(path, lines, kinds, report):
             report.add(path, line_no, "bullet-cap",
                        "list item should start with a capital letter")
         tail = text.rstrip().rstrip("*_")
-        if (tail.endswith(".") and not tail.endswith(ABBREVIATIONS)
+        if (tail.endswith(".") and not tail.lower().endswith(ABBREVIATIONS)
                 and not tail.endswith("`")):
             report.add(path, last, "bullet-period",
                        "list item should not end with a period")
