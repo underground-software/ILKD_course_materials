@@ -1,4 +1,4 @@
-## Create a filesystem 🗄️
+## Create a Filesystem 🗄️
 
 The objective of this assignment is to build a kernel module that adds support for mounting a new filesystem with a simple on disk representation.
 
@@ -10,7 +10,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
 * Learn about storing data portably so that it can be accessed by multiple systems regardless of endianness or abi
 
-### What to submit:
+### What to Submit:
 
 * Patch 1 adds `$USER/filesystem/tests/test.c`, your testing program and `$USER/filesystem/tests/Makefile`, which builds your testing program as `test` via the default and `test` targets
 

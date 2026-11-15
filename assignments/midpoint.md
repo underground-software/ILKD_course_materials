@@ -2,7 +2,7 @@
 
 You will deliver a brief presentation on research into a kernel related topic of your choice
 
-### Presentation requirements
+### Presentation Requirements
 
 * 10 ± 1 minutes long
 
@@ -30,7 +30,7 @@ You will deliver a brief presentation on research into a kernel related topic of
 
     * It is much more interesting to see e.g. the actual code, commit message, mailing list discussion, running behavior, etc than a coarse summary or a bullet on a slide
 
-### What and how to submit
+### What and How to Submit
 
 * You will propose your choice of topic ahead of time
 
@@ -60,7 +60,7 @@ You will deliver a brief presentation on research into a kernel related topic of
 
         * If you would rather go sooner than later, you can let me know and I can take that into consideration
 
-### Example topics
+### Example Topics
 
 * Compare and contrast open source operating systems:
 

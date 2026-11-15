@@ -1,4 +1,4 @@
-## Create a block device 🧱
+## Create a Block Device 🧱
 
 The objective of this assignment is to build a kernel module that creates simple block devices backed by RAM.
 
@@ -10,7 +10,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
 * Learn about module parameters for load time configuration of kernel modules
 
-### What to submit:
+### What to Submit:
 
 * Patch 1 adds `$USER/block_device/spec.txt`, a filled out copy of `spec.txt`
 

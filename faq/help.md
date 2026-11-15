@@ -1,4 +1,4 @@
-## How to get help in this course
+## How to Get Help in This Course
 
 The `#questions` channel on Matrix is the best place to turn.
 If you're having an issue with something, chances are that

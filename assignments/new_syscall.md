@@ -1,4 +1,4 @@
-## Add a new system call 🤫
+## Add a New System Call 🤫
 
 Add a new system call to the kernel
 
@@ -14,7 +14,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
 * Understand how system calls are made in assembly language
 
-### What to submit:
+### What to Submit:
 
 * Patch 1 adds `kernel.patch`, which patches the kernel code to implement your system call
 

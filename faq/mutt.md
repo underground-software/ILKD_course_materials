@@ -1,4 +1,4 @@
-## Configuring and using mutt
+## Configuring and Using Mutt
 
 [Mutt](https://www.mutt.org) is a free and open source text based mail user agent (email client) suitable for use in your terminal.
 

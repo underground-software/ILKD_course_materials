@@ -1,4 +1,4 @@
-## Common reasons for submission rejection
+## Common Reasons for Submission Rejection
 
 0. The [patches](patches.md) in your [patchset](patchset.md), and maybe your [cover letter](coverletters.md), are corrupt, so consider revising your [commits](commits.md)
 

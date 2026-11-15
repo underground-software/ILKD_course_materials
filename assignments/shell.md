@@ -10,7 +10,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
 * Get hands on experience with signals, system calls, processes, and file descriptors
 
-### What to submit:
+### What to Submit:
 
 * Patch 1 includes all of the files to build your finished shell in `submissions/$USER/shell/`
 

@@ -1,4 +1,4 @@
-## Your first kernel module 🍿
+## Your First Kernel Module 🍿
 
 You will specify, implement, and test a simple kernel module that creates a `kdlp` entry in the Linux kernel's [`/proc`](https://docs.kernel.org/filesystems/proc.html) filesystem with a basic read only interface that returns an unchanging message which includes the student's name.
 
@@ -14,7 +14,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
 * Write your first kernel module!
 
-### What to submit:
+### What to Submit:
 
 * Patch 1 adds `$USER/first_module/spec.txt`, a filled out copy of the provided `spec.txt`
 

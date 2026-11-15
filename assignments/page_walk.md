@@ -8,7 +8,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
 * Understand how the page table maps virtual memory addresses to physical memory addresses
 
-### What to submit:
+### What to Submit:
 
 * Patch 1 adds the module code and makefile to `submissions/$USER/page_walk/`
 

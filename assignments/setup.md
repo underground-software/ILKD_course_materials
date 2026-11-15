@@ -21,7 +21,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
 * Get familiar with the peer review process, which we will use for the rest of the course
 
-### What to submit:
+### What to Submit:
 
 * Patch 1 adds `$USER/setup/setup.txt` which contains a brief introduction about yourself
 
@@ -328,7 +328,7 @@ by running the command `git send-email --to=setup@fall2026-uml.kdlp.underground.
 
 If your `git send-email` output ends in `Result: 250` then your patchset was sent successfully.
 
-### Check your work
+### Check Your Work
 
 You can check the Course Dashboard on the course website to confirm your submission was received.
 On the dashboard there is a section for each assignment that has been assigned.

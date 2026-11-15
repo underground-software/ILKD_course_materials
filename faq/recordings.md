@@ -1,4 +1,4 @@
-## Class recordings
+## Class Recordings
 
 Unless otherwise specified, each session of class will be recorded.
 
