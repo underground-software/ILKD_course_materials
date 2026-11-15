@@ -35,7 +35,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
             CROSS_COMPILE=riscv64-linux-gnu- make KCONFIG_ALLCONFIG=../busybox.config allnoconfig
 
-    * Compile busybox. The existing config assumes you have the `sysroot` with libc from the previous assignment in your home directory `~`
+    * Compile busybox, noting that the existing config assumes you have the `sysroot` with libc from the previous assignment in your home directory `~`
 
             CROSS_COMPILE=riscv64-linux-gnu- make -j $(nproc)
 
@@ -99,13 +99,25 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
     * Features:
 
-        0. The shell prints a prompt, which consists of the absolute path the shell is currently running in (see `man 3 getcwd`) followed by a `$` and a space (e.g. `/your/current/directory$`). The shell then prints a new line and exits without any user interaction.
+        0. The shell prints a prompt, which consists of the absolute path the shell is currently running in (see `man 3 getcwd`) followed by a `$` and a space (e.g. `/your/current/directory$`)
 
-        0. The shell reads lines of user input, but doesn't do anything with them. It just prints a new prompt before each line. This loops until the shell gets EOF from user input (ctrl+d), at which point it exits with code 0.
+            * The shell then prints a new line and exits without any user interaction
 
-        0. If the user types anything, the shell prints "Unrecognized command" (but does not exit the loop). However, if the user just hits enter without typing anything, no error message is printed.
+        0. The shell reads lines of user input, but doesn't do anything with them
 
-        0. The shell splits the line of input into pieces delimited by whitespace characters (see man 3 isspace). Instead of just printing "Unrecognized command," the shell shall include the name of the program in the error message (e.g. if the user types `cat shell.c`, the shell prints "Unrecognized command: cat"). If the user enters only whitespace, no error message is printed.
+            * It just prints a new prompt before each line
+
+            * This loops until the shell gets EOF from user input (ctrl+d), at which point it exits with code 0
+
+        0. If the user types anything, the shell prints "Unrecognized command" (but does not exit the loop)
+
+            * However, if the user just hits enter without typing anything, no error message is printed
+
+        0. The shell splits the line of input into pieces delimited by whitespace characters (see `man 3 isspace`)
+
+            * Instead of just printing "Unrecognized command," the shell shall include the name of the program in the error message (e.g. if the user types `cat shell.c`, the shell prints "Unrecognized command: cat")
+
+            * If the user enters only whitespace, no error message is printed
 
         0. The shell supports the following two builtin commands:
 

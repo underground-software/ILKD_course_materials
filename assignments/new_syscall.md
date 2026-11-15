@@ -26,7 +26,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
     * Add *the email patch itself* as a file named `kernel.patch` to the staged git files and commit this
 
-        * Note: there will be whitespace errors from adding the patch. It is safe to ignore them
+        * Note: adding the patch causes whitespace errors, which are safe to ignore
 
 * Patch 2 adds `Makefile` and `test.c` a program which invokes your new system call using the `syscall` function from libc, and the `patched_output.txt` file containing output of your `qemu` virtual machine
 
@@ -163,9 +163,10 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
             cd uclibc-ng
 
-    * Create a branch to make it easier to track your future work.
-    You will notice a message about being in a "detached head state".
-    When the `--branch` argument to git clone is supplied with a tag (e.g. vX.Y.Z), git doesn't make a branch automatically.
+    * Create a branch to make it easier to track your future work
+
+        You will notice a message about being in a "detached head state"
+        because git doesn't make a branch automatically when the `--branch` argument to git clone is a tag (e.g. vX.Y.Z).
 
             git checkout -b master
 
@@ -245,11 +246,11 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
 0. Answer the following questions in a new text file at `~/submissions/$USER/new_syscall/questions.txt`
 
-    * What did `get_task_comm` report as the name of the current task? Why?
+    * What did `get_task_comm` report as the name of the current task, and why?
 
-    * Try booting your new init program with your original kernel (`~/kernel-original`). What happens?
+    * What happens when you boot your new init program with your original kernel (`~/kernel-original`)?
 
-        * What exit code does your init program return? Why?
+        * What exit code does your init program return, and why?
 
 0. Run `qemu` with your original kernel and your new init program again, capturing the output in `~/submissions/$USER/new_syscall/original_output.txt`
 

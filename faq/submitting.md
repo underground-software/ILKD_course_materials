@@ -72,8 +72,8 @@ and the student should receive feedback from two other students
 
 * If a student does not complete peer review their maximum assignment grade is 80%
 
-* Reviews are graded based on how many issues a student missed.
-The student receives 20% off for each unique issue not spotted with max penalty of 100%
+* Reviews are graded based on how many issues a student missed,
+with 20% off for each unique issue not spotted and a max penalty of 100%
 
 ### Step 3: Final submission
 

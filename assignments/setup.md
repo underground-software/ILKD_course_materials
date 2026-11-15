@@ -73,7 +73,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
             0. Open a second terminal and execute `podman exec builder podman image save f26_kdlp_container:latest | podman image load`
 
-            0. Once that command finishes, close the second terminal and go back to the first terminal. Type `exit` and hit enter
+            0. Once that command finishes, close the second terminal, go back to the first terminal, type `exit` and hit enter
 
             0. Proceed with the rest of the instructions starting with "Create a podman volume for persistent storage"
 
@@ -116,7 +116,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
       * Migrate your old volume by running `podman volume export kdlp_volume | podman volume import f26_kdlp_volume -`.
 
-      * Enter your container using the above `podman run` command again. Ensure that all your data are intact and correctly migrated over.
+      * Enter your container using the above `podman run` command again and ensure that all your data are intact and correctly migrated over
 
       * Delete your old volume by running `podman volume rm kdlp_volume`.
 
@@ -201,8 +201,8 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
         cd rootfs && find . | cpio -co > ../rootfs.cpio && cd ..
 
-0. Clone the v7.2 Linux kernel release from git.kernel.org. It's recommended that you
-set `--depth=1` to minimize the download size.
+0. Clone the v7.2 Linux kernel release from git.kernel.org,
+using `--depth=1` to minimize the download size
 
         git clone --depth=1 --branch v7.2 https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
 
@@ -210,15 +210,17 @@ set `--depth=1` to minimize the download size.
 
         cd linux
 
-0. Create a branch to make it easier to track your future work.
-You will notice a message about being in a "detached head state".
-When the `--branch` argument to git clone is supplied with a tag (e.g vX.Y), git doesn't make a branch automatically.
+0. Create a branch to make it easier to track your future work
+
+    You will notice a message about being in a "detached head state"
+    because git doesn't make a branch automatically when the `--branch` argument to git clone is a tag (e.g. vX.Y).
 
         git checkout -b master
 
-0. Create a file named `localversion` in the `linux` directory and add something cool.
-We suggest it begin with a '.' character, and it must NOT contain spaces.
-For example, `cat localversion` might print
+0. Create a file named `localversion` in the `linux` directory and add something cool
+
+    We suggest it begin with a '.' character, and it must NOT contain spaces.
+    For example, `cat localversion` might print
 
         .my-cool-kernel-version
 
@@ -252,10 +254,12 @@ For example, `cat localversion` might print
     If you choose to do this extra credit, be sure to leave comments in your code since assembly can be hard to read without them. Copy your modified `init.s` file back
     into your `~/submissions/$USER/setup/` folder. You will make a commit containing that file as an additional third commit at the end.
 
-0. Re-run `qemu` to capture the output in a file you will submit as patch 2.
-This command uses a shell pipe and the tee program to send a second copy of the output to the standard error stream so it still appears on your terminal while also forwarding it along to the next stage in the pipeline.
-The `tr` program then deletes the carriage return characters that would cause whitespace errors.
-The final stage uses output redirection to save the processed text into a file in your folder.
+0. Re-run `qemu` to capture the output in a file you will submit as patch 2
+
+    This command uses a shell pipe and the tee program to send a second copy of the output to the standard error stream
+    so it still appears on your terminal while also forwarding it along to the next stage in the pipeline.
+    The `tr` program then deletes the carriage return characters that would cause whitespace errors.
+    The final stage uses output redirection to save the processed text into a file in your folder.
 
         qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -net none -kernel arch/riscv/boot/Image -initrd ../rootfs.cpio -append 'panic=-1' | tee /dev/stderr | tr -d '\r' > ~/submissions/$USER/setup/qemu.txt
 
@@ -271,8 +275,8 @@ The final stage uses output redirection to save the processed text into a file i
         git add $USER/setup/init.s
         git commit -s
 
-0. Next, you'll want to create a patch series, also known as a [patchset](/faq/patchsets.md), with a [cover letter](/faq/coverletters.md) out of your [commits](/faq/commits.md).
-To do this, run `git format-patch -2 --cover-letter -v1 --rfc` (or substitute `-3` for `-2` if you did the extra credit).
+0. Next, create a patch series, also known as a [patchset](/faq/patchsets.md), with a [cover letter](/faq/coverletters.md) out of your [commits](/faq/commits.md)
+by running `git format-patch -2 --cover-letter -v1 --rfc` (or substitute `-3` for `-2` if you did the extra credit)
 
     * `-2` includes the most recent 2 commits (use 3 if you did the extra credit)
 
@@ -282,16 +286,22 @@ To do this, run `git format-patch -2 --cover-letter -v1 --rfc` (or substitute `-
 
     * `--rfc` marks these patches as a request for comment, which is required for all initial submissions (since they will be receiving peer feedback)
 
-0. The result of this command should be your directory containing three (or four) new `.patch` files, courtesy of git.
-You'll want to open the first of these, `v1-0000-cover-letter.patch`,
-in your text editor so that you can write your cover letter according to the [guidelines](/faq/coverletters.md).
-Don't forget to add the `Signed-off-by` line at the end of the body right before the automatically generated section containing a summary of the patchset (the first line will have your name and the number of patches in parenthesis e.g. Linus Torvalds (2):).
+0. The result of this command should be your directory containing three (or four) new `.patch` files, courtesy of git
+
+    You'll want to open the first of these, `v1-0000-cover-letter.patch`,
+    in your text editor so that you can write your cover letter according to the [guidelines](/faq/coverletters.md).
+    Don't forget to add the `Signed-off-by` line at the end of the body right before the automatically generated section
+    containing a summary of the patchset (the first line will have your name and the number of patches in parenthesis e.g. Linus Torvalds (2):).
 
 0. Verify that your patches apply correctly on the master branch by making a new branch to try applying them
 
         git checkout -b test origin/master
 
-0. Apply your patches making sure to exclude the cover letter which does not contain any actual changes. Ensure that no errors or warnings are printed. If the patches do not apply, ensure that you created the right number of commits and formatted them into the right number of patches. If there are warnings from whitespace errors, correct the commits using git rebase.
+0. Apply your patches, making sure to exclude the cover letter, which does not contain any actual changes
+
+    Ensure that no errors or warnings are printed.
+    If the patches do not apply, ensure that you created the right number of commits and formatted them into the right number of patches.
+    If there are warnings from whitespace errors, correct the commits using git rebase.
 
         git am v1-0001*.patch
         git am v1-0002*.patch
@@ -302,8 +312,8 @@ Don't forget to add the `Signed-off-by` line at the end of the body right before
         git switch -
         git branch -D test
 
-0. Once you've finished your cover letter, send your patches to the class mailing list.
-You can do this by running the command `git send-email --to=setup@fall2026-uml.kdlp.underground.software v1*.patch`.
+0. Once you've finished your cover letter, send your patches to the class mailing list
+by running the command `git send-email --to=setup@fall2026-uml.kdlp.underground.software v1*.patch`
 
     * Each assignment will have its own special address to send submissions to, in this case `setup@fall2026-uml.kdlp.underground.software`
 
