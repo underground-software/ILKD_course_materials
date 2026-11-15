@@ -50,6 +50,14 @@ URL_RE = re.compile(r"<?https?://\S+>?")
 HTML_TAG_RE = re.compile(r"<[^>]+>")
 SENTENCE_BREAK_RE = re.compile(r"[A-Za-z0-9)\"'][.!?]\s+[A-Z]")
 ABBREVIATION_RE = re.compile(r"\b(?:e\.g|i\.e|etc|vs|cf)\.?(?=\s)", re.I)
+# Numbers used as names or measurements rather than counts stay as digits:
+# "Patch 1", "inode 0", "exit code 0", "version 5", "8 bytes", "10 ± 1".
+NUMBER_LABEL_RE = re.compile(
+    r"(?:patch|inode|sector|index|code|errno|pid|version|step|slide|plan|"
+    r"lecture|chapter|section|page|width of|level|column|line|signal|"
+    r"slot|±)\s+$", re.I)
+NUMBER_UNIT_RE = re.compile(
+    r"^\s*(?:bytes?|bits?|[KMGT]i?B\b|columns?|±|%)", re.I)
 SMALL_NUMBER_RE = re.compile(r"(?<![\w.$/#:-])(1?\d)(?![\w./%:-])")
 
 
@@ -250,6 +258,9 @@ def check_numbers(path, lines, kinds, report):
             body = lm.group(3)
         plain = strip_markup(body)
         for m in SMALL_NUMBER_RE.finditer(plain):
+            if (NUMBER_LABEL_RE.search(plain[:m.start()])
+                    or NUMBER_UNIT_RE.match(plain[m.end():])):
+                continue
             report.add(path, n, "small-number",
                        f"spell out numbers under 20 in prose ({m.group(1)})",
                        warning=True)
