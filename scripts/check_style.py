@@ -49,6 +49,7 @@ LINK_RE = re.compile(r"!?\[([^\]]*)\]\([^)]*\)|\[([^\]]*)\]\[[^\]]*\]")
 URL_RE = re.compile(r"<?https?://\S+>?")
 HTML_TAG_RE = re.compile(r"<[^>]+>")
 SENTENCE_BREAK_RE = re.compile(r"[a-z0-9)\"'][.!?]\s+[A-Z]")
+ABBREVIATION_RE = re.compile(r"\b(?:e\.g|i\.e|etc|vs|cf)\.?(?=\s)", re.I)
 SMALL_NUMBER_RE = re.compile(r"(?<![\w.$/#:-])(1?\d)(?![\w./%:-])")
 
 
@@ -233,7 +234,7 @@ def check_lists(path, lines, kinds, report):
                 and not tail.endswith("`")):
             report.add(path, last, "bullet-period",
                        "list item should not end with a period")
-        if SENTENCE_BREAK_RE.search(plain.rstrip(".")):
+        if SENTENCE_BREAK_RE.search(ABBREVIATION_RE.sub("abbr", plain).rstrip(".")):
             report.add(path, line_no, "bullet-sentences",
                        "list item should be at most one sentence; split it "
                        "into separate items or a paragraph", warning=True)
