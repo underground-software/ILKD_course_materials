@@ -108,7 +108,6 @@ A: [Contribute to the course materials and infrastructure](/faq/contributing.md)
 
 Q: What happens if I need to miss class?
 
-
 Q: Will class be recorded?
 
 Q: How do I unlock a class recording file?
