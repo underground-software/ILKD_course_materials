@@ -484,7 +484,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
                 * If the user wishes to start writing at a position beyond the end of the file, `cont_write_begin` will take care of zeroing the data in between the previous end point and the new start
 
-                * However, to do that it needs to know the current size of the file (as obtained from `i_size_read` on inode pointer from the mapping's `host`) 
+                * However, to do that it needs to know the current size of the file (as obtained from `i_size_read` on inode pointer from the mapping's `host`)
 
             * This function must also handle some error clean up if the `cont_write_begin` returns a nonzero value
 
@@ -504,7 +504,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
             * If the mapping is from a write call, new file data may be being created (a non zero value will be passed for the final integer argument to the callback):
 
-                * If new data is being created, we need to call `set_buffer_new` on the `buffer_head` 
+                * If new data is being created, we need to call `set_buffer_new` on the `buffer_head`
 
                 * Since our filesystem does not support holes within a file, the only time new data is being created is when a file is having more data added at the end
 
