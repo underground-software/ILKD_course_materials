@@ -48,7 +48,7 @@ INLINE_CODE_RE = re.compile(r"`+[^`]*`+")
 LINK_RE = re.compile(r"!?\[([^\]]*)\]\([^)]*\)|\[([^\]]*)\]\[[^\]]*\]")
 URL_RE = re.compile(r"<?https?://\S+>?")
 HTML_TAG_RE = re.compile(r"<[^>]+>")
-SENTENCE_BREAK_RE = re.compile(r"[a-z0-9)\"'][.!?]\s+[A-Z]")
+SENTENCE_BREAK_RE = re.compile(r"[A-Za-z0-9)\"'][.!?]\s+[A-Z]")
 ABBREVIATION_RE = re.compile(r"\b(?:e\.g|i\.e|etc|vs|cf)\.?(?=\s)", re.I)
 SMALL_NUMBER_RE = re.compile(r"(?<![\w.$/#:-])(1?\d)(?![\w./%:-])")
 
