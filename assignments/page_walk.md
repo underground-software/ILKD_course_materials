@@ -50,7 +50,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
         * You will not be able to use the same `struct seq_file` based technique from `/proc/cmdline`, with a "show" function
 
-        * instead the module will need a `struct proc_ops` structure with the `proc_read` member pointing to your function that directly implements the custom behavior of the read system call
+        * Instead, the module will need a `struct proc_ops` structure with the `proc_read` member pointing to your function that directly implements the custom behavior of the read system call
 
         * You will need the more nuanced `proc_create` API as seen in the code for `/proc/config.gz` so you can pass your operations struct
 

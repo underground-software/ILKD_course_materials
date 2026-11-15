@@ -26,13 +26,13 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
     * This config will add support for a few different new types of block devices:
 
-        * loopback devices `/dev/loopN` that can be used to create a block device whose backing storage is a file
+        * Loopback devices `/dev/loopN` that can be used to create a block device whose backing storage is a file
 
             * These are useful for your testing efforts since you can just create a new file and then attach a loopdev to it
 
             * You can configure them using the calls to `ioctl` described in `man 4 loop`
 
-        * virtio virtual disk drive that provides a simple mechanism for having persistent storage for the QEMU vm
+        * A virtio virtual disk drive that provides a simple mechanism for having persistent storage for the QEMU vm
 
             * You can create a file of an appropriate size inside your container e.g. `fallocate -l 1MiB disk.img` and then pass `-global virtio-mmio.force-legacy=false -blockdev driver=file,node-name=disk,filename=disk.img -device virtio-blk-device,drive=disk,bus=virtio-mmio-bus.0` on the qemu cmdline to map that file into the vm as a virtual hard drive
 
@@ -46,7 +46,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
                 * You can use qemu user-mode emulation on `sfsutils` and pass the path to the backing file from the host container while the vm is shutdown
 
-                * if you need to reboot to try changing your filesystem module you won't lose the state of the data on the disk and can quickly pick up where you left off
+                * If you need to reboot to try changing your filesystem module you won't lose the state of the data on the disk and can quickly pick up where you left off
 
     * It also adds support for the ext2 filesystem
 
@@ -158,7 +158,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
                 * It is the responsibility of the kernel's `struct dentry` cache to manage the association between file system paths and the corresponding inodes
 
-                    * (or lack thereof in the case of a nonexistent path - these are also cached for performance)
+                    * Nonexistent paths, which have no inode, are also cached for performance
 
                 * The dentry cache relies on the filesystem driver to fill the corresponding inode structure into the dentry struct for paths that are looked up or created on the filesystem
 
@@ -538,7 +538,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
         * The amount of inodes set aside for directories might be larger than the number of blocks required to hold an inode table of the necessary size
 
-            * (i.e. while the size of the inode table sets a lower bound on the number of inodes that must be set aside for directories, the actual number the user wishes to select might be larger)
+            * That is, while the size of the inode table sets a lower bound on the number of inodes that must be set aside for directories, the actual number the user wishes to select might be larger
 
             * If this is the case, the on disk blocks that would be the backing storage for these directory inodes is simply completely wasted, used neither for the inode table nor for file contents
 

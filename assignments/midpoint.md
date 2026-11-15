@@ -98,7 +98,7 @@ You will deliver a brief presentation on research into a kernel related topic of
 
     * OpenBSD
 
-        * unveil/pledge vs seccomp / LSM
+        * `unveil`/`pledge` vs seccomp / LSM
 
     * DragonFly BSD
 
@@ -120,7 +120,7 @@ You will deliver a brief presentation on research into a kernel related topic of
 
         * Capability-based permissions vs ambient authority
 
-    * plan9
+    * Plan 9
 
         * 9p protocol and Process namespaces vs Standard File System Hierarchy
 

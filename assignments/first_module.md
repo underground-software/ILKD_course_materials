@@ -120,7 +120,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
     * Rebuild the rootfs
 
-        * make an empty directory named `proc` in `rootfs` to act as the mount target for the proc filesystem
+        * Make an empty directory named `proc` in `rootfs` to act as the mount target for the proc filesystem
 
         * Add the following line to `etc/inittab` to mount the proc filesystem during startup
 

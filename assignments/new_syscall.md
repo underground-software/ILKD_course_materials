@@ -44,7 +44,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
     0. Enter the `linux` repository
 
-    0. copy `arch/riscv/boot/Image` to `~/kernel-original`
+    0. Copy `arch/riscv/boot/Image` to `~/kernel-original`
 
 0. Add a new system call to the Linux kernel
 
@@ -221,7 +221,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
     * Create a file `kdlp_syscall.S` that contains a single function `kdlp` that sets up the arguments correctly and invokes the kernel to perform your new syscall
 
-    * the capital `.S` extension means that the code will go through the preprocessor so you can `#include <asm/unistd.h>` to access the `#define` for your `__NR_kdlp` instead of hardcoding the literal value
+    * The capital `.S` extension means that the code will go through the preprocessor so you can `#include <asm/unistd.h>` to access the `#define` for your `__NR_kdlp` instead of hardcoding the literal value
 
     * Follow the conventions of the [ELF psABI](https://github.com/riscv-non-isa/riscv-elf-psabi-doc/releases/tag/v1.0) (processor specific application binary interface) for RISC-V to interoperate with the C code that will call your function
 
