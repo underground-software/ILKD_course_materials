@@ -19,7 +19,7 @@
 | 0xE | 12/08 |	F1 | final presentations |
 | 0xF |  TBD  |    | two additional sessions for more presentations during finals week |
 
-#### [Frequently Asked Questions](faq.md)
+### [Frequently Asked Questions](faq.md)
 
 ### Course Summary and Purpose
 

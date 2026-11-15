@@ -4,11 +4,11 @@ Add an entry to /proc that walks the page table and exposes the physical mapping
 
 For the purposes of grading, this assignment will be part of the "Programming Assignments" category.
 
-#### Outcomes:
+### Outcomes:
 
 * Understand how the page table maps virtual memory addresses to physical memory addresses
 
-#### What to submit:
+### What to submit:
 
 * Patch 1 adds the module code and makefile to `submissions/$USER/page_walk/`
 
@@ -20,7 +20,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
 * Submit your patches to page_walk@fall2026-uml.kdlp.underground.software
 
-#### Procedure:
+### Procedure:
 
 * From now on when building the kernel, use a config that has the MMU enabled
 

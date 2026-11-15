@@ -4,7 +4,7 @@ You will specify, implement, and test a simple kernel module that creates a `kdl
 
 For the purposes of grading, this assignment will be part of the "Homework Exercises" category.
 
-#### Outcomes:
+### Outcomes:
 
 * Get familiar with the internals of Linux's [`/proc`](https://docs.kernel.org/filesystems/proc.html) filesystem
 
@@ -14,7 +14,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
 * Write your first kernel module!
 
-#### What to submit:
+### What to submit:
 
 * Patch 1 adds `$USER/first_module/spec.txt`, a filled out copy of the provided `spec.txt`
 
@@ -28,7 +28,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
 * Submit your patches to `first_module@fall2026-uml.kdlp.underground.software`
 
-#### Procedure:
+### Procedure:
 
 0. Rebuild the kernel with support for loadable modules and the `/proc` filesystem
 

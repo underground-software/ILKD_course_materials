@@ -9,7 +9,7 @@ patch submission process we'll be using.
 
 For the purposes of grading, this assignment will be part of the "Homework Exercises" category.
 
-#### Outcomes:
+### Outcomes:
 
 * Set up your Linux environment for the rest of the class
 
@@ -21,7 +21,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
 * Get familiar with the peer review process, which we will use for the rest of the course
 
-#### What to submit:
+### What to submit:
 
 * Patch 1 adds `$USER/setup/setup.txt` which contains a brief introduction about yourself
 
@@ -35,7 +35,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
 * Submit your patches to `setup@fall2026-uml.kdlp.underground.software`
 
-#### Procedure:
+### Procedure:
 
 0. Install [Podman](https://podman.io)
 
@@ -318,7 +318,7 @@ You can do this by running the command `git send-email --to=setup@fall2026-uml.k
 
 If your `git send-email` output ends in `Result: 250` then your patchset was sent successfully.
 
-#### Check your work
+### Check your work
 
 You can check the Course Dashboard on the course website to confirm your submission was received.
 On the dashboard there is a section for each assignment that has been assigned.

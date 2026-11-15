@@ -4,7 +4,7 @@ Add a new system call to the kernel
 
 For the purposes of grading, this assignment will be part of the "Homework Exercises" category.
 
-#### Outcomes:
+### Outcomes:
 
 * Get comfortable with the concept of a system call from both kernelspace and userspace
 
@@ -14,7 +14,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
 * Understand how system calls are made in assembly language
 
-#### What to submit:
+### What to submit:
 
 * Patch 1 adds `kernel.patch`, which patches the kernel code to implement your system call
 
@@ -38,7 +38,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
 * Submit your patches to `new_syscall@fall2026-uml.kdlp.underground.software`
 
-#### Procedure:
+### Procedure:
 
 0. Start by backing up your compiled kernel from the setup assignment
 
