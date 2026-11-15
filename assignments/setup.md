@@ -278,7 +278,7 @@ using `--depth=1` to minimize the download size
 0. Next, create a patch series, also known as a [patchset](/faq/patchsets.md), with a [cover letter](/faq/coverletters.md) out of your [commits](/faq/commits.md)
 by running `git format-patch -2 --cover-letter -v1 --rfc` (or substitute `-3` for `-2` if you did the extra credit)
 
-    * `-2` includes the most recent 2 commits (use 3 if you did the extra credit)
+    * `-2` includes the most recent two commits (use three if you did the extra credit)
 
     * `--cover-letter` generates a cover letter for the whole patch series with a summary
 
@@ -291,7 +291,7 @@ by running `git format-patch -2 --cover-letter -v1 --rfc` (or substitute `-3` fo
     You'll want to open the first of these, `v1-0000-cover-letter.patch`,
     in your text editor so that you can write your cover letter according to the [guidelines](/faq/coverletters.md).
     Don't forget to add the `Signed-off-by` line at the end of the body right before the automatically generated section
-    containing a summary of the patchset (the first line will have your name and the number of patches in parenthesis e.g. Linus Torvalds (2):).
+    containing a summary of the patchset (the first line will have your name and the number of patches in parentheses, e.g. `Linus Torvalds (2):`).
 
 0. Verify that your patches apply correctly on the master branch by making a new branch to try applying them
 

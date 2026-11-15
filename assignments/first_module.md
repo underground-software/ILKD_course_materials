@@ -66,7 +66,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
         * Make sure to also test error conditions to make sure strange user input to your module won't crash the system
 
-    * You should have at least 10 distinct tests that the module can pass or fail
+    * You should have at least ten distinct tests that the module can pass or fail
 
         * When run, the program should provide information about which tests succeeded or failed
 

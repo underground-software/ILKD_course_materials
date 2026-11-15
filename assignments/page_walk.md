@@ -54,7 +54,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
         * You will need the more nuanced `proc_create` API as seen in the code for `/proc/config.gz` so you can pass your operations struct
 
-    * The read implementation for the page walk file expects always to be given a pointer to an array 6 `unsigned long`s as the user buffer and an appropriately large count
+    * The read implementation for the page walk file expects always to be given a pointer to an array of six `unsigned long`s as the user buffer and an appropriately large count
 
         * It will interpret the current file offset as a virtual address and walk the page table to try and locate the corresponding page table entry (PTE)
 

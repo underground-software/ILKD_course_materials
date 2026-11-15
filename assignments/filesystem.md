@@ -584,6 +584,6 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
         * Then, for each of the extra credit ideas you completed, create a commit that modifies your driver and your copy of sfsutils as needed and adds at least five new tests to the testing program to verify the new behavior
 
-        * In other words, if you completed only the first extra credit suggestion, your patch series would have 4 patches (5 including the cover letter), if you completed all four your patch series would have 7 patches (8 including the cover letter)
+        * In other words, if you completed only the first extra credit suggestion, your patch series would have four patches (five including the cover letter), if you completed all four your patch series would have seven patches (eight including the cover letter)
 
 [Frequently Asked Questions](/faq.md)
