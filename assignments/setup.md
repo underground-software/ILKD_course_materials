@@ -39,7 +39,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
 0. Install [Podman](https://podman.io)
 
-    * Windows: from the above link, select `Podman CLI for Windows` from the `Download` dropdown menu.
+    * Windows: from the above link, select `Podman CLI for Windows` from the `Download` dropdown menu
 
         * Select WSLv2 as your virtualization provider
 
@@ -51,7 +51,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
             * Add a new folder and name it `.ssh`
 
-    * MacOS: from the above link, select `Podman CLI for MacOS` from the `Download` dropdown menu.
+    * MacOS: from the above link, select `Podman CLI for MacOS` from the `Download` dropdown menu
 
         * Double click `podman-installer-macos-universal.pkg` in your downloads folder once it is done downloading
 
@@ -69,7 +69,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
             0. Within that container, run the linux command from the step "Build your container using the Containerfile we serve you"
 
-            0. Wait for the build to finish and for the shell prompt to reappear.
+            0. Wait for the build to finish and for the shell prompt to reappear
 
             0. Open a second terminal and execute `podman exec builder podman image save f26_kdlp_container:latest | podman image load`
 
@@ -114,11 +114,11 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
       * Run `podman volume ls` and only follow these instructions if you have two volumes called `kdlp_volume` and `f26_kdlp_volume`
 
-      * Migrate your old volume by running `podman volume export kdlp_volume | podman volume import f26_kdlp_volume -`.
+      * Migrate your old volume by running `podman volume export kdlp_volume | podman volume import f26_kdlp_volume -`
 
       * Enter your container using the above `podman run` command again and ensure that all your data are intact and correctly migrated over
 
-      * Delete your old volume by running `podman volume rm kdlp_volume`.
+      * Delete your old volume by running `podman volume rm kdlp_volume`
 
 0. Clone the submission repository
 
@@ -134,7 +134,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
         mkdir -p $USER/setup
         cd $USER/setup
 
-0. Add a file named setup.txt to this folder containing an introduction about yourself.
+0. Add a file named setup.txt to this folder containing an introduction about yourself
 
     The content can be whatever you want, whether it be why you are taking this class,
     your favorite ice cream flavor, or a fun fact about yourself.
@@ -146,41 +146,41 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
 0. Make a commit out of your changes
 
-    * By default, git will not be tracking changes to newly created files.
+    * By default, git will not be tracking changes to newly created files
 
-    * Add your file to the list that git is tracking with `git add setup.txt`.
+    * Add your file to the list that git is tracking with `git add setup.txt`
 
-    * Verify that you did not introduce any whitespace errors by running `git diff --staged --check`.
+    * Verify that you did not introduce any whitespace errors by running `git diff --staged --check`
 
-        * You can read more about whitespace errors on the [commits](/faq/commits.md) page.
+        * You can read more about whitespace errors on the [commits](/faq/commits.md) page
 
-        * They can (and should) be something you double check for at the end before you send your patches, but the above command is recommended as a preventative measure to avoid introducing them in the first place when it is easier to fix.
+        * They can (and should) be something you double check for at the end before you send your patches, but the above command is recommended as a preventative measure to avoid introducing them in the first place when it is easier to fix
 
-        * If the command complains, change the offending lines and `git add setup.txt` again and check once more.
+        * If the command complains, change the offending lines and `git add setup.txt` again and check once more
 
-        * Repeat until no errors remain.
+        * Repeat until no errors remain
 
-    * Make a commit to save this version of the repository, so it can be shared with `git commit -s`.
+    * Make a commit to save this version of the repository, so it can be shared with `git commit -s`
 
-        * Note that the -s flag makes git include the "Signed-off-by:" or DCO line for you automatically.
+        * Note that the -s flag makes git include the "Signed-off-by:" or DCO line for you automatically
 
-        * See our page on [patches](/faq/patches.md) for more information on the DCO.
+        * See our page on [patches](/faq/patches.md) for more information on the DCO
 
-    * Git will then open an instance of the default text editor (nano unless you used the `?vim=yes` parameter when building your container) to let you input a message for the commit.
+    * Git will then open an instance of the default text editor (nano unless you used the `?vim=yes` parameter when building your container) to let you input a message for the commit
 
-        * Put a title containing a short summary of what you did on the first line, e.g. `setup: add introduction for Linus Torvalds`.
+        * Put a title containing a short summary of what you did on the first line, e.g. `setup: add introduction for Linus Torvalds`
 
-        * Press enter twice, and then write a more detailed explanation that will act as the body of the commit.
+        * Press enter twice, and then write a more detailed explanation that will act as the body of the commit
 
-        * There should already be a "Signed-off-by:" line for your account at the bottom; if not, add one.
+        * There should already be a "Signed-off-by:" line for your account at the bottom; if not, add one
 
-        * Save your changes and exit the editor to finish the commit.
+        * Save your changes and exit the editor to finish the commit
 
-    * Check to make sure you see the commit and it looks good by running `git log -p`.
+    * Check to make sure you see the commit and it looks good by running `git log -p`
 
-    * Your new commit should be the top most one, and you should see the title, message, DCO, and difference view containing the changes.
+    * Your new commit should be the top most one, and you should see the title, message, DCO, and difference view containing the changes
 
-    * If there is more output than can fit on one screen, git will open a scrolling view that you can maneuver up and down within using the arrow keys.
+    * If there is more output than can fit on one screen, git will open a scrolling view that you can maneuver up and down within using the arrow keys
 
         * Press q to go back to the terminal.
 
@@ -270,7 +270,7 @@ using `--depth=1` to minimize the download size
         git diff --staged --check #check for whitespace errors, you might have some to fix. Edit the file, re run git add and check until there are none left
         git commit -s
 
-0. If you completed the extra credit, make a commit containing just the `init.s` file.
+0. If you completed the extra credit, make a commit containing just the `init.s` file
 
         git add $USER/setup/init.s
         git commit -s

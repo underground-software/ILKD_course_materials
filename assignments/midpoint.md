@@ -48,7 +48,7 @@ You will deliver a brief presentation on research into a kernel related topic of
 
         * Note: it is potentially acceptable that two proposals start from the same example idea, as long as the details are substantially different
 
-        * This goes hand in hand with the suggestion above to go deep, many students can pick different specific details to focus on.
+        * This goes hand in hand with the suggestion above to go deep, many students can pick different specific details to focus on
 
 * You will make your presentation live during class during a pre-assigned slot at the beginning of a particular class session
 
@@ -66,7 +66,7 @@ You will deliver a brief presentation on research into a kernel related topic of
 
     * Pick an operating system with an open source kernel and find out how it differs from the Linux kernel
 
-    * Focus on a specific design decision and unpack the history and reasoning behind it.
+    * Focus on a specific design decision and unpack the history and reasoning behind it
 
     * Compare and show off the relevant code for the contrasting features in both kernels
 

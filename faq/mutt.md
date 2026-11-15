@@ -16,13 +16,13 @@ Press:
 
 * `enter` to view which message you have highlighted
 
-* `q` while viewing a message to exit back to the main screen.
+* `q` while viewing a message to exit back to the main screen
 
-* `space` to scroll to the next page within the email.
+* `space` to scroll to the next page within the email
 
-* `q` or `ctrl+c` to exit `mutt`.
+* `q` or `ctrl+c` to exit `mutt`
 
-* `r` while viewing a message to draft a reply.
+* `r` while viewing a message to draft a reply
 
 You can configure your own email client (e.g. thunderbird) to use your course account
 if you wish, but if you do so, the instructors will not be able to help troubleshoot

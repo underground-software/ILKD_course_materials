@@ -46,7 +46,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
     * Copy `first_module/spec.txt` into your personal folder for the assignment
 
-    * Edit your copy of `spec.txt` and fill in the blanks to fully specify the expected behavior of your module.
+    * Edit your copy of `spec.txt` and fill in the blanks to fully specify the expected behavior of your module
 
 0. Write a testing program and makefile that exercises a module implementing the spec
 

@@ -165,7 +165,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
                 * Don't forget to exit the child process
 
-            * The shell waits for the child to finish running before printing the next prompt (see `man 2 wait4`).
+            * The shell waits for the child to finish running before printing the next prompt (see `man 2 wait4`)
 
         0. In the case that the user types something that isn't a path or a builtin, the shell checks whether a file with that name exists (see `man 2 access`) in any of the directories listed in the `PATH` environment variable in order
 
@@ -175,7 +175,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
                 * For example `Unrecognized command: kdlp`
 
-        0. Redirect the input/output if any redirections are provided in a given command.
+        0. Redirect the input/output if any redirections are provided in a given command
 
             * `>` replaces stdout
 
@@ -215,7 +215,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
             make
             cp shell ~/rootfs/bin/sh
 
-    * Rebuild the rootfs and boot the kernel.
+    * Rebuild the rootfs and boot the kernel
 
         * You should see output from busybox's init program first and then it will spawn your shell
 

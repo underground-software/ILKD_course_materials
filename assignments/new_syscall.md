@@ -190,19 +190,19 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
             cd linux
             qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -kernel arch/riscv/boot/Image -initrd ../rootfs.cpio -append 'panic=-1'
 
-    * If you are successful, you should see a message "Hello from C!" at the end of the kernel output.
+    * If you are successful, you should see a message "Hello from C!" at the end of the kernel output
 
 0. Write a test program for your new syscall in C
 
-    * Use the `syscall` function from libc and the macro you defined `__NR_kdlp` to invoke your new system call.
+    * Use the `syscall` function from libc and the macro you defined `__NR_kdlp` to invoke your new system call
 
-    * Check a return code of `-1` to see if there is an error.
+    * Check a return code of `-1` to see if there is an error
 
         * Use `strerror` with `errno` to get a description of what went wrong and print an error message
 
-        * Exit the program with a return code equal to the error number.
+        * Exit the program with a return code equal to the error number
 
-    * If there is not an error, use the returned length to print the appropriate amount of bytes using the `write` system call.
+    * If there is not an error, use the returned length to print the appropriate amount of bytes using the `write` system call
 
     * You will need to power off the kernel to exit gracefully since this program will run as pid 1
 
@@ -234,11 +234,11 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
         * You will need to adjust the error handling because the `errno` variable is a userspace only construct
 
-    * To call the function that is defined in assembly, simply add an `extern`  declaration for the assembly function at the top of your file.
+    * To call the function that is defined in assembly, simply add an `extern`  declaration for the assembly function at the top of your file
 
         * Make sure you remembered to set the `kdlp` function to have global linkage in your assembly source
 
-    * Update `Makefile` to compile the two source files together into the program using the appropriate flags.
+    * Update `Makefile` to compile the two source files together into the program using the appropriate flags
 
     * Rebuild and rerun the kernel capturing the output in `assembly_output.txt`
 
