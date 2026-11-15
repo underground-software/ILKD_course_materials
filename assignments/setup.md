@@ -63,7 +63,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
             0. Install podman from your package manager (`sudo apt install podman`)
 
-            0. Check the installed version with `podman --version`. If the version is greater than 5.0.0 you are all set and can continue with the next steps and stop reading these special instructions
+            0. Check the installed version with `podman --version`, and if it is greater than 5.0.0 you are all set and can continue with the next steps and stop reading these special instructions
 
             0. Otherwise, run `podman run --hostname builder --name builder --privileged -it --rm quay.io/podman/stable`
 
@@ -112,7 +112,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
     Note: A previous version of these instructions incorrectly used the volume name `kdlp_volume`. If you've previously started on this assignment and lost progress:
 
-      * Run `podman volume ls` and check if you have two volumes called `kdlp_volume` and `f26_kdlp_volume`. If not, do not follow these instructions.
+      * Run `podman volume ls` and only follow these instructions if you have two volumes called `kdlp_volume` and `f26_kdlp_volume`
 
       * Migrate your old volume by running `podman volume export kdlp_volume | podman volume import f26_kdlp_volume -`.
 
