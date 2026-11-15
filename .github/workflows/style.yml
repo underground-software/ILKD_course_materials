@@ -1,0 +1,89 @@
+name: Contribution checks
+
+# Enforce styleguide.md and the commit rules from faq/commits.md.
+# Markdown is only checked on the lines a change touches, and only the
+# commits a change adds are checked, so existing history and content do
+# not block new contributions.
+
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+    inputs:
+      full:
+        description: Check every Markdown file instead of only changed lines
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          # Check the PR's own commits rather than GitHub's merge commit.
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install codespell
+        run: pip install --quiet codespell==2.4.1
+
+      - name: Work out what to compare against
+        id: base
+        env:
+          EVENT: ${{ github.event_name }}
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          BEFORE: ${{ github.event.before }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          FULL: ${{ inputs.full }}
+        run: |
+          base=""
+          if [ "$EVENT" = pull_request ]; then
+            base="$(git merge-base HEAD "$PR_BASE")"
+          elif [ "$EVENT" = push ] && [ -n "$BEFORE" ] &&
+               ! [[ "$BEFORE" =~ ^0+$ ]] &&
+               git cat-file -e "$BEFORE^{commit}" 2>/dev/null; then
+            base="$BEFORE"
+          elif [ "$EVENT" = push ]; then
+            # New branch: compare against the default branch.
+            base="$(git merge-base HEAD "origin/$DEFAULT_BRANCH")"
+          fi
+          [ "$FULL" = true ] && base=""
+          echo "ref=$base" >> "$GITHUB_OUTPUT"
+          echo "Comparing against: ${base:-<everything>}"
+
+      - name: Commit messages (DCO, format, spelling, grammar)
+        if: steps.base.outputs.ref != ''
+        run: python3 scripts/check_commits.py --require-spelling "${{ steps.base.outputs.ref }}..HEAD"
+
+      - name: Whitespace errors (git diff --check)
+        if: always() && steps.base.outputs.ref != ''
+        run: git diff --check "${{ steps.base.outputs.ref }}...HEAD"
+
+      - name: Markdown style guide
+        if: always()
+        env:
+          BASE: ${{ steps.base.outputs.ref }}
+        run: |
+          if [ -n "$BASE" ]; then
+            python3 scripts/check_style.py --diff-base "$BASE"
+          else
+            python3 scripts/check_style.py
+          fi
+
+      - name: Markdown spelling (informational)
+        if: always() && steps.base.outputs.ref != ''
+        continue-on-error: true
+        env:
+          BASE: ${{ steps.base.outputs.ref }}
+        run: |
+          files=$(git diff --name-only --diff-filter=AM "$BASE...HEAD" -- '*.md')
+          [ -z "$files" ] && exit 0
+          codespell $files

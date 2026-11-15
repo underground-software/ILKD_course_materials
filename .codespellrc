@@ -1,0 +1,3 @@
+[codespell]
+# Short for "presentation" in commit titles
+ignore-words-list = pres
