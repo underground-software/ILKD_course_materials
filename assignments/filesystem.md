@@ -16,6 +16,8 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
 * Patch 2 adds `$USER/filesystem/sfs.c` and a new makefile to build `$USER/filesystem/sfs.ko` via the default and `build` targets
 
+* Patch 3 adds `testing_output.txt`
+
 * Don't forget a cover letter
 
 * Submit your patches to filesystem@fall2026-uml.kdlp.underground.software
