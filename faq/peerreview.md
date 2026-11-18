@@ -2,7 +2,7 @@
 
 For each student to whom you are assigned to perform peer review, you will do the following:
 
-* Make a new branch off of master and switch over to that branch.
+* Make a new branch off of master and switch over to that branch
 
 * Apply the student's latest patchset submission to your local tree
 
@@ -18,7 +18,7 @@ For each student to whom you are assigned to perform peer review, you will do th
 
 * If there are any problems with the submission, report them in your review
 
-* If you determine that there are no issues with the submission, inform the recipient.
+* If you determine that there are no issues with the submission, inform the recipient
 
 * If it turns out that there were issues with the submission that you missed, points will be deducted from your overall assignment grade
 

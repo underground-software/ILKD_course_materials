@@ -2,7 +2,7 @@
 
 You will deliver a brief presentation on research into a kernel related topic of your choice
 
-### Presentation requirements
+### Presentation Requirements
 
 * 10 ± 1 minutes long
 
@@ -30,7 +30,7 @@ You will deliver a brief presentation on research into a kernel related topic of
 
     * It is much more interesting to see e.g. the actual code, commit message, mailing list discussion, running behavior, etc than a coarse summary or a bullet on a slide
 
-### What and how to submit
+### What and How to Submit
 
 * You will propose your choice of topic ahead of time
 
@@ -48,7 +48,7 @@ You will deliver a brief presentation on research into a kernel related topic of
 
         * Note: it is potentially acceptable that two proposals start from the same example idea, as long as the details are substantially different
 
-        * This goes hand in hand with the suggestion above to go deep, many students can pick different specific details to focus on.
+        * This goes hand in hand with the suggestion above to go deep, many students can pick different specific details to focus on
 
 * You will make your presentation live during class during a pre-assigned slot at the beginning of a particular class session
 
@@ -60,13 +60,13 @@ You will deliver a brief presentation on research into a kernel related topic of
 
         * If you would rather go sooner than later, you can let me know and I can take that into consideration
 
-### Example topics
+### Example Topics
 
 * Compare and contrast open source operating systems:
 
     * Pick an operating system with an open source kernel and find out how it differs from the Linux kernel
 
-    * Focus on a specific design decision and unpack the history and reasoning behind it.
+    * Focus on a specific design decision and unpack the history and reasoning behind it
 
     * Compare and show off the relevant code for the contrasting features in both kernels
 
@@ -98,7 +98,7 @@ You will deliver a brief presentation on research into a kernel related topic of
 
     * OpenBSD
 
-        * unveil/pledge vs seccomp / LSM
+        * `unveil`/`pledge` vs seccomp / LSM
 
     * DragonFly BSD
 
@@ -120,7 +120,7 @@ You will deliver a brief presentation on research into a kernel related topic of
 
         * Capability-based permissions vs ambient authority
 
-    * plan9
+    * Plan 9
 
         * 9p protocol and Process namespaces vs Standard File System Hierarchy
 

@@ -16,7 +16,7 @@ $ git format-patch -3 --cover-letter --rfc -v1
 
 This command generates git email patches from a base repository. The arguments mean the following:
 
-`-3` specifies that the three most recent commits should be included, and therefore 3 email patch files will be generated. Change the number as needed.
+`-3` specifies that the three most recent commits should be included, and therefore three email patch files will be generated. Change the number as needed.
 
 `--cover-letter` specifies that a [cover letter](coverletters.md) email template file is generated as "patch 0" of the patchset. You must always use this.
 

@@ -1,4 +1,4 @@
-## Course assignments
+## Course Assignments
 
 Students will complete a homework assignment in this class about once a week.
 About half are "programming projects" and the other half are "homework exercises". Both involve interacting with code, running commands and capturing the output, etc,

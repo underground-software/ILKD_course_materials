@@ -8,28 +8,31 @@ Students receive a zero for assignments not submitted on time.
 During a week where an assignment is due,
 the students must make two
 [submissions](submitting.md)
-and complete two peer reviews in three stages as follows:
+and complete two peer reviews in three stages.
 
-1. By midnight on Tuesday, a student must make at least one submission.
-This is the "initial submission" stage.
+### Tuesday: Initial Submission
+
+By midnight on Tuesday, a student must make at least one submission.
 The student will not be graded on the content of this submission,
-however the student will receive a 0 for the assignment if they do not submit anything at all.
+however the student will receive a zero for the assignment if they do not submit anything at all.
 Students may make as many resubmissions as they please,
 and only the last submission made before the initial submission deadline
 will be distributed as the target of peer review.
 Students will review each other's initial submissions in the following stage.
 
-2. By midnight on Wednesday, a student must reply by email to two other students' initial submissions,
+### Wednesday: Peer Review
+
+By midnight on Wednesday, a student must reply by email to two other students' initial submissions,
 providing feedback on anything wrong with the patchset
 and any suggestions for the other student to improve their final submission.
-This is the "peer review" stage.
 Triggered by the event of the initial submission deadline, automation will make all students'
 accepted submissions visible to the whole class and assign each student two others to peer review.
 Each peer review will comprise 10% of a students' assignment grade, for 20% of the total.
 Students who do not make an on-time initial submission will be excluded from the peer review process.
 
-3. By midnight on Thursday, a student must make at least one more submission.
-This is the "final submission" stage.
+### Thursday: Final Submission
+
+By midnight on Thursday, a student must make at least one more submission.
 The wise students will take their peer's feedback and self-reflection into account and revise
 their work before the final submission, however if they disagree with the feedback, they are not required to follow it.
 Students can

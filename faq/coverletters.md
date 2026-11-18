@@ -9,8 +9,8 @@ and message `(*** BLURB HERE ***)` to the email.
 
 You must:
 
-* Replace the subject filler text with the assignment name and your username separated by a dash `'-'`.
-For example: `Linux kernel - linus_torvalds`
+* Replace the subject filler text with the assignment name and your username separated by a dash `'-'`,
+for example `Linux kernel - linus_torvalds`
 
 * Replace the blurb filler text with your write-up
 

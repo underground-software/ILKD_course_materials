@@ -1,10 +1,10 @@
-## Your first kernel module 🍿
+## Your First Kernel Module 🍿
 
 You will specify, implement, and test a simple kernel module that creates a `kdlp` entry in the Linux kernel's [`/proc`](https://docs.kernel.org/filesystems/proc.html) filesystem with a basic read only interface that returns an unchanging message which includes the student's name.
 
 For the purposes of grading, this assignment will be part of the "Homework Exercises" category.
 
-#### Outcomes:
+### Outcomes:
 
 * Get familiar with the internals of Linux's [`/proc`](https://docs.kernel.org/filesystems/proc.html) filesystem
 
@@ -14,7 +14,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
 * Write your first kernel module!
 
-#### What to submit:
+### What to Submit:
 
 * Patch 1 adds `$USER/first_module/spec.txt`, a filled out copy of the provided `spec.txt`
 
@@ -28,7 +28,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
 * Submit your patches to `first_module@fall2026-uml.kdlp.underground.software`
 
-#### Procedure:
+### Procedure:
 
 0. Rebuild the kernel with support for loadable modules and the `/proc` filesystem
 
@@ -46,7 +46,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
     * Copy `first_module/spec.txt` into your personal folder for the assignment
 
-    * Edit your copy of `spec.txt` and fill in the blanks to fully specify the expected behavior of your module.
+    * Edit your copy of `spec.txt` and fill in the blanks to fully specify the expected behavior of your module
 
 0. Write a testing program and makefile that exercises a module implementing the spec
 
@@ -66,7 +66,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
         * Make sure to also test error conditions to make sure strange user input to your module won't crash the system
 
-    * You should have at least 10 distinct tests that the module can pass or fail
+    * You should have at least ten distinct tests that the module can pass or fail
 
         * When run, the program should provide information about which tests succeeded or failed
 
@@ -120,7 +120,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
     * Rebuild the rootfs
 
-        * make an empty directory named `proc` in `rootfs` to act as the mount target for the proc filesystem
+        * Make an empty directory named `proc` in `rootfs` to act as the mount target for the proc filesystem
 
         * Add the following line to `etc/inittab` to mount the proc filesystem during startup
 

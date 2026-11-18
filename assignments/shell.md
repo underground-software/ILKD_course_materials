@@ -10,7 +10,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
 * Get hands on experience with signals, system calls, processes, and file descriptors
 
-### What to submit:
+### What to Submit:
 
 * Patch 1 includes all of the files to build your finished shell in `submissions/$USER/shell/`
 
@@ -35,7 +35,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
             CROSS_COMPILE=riscv64-linux-gnu- make KCONFIG_ALLCONFIG=../busybox.config allnoconfig
 
-    * Compile busybox. The existing config assumes you have the `sysroot` with libc from the previous assignment in your home directory `~`
+    * Compile busybox, noting that the existing config assumes you have the `sysroot` with libc from the previous assignment in your home directory `~`
 
             CROSS_COMPILE=riscv64-linux-gnu- make -j $(nproc)
 
@@ -99,13 +99,25 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
     * Features:
 
-        0. The shell prints a prompt, which consists of the absolute path the shell is currently running in (see `man 3 getcwd`) followed by a `$` and a space (e.g. `/your/current/directory$`). The shell then prints a new line and exits without any user interaction.
+        0. The shell prints a prompt, which consists of the absolute path the shell is currently running in (see `man 3 getcwd`) followed by a `$` and a space (e.g. `/your/current/directory$`)
 
-        0. The shell reads lines of user input, but doesn't do anything with them. It just prints a new prompt before each line. This loops until the shell gets EOF from user input (ctrl+d), at which point it exits with code 0.
+            * The shell then prints a new line and exits without any user interaction
 
-        0. If the user types anything, the shell prints "Unrecognized command" (but does not exit the loop). However, if the user just hits enter without typing anything, no error message is printed.
+        0. The shell reads lines of user input, but doesn't do anything with them
 
-        0. The shell splits the line of input into pieces delimited by whitespace characters (see man 3 isspace). Instead of just printing "Unrecognized command," the shell shall include the name of the program in the error message (e.g. if the user types `cat shell.c`, the shell prints "Unrecognized command: cat"). If the user enters only whitespace, no error message is printed.
+            * It just prints a new prompt before each line
+
+            * This loops until the shell gets EOF from user input (ctrl+d), at which point it exits with code 0
+
+        0. If the user types anything, the shell prints "Unrecognized command" (but does not exit the loop)
+
+            * However, if the user just hits enter without typing anything, no error message is printed
+
+        0. The shell splits the line of input into pieces delimited by whitespace characters (see `man 3 isspace`)
+
+            * Instead of just printing "Unrecognized command," the shell shall include the name of the program in the error message (e.g. if the user types `cat shell.c`, the shell prints "Unrecognized command: cat")
+
+            * If the user enters only whitespace, no error message is printed
 
         0. The shell supports the following two builtin commands:
 
@@ -153,7 +165,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
                 * Don't forget to exit the child process
 
-            * The shell waits for the child to finish running before printing the next prompt (see `man 2 wait4`).
+            * The shell waits for the child to finish running before printing the next prompt (see `man 2 wait4`)
 
         0. In the case that the user types something that isn't a path or a builtin, the shell checks whether a file with that name exists (see `man 2 access`) in any of the directories listed in the `PATH` environment variable in order
 
@@ -163,7 +175,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
                 * For example `Unrecognized command: kdlp`
 
-        0. Redirect the input/output if any redirections are provided in a given command.
+        0. Redirect the input/output if any redirections are provided in a given command
 
             * `>` replaces stdout
 
@@ -203,7 +215,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
             make
             cp shell ~/rootfs/bin/sh
 
-    * Rebuild the rootfs and boot the kernel.
+    * Rebuild the rootfs and boot the kernel
 
         * You should see output from busybox's init program first and then it will spawn your shell
 

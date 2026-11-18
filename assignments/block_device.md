@@ -1,4 +1,4 @@
-## Create a block device 🧱
+## Create a Block Device 🧱
 
 The objective of this assignment is to build a kernel module that creates simple block devices backed by RAM.
 
@@ -10,7 +10,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
 * Learn about module parameters for load time configuration of kernel modules
 
-### What to submit:
+### What to Submit:
 
 * Patch 1 adds `$USER/block_device/spec.txt`, a filled out copy of `spec.txt`
 
@@ -61,7 +61,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
     * The testing program output must follow the TAP specification like the testing program from first_module
 
     * Unlike in previous assignments, the testing program should not assume the module is already loaded and merely perform unit tests on a single file
-    
+
     * Perform end to end tests of the entire module including loading and unloading it with different parameters
 
         * The `finit_module` and `delete_module` system calls will be helpful for loading/unloading the module programmatically
