@@ -16,8 +16,8 @@
 | 0xB | 11/17 |	[filesystem](/assignments/filesystem.md) | character drivers, file operations, device numbers |
 | 0xC | 11/24 |	   | network devices, address families, protocols |
 | 0xD | 12/01 | F0 | live driver debugging exercise |
-| 0xE | 12/08 |	F1 | final presentations |
-| 0xF |  TBD  |    | two additional sessions for more presentations during finals week |
+| 0xE | 12/08 |	   | final presentations |
+| 0xF |  TBD  | F1 | two additional sessions for more presentations during finals week |
 
 #### [Frequently Asked Questions](faq.md)
 
