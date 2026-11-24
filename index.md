@@ -17,7 +17,8 @@
 | 0xC | 11/24 |	   | network devices, address families, protocols |
 | 0xD | 12/01 | [specification](/assignments/specification.md) | live driver debugging exercise |
 | 0xE | 12/08 |	   | final presentations |
-| 0xF |  TBD  | F1 | two additional sessions for more presentations during finals week |
+| 0xF | 12/14 | [character device](/assignments/character_device.md) | **NOTE:** your one and *only* final submission is due on **MONDAY**|
+| 0xF | 12/15-17 | [final](/assignments/final.md) | sessions for presentations during finals week |
 
 #### [Frequently Asked Questions](faq.md)
 
