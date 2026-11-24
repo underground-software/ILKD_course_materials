@@ -20,7 +20,7 @@
 | 0xF | 12/14 | [character device](/assignments/character_device.md) | **NOTE:** your one and *only* final submission is due on **MONDAY**|
 | 0xF | 12/15-17 | [final](/assignments/final.md) | sessions for presentations during finals week |
 
-#### [Frequently Asked Questions](faq.md)
+### [Frequently Asked Questions](faq.md)
 
 ### Course Summary and Purpose
 
@@ -97,7 +97,7 @@ The line between prompts that ease research and deepen student understanding thr
 
 If you do choose to use GAI / LLM technology keep the following questions in mind:
 
- - Is the information being provided actually accurate? Can you find a primary source to back it up?
+ - Is the information being provided actually accurate, and can you find a primary source to back it up?
 
  - Would you be able to reproduce your findings / creation from memory without looking at the generated output?
 

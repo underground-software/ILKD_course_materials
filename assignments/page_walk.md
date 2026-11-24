@@ -4,11 +4,11 @@ Add an entry to /proc that walks the page table and exposes the physical mapping
 
 For the purposes of grading, this assignment will be part of the "Programming Assignments" category.
 
-#### Outcomes:
+### Outcomes:
 
 * Understand how the page table maps virtual memory addresses to physical memory addresses
 
-#### What to submit:
+### What to Submit:
 
 * Patch 1 adds the module code and makefile to `submissions/$USER/page_walk/`
 
@@ -20,7 +20,7 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
 * Submit your patches to page_walk@fall2026-uml.kdlp.underground.software
 
-#### Procedure:
+### Procedure:
 
 * From now on when building the kernel, use a config that has the MMU enabled
 
@@ -50,11 +50,11 @@ For the purposes of grading, this assignment will be part of the "Programming As
 
         * You will not be able to use the same `struct seq_file` based technique from `/proc/cmdline`, with a "show" function
 
-        * instead the module will need a `struct proc_ops` structure with the `proc_read` member pointing to your function that directly implements the custom behavior of the read system call
+        * Instead, the module will need a `struct proc_ops` structure with the `proc_read` member pointing to your function that directly implements the custom behavior of the read system call
 
         * You will need the more nuanced `proc_create` API as seen in the code for `/proc/config.gz` so you can pass your operations struct
 
-    * The read implementation for the page walk file expects always to be given a pointer to an array 6 `unsigned long`s as the user buffer and an appropriately large count
+    * The read implementation for the page walk file expects always to be given a pointer to an array of six `unsigned long`s as the user buffer and an appropriately large count
 
         * It will interpret the current file offset as a virtual address and walk the page table to try and locate the corresponding page table entry (PTE)
 

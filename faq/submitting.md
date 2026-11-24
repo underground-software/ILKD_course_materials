@@ -1,4 +1,4 @@
-## Submitting assignments
+## Submitting Assignments
 
 All homework submissions must be submitted in the form of an
 [email patchset](patchsets.md)
@@ -30,7 +30,7 @@ Students submit assignments and review peer submissions on this list.
 
 Each assignment involves the following three stages:
 
-### Step 1: Initial submission
+### Step 1: Initial Submission
 
 * The student makes their submission to the mailing list using `git-send-email`
 
@@ -42,7 +42,7 @@ Each assignment involves the following three stages:
 
 * Each [re-submission](resubmitting.md) should increment the version number in the subject line, [explained here](patchsets.md)
 
-### Step 2: Peer review
+### Step 2: Peer Review
 
 * Each student is assigned two other students' work to review on their [submission dashboard](dashboard.md)
 
@@ -72,10 +72,10 @@ and the student should receive feedback from two other students
 
 * If a student does not complete peer review their maximum assignment grade is 80%
 
-* Reviews are graded based on how many issues a student missed.
-The student receives 20% off for each unique issue not spotted with max penalty of 100%
+* Reviews are graded based on how many issues a student missed,
+with 20% off for each unique issue not spotted and a max penalty of 100%
 
-### Step 3: Final submission
+### Step 3: Final Submission
 
 * The student, if canny, will act on the feedback from the received reviews
 

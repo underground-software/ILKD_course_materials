@@ -1,4 +1,4 @@
-## Joining the course Matrix
+## Joining the Course Matrix
 
 0. Get your [course credentials](credentials.md)
 

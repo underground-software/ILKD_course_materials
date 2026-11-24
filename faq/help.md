@@ -1,4 +1,4 @@
-## How to get help in this course
+## How to Get Help in This Course
 
 The `#questions` channel on Matrix is the best place to turn.
 If you're having an issue with something, chances are that
@@ -20,7 +20,7 @@ Before posting a question, we encourage you to:
 If you were stuck but manage to figure out something yourself,
 feel free to share on Matrix
 (maybe this point of confusion could form the basis of a
-[contribution](faq/contributing.md)
+[contribution](contributing.md)
 to the course materials to improve them for everyone and earn some extra credit).
 
 If you are not able to figure out the solution yourself,

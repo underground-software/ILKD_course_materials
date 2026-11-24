@@ -9,7 +9,7 @@ patch submission process we'll be using.
 
 For the purposes of grading, this assignment will be part of the "Homework Exercises" category.
 
-#### Outcomes:
+### Outcomes:
 
 * Set up your Linux environment for the rest of the class
 
@@ -21,7 +21,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
 * Get familiar with the peer review process, which we will use for the rest of the course
 
-#### What to submit:
+### What to Submit:
 
 * Patch 1 adds `$USER/setup/setup.txt` which contains a brief introduction about yourself
 
@@ -35,11 +35,11 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
 * Submit your patches to `setup@fall2026-uml.kdlp.underground.software`
 
-#### Procedure:
+### Procedure:
 
 0. Install [Podman](https://podman.io)
 
-    * Windows: from the above link, select `Podman CLI for Windows` from the `Download` dropdown menu.
+    * Windows: from the above link, select `Podman CLI for Windows` from the `Download` dropdown menu
 
         * Select WSLv2 as your virtualization provider
 
@@ -51,7 +51,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
             * Add a new folder and name it `.ssh`
 
-    * MacOS: from the above link, select `Podman CLI for MacOS` from the `Download` dropdown menu.
+    * MacOS: from the above link, select `Podman CLI for MacOS` from the `Download` dropdown menu
 
         * Double click `podman-installer-macos-universal.pkg` in your downloads folder once it is done downloading
 
@@ -63,17 +63,17 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
             0. Install podman from your package manager (`sudo apt install podman`)
 
-            0. Check the installed version with `podman --version`. If the version is greater than 5.0.0 you are all set and can continue with the next steps and stop reading these special instructions
+            0. Check the installed version with `podman --version`, and if it is greater than 5.0.0 you are all set and can continue with the next steps and stop reading these special instructions
 
             0. Otherwise, run `podman run --hostname builder --name builder --privileged -it --rm quay.io/podman/stable`
 
             0. Within that container, run the linux command from the step "Build your container using the Containerfile we serve you"
 
-            0. Wait for the build to finish and for the shell prompt to reappear.
+            0. Wait for the build to finish and for the shell prompt to reappear
 
             0. Open a second terminal and execute `podman exec builder podman image save f26_kdlp_container:latest | podman image load`
 
-            0. Once that command finishes, close the second terminal and go back to the first terminal. Type `exit` and hit enter
+            0. Once that command finishes, close the second terminal, go back to the first terminal, type `exit` and hit enter
 
             0. Proceed with the rest of the instructions starting with "Create a podman volume for persistent storage"
 
@@ -112,13 +112,13 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
     Note: A previous version of these instructions incorrectly used the volume name `kdlp_volume`. If you've previously started on this assignment and lost progress:
 
-      * Run `podman volume ls` and check if you have two volumes called `kdlp_volume` and `f26_kdlp_volume`. If not, do not follow these instructions.
+      * Run `podman volume ls` and only follow these instructions if you have two volumes called `kdlp_volume` and `f26_kdlp_volume`
 
-      * Migrate your old volume by running `podman volume export kdlp_volume | podman volume import f26_kdlp_volume -`.
+      * Migrate your old volume by running `podman volume export kdlp_volume | podman volume import f26_kdlp_volume -`
 
-      * Enter your container using the above `podman run` command again. Ensure that all your data are intact and correctly migrated over.
+      * Enter your container using the above `podman run` command again and ensure that all your data are intact and correctly migrated over
 
-      * Delete your old volume by running `podman volume rm kdlp_volume`.
+      * Delete your old volume by running `podman volume rm kdlp_volume`
 
 0. Clone the submission repository
 
@@ -134,7 +134,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
         mkdir -p $USER/setup
         cd $USER/setup
 
-0. Add a file named setup.txt to this folder containing an introduction about yourself.
+0. Add a file named setup.txt to this folder containing an introduction about yourself
 
     The content can be whatever you want, whether it be why you are taking this class,
     your favorite ice cream flavor, or a fun fact about yourself.
@@ -146,41 +146,41 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
 0. Make a commit out of your changes
 
-    * By default, git will not be tracking changes to newly created files.
+    * By default, git will not be tracking changes to newly created files
 
-    * Add your file to the list that git is tracking with `git add setup.txt`.
+    * Add your file to the list that git is tracking with `git add setup.txt`
 
-    * Verify that you did not introduce any whitespace errors by running `git diff --staged --check`.
+    * Verify that you did not introduce any whitespace errors by running `git diff --staged --check`
 
-        * You can read more about whitespace errors on the [commits](/faq/commits.md) page.
+        * You can read more about whitespace errors on the [commits](/faq/commits.md) page
 
-        * They can (and should) be something you double check for at the end before you send your patches, but the above command is recommended as a preventative measure to avoid introducing them in the first place when it is easier to fix.
+        * They can (and should) be something you double check for at the end before you send your patches, but the above command is recommended as a preventative measure to avoid introducing them in the first place when it is easier to fix
 
-        * If the command complains, change the offending lines and `git add setup.txt` again and check once more.
+        * If the command complains, change the offending lines and `git add setup.txt` again and check once more
 
-        * Repeat until no errors remain.
+        * Repeat until no errors remain
 
-    * Make a commit to save this version of the repository, so it can be shared with `git commit -s`.
+    * Make a commit to save this version of the repository, so it can be shared with `git commit -s`
 
-        * Note that the -s flag makes git include the "Signed-off-by:" or DCO line for you automatically.
+        * Note that the -s flag makes git include the "Signed-off-by:" or DCO line for you automatically
 
-        * See our page on [patches](/faq/patches.md) for more information on the DCO.
+        * See our page on [patches](/faq/patches.md) for more information on the DCO
 
-    * Git will then open an instance of the default text editor (nano unless you used the `?vim=yes` parameter when building your container) to let you input a message for the commit.
+    * Git will then open an instance of the default text editor (nano unless you used the `?vim=yes` parameter when building your container) to let you input a message for the commit
 
-        * Put a title containing a short summary of what you did on the first line, e.g. `setup: add introduction for Linus Torvalds`.
+        * Put a title containing a short summary of what you did on the first line, e.g. `setup: add introduction for Linus Torvalds`
 
-        * Press enter twice, and then write a more detailed explanation that will act as the body of the commit.
+        * Press enter twice, and then write a more detailed explanation that will act as the body of the commit
 
-        * There should already be a "Signed-off-by:" line for your account at the bottom; if not, add one.
+        * There should already be a "Signed-off-by:" line for your account at the bottom; if not, add one
 
-        * Save your changes and exit the editor to finish the commit.
+        * Save your changes and exit the editor to finish the commit
 
-    * Check to make sure you see the commit and it looks good by running `git log -p`.
+    * Check to make sure you see the commit and it looks good by running `git log -p`
 
-    * Your new commit should be the top most one, and you should see the title, message, DCO, and difference view containing the changes.
+    * Your new commit should be the top most one, and you should see the title, message, DCO, and difference view containing the changes
 
-    * If there is more output than can fit on one screen, git will open a scrolling view that you can maneuver up and down within using the arrow keys.
+    * If there is more output than can fit on one screen, git will open a scrolling view that you can maneuver up and down within using the arrow keys
 
         * Press q to go back to the terminal.
 
@@ -201,8 +201,8 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
         cd rootfs && find . | cpio -co > ../rootfs.cpio && cd ..
 
-0. Clone the v7.2 Linux kernel release from git.kernel.org. It's recommended that you
-set `--depth=1` to minimize the download size.
+0. Clone the v7.2 Linux kernel release from git.kernel.org,
+using `--depth=1` to minimize the download size
 
         git clone --depth=1 --branch v7.2 https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
 
@@ -210,15 +210,17 @@ set `--depth=1` to minimize the download size.
 
         cd linux
 
-0. Create a branch to make it easier to track your future work.
-You will notice a message about being in a "detached head state".
-When the `--branch` argument to git clone is supplied with a tag (e.g vX.Y), git doesn't make a branch automatically.
+0. Create a branch to make it easier to track your future work
+
+    You will notice a message about being in a "detached head state"
+    because git doesn't make a branch automatically when the `--branch` argument to git clone is a tag (e.g. vX.Y).
 
         git checkout -b master
 
-0. Create a file named `localversion` in the `linux` directory and add something cool.
-We suggest it begin with a '.' character, and it must NOT contain spaces.
-For example, `cat localversion` might print
+0. Create a file named `localversion` in the `linux` directory and add something cool
+
+    We suggest it begin with a '.' character, and it must NOT contain spaces.
+    For example, `cat localversion` might print
 
         .my-cool-kernel-version
 
@@ -252,10 +254,12 @@ For example, `cat localversion` might print
     If you choose to do this extra credit, be sure to leave comments in your code since assembly can be hard to read without them. Copy your modified `init.s` file back
     into your `~/submissions/$USER/setup/` folder. You will make a commit containing that file as an additional third commit at the end.
 
-0. Re-run `qemu` to capture the output in a file you will submit as patch 2.
-This command uses a shell pipe and the tee program to send a second copy of the output to the standard error stream so it still appears on your terminal while also forwarding it along to the next stage in the pipeline.
-The `tr` program then deletes the carriage return characters that would cause whitespace errors.
-The final stage uses output redirection to save the processed text into a file in your folder.
+0. Re-run `qemu` to capture the output in a file you will submit as patch 2
+
+    This command uses a shell pipe and the tee program to send a second copy of the output to the standard error stream
+    so it still appears on your terminal while also forwarding it along to the next stage in the pipeline.
+    The `tr` program then deletes the carriage return characters that would cause whitespace errors.
+    The final stage uses output redirection to save the processed text into a file in your folder.
 
         qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -net none -kernel arch/riscv/boot/Image -initrd ../rootfs.cpio -append 'panic=-1' | tee /dev/stderr | tr -d '\r' > ~/submissions/$USER/setup/qemu.txt
 
@@ -266,15 +270,15 @@ The final stage uses output redirection to save the processed text into a file i
         git diff --staged --check #check for whitespace errors, you might have some to fix. Edit the file, re run git add and check until there are none left
         git commit -s
 
-0. If you completed the extra credit, make a commit containing just the `init.s` file.
+0. If you completed the extra credit, make a commit containing just the `init.s` file
 
         git add $USER/setup/init.s
         git commit -s
 
-0. Next, you'll want to create a patch series, also known as a [patchset](/faq/patchsets.md), with a [cover letter](/faq/coverletters.md) out of your [commits](/faq/commits.md).
-To do this, run `git format-patch -2 --cover-letter -v1 --rfc` (or substitute `-3` for `-2` if you did the extra credit).
+0. Next, create a patch series, also known as a [patchset](/faq/patchsets.md), with a [cover letter](/faq/coverletters.md) out of your [commits](/faq/commits.md)
+by running `git format-patch -2 --cover-letter -v1 --rfc` (or substitute `-3` for `-2` if you did the extra credit)
 
-    * `-2` includes the most recent 2 commits (use 3 if you did the extra credit)
+    * `-2` includes the most recent two commits (use three if you did the extra credit)
 
     * `--cover-letter` generates a cover letter for the whole patch series with a summary
 
@@ -282,16 +286,22 @@ To do this, run `git format-patch -2 --cover-letter -v1 --rfc` (or substitute `-
 
     * `--rfc` marks these patches as a request for comment, which is required for all initial submissions (since they will be receiving peer feedback)
 
-0. The result of this command should be your directory containing three (or four) new `.patch` files, courtesy of git.
-You'll want to open the first of these, `v1-0000-cover-letter.patch`,
-in your text editor so that you can write your cover letter according to the [guidelines](/faq/coverletters.md).
-Don't forget to add the `Signed-off-by` line at the end of the body right before the automatically generated section containing a summary of the patchset (the first line will have your name and the number of patches in parenthesis e.g. Linus Torvalds (2):).
+0. The result of this command should be your directory containing three (or four) new `.patch` files, courtesy of git
+
+    You'll want to open the first of these, `v1-0000-cover-letter.patch`,
+    in your text editor so that you can write your cover letter according to the [guidelines](/faq/coverletters.md).
+    Don't forget to add the `Signed-off-by` line at the end of the body right before the automatically generated section
+    containing a summary of the patchset (the first line will have your name and the number of patches in parentheses, e.g. `Linus Torvalds (2):`).
 
 0. Verify that your patches apply correctly on the master branch by making a new branch to try applying them
 
         git checkout -b test origin/master
 
-0. Apply your patches making sure to exclude the cover letter which does not contain any actual changes. Ensure that no errors or warnings are printed. If the patches do not apply, ensure that you created the right number of commits and formatted them into the right number of patches. If there are warnings from whitespace errors, correct the commits using git rebase.
+0. Apply your patches, making sure to exclude the cover letter, which does not contain any actual changes
+
+    Ensure that no errors or warnings are printed.
+    If the patches do not apply, ensure that you created the right number of commits and formatted them into the right number of patches.
+    If there are warnings from whitespace errors, correct the commits using git rebase.
 
         git am v1-0001*.patch
         git am v1-0002*.patch
@@ -302,8 +312,8 @@ Don't forget to add the `Signed-off-by` line at the end of the body right before
         git switch -
         git branch -D test
 
-0. Once you've finished your cover letter, send your patches to the class mailing list.
-You can do this by running the command `git send-email --to=setup@fall2026-uml.kdlp.underground.software v1*.patch`.
+0. Once you've finished your cover letter, send your patches to the class mailing list
+by running the command `git send-email --to=setup@fall2026-uml.kdlp.underground.software v1*.patch`
 
     * Each assignment will have its own special address to send submissions to, in this case `setup@fall2026-uml.kdlp.underground.software`
 
@@ -318,7 +328,7 @@ You can do this by running the command `git send-email --to=setup@fall2026-uml.k
 
 If your `git send-email` output ends in `Result: 250` then your patchset was sent successfully.
 
-#### Check your work
+### Check Your Work
 
 You can check the Course Dashboard on the course website to confirm your submission was received.
 On the dashboard there is a section for each assignment that has been assigned.

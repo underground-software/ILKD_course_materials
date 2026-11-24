@@ -1,10 +1,10 @@
-## Add a new system call 🤫
+## Add a New System Call 🤫
 
 Add a new system call to the kernel
 
 For the purposes of grading, this assignment will be part of the "Homework Exercises" category.
 
-#### Outcomes:
+### Outcomes:
 
 * Get comfortable with the concept of a system call from both kernelspace and userspace
 
@@ -14,7 +14,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
 * Understand how system calls are made in assembly language
 
-#### What to submit:
+### What to Submit:
 
 * Patch 1 adds `kernel.patch`, which patches the kernel code to implement your system call
 
@@ -26,7 +26,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
     * Add *the email patch itself* as a file named `kernel.patch` to the staged git files and commit this
 
-        * Note: there will be whitespace errors from adding the patch. It is safe to ignore them
+        * Note: adding the patch causes whitespace errors, which are safe to ignore
 
 * Patch 2 adds `Makefile` and `test.c` a program which invokes your new system call using the `syscall` function from libc, and the `patched_output.txt` file containing output of your `qemu` virtual machine
 
@@ -38,13 +38,13 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
 * Submit your patches to `new_syscall@fall2026-uml.kdlp.underground.software`
 
-#### Procedure:
+### Procedure:
 
 0. Start by backing up your compiled kernel from the setup assignment
 
     0. Enter the `linux` repository
 
-    0. copy `arch/riscv/boot/Image` to `~/kernel-original`
+    0. Copy `arch/riscv/boot/Image` to `~/kernel-original`
 
 0. Add a new system call to the Linux kernel
 
@@ -163,9 +163,10 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
             cd uclibc-ng
 
-    * Create a branch to make it easier to track your future work.
-    You will notice a message about being in a "detached head state".
-    When the `--branch` argument to git clone is supplied with a tag (e.g. vX.Y.Z), git doesn't make a branch automatically.
+    * Create a branch to make it easier to track your future work
+
+        You will notice a message about being in a "detached head state"
+        because git doesn't make a branch automatically when the `--branch` argument to git clone is a tag (e.g. vX.Y.Z).
 
             git checkout -b master
 
@@ -189,19 +190,19 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
             cd linux
             qemu-system-riscv64 -machine virt -bios none -nographic -no-reboot -kernel arch/riscv/boot/Image -initrd ../rootfs.cpio -append 'panic=-1'
 
-    * If you are successful, you should see a message "Hello from C!" at the end of the kernel output.
+    * If you are successful, you should see a message "Hello from C!" at the end of the kernel output
 
 0. Write a test program for your new syscall in C
 
-    * Use the `syscall` function from libc and the macro you defined `__NR_kdlp` to invoke your new system call.
+    * Use the `syscall` function from libc and the macro you defined `__NR_kdlp` to invoke your new system call
 
-    * Check a return code of `-1` to see if there is an error.
+    * Check a return code of `-1` to see if there is an error
 
         * Use `strerror` with `errno` to get a description of what went wrong and print an error message
 
-        * Exit the program with a return code equal to the error number.
+        * Exit the program with a return code equal to the error number
 
-    * If there is not an error, use the returned length to print the appropriate amount of bytes using the `write` system call.
+    * If there is not an error, use the returned length to print the appropriate amount of bytes using the `write` system call
 
     * You will need to power off the kernel to exit gracefully since this program will run as pid 1
 
@@ -221,7 +222,7 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
     * Create a file `kdlp_syscall.S` that contains a single function `kdlp` that sets up the arguments correctly and invokes the kernel to perform your new syscall
 
-    * the capital `.S` extension means that the code will go through the preprocessor so you can `#include <asm/unistd.h>` to access the `#define` for your `__NR_kdlp` instead of hardcoding the literal value
+    * The capital `.S` extension means that the code will go through the preprocessor so you can `#include <asm/unistd.h>` to access the `#define` for your `__NR_kdlp` instead of hardcoding the literal value
 
     * Follow the conventions of the [ELF psABI](https://github.com/riscv-non-isa/riscv-elf-psabi-doc/releases/tag/v1.0) (processor specific application binary interface) for RISC-V to interoperate with the C code that will call your function
 
@@ -233,11 +234,11 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
         * You will need to adjust the error handling because the `errno` variable is a userspace only construct
 
-    * To call the function that is defined in assembly, simply add an `extern`  declaration for the assembly function at the top of your file.
+    * To call the function that is defined in assembly, simply add an `extern`  declaration for the assembly function at the top of your file
 
         * Make sure you remembered to set the `kdlp` function to have global linkage in your assembly source
 
-    * Update `Makefile` to compile the two source files together into the program using the appropriate flags.
+    * Update `Makefile` to compile the two source files together into the program using the appropriate flags
 
     * Rebuild and rerun the kernel capturing the output in `assembly_output.txt`
 
@@ -245,11 +246,11 @@ For the purposes of grading, this assignment will be part of the "Homework Exerc
 
 0. Answer the following questions in a new text file at `~/submissions/$USER/new_syscall/questions.txt`
 
-    * What did `get_task_comm` report as the name of the current task? Why?
+    * What did `get_task_comm` report as the name of the current task, and why?
 
-    * Try booting your new init program with your original kernel (`~/kernel-original`). What happens?
+    * What happens when you boot your new init program with your original kernel (`~/kernel-original`)?
 
-        * What exit code does your init program return? Why?
+        * What exit code does your init program return, and why?
 
 0. Run `qemu` with your original kernel and your new init program again, capturing the output in `~/submissions/$USER/new_syscall/original_output.txt`
 
